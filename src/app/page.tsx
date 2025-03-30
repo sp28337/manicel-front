@@ -1,12 +1,14 @@
+import './styles/globals.css';
+
+import { Header } from './ui/header/Header';
+
 export default function Home() {
   return (
-    <div>
+    <>
+      <Header />
       <main>
-        
+          
       </main>
-      <footer>
-       
-      </footer>
-    </div>
+    </>
   );
 }
