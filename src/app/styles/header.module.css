@@ -1,0 +1,233 @@
+.headerWrapper {
+    background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
+    position: relative;
+    z-index: 2;
+}
+
+.imgAll {
+    margin-top: 80px;
+}
+
+.headerBody {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.textHeader {
+    position: relative;
+    z-index: 2;
+    margin-top: 250px;
+    margin-bottom: 105px;
+}
+
+.h1Header {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 110%;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #0d0c10;
+    margin-bottom: 20px;
+}
+
+.spanHeader {
+    display: block;
+    padding-top: 20px;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 110%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: rgba(13, 12, 16, 0.9);
+}
+
+.pHeader {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: lowercase;
+    color: #0d0c10;
+    letter-spacing: 0;
+    width: 467px;
+}
+
+.icons {
+    display: flex;
+    padding-top: 63px;
+    gap: 57px;
+}
+
+.wave {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    transform: translateY(-70px);
+}
+
+.bottomText {
+    margin: 0 auto;
+    width: 480px;
+    height: 30px;
+    bottom: 0;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 150%;
+    font-variant: small-caps;
+    color: rgba(26, 26, 26, 0.5);
+    letter-spacing: 0;
+}
+
+.imgWrapper {
+    position: absolute;
+    margin-right: -50px;
+    right: 0;
+    z-index: 1;
+}
+
+
+@media (max-width: 1248px) {
+    .textHeader {
+        margin-top: 150px;
+        margin-bottom: 200px;
+    }
+
+    .imgWrapper {
+        margin-right: -70px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .imgAll {
+        width: 550px;
+        height: 552px;
+    }
+
+    .textHeader {
+        margin-top: 100px;
+    }
+
+    .spanHeader {
+        font-size: 36px;
+    }
+    
+    .pHeader {
+        font-size: 12px;
+        max-width: 397px;
+    }
+    
+    .imgAll {
+        margin-top: 100px;
+    }
+}
+
+
+@media (max-width: 900px) {
+    
+    .pHeader {
+        width: 350px;
+    }
+
+    .icons {
+        gap: 5%;
+    }
+
+    .textHeader {
+        margin-bottom: 182px;
+    }
+}
+
+@media (max-width: 768px) {
+    .imgAll {
+        margin: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .textHeader {
+        margin: 0;
+    }
+
+    .imgWrapper {
+        position: initial;
+        margin: 0;
+    }
+
+    .headerBody {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+    }
+
+    .h1Header {
+        font-size: 28px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #0d0c10;
+        margin-bottom: 10px;
+    }
+
+    .pHeader {
+        width: initial;
+    }
+
+    .icons {
+        gap: 10%;
+        justify-content: center;
+        padding-top: 30px;
+    }
+
+    .spanHeader {
+        padding-top: 10px;
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 566px) {
+    .h1Header {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 500px) {
+    .h1Header {
+        font-size: 22px;
+    }
+
+    .spanHeader {
+        padding-top: 10px;
+        font-size: 34px;
+    }
+
+    .pHeader {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 433px) {
+    .h1Header {
+        font-size: 19px;
+    }
+
+    .spanHeader {
+        padding-top: 10px;
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 374px) {
+    .h1Header {
+        font-size: 17px;
+    }
+
+    .spanHeader {
+        padding-top: 8px;
+        font-size: 28px;
+    }
+    .pHeader {
+        font-size: 9px;
+    }
+}

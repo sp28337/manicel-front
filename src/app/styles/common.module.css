@@ -1,0 +1,42 @@
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 150px;
+
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    background-color: #0D0C10;
+    color: white;
+    font-size: 12px;
+}
+
+@media (max-width: 1248px) {
+    .container {
+        padding: 0 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .topbar {
+        height: 20px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .topbar {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 374px) {
+    .topbar {
+        height: 20px;
+        font-size: 7px;
+    }
+}
