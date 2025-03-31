@@ -14,3 +14,9 @@ html {
 body {
     position: relative;
 }
+
+hr {
+    stroke-width: 0.70px;
+    stroke: rgba(0, 0, 0, 0.9);
+    margin: 50px 0 50px;
+}
