@@ -1,0 +1,191 @@
+.scrub {
+    width: 300px;
+    height: auto;
+}
+
+.bestsellersFlex {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+.setsFlex {
+    display: flex;
+}
+
+.productItem {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.h1 {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #0d0c10;
+}
+
+.button {
+    border: none;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 110%;
+    text-transform: uppercase;
+    text-align: center;
+    color: #0d0c10;
+}
+
+.bestsellersWrapper {
+    text-align: center;
+}
+
+.tabsWrapper {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.composition {
+    text-align: left;
+    width: 42.8%;
+}
+
+.p {
+    letter-spacing: 1px;
+    font-size: 12px;
+    line-height: 150%;
+    color: #0d0c10;        
+    margin-bottom: 10px;
+}
+
+.h3 {
+    letter-spacing: 3px;
+    font-weight: 500;
+    font-size: 22px;
+    color: #000;
+    text-transform: uppercase;
+    margin: 30px 0 10px;
+    white-space: nowrap;
+}
+
+.h3Hide {
+    color: #FFF;
+}
+
+.true {
+    cursor: pointer;
+}
+
+.false {
+    cursor: initial;
+}
+
+@media (max-width: 1248px) {
+
+    .scrub {
+        width: 250px;
+    }
+
+    .h3 {
+        margin: 20px 0 10px;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .scrub {
+        width: 320px;
+    }
+
+    .composition {
+        display: none;
+    }
+
+    .p {
+        font-size: 14px;
+    }
+    
+    .h3 {
+        margin: 0 0 10px;
+    }
+    
+    .infoContainer {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 768px) {
+    
+    .h1 {
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    
+    .productItem {
+        gap: 0px;
+    }
+
+    .scrub {
+        width: 280px;
+        min-width: 180px;
+        height: auto;
+    }
+
+    .p {
+        font-size: 12px;
+    }
+    
+    .h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 610px) {
+    .scrub {
+        width: 240px;
+    }
+
+    .p {
+        font-size: 10px;
+    }
+    
+    .h3 {
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 522px) {
+    .scrub {
+        width: 100%;
+    }
+
+    .imgWrapper {
+        width: 100%;
+    }
+    
+    .infoContainer {
+        display: none;
+    }
+}

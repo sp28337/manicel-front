@@ -6,6 +6,8 @@
 
 .imgAll {
     margin-top: 80px;
+    width: 674px;
+    height: auto;
 }
 
 .headerBody {
@@ -17,8 +19,7 @@
 .textHeader {
     position: relative;
     z-index: 2;
-    margin-top: 250px;
-    margin-bottom: 105px;
+    margin: 200px 0 200px;
 }
 
 .h1Header {
@@ -78,7 +79,7 @@
 
 .imgWrapper {
     position: absolute;
-    margin-right: -50px;
+    margin: 80px -30px 0 auto;
     right: 0;
     z-index: 1;
 }
@@ -86,24 +87,32 @@
 
 @media (max-width: 1248px) {
     .textHeader {
-        margin-top: 150px;
-        margin-bottom: 200px;
+        margin: 150px 0 150px;
+    }
+
+    .imgAll {
+        margin-top: initial;
+        width: 620px;
     }
 
     .imgWrapper {
-        margin-right: -70px;
+        margin: 100px -50px 0 auto;
     }
 }
 
 
 @media (max-width: 1024px) {
+
     .imgAll {
-        width: 550px;
-        height: 552px;
+        width: 600px;
+    }
+
+    .imgWrapper {
+        margin: 130px -50px 0 auto;
     }
 
     .textHeader {
-        margin-top: 100px;
+        margin: 100px 0 220px;
     }
 
     .spanHeader {
@@ -114,15 +123,20 @@
         font-size: 12px;
         max-width: 397px;
     }
-    
-    .imgAll {
-        margin-top: 100px;
-    }
+
 }
 
 
 @media (max-width: 900px) {
     
+    .imgWrapper {
+        margin: 150px -50px 0 auto;
+    }
+
+    .imgAll {
+        width: 540px;
+    }
+
     .pHeader {
         width: 350px;
     }
@@ -140,7 +154,6 @@
     .imgAll {
         margin: 0;
         width: 100%;
-        height: auto;
     }
 
     .textHeader {

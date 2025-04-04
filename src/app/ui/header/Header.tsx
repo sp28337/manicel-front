@@ -1,9 +1,11 @@
-import { ImgAll } from './Img';
 import { Icons } from './Icons';
 import { Nav } from './nav/Nav';
+import { Wave } from './Wave';
 import commonStyles from '../../styles/common.module.css';
 import headerStyles from '../../styles/header.module.css';
-import { Wave } from './Wave';
+import Image from "next/image";
+import allPng from "../../../../public/all-1200w.png";
+import styles from '../../styles/header.module.css'
 
 export const Header = () => {
     return (
@@ -20,7 +22,13 @@ export const Header = () => {
                             <Icons  />
                         </div>
                         <div className={headerStyles.imgWrapper}>
-                            <ImgAll />
+                            <Image className={styles.imgAll}
+                                src={allPng} 
+                                alt="piramyd of all scrubs with raspberry on top of some cans"
+                                sizes="
+                                (max-width: 1248px) 100vw,
+                                1200px"
+                            />
                             {/* <span className={headerStyles.bottomText}>
                                 Солевые скрабы для тела не содержат агрессивных компонентов, поэтому подходят для беременных и, с осторожностью, для людей с чувствительной и проблемной кожей.
                             </span> */}
