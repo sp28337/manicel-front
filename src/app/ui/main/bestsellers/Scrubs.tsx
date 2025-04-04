@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import styles from '../../../styles/bestsellers.module.css';
-import raspberryPng from "../../../../../public/raspberry.png";
-import mangoPng from "../../../../../public/mango.png";
-import mintPng from "../../../../../public/mint.png";
-import coconutPng from "../../../../../public/coconut.png";
-import bubblegumPng from "../../../../../public/bubblegum.png";
-import caramelPng from "../../../../../public/caramel.png";
-import lavenderPng from "../../../../../public/lavender.png";
+import raspberryPng from "../../../../../public/raspberry-1200w.png";
+import mangoPng from "../../../../../public/mango-1200w.png";
+import mintPng from "../../../../../public/mint-1200w.png";
+import coconutPng from "../../../../../public/coconut-1200w.png";
+import bubblegumPng from "../../../../../public/bubblegum-1200w.png";
+import caramelPng from "../../../../../public/caramel-1200w.png";
+import lavenderPng from "../../../../../public/lavender-1200w.png";
 
 export const Scrubs = () => {
      
@@ -16,71 +16,32 @@ export const Scrubs = () => {
     // const bestsellers = await data.json()
     // {console.log(bestsellers)}
 
-    const products = [
-        {
-            id: 1,
-            name: "bubblegum",
-            description: "Антицеллюлитный скраб для тела солевой с маслами",
-            ingredients: "морская соль, масло кокоса, масло ши, увлажняющий лосьон, глицерин, витамин E, твин 80, отдушка Малина",
-            rating: "",
-            image: bubblegumPng,
-            imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
-        },
-        {
-            id: 2,
-            name: "caramel",
-            description: "Антицеллюлитный скраб для тела солевой с маслами",
-            ingredients: "морская соль, масло кокоса, масло манго, масло авокадо, экстракт красный перец, масло ши, глицерин, витамин E, твин 80, отдушка манго",
-            rating: "",
-            image: caramelPng,
-            imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
-        },
-        {
-            id: 3,
-            name: "lavender",
-            description: "Антицеллюлитный скраб для тела солевой с маслами",
-            ingredients: "морская соль, масло кокоса, масло миндаля, кокосовая стружка, масло ши, глицерин, витамин E, твин 80, отдушка КОКОС",
-            rating: "",
-            image: lavenderPng,
-            imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
-        },
-        {
-            id: 4,
-            name: "mint",
-            description: "Антицеллюлитный скраб для тела солевой с маслами",
-            ingredients: "морская соль, масло кокоса, масло ши, увлажняющий лосьон, глицерин, витамин E, твин 80, отдушка Малина",
-            rating: "",
-            image: mintPng,
-            imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
-        }
-    ]
-
     // const products = [
     //     {
     //         id: 1,
-    //         name: "raspberry",
+    //         name: "bubblegum",
     //         description: "Антицеллюлитный скраб для тела солевой с маслами",
     //         ingredients: "морская соль, масло кокоса, масло ши, увлажняющий лосьон, глицерин, витамин E, твин 80, отдушка Малина",
     //         rating: "",
-    //         image: raspberryPng,
+    //         image: bubblegumPng,
     //         imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
     //     },
     //     {
     //         id: 2,
-    //         name: "mango",
+    //         name: "caramel",
     //         description: "Антицеллюлитный скраб для тела солевой с маслами",
     //         ingredients: "морская соль, масло кокоса, масло манго, масло авокадо, экстракт красный перец, масло ши, глицерин, витамин E, твин 80, отдушка манго",
     //         rating: "",
-    //         image: mangoPng,
+    //         image: caramelPng,
     //         imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
     //     },
     //     {
     //         id: 3,
-    //         name: "coconut",
+    //         name: "lavender",
     //         description: "Антицеллюлитный скраб для тела солевой с маслами",
     //         ingredients: "морская соль, масло кокоса, масло миндаля, кокосовая стружка, масло ши, глицерин, витамин E, твин 80, отдушка КОКОС",
     //         rating: "",
-    //         image: coconutPng,
+    //         image: lavenderPng,
     //         imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
     //     },
     //     {
@@ -94,18 +55,59 @@ export const Scrubs = () => {
     //     }
     // ]
 
+    const products = [
+        {
+            id: 1,
+            name: "raspberry",
+            description: "Антицеллюлитный скраб для тела солевой с маслами",
+            ingredients: "морская соль, масло кокоса, масло ши, увлажняющий лосьон, глицерин, витамин E, твин 80, отдушка Малина",
+            rating: "",
+            image: raspberryPng,
+            imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
+        },
+        {
+            id: 2,
+            name: "mango",
+            description: "Антицеллюлитный скраб для тела солевой с маслами",
+            ingredients: "морская соль, масло кокоса, масло манго, масло авокадо, экстракт красный перец, масло ши, глицерин, витамин E, твин 80, отдушка манго",
+            rating: "",
+            image: mangoPng,
+            imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
+        },
+        {
+            id: 3,
+            name: "coconut",
+            description: "Антицеллюлитный скраб для тела солевой с маслами",
+            ingredients: "морская соль, масло кокоса, масло миндаля, кокосовая стружка, масло ши, глицерин, витамин E, твин 80, отдушка КОКОС",
+            rating: "",
+            image: coconutPng,
+            imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
+        },
+        {
+            id: 4,
+            name: "mint",
+            description: "Антицеллюлитный скраб для тела солевой с маслами",
+            ingredients: "морская соль, масло кокоса, масло ши, увлажняющий лосьон, глицерин, витамин E, твин 80, отдушка Малина",
+            rating: "",
+            image: mintPng,
+            imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
+        }
+    ]
+
     return (
-        <div className={styles.bestsellersGrid}>
+        <div className={`${styles.bestsellersGrid} ${styles.bestsellersFlex}`}>
             {products.map((product, index) => (
             <div key={index} className={styles.productItem}>
-                <Image 
-                    className={styles[`${product.name}`]} 
-                    src={product.image} 
-                    alt={product.imgDescription}
-                    width={300}
-                    height={200}
-
-                />
+                <div className={styles.imgWrapper}>
+                    <Image 
+                        className={`${styles[`${product.name}`]} ${styles.scrub}`} 
+                        src={product.image} 
+                        alt={product.imgDescription}
+                        sizes="(max-width: 1248px) 100vw,
+                                    1200px"
+                        width={400}
+                    />
+                </div>
                 <div className={styles.infoContainer}>
                     <h3 className={`${styles.h3}`}>{product.name}</h3>
                     <p className={styles.p}>{product.description}</p>

@@ -1,5 +1,22 @@
-.bestsellersWrapper {
-    text-align: center;
+.scrub {
+    width: 300px;
+    height: auto;
+}
+
+.bestsellersFlex {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+.setsFlex {
+    display: flex;
+}
+
+.productItem {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
 }
 
 .h1 {
@@ -23,6 +40,10 @@
     color: #0d0c10;
 }
 
+.bestsellersWrapper {
+    text-align: center;
+}
+
 .tabsWrapper {
     margin-bottom: 30px;
     display: flex;
@@ -30,29 +51,9 @@
     gap: 20px;
 }
 
-.bestsellersGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr;
-    gap: 20px;
-    align-items: center;
-  }
-
-.setsGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-items: center;
-}
-  
-.productItem {
-    display: contents; 
-    /* Позволяет каждому элементу внутри вести себя как grid-item */
-}
-
 .infoContainer {
     display: flex;
     flex-direction: column;
-    margin: 0 0 auto;
     text-align: left;
 }
 
@@ -63,8 +64,8 @@
 }
 
 .composition {
-    margin: 0 0 auto;
     text-align: left;
+    width: 42.8%;
 }
 
 .p {
@@ -73,7 +74,6 @@
     line-height: 150%;
     color: #0d0c10;        
     margin-bottom: 10px;
-    min-height: 22px;
 }
 
 .h3 {
@@ -82,54 +82,12 @@
     font-size: 22px;
     color: #000;
     text-transform: uppercase;
-    margin: 20px 0 10px;
+    margin: 30px 0 10px;
     white-space: nowrap;
 }
 
 .h3Hide {
     color: #FFF;
-}
-
-
-.raspberry {
-    width: 85%;
-    height: auto;
-}
-
-.mango {
-    height: auto;
-    width: 80%;
-    margin: 30px 0 0 20px;
-}
-
-.coconut {
-    height: auto;
-    width: 95%;
-    margin: 0 0 0 -30px;
-}
-
-.mint {
-    width: 80%;
-    height: auto;
-    margin: 30px 0 0 10px;
-}
-
-.lavender {
-    margin: 20px 0 0 -15px;
-    width: 100%;
-    height: auto;
-}
-
-.bubblegum {
-    width: 87%;
-    height: auto;
-    margin: 20px 0 0 0;
-}
-
-.caramel {
-    margin:  30px 0 0 15px;
-    width: 80%;
-    height: auto;
 }
 
 .true {
@@ -140,12 +98,94 @@
     cursor: initial;
 }
 
+@media (max-width: 1248px) {
+
+    .scrub {
+        width: 250px;
+    }
+
+    .h3 {
+        margin: 20px 0 10px;
+    }
+
+}
+
 @media (max-width: 1024px) {
-    .bestsellersGrid {
-        grid-template-columns: 1fr 1fr;
+    .scrub {
+        width: 320px;
     }
 
     .composition {
+        display: none;
+    }
+
+    .p {
+        font-size: 14px;
+    }
+    
+    .h3 {
+        margin: 0 0 10px;
+    }
+    
+    .infoContainer {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 768px) {
+    
+    .h1 {
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    
+    .productItem {
+        gap: 0px;
+    }
+
+    .scrub {
+        width: 280px;
+        min-width: 180px;
+        height: auto;
+    }
+
+    .p {
+        font-size: 12px;
+    }
+    
+    .h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 610px) {
+    .scrub {
+        width: 240px;
+    }
+
+    .p {
+        font-size: 10px;
+    }
+    
+    .h3 {
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 522px) {
+    .scrub {
+        width: 100%;
+    }
+
+    .imgWrapper {
+        width: 100%;
+    }
+    
+    .infoContainer {
         display: none;
     }
 }

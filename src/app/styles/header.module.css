@@ -6,6 +6,8 @@
 
 .imgAll {
     margin-top: 80px;
+    width: 674px;
+    height: auto;
 }
 
 .headerBody {
@@ -91,7 +93,6 @@
     .imgAll {
         margin-top: initial;
         width: 620px;
-        height: auto;
     }
 
     .imgWrapper {
@@ -153,7 +154,6 @@
     .imgAll {
         margin: 0;
         width: 100%;
-        height: auto;
     }
 
     .textHeader {
