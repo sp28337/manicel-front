@@ -5,7 +5,7 @@ import { TextBlock } from './ui/main/TextBlock';
 import { Bestsellers } from './ui/main/Bestsellers';
 import { StoreBlock } from './ui/main/StoreBlock';
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
       <Header />
