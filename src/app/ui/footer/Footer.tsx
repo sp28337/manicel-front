@@ -12,13 +12,13 @@ export const Footer = () => {
                 <div>
                     <h3 className={styles.h3}>навигация</h3>
                     <div className={styles.linksWrapper}>
-                        <a href="">о нас</a>
-                        <a href="">каталог</a>
-                        <a href="">доставка и оплата</a>
-                        <a href="">где купить</a>
+                        <a className={styles.footerLink} href="">о нас</a>
+                        <a className={styles.footerLink} href="">каталог</a>
+                        <a className={styles.footerLink} href="">доставка и оплата</a>
+                        <a className={styles.footerLink} href="">где купить</a>
                     </div>
                 </div>
-                <div className={styles.contactsWrapper}>
+                <div id="contacts" className={styles.contactsWrapper}>
                     <h3 className={styles.h3}>контакты</h3>
                     <div className={styles.linksWrapper}>
                         <a href="">+7 (999) 999-99-99</a>
