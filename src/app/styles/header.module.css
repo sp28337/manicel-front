@@ -61,7 +61,8 @@
 
 .wave {
     width: 100%;
-    transform: translateY(-70px);
+    height: auto;
+    transform: translateY(-50px);
 }
 
 .bottomText {
@@ -122,6 +123,10 @@
     .pHeader {
         font-size: 12px;
         max-width: 397px;
+    }
+
+    .wave {
+        transform: translateY(-40px);
     }
 
 }
@@ -194,6 +199,10 @@
         padding-top: 10px;
         font-size: 38px;
     }
+
+    .wave {
+        transform: translateY(-30px);
+    }
 }
 
 @media (max-width: 566px) {
@@ -215,6 +224,10 @@
     .pHeader {
         font-size: 10px;
     }
+}
+
+.wave {
+    transform: translateY(-20px);
 }
 
 @media (max-width: 433px) {
@@ -239,5 +252,9 @@
     }
     .pHeader {
         font-size: 9px;
+    }
+
+    .wave {
+        transform: translateY(-10px);
     }
 }
