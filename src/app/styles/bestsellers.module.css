@@ -17,6 +17,14 @@
     display: flex;
     justify-content: space-evenly;
     gap: 20px;
+    transition: 
+        background-color 0.3s ease,
+        transform 0.3s ease, 
+        color 0.3s ease;
+}
+
+.productItem:hover {
+    transform: scale(1.05);
 }
 
 .h1 {
@@ -87,7 +95,7 @@
 }
 
 .h3Hide {
-    color: #FFF;
+    color: inherit;
 }
 
 .true {

@@ -24,6 +24,14 @@
     text-align: center;
     color: rgba(0, 0, 0, 0.9);
     align-items: center;    
+    transition: 
+        background-color 0.3s ease,
+        transform 0.3s ease, 
+        color 0.3s ease;
+}
+
+.contactUsButton:hover {
+    transform: scale(1.05);
 }
 
 .footerNav {
@@ -49,6 +57,18 @@
     line-height: 110%;
     text-transform: uppercase;
 }
+
+.footerLink {
+    transition: 
+        background-color 0.3s ease,
+        transform 0.3s ease, 
+        color 0.3s ease;
+}
+
+.footerLink:hover {
+    transform: scale(1.05);
+}
+
 
 .email {
     text-transform: lowercase;

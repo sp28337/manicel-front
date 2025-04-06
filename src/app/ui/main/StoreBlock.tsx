@@ -20,7 +20,7 @@ export const StoreBlock = () => {
                     Подарите себе или своим близким возможность насладиться уходом за телом на высшем уровне. 
                 </p>
                 <div className={styles.aWrapper}>
-                    <a className={styles.a}>
+                    <a href="https://www.wildberries.ru/brands/310747490-manicel" className={styles.a}>
                         в магазин
                     </a>
                 </div>

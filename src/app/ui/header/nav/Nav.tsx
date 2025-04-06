@@ -6,13 +6,13 @@ export const Nav = () => {
         <nav className={styles.nav}>
             <Logo />
             <div className={styles.links}>
-                <a>
+                <a href="/about" className={styles.navLink}>
                     <p>O НАС</p>
                 </a>
-                <a href="/catalog">
+                <a href="/catalog" className={styles.navLink}>
                     <p>КАТАЛОГ</p>
                 </a>
-                <a>
+                <a href="#contacts" className={styles.navLink}>
                     <p>КОНТАКТЫ</p>
                 </a>
             </div>
