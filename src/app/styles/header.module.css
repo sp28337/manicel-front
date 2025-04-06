@@ -224,10 +224,10 @@
     .pHeader {
         font-size: 10px;
     }
-}
-
-.wave {
-    transform: translateY(-20px);
+    
+    .wave {
+        transform: translateY(-20px);
+    }
 }
 
 @media (max-width: 433px) {

@@ -26,6 +26,9 @@
         height: 20px;
         font-size: 10px;
     }
+    .container {
+        padding: 0 5%;
+    }
 }
 
 @media (max-width: 500px) {

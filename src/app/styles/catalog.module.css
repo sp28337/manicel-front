@@ -70,21 +70,208 @@
     color: rgba(26, 26, 26, 0.5);
 }
 
-/* .scrub {
+.iconsWrapper {
+    display: flex;
+    margin: 7% auto;
+    gap: 10%;
+    justify-content: center;
+    width: 70%;
+}
+
+.partners {
+    margin: 5% 0 0 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.wbLogo {
+    max-width: 170px;
     height: auto;
-    margin: 200px auto 0;
-} */
+}
+
+.gradient {
+    position: relative;
+}
+
+.gradientImage {
+    color: transparent;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    z-index: -1;
+}
+
+/* styles for BodyCatalog */
+
+.description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    font-variant: small-caps;
+    color: #1a1a1a;
+    margin: 0 0 30px 0;
+}
+
+.bodyWrapper {
+    margin-bottom: 90px;
+}
+
+.catalogList {
+    display: grid;
+    row-gap: 50px;
+    column-gap: 2%;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 0 3% 0;
+}
+
+.h1Body {
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 110%;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    text-align: center;
+    margin:  0 0 50px 0;
+}
+
+.cardContent {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    padding: 10px 30px 50px 20px;
+}
+
+.cardItem {
+    border-radius: 8px;
+    background: linear-gradient(180deg, #fff 0%, #ececec 100%);
+    position: relative;
+}
+
+.scrabImg {
+    margin: 0 auto;
+    display: block;
+}
+
+.descScrab {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 150%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.infoButtonWrapper {
+    display: flex;
+    /* position: relative; */
+    justify-content: center;
+    /* margin: 50px 0 0 0; */
+    transition: 
+    background-color 0.3s ease,
+    transform 0.3s ease, 
+    color 0.3s ease;
+}
+
+.infoButtonWrapper:hover {
+    transform: scale(1.05);
+}
+
+.infoButton {
+    background-color: #fff;
+    bottom: -21px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.9);
+    border-radius: 20px;
+    width: 70%;
+    height: 42px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.9);
+    align-items: center;    
+}
+
+.h3Body {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 110%;
+    text-transform: uppercase;
+    color: #000;
+}
+
+/* end styles for BodyCatalog */
+
+@media (max-width: 1431px) {
+    .scrabImg {
+        width: 90%;
+        height: auto;
+    }
+
+    .h3Body {
+        font-size: 19px;
+    }
+
+    .catalogList {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+}
+
+@media (max-width: 1248px) {
+    .catalogList {
+        row-gap: 50px;
+        column-gap: 15px;
+    }
+    
+}
 
 @media (max-width: 1024px) {
+    .catalogList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .iconsWrapper {
+        margin: 10% auto;
+    }
+
     .scrub {
         width: 600px;
         height: auto;
     }
 
+    /* .scrabImg {
+        width: 80%;
+    } */
+
     .saltBodyScrub {
         height: auto;
         object-fit: initial;
     }
+
+    .h3Body {
+        font-size: 26px;
+    }
+
+}
+
+@media (max-width: 958px) {
+    .h3Body {
+        font-size: 24px;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -94,11 +281,23 @@
         .spanHeader {
             font-size: 28px;
         }
-    }  
+    }
+
+    .catalogList {
+        column-gap: 20px;
+    }
+
+    /* .descScrab {
+        font-size: 8px;
+    } */
 
     .saltBodyScrub {
         height: 102px;
         object-fit: cover;
+    }
+    
+    .scrabImg {
+        width: 80%;
     }
 
     .scrub {
@@ -138,6 +337,20 @@
         height: auto;
         object-fit: initial;
     }
+
+    .scrabImg {
+        width: 70%;
+    }
+
+    .h3Body {
+        font-size: 20px;
+    }
+
+    .descScrab {
+        font-size: 9px;
+    }
+    
+
 }
 
 @media (max-width: 546px) {
@@ -147,13 +360,47 @@
         .spanHeader {
             font-size: 20px;
         }
-    }  
+    }
+
+    .iconsWrapper {
+        margin: 15% auto;
+    }
+
+    .catalogList {
+        grid-template-columns: 1fr;
+    }
+
+    .scrabImg {
+        width: 80%;
+    }
+
+    .h3Body {
+        font-size: 28px;
+    }
+
+    .descScrab {
+        font-size: 14px;
+    }
+
+    .infoButton {
+        width: 60%;
+    }    
+
+    .cardContent {
+        padding: 10px 30px 50px 30px;
+    }
+    
+      
 }
 
 @media (max-width: 430px) {
     .saltBodyScrub {
         height: 57px;
         object-fit: cover;
+    }
+
+    .iconsWrapper {
+        margin: 20% auto;
     }
 }
 
@@ -164,6 +411,10 @@
         .spanHeader {
             font-size: 18px;
         }
+    }
+
+    .iconsWrapper {
+        margin: 30% auto;
     }
 
 }

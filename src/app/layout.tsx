@@ -13,6 +13,7 @@ export default function RootLayout({
       <body className={montserrat.className}>
         <TopBar />
         {children}
+        <hr />
         <Footer />
       </body>
     </html>

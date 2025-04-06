@@ -19,7 +19,9 @@ export const Header = () => {
                                 <span className={headerStyles.spanHeader}>ОБНОВЛЕНИЯ<br/> И СИЯНИЯ</span>
                             </h1>
                             <p className={headerStyles.pHeader}>Познакомьтесь с нашими натуральными солевыми скрабами, доступными в разнообразии ароматов, которые подарят вашей коже мягкость и гладкость, словно после спа-процедур!</p>
-                            <Icons  />
+                            <div className={styles.icons}>
+                                <Icons  />
+                            </div>
                         </div>
                         <div className={headerStyles.imgWrapper}>
                             <Image className={styles.imgAll}
