@@ -25,7 +25,7 @@ const scrabs = [
         name: "framboise",
         description: "Антицеллюлитный скраб для тела солевой с маслами",
         ingredients: "морская соль, масло кокоса, масло ши, увлажняющий лосьон, глицерин, витамин E, твин 80, отдушка Малина",
-        rating: "",
+        rating: "4.8",
         image: raspberry,
         imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
     },
@@ -166,7 +166,7 @@ export const BodyCatalog = () => {
                             alt={scrab.imgDescription}
                             sizes="(max-width: 1248px) 100vw,
                                         1200px"
-                            width={250}
+                            width={210}
                         />}
                         {scrab.name && 
                         <>

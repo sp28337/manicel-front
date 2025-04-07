@@ -9,37 +9,6 @@ import background from "../../../../../public/salt-body-scrub-1140w.png"
 
 export const HeaderCatalog = () => {
 
-    // const images = [
-    //     raspberry,
-    //     mango,
-    //     mint,
-    //     bubblegum,
-    //     caramel,
-    // ]
-
-    // const data = [
-    //     {
-    //         name: "raspberry",
-    //         img: raspberry,
-    //     },
-    //     {
-    //         name: "mango",
-    //         img: mango,
-    //     },
-    //     {
-    //         name: "mint",
-    //         img: mint,
-    //     },
-    //     {
-    //         name: "bubblegum",
-    //         img: bubblegum,
-    //     },
-    //     {
-    //         name: "caramel",
-    //         img: caramel,
-    //     },  
-    // ]
-
     return (
         <>
             <header className={styles.headerWrapper}>
