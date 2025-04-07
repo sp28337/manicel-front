@@ -2,12 +2,31 @@
     background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
     position: relative;
     z-index: 2;
+    overflow: hidden;
 }
 
 .imgAll {
     margin-top: 80px;
     width: 674px;
     height: auto;
+}
+
+/* .imageWrapper {
+    position: absolute;
+    overflow: hidden;
+} */
+
+.image {
+    /* width: 100%;
+    height: auto; */
+    position: absolute;
+    z-index: 1;
+    margin-top: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    min-width: 130%;
+    overflow: hidden;
 }
 
 .headerBody {
@@ -160,6 +179,17 @@
         margin: 0;
         width: 100%;
     }
+
+    .image {
+        margin-top: 30px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 20%;
+        overflow: hidden;
+        width: 70vw;
+        height: auto;
+    }
+    
 
     .textHeader {
         margin: 0;
