@@ -6,6 +6,7 @@ import headerStyles from '../../styles/header.module.css';
 import Image from "next/image";
 import allPng from "../../../../public/all-1200w.png";
 import styles from '../../styles/header.module.css'
+import background from "../../../../public/salt-body-scrub-1140w.png"
 
 export const Header = () => {
     return (
@@ -14,6 +15,13 @@ export const Header = () => {
                 <div className={`${commonStyles.container}`}>
                     <Nav />
                     <div className={headerStyles.headerBody}>
+                        <Image
+                            className={styles.image}
+                            alt="salt body scrab"
+                            src={background}
+                        />
+                        {/* <div className={styles.imageWrapper}>
+                        </div> */}
                         <div className={headerStyles.textHeader}>
                             <h1 className={headerStyles.h1Header}>НАСТОЯЩИЙ СПА-РИТУАЛ<br />
                                 <span className={headerStyles.spanHeader}>ОБНОВЛЕНИЯ<br/> И СИЯНИЯ</span>

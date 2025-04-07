@@ -1,11 +1,11 @@
-import { Nav } from '../header/nav/Nav';
-import commonStyles from '../../styles/common.module.css';
-import styles from '../../styles/catalog.module.css';
-import { Wave } from '../header/Wave';
-import allFront from "../../../../public/all-front-1200w.png";
+import { Nav } from '../../header/nav/Nav';
+import commonStyles from '../../../styles/common.module.css';
+import styles from '../../../styles/catalog.module.css';
+import { Wave } from '../../header/Wave';
+import allFront from "../../../../../public/all-front-1200w.png";
 
 import Image from 'next/image';
-import background from "../../../../public/salt-body-scrub-1140w.png"
+import background from "../../../../../public/salt-body-scrub-1140w.png"
 
 export const HeaderCatalog = () => {
 
