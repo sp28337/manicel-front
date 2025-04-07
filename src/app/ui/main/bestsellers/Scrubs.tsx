@@ -16,79 +16,40 @@ export const Scrubs = () => {
     // const bestsellers = await data.json()
     // {console.log(bestsellers)}
 
-    // const products = [
-    //     {
-    //         id: 1,
-    //         name: "bubblegum",
-    //         description: "Антицеллюлитный скраб для тела солевой с маслами",
-    //         ingredients: "морская соль, масло кокоса, масло ши, увлажняющий лосьон, глицерин, витамин E, твин 80, отдушка Малина",
-    //         rating: "",
-    //         image: bubblegumPng,
-    //         imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
-    //     },
-    //     {
-    //         id: 2,
-    //         name: "caramel",
-    //         description: "Антицеллюлитный скраб для тела солевой с маслами",
-    //         ingredients: "морская соль, масло кокоса, масло манго, масло авокадо, экстракт красный перец, масло ши, глицерин, витамин E, твин 80, отдушка манго",
-    //         rating: "",
-    //         image: caramelPng,
-    //         imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
-    //     },
-    //     {
-    //         id: 3,
-    //         name: "lavender",
-    //         description: "Антицеллюлитный скраб для тела солевой с маслами",
-    //         ingredients: "морская соль, масло кокоса, масло миндаля, кокосовая стружка, масло ши, глицерин, витамин E, твин 80, отдушка КОКОС",
-    //         rating: "",
-    //         image: lavenderPng,
-    //         imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
-    //     },
-    //     {
-    //         id: 4,
-    //         name: "mint",
-    //         description: "Антицеллюлитный скраб для тела солевой с маслами",
-    //         ingredients: "морская соль, масло кокоса, масло ши, увлажняющий лосьон, глицерин, витамин E, твин 80, отдушка Малина",
-    //         rating: "",
-    //         image: mintPng,
-    //         imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
-    //     }
-    // ]
-
     const products = [
         {
             id: 1,
             name: "raspberry",
             description: "Антицеллюлитный скраб для тела солевой с маслами",
             ingredients: "морская соль, масло кокоса, масло ши, увлажняющий лосьон, глицерин, витамин E, твин 80, отдушка Малина",
-            rating: "",
+            ratio: "4.8",
             image: raspberryPng,
             imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
         },
         {
             id: 2,
-            name: "mango",
+            name: "mango & chilli",
             description: "Антицеллюлитный скраб для тела солевой с маслами",
             ingredients: "морская соль, масло кокоса, масло манго, масло авокадо, экстракт красный перец, масло ши, глицерин, витамин E, твин 80, отдушка манго",
-            rating: "",
+            ratio: "4.8",
             image: mangoPng,
             imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
         },
         {
             id: 3,
-            name: "coconut",
+            name: "coconut pulp",
             description: "Антицеллюлитный скраб для тела солевой с маслами",
             ingredients: "морская соль, масло кокоса, масло миндаля, кокосовая стружка, масло ши, глицерин, витамин E, твин 80, отдушка КОКОС",
-            rating: "",
+            ratio: "4.8",
             image: coconutPng,
             imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
         },
         {
             id: 4,
-            name: "mint",
+            name: "mint & cucumber",
             description: "Антицеллюлитный скраб для тела солевой с маслами",
             ingredients: "морская соль, масло кокоса, масло ши, увлажняющий лосьон, глицерин, витамин E, твин 80, отдушка Малина",
-            rating: "",
+            ratio: "4.8",
             image: mintPng,
             imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
         }
@@ -119,7 +80,7 @@ export const Scrubs = () => {
                             <path d="M67 14.375L61.8567 17.5163L63.255 11.6538L58.6787 7.73375L64.6856 7.2525L67 1.6875L69.3143 7.2525L75.3221 7.73375L70.745 11.6538L72.1432 17.5163L67 14.375Z" fill="#4A4A4A"/>
                             <path d="M86 14.375L80.8567 17.5163L82.255 11.6538L77.6787 7.73375L83.6856 7.2525L86 1.6875L88.3143 7.2525L94.3221 7.73375L89.745 11.6538L91.1432 17.5163L86 14.375Z" fill="#4A4A4A"/>
                         </svg>
-                        <span className={styles.span}>4.8 (4 617)</span>
+                        <span className={styles.ratio}>{product.ratio}</span>
                     </div>
                 </div>
                 <div className={styles.composition}>
