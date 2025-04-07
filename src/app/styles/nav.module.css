@@ -38,6 +38,8 @@
 
 .wblink:hover {
     transform: scale(1.05);
+    background-color: #cb11ac5d;
+    border-color: #ffffff5d;
 }
 
 .search {
