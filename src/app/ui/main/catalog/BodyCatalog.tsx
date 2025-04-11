@@ -22,7 +22,7 @@ export const BodyCatalog = () => {
         
     const scrabs = [
             {
-                id: 1,
+                id: 8,
                 price: "348₽",
                 oldPrice: "527₽",
                 name: "framboise",
@@ -33,7 +33,7 @@ export const BodyCatalog = () => {
                 imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
             },
             {
-                id: 2,
+                id: 1,
                 price: "348₽",
                 oldPrice: "527₽",
                 name: "mango & chilli",
@@ -44,7 +44,7 @@ export const BodyCatalog = () => {
                 imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
             },
             {
-                id: 3,
+                id: 5,
                 price: "348₽",
                 oldPrice: "527₽",
                 name: "coconut pulp",
@@ -55,7 +55,7 @@ export const BodyCatalog = () => {
                 imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
             },
             {
-                id: 4,
+                id: 11,
                 price: "348₽",
                 oldPrice: "527₽",
                 name: "mint & cucumber",
@@ -66,7 +66,7 @@ export const BodyCatalog = () => {
                 imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
             },
             {
-                id: 5,
+                id: 2,
                 price: "348₽",
                 oldPrice: "527₽",
                 name: "bubblegum",
@@ -77,7 +77,7 @@ export const BodyCatalog = () => {
                 imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
             },
             {
-                id: 6,
+                id: 4,
                 price: "348₽",
                 oldPrice: "527₽",
                 name: "vanilla caramel",
@@ -88,7 +88,7 @@ export const BodyCatalog = () => {
                 imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
             },
             {
-                id: 7,
+                id: 10,
                 price: "348₽",
                 oldPrice: "527₽",
                 name: "black currant & lavender",
@@ -99,7 +99,7 @@ export const BodyCatalog = () => {
                 imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
             },
             {
-                id: 8,
+                id: 7,
                 price: "348₽",
                 oldPrice: "527₽",
                 name: "peach",
@@ -121,7 +121,7 @@ export const BodyCatalog = () => {
                 imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
             },
             {
-                id: 10,
+                id: 3,
                 price: "348₽",
                 oldPrice: "527₽",
                 name: "coconut pulp + black currant & lavender",
@@ -132,7 +132,7 @@ export const BodyCatalog = () => {
                 imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
             },
             {
-                id:11,
+                id:6,
                 price: "348₽",
                 oldPrice: "527₽",
                 name: "peach + black currant & lavender",
