@@ -6,7 +6,7 @@ export const Wave = () => {
     return (
         <Image className={styles.wave}
             src={wave} 
-            alt="piramyd of all scrubs with raspberry on top of some cans"
+            alt="wave"
             sizes="
             (max-width: 1248px) 100vw"
         />
