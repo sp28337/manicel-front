@@ -1,4 +1,5 @@
 import { HeaderId } from "../../ui/main/catalog/id/HeaderId";
+import { BodyId } from "../../ui/main/catalog/id/BodyId";
 
 export function generateStaticParams() {
     return [
@@ -20,6 +21,7 @@ export function generateStaticParams() {
     return (
       <div>
         <HeaderId product={product} />
+        <BodyId product={product} />
       </div>
     )
   }

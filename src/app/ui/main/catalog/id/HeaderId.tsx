@@ -11,14 +11,17 @@ import mintElemsImg from "../../../../../../public/mint-elements.png";
 import lavenderElemsImg from "../../../../../../public/lavender-elements.png";
 import bubblegumElemsImg from "../../../../../../public/bubblegum-elements.png";
 import coconutElemsImg from "../../../../../../public/coconut-elements.png";
+import bubble1 from "../../../../../../public/bubble-1.png";
+import bubble2 from "../../../../../../public/bubble-2.png";
 
 import mangoMainImg from "../../../../../../public/mango-main-1200w.png";
 import mintMainImg from "../../../../../../public/mint-main-1200w.png";
 import lavenderMainImg from "../../../../../../public/lavender-main-1200w.png";
 import bubblegumMainImg from "../../../../../../public/bubblegum-main-1200w.png";
 import coconutMainImg from "../../../../../../public/coconut-main-1200w.png";
-import bubble1 from "../../../../../../public/bubble-1.png";
-import bubble2 from "../../../../../../public/bubble-2.png";
+import ingirMainImg from "../../../../../../public/inzhir-main.png";
+import appleMainImg from "../../../../../../public/apple-main.png";
+import citrusMainImg from "../../../../../../public/citrus-main.png";
 
 
 export const HeaderId = (props: { product: any}) => {
@@ -27,16 +30,16 @@ export const HeaderId = (props: { product: any}) => {
     const effects = product.effects
 
     const imgBackgroundElements = [
-        "",
+        mangoElemsImg,
         mangoElemsImg,
         bubblegumElemsImg,
-        "",
-        "",
+        mangoElemsImg,
+        mangoElemsImg,
         coconutElemsImg,
-        "",
-        "",
-        "",
-        "",
+        mangoElemsImg,
+        mangoElemsImg,
+        mangoElemsImg,
+        mangoElemsImg,
         lavenderElemsImg,
         mintElemsImg,
     ]
@@ -44,13 +47,13 @@ export const HeaderId = (props: { product: any}) => {
         "",
         mangoMainImg,
         bubblegumMainImg,
-        mangoMainImg,
+        ingirMainImg,
         mangoMainImg,
         coconutMainImg,
+        citrusMainImg,
         mangoMainImg,
         mangoMainImg,
-        mangoMainImg,
-        mangoMainImg,
+        appleMainImg,
         lavenderMainImg,
         mintMainImg,
     ]
