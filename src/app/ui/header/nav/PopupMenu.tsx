@@ -3,6 +3,9 @@ import styles from '../../../styles/popup-menu.module.css'
 export const PopupMenu = () => {
     return (
         <div className={styles.links}>
+            <a href="/" className={styles.navLink}>
+                <p>ГЛАВНАЯ</p>
+            </a>
             <a href="/about" className={styles.navLink}>
                 <p>O НАС</p>
             </a>

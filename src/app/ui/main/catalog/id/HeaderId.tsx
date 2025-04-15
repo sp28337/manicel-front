@@ -96,7 +96,6 @@ export const HeaderId = (props: { product: any}) => {
                     </>
                 }
                 <div className={`${commonStyles.container}`}>
-                    <Nav />
                     <div className={styles.headerBody}>
                         <div className={styles.textHeader}>
                             <h1 className={styles.h1Header}>{product.name}
@@ -134,11 +133,6 @@ export const HeaderId = (props: { product: any}) => {
                             </p>
                         </div>
                     </div>
-                    {/* <div className={styles.bottomText}>
-                        <p>
-                            {product.note}
-                        </p>
-                    </div> */}
                 </div>
             </header>
             <Image className={styles.wave}

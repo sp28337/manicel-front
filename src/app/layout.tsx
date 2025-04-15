@@ -1,5 +1,6 @@
 import './styles/globals.css';
 import { TopBar } from './ui/TopBar';
+import { Nav } from './ui/header/nav/Nav';
 import { Footer } from './ui/footer/Footer';
 import { montserrat } from './ui/fonts';
 
@@ -12,6 +13,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.className}`}>
         <TopBar />
+        <Nav />
         {children}
         <hr />
         <Footer />

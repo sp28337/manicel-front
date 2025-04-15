@@ -12,16 +12,13 @@ export const Header = () => {
     return (
         <>
             <header className={headerStyles.headerWrapper}>
-                <div className={`${commonStyles.container}`}>
-                    <Nav />
-                    <div className={headerStyles.headerBody}>
+                <div>
+                    <div className={`${commonStyles.container} ${headerStyles.headerBody}` }>
                         <Image
                             className={styles.image}
                             alt="salt body scrab"
                             src={background}
                         />
-                        {/* <div className={styles.imageWrapper}>
-                        </div> */}
                         <div className={headerStyles.textHeader}>
                             <h1 className={headerStyles.h1Header}>НАСТОЯЩИЙ СПА-РИТУАЛ<br />
                                 <span className={headerStyles.spanHeader}>ОБНОВЛЕНИЯ<br/> И СИЯНИЯ</span>
@@ -39,9 +36,6 @@ export const Header = () => {
                                 (max-width: 1248px) 100vw,
                                 1200px"
                             />
-                            {/* <span className={headerStyles.bottomText}>
-                                Солевые скрабы для тела не содержат агрессивных компонентов, поэтому подходят для беременных и, с осторожностью, для людей с чувствительной и проблемной кожей.
-                            </span> */}
                         </div>
                     </div>
                 </div>
