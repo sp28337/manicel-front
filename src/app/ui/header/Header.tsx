@@ -11,14 +11,15 @@ import background from "../../../../public/salt-body-scrub-1140w.png"
 export const Header = () => {
     return (
         <>
-            <header className={headerStyles.headerWrapper}>
-                <div>
+            <header>
+                <div className={headerStyles.headerWrapper}>
+                    <Image
+                        className={styles.image}
+                        alt="salt body scrab"
+                        src={background}
+                    />
                     <div className={`${commonStyles.container} ${headerStyles.headerBody}` }>
-                        <Image
-                            className={styles.image}
-                            alt="salt body scrab"
-                            src={background}
-                        />
+                        
                         <div className={headerStyles.textHeader}>
                             <h1 className={headerStyles.h1Header}>НАСТОЯЩИЙ СПА-РИТУАЛ<br />
                                 <span className={headerStyles.spanHeader}>ОБНОВЛЕНИЯ<br/> И СИЯНИЯ</span>
@@ -38,7 +39,7 @@ export const Header = () => {
                             />
                         </div>
                     </div>
-                </div>
+                </div >
             </header>
             <Wave />
         </>

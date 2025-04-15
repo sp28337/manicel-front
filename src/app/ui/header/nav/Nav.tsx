@@ -30,16 +30,7 @@ export const Nav = () => {
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-    //     const handleOutsideClick = (event) => {
-    //         if (menuRef.current && !menuRef.current.contains(event.target)) {closeMenu();}
-    //     }
-    //     document.addEventListener('mousedown', handleOutsideClick);
-
-    //     return () => {
-    //       document.removeEventListener('mousedown', handleOutsideClick);
-    //     };
-    //   }, []);
-
+    
     return (
         <div className={`${styles.navWrapper} ${hidden ? styles.hidden : ''}`}>
             <div className={`${styles.backgroundNav} ${!hidden &&styles.backgroundNavActive}`}>
