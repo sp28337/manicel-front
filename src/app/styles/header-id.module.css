@@ -1,0 +1,318 @@
+.header {
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.background {
+    position: relative;
+    background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
+    width: 100%;
+    z-index: 1;
+}
+
+.backgroundText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.elements {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    z-index: 3;
+}
+
+.content {
+    width: 100%;
+    height: 45vh;
+    position: relative;
+}
+
+.imgWrapper {
+    width: 450px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -40%);
+    z-index: 4;
+
+}
+
+.mainImg {
+    width: 100%;
+    height: auto;
+}
+
+.note {
+    width: 100%;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 100%;
+    font-variant: small-caps;
+    text-align: center;
+    color: rgba(26, 26, 26, 0.5);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(20%, -35%);
+    z-index: 5;
+    
+}
+
+.h1Wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.h1 {
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: rgba(26, 26, 26, 0.9);
+}
+
+.span {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 150%;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 150%;
+    font-variant: small-caps;
+    color: #1a1a1a;
+}
+
+.listItem {
+    align-items: center;
+    gap: 30px;
+    display: flex;
+    max-width: 370px;
+}
+
+.liItemWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.bubble1 {
+    position: absolute;
+    top: 19%;
+    right: 79%;
+    filter: blur(1.6px);
+    opacity: 0.85;
+    z-index: 6;
+}
+
+.bubble2 {
+    position: absolute;
+    left: 37%;
+    top: 70%;
+    filter: blur(1.6px);
+    opacity: 0.85;
+    z-index: 5;
+    
+}
+
+@media (max-width: 1248px) {
+    .imgWrapper {
+        transform: translate(-35%, -40%);
+    }
+
+    .text {
+        transform: translate(10%, -35%);
+    }
+}
+
+@media (max-width: 1140px) {
+    .imgWrapper {
+        transform: translate(-25%, -40%);
+    }
+
+    .text {
+        transform: translate(5%, -35%);
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .backgroundText {
+        width: 110vw;
+        height: auto;
+    }
+
+    .bubble1 {
+        right: 84%;
+    }
+
+    .bubble2 {
+        left: 31%;
+        top: 65%;
+    }
+    
+    .imgWrapper {
+        width: 400px;
+        transform: translate(-25%, -30%);
+    }
+
+    .h1 {
+        font-size: 36px;
+    }
+
+    .span {
+        font-size: 9px;
+    }
+
+    .liItemWrapper {
+        font-size: 12px;
+    }
+
+    .headerList {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 900px) {
+    
+    .imgWrapper {
+        transform: translate(-10%, -30%);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .content {
+        height: 35vh;
+    }
+
+    .imgWrapper {
+        width: 330px;
+        transform: translate(-10%, -30%);
+    }
+
+    .text {
+        transform: translate(5%, -35%);
+        gap: 20px;
+    }
+
+    .note {
+        font-size: 8px;
+    }
+    
+    .h1 {
+        font-size: 32px;
+    }
+    
+    .span {
+        font-size: 8px;
+    }
+
+    .liItemWrapper {
+        font-size: 10px;
+    }
+
+    .bottomText {
+        margin: 40px 0 0 auto;
+        font-size: 9px;
+        width: 350px;
+    }
+
+    .list {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 610px) {
+    .backgroundText {
+        top: 80%;
+    }
+
+    .elements {
+        width: 250vw;
+    ;
+        top: 150px;
+        height: auto;
+    }
+
+    .bubble1 {
+        left: 64%;
+        top: 77%;
+        width: 100px;
+        height: auto;
+    }
+
+    .bubble2 {
+        filter: blur(1px);
+        opacity: 0.90;
+        left: -4%;
+        top: 57%;
+    }
+
+    .wrapper {
+        margin-top: 120px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .content {
+        height: auto;
+    }
+
+    .imgWrapper {
+        position: relative;
+        display: block;
+        width: 100%;
+        transform: translate(0, 0);
+        top: 0px;
+        text-align: center;
+    }
+
+    .mainImg {
+        width: 90%;
+    }
+
+    .text {
+        position: relative;
+        display: block;
+        top: 0px;
+        transform: translate(0, 0);
+        width: 90%;
+        margin: 0 auto 5%;
+    }
+
+    .h1 {
+        font-size: 28px;
+        white-space: break-spaces;
+    }
+
+    .span {
+        white-space: break-spaces;
+    }
+
+    .saltBodyScrub {
+        width: 120vw;
+        top: 78%;
+    }
+}

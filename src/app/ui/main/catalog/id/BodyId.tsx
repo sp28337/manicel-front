@@ -19,56 +19,52 @@ import mintPocket2 from "../../../../../../public/mint-pocket-2.jpg";
 import peachPocket from "../../../../../../public/peach-pocket.jpg";
 import peachPocket1 from "../../../../../../public/peach-pocket-1.jpg";
 import peachPocket2 from "../../../../../../public/peach-pocket-2.jpg";
-import mangoHowToUse from "../../../../../../public/mango-how-to-use.png";
-import coconutHowToUse from "../../../../../../public/coconut-how-to-use.png";
-import lavenderHowToUse from "../../../../../../public/lavender-how-to-use.png";
-import mintHowToUse from "../../../../../../public/mint-how-to-use.png";
-import peachHowToUse from "../../../../../../public/peach-how-to-use.png";
+import inzhirPocket from "../../../../../../public/inzhir-pocket-680w.png";
+import citrusPocket from "../../../../../../public/citrus-pocket-680w.png";
+import applePocket from "../../../../../../public/apple-pocket-680w.png";
 
+import howToUseImg from "../../../../../../public/all-1200w.png";
 
 const pocketImages = [
     [],
     [mangoPocket, 
     mangoPocket1, 
-    mangoPocket2, ],
+    mangoPocket2,],
     [],
-    [],
+    [inzhirPocket,
+    inzhirPocket,
+    inzhirPocket],
     [],
     [coconutPocket,
     coconutPocket1,
     coconutPocket2,],
-    [],
+    [citrusPocket,
+    citrusPocket,
+    citrusPocket],
     [],
     [peachPocket,
     peachPocket1,
     peachPocket2,],
-    [],
+    [applePocket,
+    applePocket,
+    applePocket],
     [lavenderPocket, 
     lavenderPocket1, 
     lavenderPocket2,],
     [mintPocket,
     mintPocket1,
-    mintPocket2,],  
-]
-const howToUseImages = [
-    "",
-    mangoHowToUse,
-    mangoHowToUse,
-    mangoHowToUse,
-    mangoHowToUse,
-    coconutHowToUse,
-    peachHowToUse,
-    peachHowToUse,
-    peachHowToUse,
-    peachHowToUse,
-    lavenderHowToUse,
-    mintHowToUse,
+    mintPocket2,],
+    [],
+    [],
+    [],
+    [],
+    [],  
 ]
 
 export const BodyId = (props: { product: any }) => {
 
     return (
-        <div className={commonStyles.container}>
+        <div className={`${styles.bodyWrapper} ${commonStyles.container}`}>
             <UrlPath name={props.product.name} />
             <Description product={props.product} />
             <hr className={styles.hr}/>
@@ -150,12 +146,7 @@ export const BodyId = (props: { product: any }) => {
                     <div className={styles.infoLine}>
                         <h3 className={styles.h3}>объем товара:</h3>
                         <hr className={styles.hrInfoLine}/>
-                        <span className={styles.infoItem}>{`${props.product.volumes[0].volume} МЛ`}</span>
-                    </div>
-                    <div className={styles.infoLine}>
-                        <h3 className={styles.h3}>комплектация:</h3>
-                        <hr className={styles.hrInfoLine}/>
-                        <span className={styles.infoItem}>{`СКРАБ ДЛЯ ТЕЛА В БАНКЕ ${props.product.volumes[1].volume} Г`}</span>
+                        <span className={styles.infoItem}>{`${props.product.volumes[0].volume}`}</span>
                     </div>
                     <div>
                         <div className={styles.infoLine}>
@@ -243,8 +234,9 @@ export const BodyId = (props: { product: any }) => {
                 <div className={styles.howToUseImgWrapper}>
                     <Image 
                         className={styles.howToUseImage}
-                        src={howToUseImages[props.product.id]} 
+                        src={howToUseImg} 
                         alt="how to use scrub"
+                        width={450}
                         sizes="100vw"
                     />
                 </div>

@@ -6,6 +6,7 @@
     background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
     position: relative;
     z-index: 2;
+    margin-top: 112px;
 }
 
 .imgWrapper {
@@ -99,7 +100,7 @@
     line-height: 150%;
     font-variant: small-caps;
     color: #1a1a1a;
-    margin: 0 0 30px 0;
+    margin: 2% 0 30px 0;
 }
 
 .h1Body {
@@ -220,6 +221,22 @@
     color: rgba(0, 0, 0, 0.8);
 }
 
+.activePath {
+    color: #e58b00;
+}
+
+.urlPath {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 110%;
+    text-transform: uppercase;
+    color: #444a4e;
+}
+
+.pathLink {
+    cursor: pointer;
+}
+
 /* end styles for BodyCatalog */
 
 @media (max-width: 1431px) {
@@ -258,6 +275,11 @@
 }
 
 @media (max-width: 768px) {
+
+    .headerWrapper {
+        margin-top: 102px;
+    }
+
     .h1Header {
         font-size: 36px;
     
@@ -330,6 +352,8 @@
     .saltBodyScrub {
         height: auto;
         object-fit: initial;
+        width: 110vw;
+        top: 40%;
     }
 
     .infoButton {

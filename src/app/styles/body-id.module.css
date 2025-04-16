@@ -1,3 +1,7 @@
+.bodyWrapper {
+    margin-top: 3%;
+}
+
 .urlPath {
     font-weight: 500;
     font-size: 12px;
@@ -245,15 +249,15 @@
 .howToUseImgWrapper {
     align-content: center;
     position: absolute;
-    right: -30%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
+    top: 60%;
+    transform: translate(5%, -50%);
+    right: 0;
     z-index: -1;
 }
 
 .howToUseImage {
-    width: 100%;
+    width: 380px;
+    opacity: 0.9;
     height: auto;
 }
 
