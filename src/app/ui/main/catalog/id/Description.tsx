@@ -6,13 +6,13 @@ import { useState } from 'react';
 
 export const Description = (props: { product: any }) => {
     
-    const [openCloseButton, setOpenCloseButton] = useState("..больше");
+    const [openCloseButton, setOpenCloseButton] = useState("больше");
 
     const handleClick = () => {
-        if (openCloseButton === "..больше") {
+        if (openCloseButton === "больше") {
             setOpenCloseButton("скрыть");
         } else {
-            setOpenCloseButton("..больше");
+            setOpenCloseButton("больше");
         }
     }
 
