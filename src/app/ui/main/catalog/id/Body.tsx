@@ -3,101 +3,121 @@ import { UrlPath } from "./UrlPath";
 import { Description } from "./Description";
 import commonStyles from '../../../../styles/common.module.css';
 import styles from '../../../../styles/body-id.module.css';
+import { StaticImageData } from "next/image";
 
-import mangoPocket from "../../../../../../public/mango-chilli-pocket-600w.jpg";
-import mangoPocket1 from "../../../../../../public/mango-chilli-pocket-600w-1.jpg";
-import mangoPocket2 from "../../../../../../public/mango-chilli-pocket-600w-2.jpg";
-import lavenderPocket from "../../../../../../public/lavender/lavender-black-currant-pocket-600w.jpg";
-import lavenderPocket1 from "../../../../../../public/lavender/lavender-black-currant-pocket-600w-1.jpg";
-import lavenderPocket2 from "../../../../../../public/lavender/lavender-black-currant-pocket-600w-2.jpg";
-import coconutPocket from "../../../../../../public/coconut-pocket-600w.jpg";
-import coconutPocket1 from "../../../../../../public/coconut-pocket-600w-1.jpg";
-import coconutPocket2 from "../../../../../../public/coconut-pocket-600w-2.jpg";
-import mintPocket from "../../../../../../public/mint-cucumber-pocket-600w.jpg";
-import mintPocket1 from "../../../../../../public/mint-cucumber-pocket-600w-1.jpg";
-import mintPocket2 from "../../../../../../public/mint-cucumber-pocket-600w-2.jpg";
-import peachPocket from "../../../../../../public/peach-pocket-600w.jpg";
-import peachPocket1 from "../../../../../../public/peach-pocket-600w-1.jpg";
-import peachPocket2 from "../../../../../../public/peach-pocket-600w-2.jpg";
-import inzhirPocket from "../../../../../../public/inzhir-pocket-600w.jpg";
-import inzhirPocket1 from "../../../../../../public/inzhir-pocket-600w-1.jpg";
-import inzhirPocket2 from "../../../../../../public/inzhir-pocket-600w-2.jpg";
-import citrusPocket from "../../../../../../public/citrus-pocket-600w.jpg";
-import citrusPocket1 from "../../../../../../public/citrus-pocket-600w-1.jpg";
-import citrusPocket2 from "../../../../../../public/citrus-pocket-600w-2.jpg";
-import applePocket from "../../../../../../public/apple-pocket-600w.jpg";
-import applePocket1 from "../../../../../../public/apple-pocket-600w-1.jpg";
-import applePocket2 from "../../../../../../public/apple-pocket-600w-2.jpg";
-import trioPocket from "../../../../../../public/trio-600w.jpg";
-import trioPocket1 from "../../../../../../public/trio-600w-1.jpg";
-import trioPocket2 from "../../../../../../public/trio-600w-2.jpg";
+import mango from "../../../../../../public/mango/mango-chilli-pocket-600w.jpg";
+import mango1 from "../../../../../../public/mango/mango-chilli-pocket-600w-1.jpg";
+import mango2 from "../../../../../../public/mango/mango-chilli-pocket-600w-2.jpg";
+import lavender from "../../../../../../public/lavender/lavender-black-currant-pocket-600w.jpg";
+import lavender1 from "../../../../../../public/lavender/lavender-black-currant-pocket-600w-1.jpg";
+import lavender2 from "../../../../../../public/lavender/lavender-black-currant-pocket-600w-2.jpg";
+import coconut from "../../../../../../public/coconut/coconut-pocket-600w.jpg";
+import coconut1 from "../../../../../../public/coconut/coconut-pocket-600w-1.jpg";
+import coconut2 from "../../../../../../public/coconut/coconut-pocket-600w-2.jpg";
+import mint from "../../../../../../public/mint/mint-cucumber-pocket-600w.jpg";
+import mint1 from "../../../../../../public/mint/mint-cucumber-pocket-600w-1.jpg";
+import mint2 from "../../../../../../public/mint/mint-cucumber-pocket-600w-2.jpg";
+import peach from "../../../../../../public/peach/peach-pocket-600w.jpg";
+import peach1 from "../../../../../../public/peach/peach-pocket-600w-1.jpg";
+import peach2 from "../../../../../../public/peach/peach-pocket-600w-2.jpg";
+import inzhir from "../../../../../../public/inzhir/inzhir-pocket-600w.jpg";
+import inzhir1 from "../../../../../../public/inzhir/inzhir-pocket-600w-1.jpg";
+import inzhir2 from "../../../../../../public/inzhir/inzhir-pocket-600w-2.jpg";
+import citrus from "../../../../../../public/citrus/citrus-pocket-600w.jpg";
+import citrus1 from "../../../../../../public/citrus/citrus-pocket-600w-1.jpg";
+import citrus2 from "../../../../../../public/citrus/citrus-pocket-600w-2.jpg";
+import apple from "../../../../../../public/apple/apple-pocket-600w.jpg";
+import apple1 from "../../../../../../public/apple/apple-pocket-600w-1.jpg";
+import apple2 from "../../../../../../public/apple/apple-pocket-600w-2.jpg";
+import trio from "../../../../../../public/trio-600w.jpg";
+import trio1 from "../../../../../../public/trio-600w-1.jpg";
+import trio2 from "../../../../../../public/trio-600w-2.jpg";
 
 import howToUseImg from "../../../../../../public/all-1200w.png";
 
-const pocketImages = [
-    [],
-    [mangoPocket, 
-    mangoPocket1, 
-    mangoPocket2,],
-    [mangoPocket, 
-        mangoPocket1, 
-        mangoPocket2,],
-    [inzhirPocket,
-    inzhirPocket1,
-    inzhirPocket2],
-    [mangoPocket, 
-        mangoPocket1, 
-        mangoPocket2,],
-    [coconutPocket,
-    coconutPocket1,
-    coconutPocket2,],
-    [citrusPocket,
-    citrusPocket1,
-    citrusPocket2],
-    [mangoPocket, 
-        mangoPocket1, 
-        mangoPocket2,],
-    [peachPocket,
-    peachPocket1,
-    peachPocket2,],
-    [applePocket,
-    applePocket1,
-    applePocket2],
-    [lavenderPocket, 
-    lavenderPocket1, 
-    lavenderPocket2,],
-    [mintPocket,
-    mintPocket1,
-    mintPocket2,],
-    [mintPocket,
-    mintPocket1,
-    mintPocket2,
-    mangoPocket, 
-    mangoPocket1, 
-    mangoPocket2,],
-    [lavenderPocket, 
-    lavenderPocket1, 
-    lavenderPocket2,
-    coconutPocket,
-    coconutPocket1,
-    coconutPocket2,],
-    [peachPocket,
-    peachPocket1,
-    peachPocket2,
-    coconutPocket,
-    coconutPocket1,
-    coconutPocket2,],
-    [lavenderPocket, 
-    lavenderPocket1, 
-    lavenderPocket2,
-    peachPocket,
-    peachPocket1,
-    peachPocket2,],
-    [trioPocket,
-    trioPocket1,
-    trioPocket2,
-    ],  
-]
+const images: { [key: number]: StaticImageData[] } = {
+    1: [mango, mango1, mango2,],
+    2: [mango, mango1, mango2,],
+    3: [inzhir, inzhir1, inzhir2],
+    4: [mango, mango1, mango2,],
+    5: [coconut, coconut1, coconut2,],
+    6: [citrus, citrus1, citrus2],
+    7: [mango, mango1, mango2,],
+    8: [peach, peach1, peach2,],
+    9: [apple, apple1, apple2],
+    10: [lavender, lavender1, lavender2,],
+    11: [mint, mint1, mint2,], 
+    12: [mint, mint1, mint2, mango, mango1, mango2,],
+    13: [lavender, lavender1, lavender2, coconut, coconut1, coconut2,],
+    14: [peach, peach1, peach2, coconut, coconut1, coconut2,],
+    15: [lavender, lavender1, lavender2, peach, peach1, peach2,],
+    16: [trio, trio1, trio2,],  
+}
+
+// const images = [
+//     [],
+//     [mango, 
+//     mango1, 
+//     mango2,],
+//     [mango, 
+//     mango1, 
+//     mango2,],
+//     [inzhir,
+//     inzhir1,
+//     inzhir2],
+//     [mango, 
+//     mango1, 
+//     mango2,],
+//     [coconut,
+//     coconut1,
+//     coconut2,],
+//     [citrus,
+//     citrus1,
+//     citrus2],
+//     [mango, 
+//     mango1, 
+//     mango2,],
+//     [peach,
+//     peach1,
+//     peach2,],
+//     [apple,
+//     apple1,
+//     apple2],
+//     [lavender, 
+//     lavender1, 
+//     lavender2,],
+//     [mint,
+//     mint1,
+//     mint2,],
+//     [mint,
+//     mint1,
+//     mint2,
+//     mango, 
+//     mango1, 
+//     mango2,],
+//     [lavender, 
+//     lavender1, 
+//     lavender2,
+//     coconut,
+//     coconut1,
+//     coconut2,],
+//     [peach,
+//     peach1,
+//     peach2,
+//     coconut,
+//     coconut1,
+//     coconut2,],
+//     [lavender, 
+//     lavender1, 
+//     lavender2,
+//     peach,
+//     peach1,
+//     peach2,],
+//     [trio,
+//     trio1,
+//     trio2,
+//     ],  
+// ]
 
 export const Body = (props: { product: any }) => {
 
@@ -107,44 +127,32 @@ export const Body = (props: { product: any }) => {
             <Description product={props.product} />
             <hr className={styles.hr}/>
             <div className={styles.productCard}>
+
                 <div className={styles.imgWrapper}>
                     <div className={styles.imgSlider}>
-                        <div className={styles.imgSliderItem}>
-                            <Image 
-                                className={`${styles.scrubPhotoMini}`}
-                                src={pocketImages[props.product.id][0]} 
-                                alt="scrub photo"
-                                width={81}
-                                sizes="100vw"
-                            />
-                        </div>
-                        <div className={styles.imgSliderItem}>
-                            <Image 
-                                className={`${styles.scrubPhotoMini}`}
-                                src={pocketImages[props.product.id][1]} 
-                                alt="scrub photo"
-                                width={81}
-                                sizes="100vw"
-                            />
-                        </div>
-                        <div className={styles.imgSliderItem}>
-                            <Image 
-                                className={`${styles.scrubPhotoMini}`}
-                                src={pocketImages[props.product.id][2]} 
-                                alt="scrub photo"
-                                width={81}
-                                sizes="100vw"
-                            />
-                        </div>
+                        {
+                            images[props.product.id].map((image, index) => (
+                                <div key={index} className={styles.imgSliderItem}>
+                                    <Image 
+                                        className={`${styles.scrubPhotoMini}`}
+                                        src={image} 
+                                        alt="scrub photo"
+                                        width={81}
+                                        sizes="100vw"
+                                    />
+                                </div>
+                            ))
+                        }
                     </div>
                     <Image 
                         className={`${styles.scrubPhoto}`}
-                        src={pocketImages[props.product.id][0]} 
+                        src={images[props.product.id][0]} 
                         alt="scrub photo"
                         width={520}
                         sizes="100vw"
                     />
                 </div>
+
                 <div className={styles.infoWrapper}>
                     <div className={styles.infoLine}>
                         <h3 className={styles.h3}>состав:</h3>

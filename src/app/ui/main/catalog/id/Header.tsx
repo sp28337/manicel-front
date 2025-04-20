@@ -23,22 +23,16 @@ import { PeachCoconut } from './elements/PeachCoconut';
 import { Trio } from './elements/Trio';
 
 import background from "../../../../../../public/salt-body-scrub-1140w.png";
-import mangoElems from "../../../../../../public/mango-elements.png";
-import mintElems from "../../../../../../public/mint-elements.png";
-import lavenderElems from "../../../../../../public/lavender-elements.png";
-import bubblegumElems from "../../../../../../public/bubblegum-elements.png";
-import coconutElems from "../../../../../../public/coconut-elements.png";
-import bubble1 from "../../../../../../public/bubble-1.png";
-import bubble2 from "../../../../../../public/bubble-2.png";
 
-import mangoImg from "../../../../../../public/mango-main-1200w.png";
-import mintImg from "../../../../../../public/mint-main-1200w.png";
+import mangoImg from "../../../../../../public/mango/mango-main-1200w.png";
+import mintImg from "../../../../../../public/mint/mint-main-1200w.png";
 import lavenderImg from "../../../../../../public/lavender/lavender-main-1200w.png";
-import bubblegumImg from "../../../../../../public/bubblegum-main-1200w.png";
-import coconutImg from "../../../../../../public/coconut-main-1200w.png";
-import ingirImg from "../../../../../../public/inzhir-main-790w.png";
-import appleImg from "../../../../../../public/apple-main-790w.png";
-import citrusImg from "../../../../../../public/citrus-main-790w.png";
+import bubblegumImg from "../../../../../../public/bubblegum/bubblegum-main-1200w.png";
+import coconutImg from "../../../../../../public/coconut/coconut-main-1200w.png";
+import ingirImg from "../../../../../../public/inzhir/inzhir-main-790w.png";
+import appleImg from "../../../../../../public/apple/apple-main-790w.png";
+import citrusImg from "../../../../../../public/citrus/citrus-main-790w.png";
+
 import trioImg from "../../../../../../public/trio.png";
 import peachLavenderImg from "../../../../../../public/lavender-peach-1200w-1.png";
 import coconutPeachImg from "../../../../../../public/peach-coconut-1200w-1.png";

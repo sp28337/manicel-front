@@ -123,10 +123,92 @@
 .cardItem {
     border-radius: 8px;
     margin-bottom: 50px;
-    background: linear-gradient(180deg, #fff 0%, #ececec 100%);
+    background: linear-gradient(180deg, transparent 0%, #ececec 100%);
     position: relative;
     width: 23%;
     height: auto;
+    transition: transform 1.25s cubic-bezier(.4,2,.5,1);
+        /* box-shadow 1.25s cubic-bezier(.4,2,.5,1), */
+}
+
+.cardItem1:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #ffc5807a 100%);
+    /* box-shadow: 0 8px 32px rgba(143,95,214,0.13); */
+}
+
+.cardItem2:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #ff7fb685 100%);
+}
+
+.cardItem3:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #d77eff85 100%);
+}
+
+.cardItem4:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #ffc2857a 100%);
+}
+
+.cardItem5:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #5e5e5e33 100%);
+}
+
+.cardItem6:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #fff47d8f 100%);
+}
+
+.cardItem7:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #ff7c7c80 100%);
+}
+
+.cardItem8:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #ffa17c82 100%);
+}
+
+.cardItem9:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #a9ff7f82 100%);
+}
+
+.cardItem10:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #927fff7a 100%);
+}
+.cardItem11:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #7de7ff80 100%);
+}
+
+.cardItem12:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #ee916d 100%);
+}
+
+.cardItem13:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #ee916d 100%);
+}
+
+.cardItem14:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #ee916d 100%);
+}
+
+.cardItem15:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #ee916d 100%);
+}
+
+.cardItem16:hover {
+    transform: scale(1.01);
+    background: linear-gradient(180deg, transparent 30%, #ee916d 100%);
 }
 
 .cardContent {

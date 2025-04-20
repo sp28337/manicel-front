@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import styles from '../../../styles/bestsellers.module.css';
-import raspberryPng from "../../../../../public/raspberry-1200w.png";
-import mangoPng from "../../../../../public/mango-1200w.png";
-import mintPng from "../../../../../public/mint-1200w.png";
-import coconutPng from "../../../../../public/coconut-1200w.png";
-import bubblegumPng from "../../../../../public/bubblegum-1200w.png";
-import caramelPng from "../../../../../public/caramel-1200w.png";
-import lavenderPng from "../../../../../public/lavender-1200w.png";
+import raspberryPng from "../../../../../public/raspberry/raspberry-1200w.png";
+import mangoPng from "../../../../../public/mango/mango-1200w.png";
+import mintPng from "../../../../../public/mint/mint-1200w.png";
+import coconutPng from "../../../../../public/coconut/coconut-1200w.png";
+import bubblegumPng from "../../../../../public/bubblegum/bubblegum-1200w.png";
+import caramelPng from "../../../../../public/caramel/caramel-1200w.png";
+import lavenderPng from "../../../../../public/lavender/lavender-1200w.png";
 
 export const Scrubs = () => {
      

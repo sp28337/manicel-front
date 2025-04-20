@@ -114,12 +114,6 @@
 
     }
     
-    .elem2 {
-    }
-    
-    .elem3 {
-    }
-    
     .elem4 {
         left: 12%;
         width: 12%;
@@ -129,12 +123,6 @@
     
     .elem5 {
         top: 35%;
-    }
-    
-    .elem6 {
-    }
-    
-    .elem7 {
     }
     
     .elem8 {
@@ -147,9 +135,7 @@
         width: 23%;
         left: -12%;
     }
-    
-    .elem10 {
-    }
+
 }
 
 @media (max-width: 610px) {
