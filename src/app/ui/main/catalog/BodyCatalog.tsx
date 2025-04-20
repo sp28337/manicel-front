@@ -7,12 +7,12 @@ import mint from "../../../../../public/mint-1200w.png";
 import bubblegum from "../../../../../public/bubblegum-1200w.png";
 import caramel from "../../../../../public/caramel-1200w.png";
 import coconut from "../../../../../public/coconut-1200w.png";
-import lavender from "../../../../../public/lavender-1200w.png";
+import lavender from "../../../../../public/lavender/lavender-1200w.png";
 import peach from "../../../../../public/peach-letual.png";
 import { Icons } from '../../header/Icons';
-import inzhir from "../../../../../public/inzhir-main-crop.png"
-import citrus from "../../../../../public/citrus-main-crop.png"
-import apple from "../../../../../public/apple-main-crop.png"
+import inzhir from "../../../../../public/inzhir-320w.png"
+import citrus from "../../../../../public/citrus-320w.png"
+import apple from "../../../../../public/apple-320w.png"
 import trio from "../../../../../public/trio.png"
 
 import wbLogo from "../../../../../public/wildberries-logo.svg"

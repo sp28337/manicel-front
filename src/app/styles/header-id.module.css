@@ -22,6 +22,8 @@
 
 .elements {
     position: absolute;
+    max-width: 150vw;
+    height: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -40%);
@@ -30,11 +32,11 @@
 
 .content {
     width: 100%;
-    height: 45vh;
+    height: 650px;
     position: relative;
 }
 
-.imgWrapper {
+.imgDefaultWrapper {
     width: 450px;
     position: absolute;
     top: 50%;
@@ -44,13 +46,23 @@
 
 }
 
+.imgSetsWrapper {
+    width: 650px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-10%, -30%);
+    z-index: 4;
+}
+
 .mainImg {
     width: 100%;
     height: auto;
 }
 
 .note {
-    width: 100%;
+    margin: 0 auto;
+    width: 90%;
     font-weight: 400;
     font-size: 10px;
     line-height: 100%;
@@ -67,7 +79,26 @@
     top: 50%;
     transform: translate(20%, -35%);
     z-index: 5;
-    
+}
+
+.textSets {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(10%, -35%);
+    z-index: 5;
+}
+
+.textPockets {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -35%);
+    z-index: 5;
 }
 
 .h1Wrapper {
@@ -77,6 +108,17 @@
 
 .h1 {
     white-space: nowrap;
+    font-weight: 500;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: rgba(26, 26, 26, 0.9);
+}
+
+.plus {
+    text-align: center;
+}
+
+.h1Sets {
     font-weight: 500;
     font-size: 40px;
     text-transform: uppercase;
@@ -111,6 +153,13 @@
     max-width: 370px;
 }
 
+.listSetsItem {
+    align-items: center;
+    gap: 30px;
+    display: flex;
+    max-width: 400px;
+}
+
 .liItemWrapper {
     display: flex;
     align-items: center;
@@ -136,26 +185,54 @@
 }
 
 @media (max-width: 1248px) {
-    .imgWrapper {
+    .imgDefaultWrapper {
         transform: translate(-35%, -40%);
+    }
+
+    .imgSetsWrapper {
+        transform: translate(0%, -30%);
     }
 
     .text {
         transform: translate(10%, -35%);
     }
+
+    .textSets{
+        transform: translate(5%, -35%);
+    }
+
+    .textPockets {
+        transform: translate(40%, -35%);
+    }
 }
 
 @media (max-width: 1140px) {
-    .imgWrapper {
+    .imgDefaultWrapper {
         transform: translate(-25%, -40%);
+    }
+
+    .imgSetsWrapper {
+        transform: translate(1%, -30%);
     }
 
     .text {
         transform: translate(5%, -35%);
     }
+
+    .textSets{
+        transform: translate(2%, -35%);
+    }
+
+    .textPockets {
+        transform: translate(30%, -35%);
+    }
 }
 
 @media (max-width: 1024px) {
+
+    .content {
+        height: 600px;
+    }
 
     .backgroundText {
         width: 110vw;
@@ -171,12 +248,20 @@
         top: 65%;
     }
     
-    .imgWrapper {
+    .imgDefaultWrapper {
         width: 400px;
         transform: translate(-25%, -30%);
     }
 
+    .imgSetsWrapper {
+        width: 550px;
+    }
+
     .h1 {
+        font-size: 36px;
+    }
+
+    .h1Sets {
         font-size: 36px;
     }
 
@@ -195,7 +280,7 @@
 
 @media (max-width: 900px) {
     
-    .imgWrapper {
+    .imgDefaultWrapper {
         transform: translate(-10%, -30%);
     }
 }
@@ -203,16 +288,26 @@
 @media (max-width: 768px) {
 
     .content {
-        height: 35vh;
+        height: 550px;
     }
 
-    .imgWrapper {
+    .imgDefaultWrapper {
         width: 330px;
-        transform: translate(-10%, -30%);
+    }
+
+    .imgSetsWrapper {
+        width: 480px;
     }
 
     .text {
-        transform: translate(5%, -35%);
+        gap: 20px;
+    }
+
+    .textSets{
+        gap: 20px;
+    }
+
+    .textPockets {
         gap: 20px;
     }
 
@@ -221,6 +316,10 @@
     }
     
     .h1 {
+        font-size: 32px;
+    }
+
+    .h1Sets {
         font-size: 32px;
     }
     
@@ -280,7 +379,16 @@
         height: auto;
     }
 
-    .imgWrapper {
+    .imgDefaultWrapper {
+        position: relative;
+        display: block;
+        width: 100%;
+        transform: translate(0, 0);
+        top: 0px;
+        text-align: center;
+    }
+
+    .imgSetsWrapper {
         position: relative;
         display: block;
         width: 100%;
@@ -295,7 +403,25 @@
 
     .text {
         position: relative;
-        display: block;
+        /* display: block; */
+        top: 0px;
+        transform: translate(0, 0);
+        width: 90%;
+        margin: 0 auto 5%;
+    }
+
+    .textSets{
+        position: relative;
+        /* display: block; */
+        top: 0px;
+        transform: translate(0, 0);
+        width: 90%;
+        margin: 0 auto 5%;
+    }
+
+    .textPockets {
+        position: relative;
+        /* display: block; */
         top: 0px;
         transform: translate(0, 0);
         width: 90%;
@@ -303,6 +429,11 @@
     }
 
     .h1 {
+        font-size: 28px;
+        white-space: break-spaces;
+    }
+
+    .h1Sets {
         font-size: 28px;
         white-space: break-spaces;
     }

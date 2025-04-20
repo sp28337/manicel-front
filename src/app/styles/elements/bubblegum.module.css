@@ -1,0 +1,177 @@
+.wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    max-width: 1750px;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+.elem1 {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    left: 46%;
+    top: 12%;
+    filter: blur(2.6px);
+}
+
+.elem2 {
+    position: absolute;
+    top: 61%;
+    right: 2%;
+    width: 12%;
+    height: auto;
+    opacity: 0.9;
+    filter: blur(1.6px);
+}
+
+.elem3 {
+    position: absolute;
+    top: 76%;
+    left: 2%;
+    width: 150px;
+    height: auto;
+}
+
+.elem4 {
+    position: absolute;
+    top: 18%;
+    left: 9%;
+    width: 155px;
+    height: auto;
+    filter: blur(1.6px);
+    opacity: 0.85;
+
+}
+
+.elem5 {
+    position: absolute;
+    top: 23%;
+    right: 20%;
+    width: 170px;
+    height: auto;
+}
+
+.elem6 {
+    width: 90px;
+    height: auto;
+    position: absolute;
+    right: 7%;
+    top: 10%;
+    filter: blur(2px);
+}
+
+.elem7 {
+    width: 120px;
+    height: auto;
+    position: absolute;
+    left: 36%;
+    top: 70%;
+    filter: blur(1.6px);
+    opacity: 0.85;
+}
+
+
+@media (max-width: 1248px) {
+    .elem2 {
+        right: -5%;
+    }
+
+    .elem5 {
+        right: 15%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .elem3 {
+        top: 72%;
+        left: -7%;
+        width: 170px;
+    }
+
+    .elem5 {
+        /* width: 130px; */
+        top: 29%;
+    }
+    
+    .elem7 {
+        left: 30%;
+        top: 70%;
+    }
+}
+
+@media (max-width: 900px) {
+    .elem2 {
+        top: 80%;
+    }
+
+    .elem3 {
+        left: -11%;
+    }
+
+    .elem4 {
+        width: 130px;
+        top: 25%;
+    }
+
+    .elem5 {
+        top: 33%;
+        right: 5%;
+    }
+
+    .elem7 {
+        width: 15%;
+        left: 25%;
+    }
+}
+
+@media (max-width: 768px) {
+    .elem5 {
+        width: 120px;
+        top: 37%;
+    }
+
+    .elem3 {
+        top: 70%;
+        left: -15%;
+    }
+}
+
+@media (max-width: 610px) {
+    .elem1 {
+        top: 0;
+    }
+    
+    .elem3 {
+        width: 30%;
+        top: 65%;
+        left: -5%;
+    }
+    
+    .elem4 {
+        top: -10%;
+        left: -7%;
+        width: 23%;
+    }
+    
+    .elem5 {
+        right: -10%;
+        width: 20%;
+    }
+    
+    .elem6 {
+        width: 15%;
+        top: -10%;
+    }
+    
+    .elem7 {
+        width: 22%;
+        left: 57%;
+        top: 70%
+
+    }
+
+}

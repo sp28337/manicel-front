@@ -1,0 +1,209 @@
+.wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    max-width: 1750px;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+.elem1 {
+    position: absolute;
+    top: 64%;
+    right: 4%;
+    width: 60px;
+    height: auto;
+    opacity: 0.9;
+    transform: rotate(110deg);
+}
+
+.elem2 {
+    transform: rotate(50deg);
+    position: absolute;
+    top: 21%;
+    right: 30%;
+    width: 120px;
+    height: auto;
+    opacity: 0.9;
+}
+
+.elem3 {
+    position: absolute;
+    top: 25%;
+    left: -2%;
+    width: 50px;
+    height: auto;
+    transform: rotate(180deg);
+    opacity: 0.9;
+    filter: blur(1.2px)
+}
+
+.elem4 {
+    transform: rotate(120deg);
+    position: absolute;
+    top: 5%;
+    left: 18%;
+    width: 120px;
+    height: auto;
+    opacity: 0.9;
+    
+}
+
+.elem5 {
+    filter: blur(0.3px);
+    transform: rotate(-30deg);
+    position: absolute;
+    top: 27%;
+    right: -1%;
+    width: 90px;
+    height: auto;
+}
+
+.elem6 {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    right: 53%;
+    top: 35%;
+    filter: blur(1.3px)
+}
+
+.elem7 {
+    width: 110px;
+    height: auto;
+    position: absolute;
+    left: 34%;
+    top: 72%;
+    transform: scaleX(-1) rotate(90deg);
+    opacity: 0.9;
+}
+
+.elem8 {
+    width: 70px;
+    height: auto;
+    position: absolute;
+    left: 21%;
+    top: 40%;
+    filter: blur(0.8px);
+}
+
+.elem9 {
+    width: 270px;
+    height: auto;
+    position: absolute;
+    top: 65%;
+    left: 3%;
+    opacity: 0.9;
+}
+
+.elem10 {
+    width: 60px;
+    height: auto;
+    position: absolute;
+    top: 12%;
+    right: 13%;
+    transform: rotate(220deg);
+    opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+    .elem1 {
+        right: -3%;
+
+    }
+    
+    .elem2 {
+    }
+    
+    .elem3 {
+    }
+    
+    .elem4 {
+        left: 12%;
+        width: 12%;
+        top: 7%;
+
+    }
+    
+    .elem5 {
+        top: 35%;
+    }
+    
+    .elem6 {
+    }
+    
+    .elem7 {
+    }
+    
+    .elem8 {
+        width: 50px;
+        left: 17%;
+        top: 57%;
+    }
+    
+    .elem9 {
+        width: 23%;
+        left: -12%;
+    }
+    
+    .elem10 {
+    }
+}
+
+@media (max-width: 610px) {
+    .elem1 {
+        width: 10%;
+    }
+    
+    .elem2 {
+        top: 0%;
+        right: 45%;
+    }
+    
+    .elem3 {
+        top: -7%;
+        left: 70%;
+    }
+    
+    .elem4 {
+        width: 20%;
+        top: -11%;
+        left: 6%;
+    }
+    
+    .elem5 {
+        top: 22%;
+        right: -9%;
+        width: 20%;
+    }
+    
+    .elem6 {
+        width: 8%;
+        top: -15%;
+    }
+    
+    .elem7 {
+        top: 80%;
+        left: 55%;
+
+    }
+    
+    .elem8 {
+        top: 67%;
+        opacity: 0.9;
+    }
+    
+    .elem9 {
+        top: 75%;
+        width: 30%;
+        left: -18%;
+    }
+    
+    .elem10 {
+        width: 12%;
+        top: 30%;
+        left: -5%;
+    }
+}
