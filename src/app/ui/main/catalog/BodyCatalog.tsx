@@ -75,6 +75,25 @@ export const BodyCatalog = async () => {
         16: styles.cardItem16,
     }
 
+    const gradientStyles: { [key: number]: string } = {
+        1: styles.gradient1,
+        2: styles.gradient2,
+        3: styles.gradient3,
+        4: styles.gradient4,
+        5: styles.gradient5,
+        6: styles.gradient6,
+        7: styles.gradient7,
+        8: styles.gradient8,
+        9: styles.gradient9,
+        10: styles.gradient10,
+        11: styles.gradient11,
+        12: styles.gradient12,
+        13: styles.gradient13,
+        14: styles.gradient14,
+        15: styles.gradient15,
+        16: styles.gradient16,
+    }
+
     return (
         <div className={`${commonStyles.container} ${styles.bodyWrapper}`}>
             <div className={styles.urlPath}>
@@ -87,7 +106,8 @@ export const BodyCatalog = async () => {
             <ul className={styles.catalogList}>
                 {products.map((product, index) => (
                     <div className={`${styles.cardItem} ${backgroundStyles[product.id]}`}>
-                        <Link key={index} href={`/catalog/${product.id}`}>
+                        <div className={`${styles.gradient} ${gradientStyles[product.id]}`}></div>
+                        <Link className={styles.cardLink} key={index} href={`/catalog/${product.id}`}>
                             {images[product.id] && <Image 
                                 className={styles.scrabImg} 
                                 src={images[product.id]} 
