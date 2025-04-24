@@ -1,6 +1,7 @@
 import styles from "../../styles/footer.module.css"
 import commonStyles from "../../styles/common.module.css"
 import { Logo } from "../header/nav/Logo";
+import Link from "next/link";
 
 export const Footer = () => {
     return (
@@ -12,10 +13,10 @@ export const Footer = () => {
                 <div>
                     <h3 className={styles.h3}>навигация</h3>
                     <div className={styles.linksWrapper}>
-                        <a className={styles.footerLink} href="">о нас</a>
-                        <a className={styles.footerLink} href="">каталог</a>
-                        <a className={styles.footerLink} href="">доставка и оплата</a>
-                        <a className={styles.footerLink} href="">где купить</a>
+                        <Link className={styles.footerLink} href="">о нас</Link>
+                        <Link className={styles.footerLink} href="">каталог</Link>
+                        <Link className={styles.footerLink} href="">доставка и оплата</Link>
+                        <Link className={styles.footerLink} href="">где купить</Link>
                     </div>
                 </div>
                 <div id="contacts" className={styles.contactsWrapper}>

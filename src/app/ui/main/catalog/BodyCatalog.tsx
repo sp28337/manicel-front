@@ -25,17 +25,11 @@ import coconutPeach from "../../../../../public/coconut-peach-500w.png"
 import trio from "../../../../../public/trio.png"
 
 
-interface data {
-    id: number,
-    name: string,
-    articule: number
-    type: string, 
-}
-
-export const BodyCatalog = async () => {
+export const BodyCatalog = (props: { products: any }) => {
     
-    const data = await fetch(`http://127.0.0.1:8000/products/catalog_products`)
-    const products: [data] = await data.json()
+    // const data = await fetch(`http://127.0.0.1:8000/products/catalog_products`)
+    // const products: [data] = await data.json()
+    // console.log(products)
 
     const images: { [key: number]: StaticImageData } = {
         1: mango,
@@ -104,21 +98,23 @@ export const BodyCatalog = async () => {
             <p className={styles.description}>Скрабы для тела SALT BODY SCRUB от российского бренда MANICEL — это эффективное средство для очищения и ухода за кожей рук, ног, живота, ягодиц и других участков тела. Скраб мягко отшелушивает ороговевшие клетки, стимулирует обновление кожи и придаёт ей здоровый сияющий вид.</p>
             <h1 className={styles.h1Body}>каталог</h1>
             <ul className={styles.catalogList}>
-                {products.map((product, index) => (
-                    <div className={`${styles.cardItem} ${backgroundStyles[product.id]}`}>
+                {props.products.map((product: any, index: number) => (
+                    <div key={index} className={`${styles.cardItem} ${backgroundStyles[product.id]}`}>
                         <div className={`${styles.gradient} ${gradientStyles[product.id]}`}></div>
-                        <Link className={styles.cardLink} key={index} href={`/catalog/${product.id}`}>
-                            {images[product.id] && <Image 
-                                className={styles.scrabImg} 
-                                src={images[product.id]} 
-                                alt={"scrub image"}
-                                sizes="100vw"
-                                width={[3, 6, 9].includes(product.id) ? 180 : 210}
-                            />}
-                            {product.name && 
-                                <>
-                                    <div className={styles.cardContent}>                        
-                                        {product.name && <h3 className={styles.h3Body}>{product.name}</h3>}
+                            <Link className={styles.cardLink} href={`/catalog/${product.id}`}>
+                                {images[product.id] && <Image 
+                                    className={styles.scrabImg} 
+                                    src={images[product.id]} 
+                                    alt={"scrub image"}
+                                    sizes="100vw"
+                                    width={[3, 6, 9].includes(product.id) ? 180 : 210}
+                                />}
+
+                            </Link>
+                            {product.name_ru && 
+                                <>  
+                                    <Link className={styles.cardContent} href={`/catalog/${product.id}`}>
+                                        {product.name_ru && <h3 className={styles.h3Body}>{product.name_ru}</h3>}
                                         <span className={styles.descScrab}>{product.type}</span>
                                         <span>
                                             <div className={styles.rating}>
@@ -133,15 +129,15 @@ export const BodyCatalog = async () => {
                                             </div>
                                         </span>
                                         <div className={styles.price}>{"357 P"}<span className={styles.oldPrice}>{"675 P"}</span></div>
-                                    </div>
+                                    </Link>
                                     <div className={styles.infoButtonWrapper}>                            
-                                        <Link className={styles.infoButton} href={`https://www.wildberries.ru/catalog/${product.articule.toString()}/detail.aspx`}>
+                                        <a className={styles.infoButton} href={`https://www.wildberries.ru/catalog/${product.articule.toString()}/detail.aspx`}>
                                             КУПИТЬ
-                                        </Link>
+                                        </a>
                                     </div>  
                                 </>
                             }
-                        </Link>
+                        
                     </div>
 
                 ))}

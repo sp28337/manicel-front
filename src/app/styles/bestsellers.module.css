@@ -1,12 +1,25 @@
-.scrub {
+
+.scrubWrapper {
+    display: flex;
+    align-items: center;
     width: 300px;
     height: auto;
+    transition: 1s;
+    position: relative;
+}
+
+.scrub {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    transition: 1s;
+    z-index: 0;
 }
 
 .bestsellersFlex {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
   }
 
 .setsFlex {
@@ -14,16 +27,54 @@
 }
 
 .productItem {
+    min-height: 210px;
+    position: relative;
+    border-radius: 20px;
     display: flex;
     justify-content: space-evenly;
     gap: 20px;
     transition: 
-        background-color 0.3s ease,
-        transform 0.3s ease, 
-        color 0.3s ease;
+    background-color 0.3s ease,
+    transform 0.3s ease, 
+    color 0.3s ease;
+    z-index: 0;
 }
 
-.productItem:hover {
+.background {
+    position: absolute;
+    border-radius: 20px;
+    background: linear-gradient(180deg, transparent 0%, rgba(236, 236, 236, 0.5) 100%);
+    top: 0;
+    left: 0;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(1px);
+    transition: 1s;
+}
+
+.gradient {
+    position: absolute;
+    border-radius: 20px;
+    background: linear-gradient(180deg, transparent 0%, rgba(236, 236, 236, 0.5) 100%);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(1px);
+    transition: 1s;
+}
+
+
+.productItem:hover .background {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.productItem:hover .scrub {
     transform: scale(1.05);
 }
 
@@ -60,6 +111,7 @@
 }
 
 .infoContainer {
+    width: 20%;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -78,6 +130,14 @@
 .composition {
     text-align: left;
     width: 42.8%;
+}
+
+.ingredientsWrapper {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 30px;
 }
 
 .p {
@@ -114,11 +174,197 @@
     font-size: 12px;
 }
 
-@media (max-width: 1248px) {
+    
+.infoList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    max-width: 60%;
+    gap: 7px;
+}
 
-    .scrub {
-        width: 250px;
-    }
+.infoItem {
+    white-space: nowrap;
+    height: 20px;
+    padding: 5px 15px;
+    background: rgba(239, 239, 239, 0.5);
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: right;
+    color: #000;
+    align-content: center;
+
+}
+
+.gradient1 {
+    background: linear-gradient(180deg, transparent 30%, #ffa30b87 100%);
+}
+
+.productItem1:hover .gradient1 {
+    /* animation: apply-gradient 1.25s forwards; */
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #ffa30b87 100%);
+    /* transform: scale(1.01); */
+    /* background: linear-gradient(180deg, transparent 30%, #ffc5807a 100%); */
+    /* box-shadow: 0 8px 32px rgba(143,95,214,0.13); */
+}
+
+.gradient2 {
+    background: linear-gradient(180deg, transparent 30%, #ff7fb685 100%);
+}
+
+.productItem2:hover .gradient2 {
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #ff7fb685 100%);
+}
+
+.gradient3 {    
+    background: linear-gradient(180deg, transparent 30%, #d77eff85 100%);
+}
+
+.productItem3:hover  .gradient3{
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #d77eff85 100%);
+}
+
+.gradient4 {    
+    background: linear-gradient(180deg, transparent 30%, #ffc2857a 100%);
+}
+
+.productItem4:hover  .gradient4{
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #ffc2857a 100%);
+}
+
+.gradient5 {    
+    background: linear-gradient(180deg, transparent 30%, #cfaa3c54 100%);
+}
+
+.productItem5:hover  .gradient5{
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #cfaa3c54 100%);
+}
+
+.gradient6 {    
+    background: linear-gradient(180deg, transparent 30%, #fff47d8f 100%);
+}
+
+.productItem6:hover  .gradient6{
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #fff47d8f 100%);
+}
+
+.gradient7 {    
+    background: linear-gradient(180deg, transparent 30%, #ff7c7c80 100%);
+}
+
+.productItem7:hover  .gradient7{
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #ff7c7c80 100%);
+}
+
+.gradient8 {    
+    background: linear-gradient(180deg, transparent 30%, #ffa17c82 100%);
+}
+
+.productItem8:hover  .gradient8{
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #ffa17c82 100%);
+}
+
+.gradient9 {    
+    background: linear-gradient(180deg, transparent 30%, #a9ff7f82 100%);
+}
+
+.productItem9:hover  .gradient9{
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #a9ff7f82 100%);
+}
+
+.gradient10 {    
+    background: linear-gradient(180deg, transparent 30%, #927fff7a 100%);
+}
+
+.productItem10:hover .gradient10 {
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #927fff7a 100%);
+}
+
+.gradient11 {    
+    background: linear-gradient(180deg, transparent 30%, #7de7ff80 100%);
+}
+
+.productItem11:hover .gradient11 {
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #7de7ff80 100%);
+}
+
+.gradient12 {    
+    background: linear-gradient(180deg, transparent 30%, #7effdb40 100%);
+}
+
+.productItem12:hover .gradient12 {
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #7effdb40 100%);
+}
+
+.gradient13 {    
+    background: linear-gradient(180deg, transparent 30%, #ff79c330 100%);
+}
+
+.productItem13:hover .gradient13 {
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #ff79c330 100%);
+}
+
+.gradient14 {    
+    background: linear-gradient(180deg, transparent 30%, #ffa07b45 100%);
+}
+
+.productItem14:hover .gradient14 {
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #ffa07b45 100%);
+}
+
+.gradient15 {    
+    background: linear-gradient(180deg, transparent 30%, #c17cff1f 100%);
+}
+
+.productItem15:hover .gradient15 {
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #c17cff1f 100%);
+}
+
+.gradient16 {    
+    background: linear-gradient(180deg, transparent 30%, #e9ee6d63 100%);
+}
+
+.productItem16:hover .gradient16 {
+    transform: scale(1.05);
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 30%, #e9ee6d63 100%);
+}
+
+
+@media (max-width: 1248px) {
 
     .h3 {
         margin: 20px 0 10px;
@@ -127,8 +373,8 @@
 }
 
 @media (max-width: 1024px) {
-    .scrub {
-        width: 320px;
+    .scrubWrapper {
+        width: 50%;
     }
 
     .composition {
@@ -144,6 +390,7 @@
     }
     
     .infoContainer {
+        width: 50%;
         display: flex;
         flex-direction: column;
         text-align: left;
@@ -153,7 +400,6 @@
     .infoContainerSets {
         width: initial;
     }
-
 }
 
 @media (max-width: 768px) {
@@ -164,30 +410,19 @@
     }
     
     .productItem {
+        min-height: 170px;
         gap: 0px;
     }
 
-    .scrub {
-        width: 280px;
-        min-width: 150px;
-        height: auto;
-    }
 }
 
 @media (max-width: 610px) {
-    .scrub {
-        width: 240px;
-    }
-
     .h3 {
         font-size: 20px;
     }
 }
 
 @media(max-width: 522px) {
-    .scrub {
-        width: 100%;
-    }
 
     .p {
         font-size: 11px;
@@ -201,6 +436,10 @@
 
     .rating {
         display: none;
+    }
+
+    .productItem {
+        min-height: 130px;
     }
 }
 
@@ -219,16 +458,8 @@
 }
 
 @media(max-width: 370px) {
-    .infoContainer {
-        width: 70%;
-    }
-
     .h3 {
         font-size: 16px;
-    }
-
-    .scrub {
-        min-width: 130px;
     }
 }
 
@@ -240,5 +471,9 @@
 
    .infoContainer {
         display: none;
+    }
+
+    .scrubWrapper {
+        width: 90%;
     }
 }

@@ -3,157 +3,23 @@ import { UrlPath } from "./UrlPath";
 import { Description } from "./Description";
 import commonStyles from '../../../../styles/common.module.css';
 import styles from '../../../../styles/body-id.module.css';
-import { StaticImageData } from "next/image";
-
-import mango from "../../../../../../public/mango/mango-chilli-pocket-600w.jpg";
-import mango1 from "../../../../../../public/mango/mango-chilli-pocket-600w-1.jpg";
-import mango2 from "../../../../../../public/mango/mango-chilli-pocket-600w-2.jpg";
-import lavender from "../../../../../../public/lavender/lavender-black-currant-pocket-600w.jpg";
-import lavender1 from "../../../../../../public/lavender/lavender-black-currant-pocket-600w-1.jpg";
-import lavender2 from "../../../../../../public/lavender/lavender-black-currant-pocket-600w-2.jpg";
-import coconut from "../../../../../../public/coconut/coconut-pocket-600w.jpg";
-import coconut1 from "../../../../../../public/coconut/coconut-pocket-600w-1.jpg";
-import coconut2 from "../../../../../../public/coconut/coconut-pocket-600w-2.jpg";
-import mint from "../../../../../../public/mint/mint-cucumber-pocket-600w.jpg";
-import mint1 from "../../../../../../public/mint/mint-cucumber-pocket-600w-1.jpg";
-import mint2 from "../../../../../../public/mint/mint-cucumber-pocket-600w-2.jpg";
-import peach from "../../../../../../public/peach/peach-pocket-600w.jpg";
-import peach1 from "../../../../../../public/peach/peach-pocket-600w-1.jpg";
-import peach2 from "../../../../../../public/peach/peach-pocket-600w-2.jpg";
-import inzhir from "../../../../../../public/inzhir/inzhir-pocket-600w.jpg";
-import inzhir1 from "../../../../../../public/inzhir/inzhir-pocket-600w-1.jpg";
-import inzhir2 from "../../../../../../public/inzhir/inzhir-pocket-600w-2.jpg";
-import citrus from "../../../../../../public/citrus/citrus-pocket-600w.jpg";
-import citrus1 from "../../../../../../public/citrus/citrus-pocket-600w-1.jpg";
-import citrus2 from "../../../../../../public/citrus/citrus-pocket-600w-2.jpg";
-import apple from "../../../../../../public/apple/apple-pocket-600w.jpg";
-import apple1 from "../../../../../../public/apple/apple-pocket-600w-1.jpg";
-import apple2 from "../../../../../../public/apple/apple-pocket-600w-2.jpg";
-import trio from "../../../../../../public/trio-600w.jpg";
-import trio1 from "../../../../../../public/trio-600w-1.jpg";
-import trio2 from "../../../../../../public/trio-600w-2.jpg";
-
+import { ProductImages } from "./ProductImages";
 import howToUseImg from "../../../../../../public/all-1200w.png";
-
-const images: { [key: number]: StaticImageData[] } = {
-    1: [mango, mango1, mango2,],
-    2: [mango, mango1, mango2,],
-    3: [inzhir, inzhir1, inzhir2],
-    4: [mango, mango1, mango2,],
-    5: [coconut, coconut1, coconut2,],
-    6: [citrus, citrus1, citrus2],
-    7: [mango, mango1, mango2,],
-    8: [peach, peach1, peach2,],
-    9: [apple, apple1, apple2],
-    10: [lavender, lavender1, lavender2,],
-    11: [mint, mint1, mint2,], 
-    12: [mint, mint1, mint2, mango, mango1, mango2,],
-    13: [lavender, lavender1, lavender2, coconut, coconut1, coconut2,],
-    14: [peach, peach1, peach2, coconut, coconut1, coconut2,],
-    15: [lavender, lavender1, lavender2, peach, peach1, peach2,],
-    16: [trio, trio1, trio2,],  
-}
-
-// const images = [
-//     [],
-//     [mango, 
-//     mango1, 
-//     mango2,],
-//     [mango, 
-//     mango1, 
-//     mango2,],
-//     [inzhir,
-//     inzhir1,
-//     inzhir2],
-//     [mango, 
-//     mango1, 
-//     mango2,],
-//     [coconut,
-//     coconut1,
-//     coconut2,],
-//     [citrus,
-//     citrus1,
-//     citrus2],
-//     [mango, 
-//     mango1, 
-//     mango2,],
-//     [peach,
-//     peach1,
-//     peach2,],
-//     [apple,
-//     apple1,
-//     apple2],
-//     [lavender, 
-//     lavender1, 
-//     lavender2,],
-//     [mint,
-//     mint1,
-//     mint2,],
-//     [mint,
-//     mint1,
-//     mint2,
-//     mango, 
-//     mango1, 
-//     mango2,],
-//     [lavender, 
-//     lavender1, 
-//     lavender2,
-//     coconut,
-//     coconut1,
-//     coconut2,],
-//     [peach,
-//     peach1,
-//     peach2,
-//     coconut,
-//     coconut1,
-//     coconut2,],
-//     [lavender, 
-//     lavender1, 
-//     lavender2,
-//     peach,
-//     peach1,
-//     peach2,],
-//     [trio,
-//     trio1,
-//     trio2,
-//     ],  
-// ]
 
 export const Body = (props: { product: any }) => {
 
     return (
         <div className={`${styles.bodyWrapper} ${commonStyles.container}`}>
+            
             <UrlPath name={props.product.name} />
             <Description product={props.product} />
+
             <hr className={styles.hr}/>
+
             <div className={styles.productCard}>
-
-                <div className={styles.imgWrapper}>
-                    <div className={styles.imgSlider}>
-                        {
-                            images[props.product.id].map((image, index) => (
-                                <div key={index} className={styles.imgSliderItem}>
-                                    <Image 
-                                        className={`${styles.scrubPhotoMini}`}
-                                        src={image} 
-                                        alt="scrub photo"
-                                        width={81}
-                                        sizes="100vw"
-                                    />
-                                </div>
-                            ))
-                        }
-                    </div>
-                    <Image 
-                        className={`${styles.scrubPhoto}`}
-                        src={images[props.product.id][0]} 
-                        alt="scrub photo"
-                        width={520}
-                        sizes="100vw"
-                    />
-                </div>
-
+                <ProductImages id={props.product.id}/>
                 <div className={styles.infoWrapper}>
+                    
                     <div className={styles.infoLine}>
                         <h3 className={styles.h3}>состав:</h3>
                         <hr className={styles.hrInfoLine}/>
@@ -169,6 +35,7 @@ export const Body = (props: { product: any }) => {
                             }
                         </ul>
                     </div>
+
                     <div className={styles.infoLine}>
                         <h3 className={styles.h3}>действие:</h3>
                         <hr className={styles.hrInfoLine}/>
@@ -184,16 +51,19 @@ export const Body = (props: { product: any }) => {
                             </li>
                         </ul>
                     </div>
+
                     <div className={styles.infoLine}>
                         <h3 className={styles.h3}>аромат:</h3>
                         <hr className={styles.hrInfoLine}/>
                         <span className={styles.infoItem}>{props.product.flavor.name}</span>
                     </div>
+
                     <div className={styles.infoLine}>
                         <h3 className={styles.h3}>объем товара:</h3>
                         <hr className={styles.hrInfoLine}/>
                         <span className={styles.infoItem}>{`${props.product.volumes[0].volume}`}</span>
                     </div>
+
                     <div>
                         <div className={styles.infoLine}>
                             <h3 className={styles.h3}>срок годности:</h3>
@@ -202,6 +72,7 @@ export const Body = (props: { product: any }) => {
                         </div>
                         <p className={styles.pInfo}>рекомендованный срок хранения и использования после вскрытия упаковки - {`${props.product.expiration_date.after_opening}`}</p>
                     </div>
+
                     <div className={styles.bottom}>
                         <div className={styles.priceWrapper}>
                             <span className={styles.price}>358 ₽</span>
@@ -210,10 +81,12 @@ export const Body = (props: { product: any }) => {
                         <a 
                             href={`https://www.wildberries.ru/catalog/${props.product.articule.toString()}/detail.aspx`} 
                             className={styles.chartButton}
+                            target="_blank"
                         >
                             купить на wb
                         </a>
                     </div>
+                    
                 </div>
             </div>
             <hr className={styles.hr}/>

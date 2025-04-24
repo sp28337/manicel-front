@@ -2,16 +2,16 @@ import styles from '../../../../../styles/elements/raspberry.module.css';
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 
-import elem1 from "../../../../../../../public/raspberry/raspberry-1.png";
-import elem2 from "../../../../../../../public/raspberry/raspberry-5.png";
-import elem3 from "../../../../../../../public/raspberry/raspberry-3.png";
-import elem4 from "../../../../../../../public/raspberry/raspberry-1.png";
-import elem5 from "../../../../../../../public/raspberry/raspberry-2.png";
-import elem6 from "../../../../../../../public/raspberry/raspberry-4.png";
+import elem1 from "../../../../../../../public/raspberry/raspberry-3.png";
+import elem2 from "../../../../../../../public/raspberry/raspberry-blur-1.png";
+import elem3 from "../../../../../../../public/raspberry/raspberry-blur-0.png";
+import elem4 from "../../../../../../../public/raspberry/raspberry-blur-0.png";
+import elem5 from "../../../../../../../public/raspberry/raspberry-blur-0.png";
+import elem6 from "../../../../../../../public/raspberry/raspberry-blur-8.png";
 import elem7 from "../../../../../../../public/raspberry/raspberry-2.png";
-import elem8 from "../../../../../../../public/raspberry/raspberry-3.png";
-import elem9 from "../../../../../../../public/raspberry/raspberry-6.png";
-import elem10 from "../../../../../../../public/raspberry/raspberry-4.png";
+import elem8 from "../../../../../../../public/raspberry/raspberry-blur-10.png";
+import elem9 from "../../../../../../../public/raspberry/raspberry-blur-7.png";
+import elem10 from "../../../../../../../public/raspberry/raspberry-blur-8.png";
 
 
 export const Raspberry = () => {

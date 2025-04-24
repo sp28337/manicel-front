@@ -1,5 +1,6 @@
 .textBlockWrapper {
     margin-top: 5%;
+    
 }
 
 .textHeaderWrapper {
@@ -35,24 +36,17 @@
 }
 
 .blockWrapper {
+    border-radius: 10px;
+    background: linear-gradient(180deg, transparent 0%, rgba(236, 236, 236, 0.5) 100%);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 30%;
-    height: 63px;
+    width: 33%;
     gap: 15px;
-}
-
-.block2 {
     text-align: center;
 }
 
-.block3 {
-    text-align: right;
-}
-
-
 .p {
+    padding: 0 15px 15px;
     font-weight: 500;
     font-size: 10px;
     line-height: 150%;
@@ -92,6 +86,10 @@
 }
 
 @media (max-width: 768px) {   
+
+    .aboutUsButtonWrapper {
+        margin: 30px 0 0 0;
+    }
 
     .blocks {
         flex-direction: column;

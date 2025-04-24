@@ -2,16 +2,16 @@ import styles from '../../../../../styles/elements/caramel.module.css';
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 
-import elem1 from "../../../../../../../public/caramel/caramel-1.png";
+import elem1 from "../../../../../../../public/caramel/caramel-2.png";
 import elem2 from "../../../../../../../public/caramel/caramel-2.png";
-import elem3 from "../../../../../../../public/caramel/caramel-3.png";
-import elem4 from "../../../../../../../public/caramel/caramel-1.png";
+import elem3 from "../../../../../../../public/caramel/caramel-2.png";
+import elem4 from "../../../../../../../public/caramel/caramel-2.png";
 import elem5 from "../../../../../../../public/caramel/caramel-2.png";
-import elem6 from "../../../../../../../public/caramel/caramel-4.png";
+import elem6 from "../../../../../../../public/caramel/caramel-2.png";
 import elem7 from "../../../../../../../public/caramel/caramel-2.png";
-import elem8 from "../../../../../../../public/caramel/caramel-3.png";
-import elem9 from "../../../../../../../public/caramel/caramel-1.png";
-import elem10 from "../../../../../../../public/caramel/caramel-4.png";
+import elem8 from "../../../../../../../public/caramel/caramel-2.png";
+import elem9 from "../../../../../../../public/caramel/caramel-2.png";
+import elem10 from "../../../../../../../public/caramel/caramel-2.png";
 
 
 export const Caramel = () => {

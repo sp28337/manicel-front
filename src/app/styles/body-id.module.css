@@ -53,6 +53,7 @@
 }
 
 .imgWrapper {
+    position: relative;
     width: 50%;
     height: auto;
     display: flex;
@@ -133,7 +134,7 @@
 }
 
 .scrubPhoto {
-    width: 100%;
+    width: 97%;
     height: auto;
 }
 
@@ -178,22 +179,59 @@
     border-color: #ffffff5d;
 }
 
-.imgSlider {
-    max-width: 100%;
-    overflow: scroll;
+/* .imgSliderWrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.gradientLeft {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 100px;
+    height: 81px;
+    background: linear-gradient(-90deg, transparent 0%, #ffffff 80%);
+}
+
+.gradientRight {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 100px;
+    height: 81px;
+    background:  linear-gradient(90deg, transparent 0%, #ffffff 80%);
+} */
+
+.imgSlider {
+    margin: 0 2% 2%;
+    height: auto;
+    scrollbar-width: none;       /* убирает полосу в Firefox */
+    -ms-overflow-style: none;    /* убирает полосу в IE/Edge */
+    display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
 .scrubPhotoMini {
+    width: 100%;
+    height: auto;
+    max-height: 160px;
     border-radius: 100px;
 }
 
 .imgSliderItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 100px;
-    width: 81px;
-    height: 81px;
+    width: 100%;
 }
 
 .h3Attention {
@@ -306,6 +344,15 @@
     color: #9f9f9f;
 }
 
+/* .background {
+    border-radius: 20px;
+    background: linear-gradient(180deg, transparent 0%, rgba(236, 236, 236, 0.5) 100%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+} */
+
 @media (max-width: 1268px) {
     .urlPath {
         margin-top: -2%;
@@ -313,6 +360,9 @@
 }
 
 @media (max-width: 1024px) {
+    .productCard {
+        flex-direction: column;
+    }
 
     .urlPath {
         font-size: 11px;
@@ -339,32 +389,24 @@
     }
 
     .infoWrapper {
-        width: 70%;
+        margin: 5% 0 0 0;
+        width: 100%;
         gap: 15px;
     }
 
     .imgWrapper {
-        width: 30%;
+        width: 80%;
         margin: auto;
     }
 
-    .imgSlider {
-        height: 100%;
-        flex-direction: column;
-    }
-
-    .imgSliderItem {
+    /* .imgSliderItem {
         width: 120px;
         height: 120px;
-    }
+    } */
 
     .scrubPhotoMini {
         width: 100%;
         height: auto;
-    }
-
-    .scrubPhoto {
-        display: none;
     }
 
     .howToUseP {
@@ -397,23 +439,8 @@
         flex-direction: column;
     }
 
-    .infoWrapper {
-        width: 100%;
-    }
-
-    .imgSlider {
-        flex-direction: row;
-
-    }
-
-    .imgSliderItem {
-        width: 81px;
-        height: 81px;
-    }
-
     .imgWrapper {
-        width: 100%;
-        margin-bottom: 20px;
+        width: 90%;
     }
 
     .howToUseImgWrapper {

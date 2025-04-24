@@ -24,6 +24,8 @@ import { Trio } from './elements/Trio';
 
 import background from "../../../../../../public/salt-body-scrub-1140w.png";
 
+import raspberryImg from "../../../../../../public/raspberry/raspberry-main-1200w.png";
+import caramelImg from "../../../../../../public/caramel/caramel-main-1200w-1.png";
 import mangoImg from "../../../../../../public/mango/mango-main-1200w.png";
 import mintImg from "../../../../../../public/mint/mint-main-1200w.png";
 import lavenderImg from "../../../../../../public/lavender/lavender-main-1200w.png";
@@ -39,7 +41,7 @@ import coconutPeachImg from "../../../../../../public/peach-coconut-1200w-1.png"
 import coconutLavenderImg from "../../../../../../public/lavender-coconut-1200w-1.png";
 import mintMangoImg from "../../../../../../public/mango-chilli-1200w-1.png";
 
-interface data {
+interface Data {
     id: number,
     name: string,
     note: string,
@@ -53,7 +55,7 @@ interface data {
     ],
 }
 
-export const Header = (props: { product: data}) => {
+export const Header = (props: { product: Data}) => {
 
     const { product } = props
 
@@ -80,10 +82,10 @@ export const Header = (props: { product: data}) => {
         1: mangoImg,
         2: bubblegumImg,
         3: ingirImg,
-        4: mangoImg,
+        4: caramelImg,
         5: coconutImg,
         6: citrusImg,
-        7: mangoImg,
+        7: raspberryImg,
         8: mangoImg,
         9: appleImg,
         10: lavenderImg,
