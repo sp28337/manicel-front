@@ -22,7 +22,7 @@ export const HeaderCatalog = () => {
                     sizes="100vw"
                 />
                 <div className={`${commonStyles.container}`}>
-                    <Nav />
+                    {/* <Nav /> */}
                     <div className={styles.headerBody}>
                         <div className={styles.textHeader}>
                             <h1 className={styles.h1Header}>соляные скрабы<br />
