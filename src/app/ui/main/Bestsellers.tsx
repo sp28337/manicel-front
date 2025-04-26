@@ -18,20 +18,9 @@ import coconutPeachPng from "../../../../public/coconut-peach-500w.png";
 import peachLavenderPng from "../../../../public/peach-lavender-500w.png";
 import trioPng from "../../../../public/trio.png";
 import styles from '../../styles/bestsellers.module.css';
+import { BestsellersSchema } from "../../definitions";
 
-interface Data {
-    id: number,
-    name: string,
-    type: string,
-    reviews: number,
-    ingredients: [string],
-  }
-
-interface BestsellersProps {
-    products: Data
-}
-
-export const Bestsellers = ({ products }: BestsellersProps) => {
+export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => {
 
     const backgroundStyles: { [key: number]: string } = {
         1: styles.productItem1,
@@ -89,51 +78,6 @@ export const Bestsellers = ({ products }: BestsellersProps) => {
         15: peachLavenderPng,
         16: trioPng
     }
-
-    // const products = [
-    //     {
-    //         id: 1,
-    //         name: "raspberry",
-    //         description: "Антицеллюлитный скраб для тела солевой с маслами",
-    //         ingredients: "морская соль, масло кокоса, масло ши, увлажняющий лосьон, глицерин, витамин E, твин 80, отдушка Малина",
-    //         ratio: "4.8",
-    //         image: raspberryPng,
-    //         imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
-    //     },
-    //     {
-    //         id: 2,
-    //         name: "mango & chilli",
-    //         description: "Антицеллюлитный скраб для тела солевой с маслами",
-    //         ingredients: "морская соль, масло кокоса, масло манго, масло авокадо, экстракт красный перец, масло ши, глицерин, витамин E, твин 80, отдушка манго",
-    //         ratio: "4.8",
-    //         image: mangoPng,
-    //         imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
-    //     },
-    //     {
-    //         id: 3,
-    //         name: "coconut pulp",
-    //         description: "Антицеллюлитный скраб для тела солевой с маслами",
-    //         ingredients: "морская соль, масло кокоса, масло миндаля, кокосовая стружка, масло ши, глицерин, витамин E, твин 80, отдушка КОКОС",
-    //         ratio: "4.8",
-    //         image: coconutPng,
-    //         imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
-    //     },
-    //     {
-    //         id: 4,
-    //         name: "mint & cucumber",
-    //         description: "Антицеллюлитный скраб для тела солевой с маслами",
-    //         ingredients: "морская соль, масло кокоса, масло ши, увлажняющий лосьон, глицерин, витамин E, твин 80, отдушка Малина",
-    //         ratio: "4.8",
-    //         image: mintPng,
-    //         imgDescription: "raspberry scrub with a couple of raspberries on top and some another ones nearby",
-    //     }
-    // ]
-    
-    // let [showScrubs, setShowScrubs] = useState(true);
-
-    // const handleClick = () => {
-    //     setShowScrubs(!showScrubs);
-    // }
 
     return (
         <div className={styles.bestsellersWrapper}>

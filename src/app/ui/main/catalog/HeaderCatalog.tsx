@@ -1,10 +1,9 @@
-import { Nav } from '../../header/nav/Nav';
+import Image from 'next/image';
 import commonStyles from '../../../styles/common.module.css';
 import styles from '../../../styles/catalog.module.css';
 import { Wave } from '../../header/Wave';
 import allFront from "../../../../../public/all-front-1200w.png";
 
-import Image from 'next/image';
 import background from "../../../../../public/salt-body-scrub-1140w.png"
 
 export const HeaderCatalog = () => {
@@ -16,13 +15,10 @@ export const HeaderCatalog = () => {
                     className={styles.saltBodyScrub}
                     src={background} 
                     alt="scrab"
-                    placeholder="blur"
                     quality={100}
-                    // fill
                     sizes="100vw"
                 />
                 <div className={`${commonStyles.container}`}>
-                    {/* <Nav /> */}
                     <div className={styles.headerBody}>
                         <div className={styles.textHeader}>
                             <h1 className={styles.h1Header}>соляные скрабы<br />
@@ -37,7 +33,7 @@ export const HeaderCatalog = () => {
                                 src={allFront} 
                                 alt="scrab"
                                 width={800}
-                                sizes="(max-width: 1248px) 100vw, 1200px"
+                                sizes="100vw"
                             />
                         </div>
                         <div className={styles.bottomText}>

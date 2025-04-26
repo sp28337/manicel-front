@@ -1,5 +1,7 @@
+import { fetchProduct } from "../../data";
 import { Header } from "../../ui/main/catalog/id/Header";
 import { Body } from "../../ui/main/catalog/id/Body";
+import { ProductSchema } from "../../definitions";
 
 export function generateStaticParams() {
     return [
@@ -7,17 +9,15 @@ export function generateStaticParams() {
         { id: '4' }, { id: '5' }, { id: '6' },
         { id: '7' }, { id: '8' }, { id: '9' },
         { id: '10' }, { id: '11' }, { id: '12' },
-        { id: '13' }, { id: '14' }, { id: '15' },
+        { id: '13' }, { id: '14' }, { id: '15' }, 
+        { id: '16' },
     ]
   }
 
-  export default async function Product({params,}: {params: Promise<{ id: string }>}) {
-    const { id } = await params
+  export default async function Product({ params }: {params: Promise<{ id: string }>}) {
     
-    const data = await fetch(`http://0.0.0.0:8000/products/${id}`)
-    const product = await data.json()
-
-    console.log(product)
+    const { id } = await params
+    const product: ProductSchema = await fetchProduct(id)
 
     return (
       <div>
