@@ -44,9 +44,9 @@ export function Search({ placeholder, isOpen, onClose }: { placeholder: string, 
     // Обработчик Escape на весь документ
 
     useEffect(() => {
-        if (!isOpen) {
-            replace(`${pathname}`);
-        };
+        // if (!isOpen) {
+        //     replace(`${pathname}`);
+        // };
     
         function handleKeyDown(e: KeyboardEvent) {
           if (e.key === "Escape") {
