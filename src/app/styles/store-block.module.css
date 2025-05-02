@@ -1,7 +1,4 @@
 .wrapper {
-    /* height: 261px; */
-    /* background-image: url("../../../public/salt-body-scrub.png"); */
-    /* background-size: cover; */
     width: 100%;
     position: relative;
 }
@@ -12,6 +9,7 @@
     position: absolute;
     z-index: 1;
     margin-top: 30px;
+    filter: blur(1px);
 }
 
 .content {
@@ -73,12 +71,6 @@
 .a:hover {
     border-color: #CB11AB;
     background-color: #ffffff;
-}
-
-
-.wbLogo {
-    max-width: 170px;
-    height: auto;
 }
 
 .partners {

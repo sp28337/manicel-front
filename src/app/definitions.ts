@@ -56,3 +56,11 @@ export type BestsellersSchema = {
     category: CategorySchema,
     effects: EffectSchema[],
 }
+
+export type SearchSchema = {
+    id: number,
+    name: string,
+    name_ru: string,
+    articule: number
+    type: string, 
+}

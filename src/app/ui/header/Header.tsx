@@ -1,5 +1,4 @@
 import { Icons } from './Icons';
-import { Nav } from './nav/Nav';
 import { Wave } from './Wave';
 import commonStyles from '../../styles/common.module.css';
 import headerStyles from '../../styles/header.module.css';
@@ -15,8 +14,11 @@ export const Header = () => {
                 <div className={headerStyles.headerWrapper}>
                     <Image
                         className={styles.image}
-                        alt="salt body scrab"
                         src={background}
+                        alt="pretty salt body scrab text on background"
+                        quality={50}
+                        sizes="100vw"
+                        priority
                     />
                     <div className={`${commonStyles.container} ${headerStyles.headerBody}` }>
                         
@@ -33,9 +35,9 @@ export const Header = () => {
                             <Image className={styles.imgAll}
                                 src={allPng} 
                                 alt="piramyd of all scrubs with raspberry on top of some cans"
-                                sizes="
-                                (max-width: 1248px) 100vw,
-                                1200px"
+                                quality={100}
+                                sizes="100vw"
+                                priority
                             />
                         </div>
                     </div>

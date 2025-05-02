@@ -6,38 +6,70 @@ const protocol = {
 }
 
 const host = {
-    local: '0.0.0.0',
-    dev: '0.0.0.0',
-    prod: '0.0.0.0',
-    test: '0.0.0.0'
+    local: 'localhost',
 }
 
 const port = {
     local: '8000', 
-    dev: '8000', 
-    prod: '8000', 
-    test: '8000'
 }
 
+export async function fetchFilteredProducts(query: string) {
+
+    try {
+        const data = await fetch(
+            `${protocol.http}://${host.local}:${port.local}/products/search_products?query=${query}`,
+            { cache: 'force-cache'}
+        )
+        const filteredProducts: CatalogProductsSchema[] = await data.json()
+        
+        // await new Promise((resolve) => setTimeout(resolve, 3000));
+    
+        return filteredProducts
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error('Failed to fetch invoices.');
+      }
+}
 
 export async function fetchCatalogProducts() {
     
-    const data = await fetch(`${protocol.http}://${host.local}:${port.local}/products/catalog_products`)
-    const products: CatalogProductsSchema[] = await data.json()    
+    try {
+        const data = await fetch(
+            `${protocol.http}://${host.local}:${port.local}/products/catalog_products`,
+            { cache: 'force-cache'}
+        )
+        const products: CatalogProductsSchema[] = await data.json()    
 
-    return products
+        return products
+
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error('Failed to fetch invoices.');
+    }
 }
 
 export async function fetchBestsellers() {
-    const data = await fetch(`${protocol.http}://${host.local}:${port.local}/products/bestsellers`)
-    const bestsellers: BestsellersSchema[] = await data.json()
+    
+    try {
+        const data = await fetch(`${protocol.http}://${host.local}:${port.local}/products/bestsellers`)
+        const bestsellers: BestsellersSchema[] = await data.json()
 
-    return bestsellers
+        return bestsellers
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error('Failed to fetch invoices.');
+      }
 }
 
 export async function fetchProduct(id: string) {
-    const data = await fetch(`${protocol.http}://${host.local}:${port.local}/products/${id}`)
-    const product: ProductSchema = await data.json()
 
-    return product
+    try {
+        const data = await fetch(`${protocol.http}://${host.local}:${port.local}/products/${id}`)
+        const product: ProductSchema = await data.json()
+
+        return product
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error('Failed to fetch invoices.');
+      }
 }

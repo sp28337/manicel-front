@@ -14,9 +14,10 @@ export const HeaderCatalog = () => {
                 <Image 
                     className={styles.saltBodyScrub}
                     src={background} 
-                    alt="scrab"
-                    quality={100}
+                    alt="pretty salt body scrab text on background"
+                    quality={50}
                     sizes="100vw"
+                    priority
                 />
                 <div className={`${commonStyles.container}`}>
                     <div className={styles.headerBody}>
@@ -34,6 +35,7 @@ export const HeaderCatalog = () => {
                                 alt="scrab"
                                 width={800}
                                 sizes="100vw"
+                                priority
                             />
                         </div>
                         <div className={styles.bottomText}>

@@ -18,7 +18,7 @@ body {
 hr {
     stroke-width: 0.70px;
     stroke: rgba(0, 0, 0, 0.9);
-    margin: 50px 0 50px;
+    margin: 30px 0;
     border-style: inset;
 }
 
@@ -35,6 +35,10 @@ button {
     cursor: pointer;
     border: none;
     background-color: transparent;
+}
+
+input:focus {
+    outline: none;
 }
 
 @media (max-width: 768px) {

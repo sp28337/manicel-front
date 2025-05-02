@@ -4,6 +4,8 @@ import commonStyles from '../../../../styles/common.module.css';
 import styles from '../../../../styles/header-id.module.css';
 import { StaticImageData } from "next/image";
 import { ProductSchema } from "../../../../definitions";
+import { SearchList } from "../../../SearchList";
+import { Suspense } from "react";
 
 import { Wave } from '../../../header/Wave';
 import { Lavender } from './elements/Lavender';
@@ -131,7 +133,6 @@ export const Header = (props: { product: ProductSchema }) => {
 
         <header className={styles.header}>
             <div className={styles.background}>
-
                 <Image 
                     className={styles.backgroundText}
                     src={background} 

@@ -13,6 +13,11 @@
     height: 100vh;
 }
 
+.burger {
+    display: none;
+    border: none;
+    background-color: transparent;
+}
 
 .links {
     display: flex;
@@ -37,4 +42,10 @@
 
 .navLink:hover {
     transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
 }

@@ -1,5 +1,6 @@
 .catalogWrapper {
     overflow: hidden;
+    
 }
 
 .headerWrapper {
@@ -62,7 +63,9 @@
     transform: translate(-50%, -50%);
     max-width: 1140px;
     width: 100%;
+    height: auto;
     overflow: hidden;
+    filter: blur(2px);
 }
 
 .bottomText {
@@ -88,11 +91,11 @@
     display: flex;
     justify-content: space-around;
 }
-
+/* 
 .wbLogo {
     max-width: 170px;
     height: auto;
-}
+} */
 
 .description {
     font-weight: 400;
@@ -317,7 +320,7 @@
     padding: 4% 10% 15% 7.5%;
 }
 
-.scrabImg {
+.img {
     margin: 0 auto;
     display: block;
 }
@@ -331,11 +334,11 @@
     color: #000;
 }
 
-.rating {
+/* .rating {
     display: flex;
     align-items: center;
     gap: 5px;
-}
+} */
 
 .infoButtonWrapper {
     display: flex;
@@ -393,14 +396,13 @@
     color: #9ca3af;
 }
 
-.ratio {
+/* .ratio {
     font-weight: 500;
     font-size: 12px;
-    line-height: 110%;
     text-transform: uppercase;
     text-align: center;
     color: rgba(0, 0, 0, 0.8);
-}
+} */
 
 .activePath {
     color: #e58b00;
@@ -422,7 +424,12 @@
 
 @media (max-width: 1431px) {
     .scrabImg {
-        width: 80%;
+        width: 180px;
+        height: auto;
+    }
+
+    .pocketImg {
+        width: 150px;
         height: auto;
     }
 
@@ -495,7 +502,11 @@
     }
     
     .scrabImg {
-        width: 80%;
+        width: 170px;
+    }
+
+    .pocketImg {
+        width: 140px;
     }
 
     .scrub {
@@ -629,6 +640,15 @@
 }
 
 @media (max-width: 320px) {
+
+    .scrabImg {
+        width: 80%;
+    }
+
+    .pocketImg { 
+        width: 80%;
+    }
+
     .cardContent {
         padding: 4% 10% 15% 7.5%;
         gap: 15px;

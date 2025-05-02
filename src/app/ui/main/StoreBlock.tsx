@@ -1,6 +1,6 @@
 import styles from '../../styles/store-block.module.css';
 import background from "../../../../public/salt-body-scrub-1140w.png"
-import wbLogo from "../../../../public/wildberries-logo.svg"
+import { WBLogo } from "../logotips"
 
 import Image from 'next/image';
 
@@ -9,8 +9,10 @@ export const StoreBlock = () => {
         <div className={styles.wrapper}>
             <Image
                 className={styles.image}
-                alt="salt body scrab"
                 src={background}
+                alt="pretty salt body scrab text on background"
+                quality={50}
+                sizes="100vw"
             />
             <div className={styles.content}>
                 <h2 className={styles.h2}>
@@ -27,25 +29,7 @@ export const StoreBlock = () => {
             </div>
             
             <div className={styles.partners}>
-                <Image 
-                    className={styles.wbLogo}
-                    priority
-                    src={wbLogo}
-                    alt="Wildberries logo"
-                />
-                {/* <Image 
-                    className={styles.wbLogo}
-                    priority
-                    src={wbLogo}
-                    alt="Wildberries logo"
-                />
-                <Image 
-                    className={styles.wbLogo}
-                    priority
-                    src={wbLogo}
-                    alt="Wildberries logo"
-                /> */}
-
+                <WBLogo />
             </div>
         </div>
     );
