@@ -1,11 +1,20 @@
-
-import { MainHeaderSkeleton, TextBlockSkeleton } from "./ui/skeletons"
+import commonStyles from "./styles/common.module.css"
+import { 
+    MainHeaderSkeleton, 
+    TextBlockSkeleton, 
+    BestsellersSkeleton
+} from "./ui/skeletons"
 
 export default function Loading () {
     return (
         <>        
             <MainHeaderSkeleton />
-            <TextBlockSkeleton />
+            <div className={commonStyles.container}>
+                <TextBlockSkeleton />
+                <hr />
+                <BestsellersSkeleton />            
+                <hr />
+            </div>
         </>
     )
 }
