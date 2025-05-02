@@ -15,7 +15,7 @@ export default async function Page (props: {searchParams?: Promise<{query?: stri
 
     return (
         <div className={styles.catalogWrapper}>
-            <Suspense key={query} fallback={<LoadningSkeleton />}>
+            <Suspense key={query} fallback={query !== '' ? <LoadningSkeleton /> : <></> }>
                 <SearchList query={query} />
             </Suspense>
             <HeaderCatalog />
