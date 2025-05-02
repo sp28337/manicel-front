@@ -4,7 +4,7 @@ import styles from '../../../styles/popup-menu.module.css'
 import { useState } from "react";
 import { createPortal } from "react-dom";
 
-export const PopupMenu = () => {
+export const PopupMenu = ({ isOpen }: { isOpen: boolean }) => {
 
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -13,7 +13,8 @@ export const PopupMenu = () => {
     }
 
     return (
-        <>
+        <> { !isOpen && 
+        
             <button className={styles.burger} onClick={() => setIsPopupOpen((isPopupOpen) => !isPopupOpen)}>
                 <svg width="31" height="14" viewBox="0 0 31 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1H30" stroke="#212121" strokeWidth="2" strokeLinecap="round"/>
@@ -21,6 +22,8 @@ export const PopupMenu = () => {
                     <path d="M1 13H30" stroke="#212121" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
             </button>
+
+            }
             {
                 isPopupOpen && createPortal(
                     <div className={styles.popupMenu} onClick={closeMenu}>
