@@ -3,8 +3,11 @@ import Image from 'next/image';
 import commonStyles from '../../../../styles/common.module.css';
 import styles from '../../../../styles/header-id.module.css';
 import { StaticImageData } from "next/image";
+import { ProductSchema } from "../../../../definitions";
+import { SearchList } from "../../../SearchList";
+import { Suspense } from "react";
 
-import { Wave } from '@/app/ui/header/Wave';
+import { Wave } from '../../../header/Wave';
 import { Lavender } from './elements/Lavender';
 import { Inzhir } from './elements/Inzhir';
 import { Mango } from './elements/Mango';
@@ -41,21 +44,7 @@ import coconutPeachImg from "../../../../../../public/peach-coconut-1200w-1.png"
 import coconutLavenderImg from "../../../../../../public/lavender-coconut-1200w-1.png";
 import mintMangoImg from "../../../../../../public/mango-chilli-1200w-1.png";
 
-interface Data {
-    id: number,
-    name: string,
-    note: string,
-    category: {
-        name: string,
-    },
-    effects: [
-        {
-            description: string
-        },
-    ],
-}
-
-export const Header = (props: { product: Data}) => {
+export const Header = (props: { product: ProductSchema }) => {
 
     const { product } = props
 
@@ -144,7 +133,6 @@ export const Header = (props: { product: Data}) => {
 
         <header className={styles.header}>
             <div className={styles.background}>
-
                 <Image 
                     className={styles.backgroundText}
                     src={background} 

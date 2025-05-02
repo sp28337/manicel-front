@@ -5,8 +5,11 @@ import commonStyles from '../../../../styles/common.module.css';
 import styles from '../../../../styles/body-id.module.css';
 import { ProductImages } from "./ProductImages";
 import howToUseImg from "../../../../../../public/all-1200w.png";
+import { ProductSchema } from "../../../../definitions";
 
-export const Body = (props: { product: any }) => {
+export const Body = (props: { product: ProductSchema }) => {
+
+    const { product } = props
 
     return (
         <div className={`${styles.bodyWrapper} ${commonStyles.container}`}>
@@ -25,7 +28,7 @@ export const Body = (props: { product: any }) => {
                         <hr className={styles.hrInfoLine}/>
                         <ul className={styles.infoList}>
                             {
-                                props.product.flavor.ingredients.map((
+                                product.flavor.ingredients.map((
                                     ingredient: {name: string, description: string}, 
                                     index: number
                                 ) => (<li className={styles.infoItem} key={index}>
@@ -55,29 +58,29 @@ export const Body = (props: { product: any }) => {
                     <div className={styles.infoLine}>
                         <h3 className={styles.h3}>аромат:</h3>
                         <hr className={styles.hrInfoLine}/>
-                        <span className={styles.infoItem}>{props.product.flavor.name}</span>
+                        <span className={styles.infoItem}>{product.flavor.name}</span>
                     </div>
 
                     <div className={styles.infoLine}>
                         <h3 className={styles.h3}>объем товара:</h3>
                         <hr className={styles.hrInfoLine}/>
-                        <span className={styles.infoItem}>{`${props.product.volumes[0].volume}`}</span>
+                        <span className={styles.infoItem}>{`${product.volumes[0].volume}`}</span>
                     </div>
 
                     <div>
                         <div className={styles.infoLine}>
                             <h3 className={styles.h3}>срок годности:</h3>
                             <hr className={styles.hrInfoLine}/>
-                            <span className={styles.infoItem}>{`${props.product.expiration_date.before_opening}`}</span>
+                            <span className={styles.infoItem}>{`${product.expiration_date.before_opening}`}</span>
                         </div>
                         <p className={styles.pInfo}>рекомендованный срок хранения и использования после вскрытия упаковки - {`${props.product.expiration_date.after_opening}`}</p>
                     </div>
 
                     <div className={styles.bottom}>
-                        <div className={styles.priceWrapper}>
+                        {/* <div className={styles.priceWrapper}>
                             <span className={styles.price}>358 ₽</span>
                             <span className={styles.oldPrice}>527 ₽</span>
-                        </div>
+                        </div> */}
                         <a 
                             href={`https://www.wildberries.ru/catalog/${props.product.articule.toString()}/detail.aspx`} 
                             className={styles.chartButton}
@@ -90,12 +93,12 @@ export const Body = (props: { product: any }) => {
                 </div>
             </div>
             <hr className={styles.hr}/>
-            {props.product.attention && 
+            {product.attention && 
                 <>
                     <div className={styles.attentionWrapper}>
                         <h3 className={styles.h3Attention}>внимание</h3>
                         <p className={styles.pAttention}>
-                            {props.product.attention}
+                            {product.attention}
                         </p>
                     </div>
                     <hr className={styles.hr}/>

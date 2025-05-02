@@ -1,77 +1,48 @@
-'use client';
+'use client'
 
-import { Logo } from "./Logo";
-import { useState, useEffect, useRef } from "react";
-import { createPortal } from "react-dom";
-import { PopupMenu } from "./PopupMenu";
+import Link from "next/link";
 import styles from "../../../styles/nav.module.css";
 import commonStyles from "../../../styles/common.module.css";
-import popupStyles from '../../../styles/popup-menu.module.css'
-import Link from "next/link";
-import redirect from "next/navigation";
 
-export const Nav = () => {
+import { Search } from "../../Search";
+import { useState } from "react";
+import { Logo } from "./Logo";
+import { PopupMenu } from "./PopupMenu";
 
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
-    const [hidden, setHidden] = useState(false);
-    const closeMenu = () => {
-        setIsPopupOpen(false);
-    }
-    const lastScrollY = useRef(0);
+export const Navigation = () => {
 
-    // Эффект для скрытия панели навигации при прокрутке вниз
-    // 
-    // useEffect(() => {
-    //   const handleScroll = () => {
-    //     if (window.scrollY > lastScrollY.current) {
-    //       setHidden(true);
-    //     } else {
-    //       setHidden(false);
-    //     }
-    //     lastScrollY.current = window.scrollY;
-    //   };
+    const [isOpen, setIsOpen] = useState(false);
   
-    //   window.addEventListener('scroll', handleScroll);
-    //   return () => window.removeEventListener('scroll', handleScroll);
-    // }, []);
-    
     return (
-        <div className={`${styles.navWrapper} ${hidden ? styles.hidden : ''}`}>
-            <div className={`${styles.backgroundNav} ${!hidden &&styles.backgroundNavActive}`}>
-                
-            </div>
-            <nav  className={`${styles.nav} ${commonStyles.container}`}>
+        <nav className={`${styles.navWrapper}`}>
+            <div className={`${styles.backgroundNav}`}></div>
+            <div className={`${styles.nav} ${commonStyles.container}`}>
                 <Logo />
-                <div className={styles.links}>
-                    <Link href="/about" className={styles.navLink}>
-                        <p>O НАС</p>
-                    </Link>
-                    <Link href="/catalog" className={styles.navLink}>
-                        <p>КАТАЛОГ</p>
-                    </Link>
-                    <Link href="#contacts" className={styles.navLink}>
-                        <p>КОНТАКТЫ</p>
-                    </Link>
-                </div>
-                <a className={styles.wblink} href="https://www.wildberries.ru/brands/310747490-manicel">
-                    STORE
-                </a>
-                <svg className={styles.search} width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.08735 1C4.78373 1 3.48102 1.49602 2.48931 2.48777C0.505898 4.47125 0.502401 7.70525 2.4858 9.68878C4.326 11.529 7.24392 11.6585 9.23998 10.084L11.9799 12.824C12.092 12.9367 12.2443 13 12.4031 13C12.562 13 12.7143 12.9367 12.8264 12.824C13.0579 12.5912 13.0579 12.2151 12.8264 11.9822L10.0841 9.23984C11.6592 7.24407 11.5271 4.32843 9.68652 2.48777C8.69482 1.49602 7.39092 1 6.08735 1ZM6.08854 2.18695C7.08401 2.18695 8.07887 2.56832 8.84242 3.33192C10.3696 4.85915 10.3731 7.31737 8.84595 8.84461C7.31884 10.3718 4.85715 10.3718 3.33 8.84461C1.80283 7.31737 1.80632 4.85915 3.33352 3.33192C4.09711 2.56832 5.09308 2.18695 6.08854 2.18695Z" fill="#1A1A1A" stroke="#0D0C10" strokeWidth="0.110526"/>
-                </svg>
-                <button className={styles.burger} onClick={() => setIsPopupOpen((isPopupOpen) => !isPopupOpen)}>
-                    <svg width="31" height="14" viewBox="0 0 31 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1H30" stroke="#212121" strokeWidth="2" strokeLinecap="round"/>
-                        <path d="M16 7L30 7" stroke="#212121" strokeWidth="2" strokeLinecap="round"/>
-                        <path d="M1 13H30" stroke="#212121" strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                </button>
-                {isPopupOpen && createPortal(
-                    <div className={popupStyles.popupMenu} onClick={closeMenu}>
-                        <PopupMenu />
-                    </div>
-                    , document.body)}
-            </nav>
-        </div>
+                { !isOpen &&
+                    <>
+                        <div className={styles.links}>
+                            <Link href="#" className={styles.navLink}>
+                                <p>O НАС</p>
+                            </Link>
+                            <Link href="/catalog" className={styles.navLink}>
+                                <p>КАТАЛОГ</p>
+                            </Link>
+                            <Link href="#contacts" className={styles.navLink}>
+                                <p>КОНТАКТЫ</p>
+                            </Link>
+                        </div>
+                        <a 
+                            className={styles.wblink} 
+                            href="https://www.wildberries.ru/brands/310747490-manicel"
+                        >
+                            МАГАЗИН
+                        </a>               
+                    </>
+
+                }
+                <Search placeholder="Поиск..." isOpen={isOpen} onClose={() => setIsOpen(!isOpen)}/>
+                <PopupMenu />
+            </div>
+        </nav>
     );
 };

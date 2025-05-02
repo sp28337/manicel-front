@@ -1,0 +1,75 @@
+import { CatalogProductsSchema, BestsellersSchema, ProductSchema } from "./definitions"
+
+const protocol = {
+    http: 'http',
+    https: 'https'
+}
+
+const host = {
+    local: 'localhost',
+}
+
+const port = {
+    local: '8000', 
+}
+
+export async function fetchFilteredProducts(query: string) {
+
+    try {
+        const data = await fetch(
+            `${protocol.http}://${host.local}:${port.local}/products/search_products?query=${query}`,
+            { cache: 'force-cache'}
+        )
+        const filteredProducts: CatalogProductsSchema[] = await data.json()
+        
+        // await new Promise((resolve) => setTimeout(resolve, 3000));
+    
+        return filteredProducts
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error('Failed to fetch invoices.');
+      }
+}
+
+export async function fetchCatalogProducts() {
+    
+    try {
+        const data = await fetch(
+            `${protocol.http}://${host.local}:${port.local}/products/catalog_products`,
+            { cache: 'force-cache'}
+        )
+        const products: CatalogProductsSchema[] = await data.json()    
+
+        return products
+
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error('Failed to fetch invoices.');
+    }
+}
+
+export async function fetchBestsellers() {
+    
+    try {
+        const data = await fetch(`${protocol.http}://${host.local}:${port.local}/products/bestsellers`)
+        const bestsellers: BestsellersSchema[] = await data.json()
+
+        return bestsellers
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error('Failed to fetch invoices.');
+      }
+}
+
+export async function fetchProduct(id: string) {
+
+    try {
+        const data = await fetch(`${protocol.http}://${host.local}:${port.local}/products/${id}`)
+        const product: ProductSchema = await data.json()
+
+        return product
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error('Failed to fetch invoices.');
+      }
+}

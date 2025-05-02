@@ -120,12 +120,12 @@
 .infoContainerSets {
     width: 40%;
 }
-
+/* 
 .rating {
     display: flex;
     align-items: center;
     gap: 5px;
-}
+} */
 
 .composition {
     text-align: left;
@@ -170,9 +170,9 @@
     cursor: initial;
 }
 
-.ratio {
+/* .ratio {
     font-size: 12px;
-}
+} */
 
     
 .infoList {
@@ -433,10 +433,10 @@
     .h3 {
         margin-bottom: 7px;
     }
-
+/* 
     .rating {
         display: none;
-    }
+    } */
 
     .productItem {
         min-height: 130px;

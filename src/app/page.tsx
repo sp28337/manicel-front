@@ -4,34 +4,33 @@ import { Header } from './ui/header/Header';
 import { TextBlock } from './ui/main/TextBlock';
 import { Bestsellers } from './ui/main/Bestsellers';
 import { StoreBlock } from './ui/main/StoreBlock';
+import { fetchBestsellers } from './data';
+import { Suspense } from "react";
+import { SearchList } from "./ui/SearchList";
+import { LoadningSkeleton } from "./ui/skeletons"
 
+export default async function Page(props: { searchParams?: Promise<{ query?: string }>}) {
 
-interface Data {
-  id: number,
-  name: string,
-  name_ru: string,
-  type: string,
-  reviews: number,
-  ingredients: [],
-}
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
+    
+    const searchParams = await props.searchParams;
+    const query = searchParams?.query || '';
 
-
-export default async function Home() {
-
-    const data = await fetch('http://0.0.0.0:8000/products/bestsellers')
-    const bestsellers: [Data] = await data.json()
-    {console.log(bestsellers)}
-
-  return (
-    <>
-      <Header />
-      <main className={styles.container}>
-          <TextBlock />
-          <hr />
-          <Bestsellers products={bestsellers}/>
-          <hr />
-          <StoreBlock />
-      </main>
-    </>
-  );
+    const bestsellers = await fetchBestsellers()
+    
+    return (
+        <>
+            <Suspense key={query} fallback={<LoadningSkeleton />}>
+                <SearchList query={query} />
+            </Suspense>
+            <Header />
+            <main className={styles.container}>
+                <TextBlock />
+                <hr />
+                <Bestsellers products={bestsellers}/>
+                <hr />
+                <StoreBlock />
+            </main>
+        </>
+    );
 }

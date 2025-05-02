@@ -5,6 +5,11 @@
     position: relative;
 }
 
+.wbLogo {
+    width: 170px;
+    height: auto;
+}
+
 @media (max-width: 1248px) {
     .container {
         padding: 0 10%;

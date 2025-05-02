@@ -1,0 +1,9 @@
+.closeSearchListButton {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(300%, -50%)
+    /* bottom: -30px; */
+    /* left: 50%; */
+    
+}
