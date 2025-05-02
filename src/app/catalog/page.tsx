@@ -8,6 +8,8 @@ import { LoadningSkeleton } from "../ui/skeletons"
 
 export default async function Page (props: {searchParams?: Promise<{query?: string}>}) {
 
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     const searchParams = await props.searchParams;
     const query = searchParams?.query || '';
     

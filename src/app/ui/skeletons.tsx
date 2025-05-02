@@ -1,17 +1,19 @@
 import skeletonStyles from "../styles/skeletons.module.css"
 import textBlockStyles from "../styles/text-block.module.css"
 import storeBlokStyles from "../styles/store-block.module.css"
+import catalogStyles from "../styles/catalog.module.css"
 import { CloseSearchListButton } from "../ui/buttons"
 import commonStyles from "../styles/common.module.css"
 import headerStyles from "../styles/header.module.css"
 import Image from "next/image"
 import background from "../../../public/salt-body-scrub-1140w.png"
 import allPng from "../../../public/all-1200w.png"
+import allFront from "../../../public/all-front-1200w.png"
 import { WBLogo } from "./logotips"
 import { Wave } from "./header/Wave"
 import { Icons } from "./header/Icons"
 import bestsellersStyles from "../styles/bestsellers.module.css"
-import inzhirPng from "../../../public/inzhir/inzhir-main-790w.png";
+import inzhirPng from "../../../public/inzhir/inzhir-main-790w.png"
 
 export const LoadningSkeleton = () => {
     return (
@@ -193,5 +195,49 @@ export const StoreBlockSkeleton = () => {
                 <WBLogo />
             </div>
         </div>
+    )
+}
+
+export const CatalogHeaderSkeleton = () => {
+    return (
+        <>
+            <header className={catalogStyles.headerWrapper} >
+                <Image 
+                    className={catalogStyles.saltBodyScrub} 
+                    src={background} 
+                    alt="pretty salt body scrab text on background"
+                    quality={50}
+                    sizes="100vw"
+                    priority
+                />
+                <div className={`${commonStyles.container}`}>
+                    <div className={catalogStyles.headerBody}>
+                        <div className={catalogStyles.textHeader}>
+                            <h1 className={catalogStyles.h1Header}><br />
+                                <span className={catalogStyles.spanHeader}></span>
+                            </h1>
+                        </div>
+                        <div className={catalogStyles.saltBodyScrubWrapper}>
+                        </div>
+                        <div className={catalogStyles.imgWrapper} style={{opacity:0}}>
+                            <Image 
+                                className={`${catalogStyles.scrub}`}
+                                src={allFront} 
+                                alt="scrab"
+                                width={800}
+                                sizes="100vw"
+                                priority
+                            />
+                        </div>
+                        <div className={catalogStyles.bottomText} style={{opacity:0}}>
+                            <p>
+                                Наши средства для ухода за кожей состоят на 98% из натуральных ингредиентовна, на 30% из растительных масел, включая в себя натуральные баттеры кокоса, ши, масло миндаля, а также витамин Е.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <Wave />
+        </>
     )
 }
