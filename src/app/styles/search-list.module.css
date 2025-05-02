@@ -5,10 +5,13 @@
 
 .searchListWrapper {
     position: fixed;
-    display: flex;
-    justify-content: center;
+    transform: translate(-50%);
+    /* display: flex; */
+    /* justify-content: center; */
     height: auto;
-    width: 100%;
+    width: 80%;
+    max-width: 1024px;
+    left: 50%;
     top: 0;
     margin-top: 120px;
     z-index: 100;
@@ -78,7 +81,7 @@
 }
 
 .name {
-    width: 250px;
+    width: 400px;
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -124,6 +127,10 @@
 }
 
 @media (max-width: 768px) {
+    .searchListWrapper {
+        width: initial;
+    }
+
     .searchList {
         gap: 0px;
     }
@@ -166,12 +173,11 @@
 
 @media (max-width: 610px) {
 
-    .imgWrapper {
-        height: auto;
+    .searchListWrapper {
+        width: 90%;
     }
 
-    .searchList {
-        width: 85%;
+    .imgWrapper {
         height: auto;
     }
 

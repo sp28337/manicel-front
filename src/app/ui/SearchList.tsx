@@ -69,7 +69,7 @@ export async function SearchList({ query }: { query: string }) {
                                 <li key={product.id} className={styles.searchRow} >
                                     <a href={`/catalog/${product.id}`} className={styles.link}>
                                         <div className={styles.rowBackground}></div>
-                                        { index === 0 && <CloseSearchListButton /> }
+                                        
                                         <div className={styles.imgWrapper}>
                                             <Image 
                                                 src={images[product.id]}
@@ -118,6 +118,7 @@ export async function SearchList({ query }: { query: string }) {
                         }
                         
                     </ul>
+                    <CloseSearchListButton />
                 </div>
             }
         </>
