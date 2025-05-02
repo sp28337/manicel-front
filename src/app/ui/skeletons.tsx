@@ -14,6 +14,8 @@ import { Wave } from "./header/Wave"
 import { Icons } from "./header/Icons"
 import bestsellersStyles from "../styles/bestsellers.module.css"
 import inzhirPng from "../../../public/inzhir/inzhir-main-790w.png"
+import mango from "../../../public/mango/mango-1200w.png"
+import { ReviewsStars } from "./reviews"
 
 export const LoadningSkeleton = () => {
     return (
@@ -201,7 +203,7 @@ export const StoreBlockSkeleton = () => {
 export const CatalogHeaderSkeleton = () => {
     return (
         <>
-            <header className={catalogStyles.headerWrapper} >
+            <div className={catalogStyles.headerWrapper} >
                 <Image 
                     className={catalogStyles.saltBodyScrub} 
                     src={background} 
@@ -213,9 +215,9 @@ export const CatalogHeaderSkeleton = () => {
                 <div className={`${commonStyles.container}`}>
                     <div className={catalogStyles.headerBody}>
                         <div className={catalogStyles.textHeader}>
-                            <h1 className={catalogStyles.h1Header}><br />
+                            <div className={catalogStyles.h1Header}><br />
                                 <span className={catalogStyles.spanHeader}></span>
-                            </h1>
+                            </div>
                         </div>
                         <div className={catalogStyles.saltBodyScrubWrapper}>
                         </div>
@@ -230,14 +232,68 @@ export const CatalogHeaderSkeleton = () => {
                             />
                         </div>
                         <div className={catalogStyles.bottomText} style={{opacity:0}}>
-                            <p>
+                            <div>
                                 Наши средства для ухода за кожей состоят на 98% из натуральных ингредиентовна, на 30% из растительных масел, включая в себя натуральные баттеры кокоса, ши, масло миндаля, а также витамин Е.
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </header>
+            </div>
             <Wave />
         </>
+    )
+}
+
+export const CatalogBodySkeleton = () => {
+    return (
+        <div className={`${commonStyles.container} ${catalogStyles.bodyWrapper}`}>
+            <div className={catalogStyles.urlPath} style={{opacity:0}}>
+                <div className={catalogStyles.pathLink}> главная </div>
+                &gt;
+                <div className={catalogStyles.activePath}> каталог </div>
+            </div>
+            <p className={catalogStyles.description} style={{opacity:0}}>Скрабы для тела SALT BODY SCRUB от российского бренда MANICEL — это эффективное средство для очищения и ухода за кожей рук, ног, живота, ягодиц и других участков тела. Скраб мягко отшелушивает ороговевшие клетки, стимулирует обновление кожи и придаёт ей здоровый сияющий вид.</p>
+            <h1 className={catalogStyles.h1Body} style={{opacity:0}}>каталог</h1>
+            <ul className={catalogStyles.catalogList}>
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(
+                    (product: any, index: number) => (
+                    <div key={index} className={`${catalogStyles.cardItem}`}>
+                        <div className={`${catalogStyles.gradient}`}></div>
+                            <div className={catalogStyles.cardLink}>
+                                <Image 
+                                    className={`${catalogStyles.img}`}
+                                    style={{opacity:0}}
+                                    src={mango} 
+                                    alt={"scrub image"}
+                                    sizes="100vw"
+                                    width={[3, 6, 9].includes(product.id) ? 180 : 210}
+                                />
+                            </div>
+                            <div className={catalogStyles.cardContent}>
+                                <h3 className={catalogStyles.h3Body}>{product.name_ru}</h3>
+                                <span className={catalogStyles.descScrab}>{product.type}</span>
+                                <span style={{opacity:0}}>
+                                    <ReviewsStars />
+                                </span>
+                                {/* <div className={styles.price}>{"357 P"}<span className={styles.oldPrice}>{"675 P"}</span></div> */}
+                            </div>
+                            <div className={catalogStyles.infoButtonWrapper} style={{opacity:0}}>                            
+                                <div 
+                                    className={catalogStyles.infoButton} 
+                                >
+                                    КУПИТЬ
+                                </div>
+                            </div>  
+                    </div>
+
+                ))}
+            </ul>
+            <div className={catalogStyles.bottomWrapper}>
+                <div className={catalogStyles.iconsWrapper}>
+                </div>
+                <div className={catalogStyles.partners}>
+                </div>
+            </div>
+        </div>
     )
 }

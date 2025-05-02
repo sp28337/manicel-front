@@ -1,9 +1,13 @@
 import { 
-    CatalogHeaderSkeleton
+    CatalogHeaderSkeleton,
+    CatalogBodySkeleton
 } from "../ui/skeletons"
 
 export default function Loading () {
     return (
-        <CatalogHeaderSkeleton />
+        <>
+            <CatalogHeaderSkeleton />
+            <CatalogBodySkeleton />       
+        </>
     )
 }
