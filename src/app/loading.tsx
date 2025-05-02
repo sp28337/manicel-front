@@ -2,7 +2,8 @@ import commonStyles from "./styles/common.module.css"
 import { 
     MainHeaderSkeleton, 
     TextBlockSkeleton, 
-    BestsellersSkeleton
+    BestsellersSkeleton,
+    StoreBlockSkeleton
 } from "./ui/skeletons"
 
 export default function Loading () {
@@ -14,6 +15,7 @@ export default function Loading () {
                 <hr />
                 <BestsellersSkeleton />            
                 <hr />
+                <StoreBlockSkeleton />
             </div>
         </>
     )

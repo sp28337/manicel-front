@@ -1,11 +1,13 @@
 import skeletonStyles from "../styles/skeletons.module.css"
 import textBlockStyles from "../styles/text-block.module.css"
+import storeBlokStyles from "../styles/store-block.module.css"
 import { CloseSearchListButton } from "../ui/buttons"
 import commonStyles from "../styles/common.module.css"
 import headerStyles from "../styles/header.module.css"
 import Image from "next/image"
 import background from "../../../public/salt-body-scrub-1140w.png"
 import allPng from "../../../public/all-1200w.png"
+import { WBLogo } from "./logotips"
 import { Wave } from "./header/Wave"
 import { Icons } from "./header/Icons"
 import bestsellersStyles from "../styles/bestsellers.module.css"
@@ -158,6 +160,37 @@ export const BestsellersSkeleton = () => {
                     </div>
                 </div >
             ))}
+            </div>
+        </div>
+    )
+}
+
+export const StoreBlockSkeleton = () => {
+    return (
+        <div className={storeBlokStyles.wrapper}>
+            <Image
+                className={storeBlokStyles.image}
+                src={background}
+                alt=""
+                quality={50}
+                sizes="100vw"
+            />
+            <div className={storeBlokStyles.content} style={{opacity:0}}>
+                <h2 className={storeBlokStyles.h2}>
+                    закажите сегодня
+                </h2>
+                <p className={storeBlokStyles.p}>
+                    Подарите себе или своим близким возможность насладиться уходом за телом на высшем уровне. 
+                </p>
+                <div className={storeBlokStyles.aWrapper}>
+                    <a href="https://www.wildberries.ru/brands/310747490-manicel" className={storeBlokStyles.a}>
+                        в магазин
+                    </a>
+                </div>
+            </div>
+            
+            <div className={storeBlokStyles.partners} style={{opacity:0}}>
+                <WBLogo />
             </div>
         </div>
     )
