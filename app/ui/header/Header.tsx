@@ -1,7 +1,7 @@
 import commonStyles from "../../styles/common.module.css"
 import headerStyles from "../../styles/header.module.css"
 import Image from "next/image"
-import allPng from "@/public/all-1200w.png"
+import allPng from "@/public/all-800w.png"
 import styles from "../../styles/header.module.css"
 import background from "@/public/salt-body-scrub-1140w.png"
 import { IconsSVG, WaveSVG } from "../vectors"
@@ -15,7 +15,7 @@ export const Header = () => {
                         className={styles.image}
                         src={background}
                         alt="pretty salt body scrab text on background"
-                        quality={50}
+                        quality={0}
                         sizes="100vw"
                         priority
                     />
