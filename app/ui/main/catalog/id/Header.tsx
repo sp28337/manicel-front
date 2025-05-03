@@ -3,7 +3,7 @@ import Image from "next/image";
 import commonStyles from "../../../../styles/common.module.css";
 import styles from "../../../../styles/header-id.module.css";
 import { StaticImageData } from "next/image";
-import { ProductSchema } from "../../../../definitions";
+import { ProductSchema } from "../../../../lib/definitions";
 
 import { Wave } from "../../../header/Wave";
 import { Lavender } from "./elements/Lavender";

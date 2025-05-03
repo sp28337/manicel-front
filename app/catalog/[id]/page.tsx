@@ -1,4 +1,4 @@
-import { fetchProduct } from "../../data";
+import { fetchProduct } from "../../lib/data";
 import { Header } from "../../ui/main/catalog/id/Header";
 import { Body } from "../../ui/main/catalog/id/Body";
 import { Suspense } from "react";

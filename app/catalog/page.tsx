@@ -1,7 +1,7 @@
 import { HeaderCatalog } from "../ui/main/catalog/HeaderCatalog";
 import { BodyCatalog } from "../ui/main/catalog/BodyCatalog";
 import styles from "../styles/catalog.module.css";
-import { fetchCatalogProducts } from "../data";
+import { fetchCatalogProducts } from "../lib/data";
 import { Suspense } from "react";
 import { SearchList } from "../ui/SearchList";
 import { LoadningSkeleton } from "../ui/skeletons"

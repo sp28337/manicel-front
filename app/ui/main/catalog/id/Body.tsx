@@ -5,7 +5,7 @@ import commonStyles from "../../../../styles/common.module.css";
 import styles from "../../../../styles/body-id.module.css";
 import { ProductImages } from "./ProductImages";
 import howToUseImg from "@/public/all-1200w.png";
-import { ProductSchema } from "../../../../definitions";
+import { ProductSchema } from "../../../../lib/definitions";
 
 export const Body = (props: { product: ProductSchema }) => {
 
