@@ -1,26 +1,9 @@
-import Link from "next/link";
-import Image from "next/image";
-import { StaticImageData } from "next/image";
+import Link from "next/link"
+import Image from "next/image"
 import { ReviewsStars } from "../reviews"
-import { BestsellersSchema } from "../../lib/definitions";
-
-
-import raspberryPng from "@/public/raspberry/raspberry-1200w.png";
-import mangoPng from "@/public/mango/mango-1200w.png";
-import mintPng from "@/public/mint/mint-1200w.png";
-import coconutPng from "@/public/coconut/coconut-1200w.png";
-import bubblegumPng from "@/public/bubblegum/bubblegum-1200w.png";
-import caramelPng from "@/public/caramel/caramel-1200w.png";
-import lavenderPng from "@/public/lavender/lavender-1200w.png";
-import inzhirPng from "@/public/inzhir/inzhir-main-790w.png";
-import applePmg from "@/public/apple/apple-main-790w.png";
-import citrusPng from "@/public/citrus/citrus-main-790w.png";
-import mintMangoPng from "@/public/mint-mango-500w.png";
-import coconutLavenderPng from "@/public/coconut-lavender-500w.png";
-import coconutPeachPng from "@/public/coconut-peach-500w.png";
-import peachLavenderPng from "@/public/peach-lavender-500w.png";
-import trioPng from "@/public/trio.png";
-import styles from "../../styles/bestsellers.module.css";
+import { BestsellersSchema } from "../../lib/definitions"
+import { getBestsellersImages } from "../../lib/images"
+import styles from "../../styles/bestsellers.module.css"
 
 export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => {
 
@@ -62,24 +45,7 @@ export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => 
         16: styles.gradient16,
     }
 
-    const images: {[key: number]: StaticImageData} = {
-        1: mangoPng,
-        2: bubblegumPng,
-        3: inzhirPng,
-        4: caramelPng,
-        5: coconutPng,
-        6: citrusPng,
-        7: raspberryPng,
-        8: mangoPng,
-        9: applePmg,
-        10: lavenderPng,
-        11: mintPng,
-        12: mintMangoPng,
-        13: coconutLavenderPng,
-        14: coconutPeachPng,
-        15: peachLavenderPng,
-        16: trioPng
-    }
+    const images = getBestsellersImages()
 
     return (
         <div className={styles.bestsellersWrapper}>
