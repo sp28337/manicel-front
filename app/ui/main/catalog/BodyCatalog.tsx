@@ -4,8 +4,7 @@ import commonStyles from "../../../styles/common.module.css"
 import Link from "next/link"
 import Image from "next/image"
 import { CatalogProductsSchema } from "../../../lib/definitions"
-import { Icons } from "../../header/Icons"
-import { ReviewsStars } from "../../reviews"
+import { IconsSVG, ReviewsStarsSVG } from "../../vectors"
 import { getCatalogImages } from "@/app/lib/images"
 
 export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] }) => {
@@ -86,7 +85,7 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                                         {product.name_ru && <h3 className={styles.h3Body}>{product.name_ru}</h3>}
                                         <span className={styles.descScrab}>{product.type}</span>
                                         <span>
-                                            <ReviewsStars />
+                                            <ReviewsStarsSVG />
                                         </span>
                                         {/* <div className={styles.price}>{"357 P"}<span className={styles.oldPrice}>{"675 P"}</span></div> */}
                                     </Link>
@@ -107,7 +106,7 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
             </ul>
             <div className={styles.bottomWrapper}>
                 <div className={styles.iconsWrapper}>
-                    <Icons />
+                    <IconsSVG />
                 </div>
                 <div className={styles.partners}>
                     <WBLogo />

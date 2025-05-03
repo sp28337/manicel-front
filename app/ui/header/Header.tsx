@@ -1,11 +1,10 @@
-import { Icons } from "./Icons";
-import { Wave } from "./Wave";
-import commonStyles from "../../styles/common.module.css";
-import headerStyles from "../../styles/header.module.css";
-import Image from "next/image";
-import allPng from "@/public/all-1200w.png";
+import commonStyles from "../../styles/common.module.css"
+import headerStyles from "../../styles/header.module.css"
+import Image from "next/image"
+import allPng from "@/public/all-1200w.png"
 import styles from "../../styles/header.module.css"
 import background from "@/public/salt-body-scrub-1140w.png"
+import { IconsSVG, WaveSVG } from "../vectors"
 
 export const Header = () => {
     return (
@@ -28,7 +27,7 @@ export const Header = () => {
                             </h1>
                             <p className={headerStyles.pHeader}>Познакомьтесь с нашими натуральными солевыми скрабами, доступными в разнообразии ароматов, которые подарят вашей коже мягкость и гладкость, словно после спа-процедур!</p>
                             <div className={styles.icons}>
-                                <Icons  />
+                                <IconsSVG  />
                             </div>
                         </div>
                         <div className={headerStyles.imgWrapper}>
@@ -43,7 +42,7 @@ export const Header = () => {
                     </div>
                 </div >
             </header>
-            <Wave />
+            <WaveSVG />
         </>
     );
 };

@@ -1,12 +1,12 @@
-'use client'
+"use client"
 
 import Link from "next/link"
-import styles from "../../../styles/nav.module.css"
-import commonStyles from "../../../styles/common.module.css"
+import styles from "../../styles/nav.module.css"
+import commonStyles from "../../styles/common.module.css"
 
-import { Search } from "../../Search"
+import { Search } from "../Search"
 import { useState } from "react"
-import { ManicelLogoSVG, SearchSVG } from "../../vectors"
+import { ManicelLogoSVG, SearchSVG } from "../vectors"
 import { PopupMenu } from "./PopupMenu"
 
 export const Navigation = () => {

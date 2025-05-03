@@ -2,7 +2,7 @@ import Image from "next/image"
 import styles from "../styles/search-list.module.css"
 import { fetchFilteredProducts } from "../lib/data"
 import { CloseSearchListButton } from "./buttons"
-import { ReviewsStars } from "./reviews"
+import { ReviewsStarsSVG } from "./vectors"
 import { getSearchImages } from "../lib/images"
 
 const images = getSearchImages()
@@ -48,7 +48,7 @@ export async function SearchList({ query }: { query: string }) {
                                         </div>
                                     </a>
                                     <div className={styles.reviews}>
-                                        <ReviewsStars />
+                                        <ReviewsStarsSVG />
                                     </div>
                                     <div className={styles.buttonWrapper}>
                                         <a 
