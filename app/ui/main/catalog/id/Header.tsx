@@ -1,46 +1,29 @@
-import React from "react";
-import Image from "next/image";
-import commonStyles from "../../../../styles/common.module.css";
-import styles from "../../../../styles/header-id.module.css";
-import { StaticImageData } from "next/image";
-import { ProductSchema } from "../../../../lib/definitions";
-
-import { Wave } from "../../../header/Wave";
-import { Lavender } from "./elements/Lavender";
-import { Inzhir } from "./elements/Inzhir";
-import { Mango } from "./elements/Mango";
-import { Bubblegum } from "./elements/Bubblegum";
-import { Caramel } from "./elements/Caramel";
-import { Coconut } from "./elements/Coconut";
-import { Citrus } from "./elements/Citrus";
-import { Raspberry } from "./elements/Raspberry";
-import { Peach } from "./elements/Peach";
-import { Apple } from "./elements/Apple";
-import { Mint } from "./elements/Mint";
-import { MintMango } from "./elements/MintMango";
-import { LavenderCoconut } from "./elements/LavenderCoconut";
-import { LavenderPeach } from "./elements/LavenderPeach";
-import { PeachCoconut } from "./elements/PeachCoconut";
-import { Trio } from "./elements/Trio";
-
-import background from "@/public/salt-body-scrub-1140w.png";
-
-import raspberryImg from "@/public/raspberry/raspberry-main-1200w.png";
-import caramelImg from "@/public/caramel/caramel-main-1200w-1.png";
-import mangoImg from "@/public/mango/mango-main-1200w.png";
-import mintImg from "@/public/mint/mint-main-1200w.png";
-import lavenderImg from "@/public/lavender/lavender-main-1200w.png";
-import bubblegumImg from "@/public/bubblegum/bubblegum-main-1200w.png";
-import coconutImg from "@/public/coconut/coconut-main-1200w.png";
-import ingirImg from "@/public/inzhir/inzhir-main-790w.png";
-import appleImg from "@/public/apple/apple-main-790w.png";
-import citrusImg from "@/public/citrus/citrus-main-790w.png";
-
-import trioImg from "@/public/trio.png";
-import peachLavenderImg from "@/public/lavender-peach-1200w-1.png";
-import coconutPeachImg from "@/public/peach-coconut-1200w-1.png";
-import coconutLavenderImg from "@/public/lavender-coconut-1200w-1.png";
-import mintMangoImg from "@/public/mango-chilli-1200w-1.png";
+import React from "react"
+import Image from "next/image"
+import commonStyles from "../../../../styles/common.module.css"
+import styles from "../../../../styles/header-id.module.css"
+import { ProductSchema } from "../../../../lib/definitions"
+import { 
+    Lavender,
+    Fig,
+    Mango,
+    Bubblegum,
+    Caramel,
+    Coconut,
+    Citrus,
+    Raspberry,
+    Peach,
+    Apple,
+    Mint,
+    MintMango,
+    LavenderCoconut,
+    LavenderPeach,
+    PeachCoconut,
+    Trio,
+ } from "./elements"
+import { Wave } from "../../../header/Wave"
+import { getMainCardImages } from "../../../../lib/images"
+import background from "@/public/salt-body-scrub-1140w.png"
 
 export const Header = (props: { product: ProductSchema }) => {
 
@@ -49,7 +32,7 @@ export const Header = (props: { product: ProductSchema }) => {
     const backgroundElements: {[key: number]: React.ReactElement} = {
         1: <Mango />,
         2: <Bubblegum />,
-        3: <Inzhir />,
+        3: <Fig />,
         4: <Caramel />,
         5: <Coconut />,
         6: <Citrus />,
@@ -65,24 +48,7 @@ export const Header = (props: { product: ProductSchema }) => {
         16: <Trio />,
     }
 
-    const mainImages: {[key: number]: StaticImageData} = {
-        1: mangoImg,
-        2: bubblegumImg,
-        3: ingirImg,
-        4: caramelImg,
-        5: coconutImg,
-        6: citrusImg,
-        7: raspberryImg,
-        8: mangoImg,
-        9: appleImg,
-        10: lavenderImg,
-        11: mintImg,
-        12: mintMangoImg,
-        13: coconutLavenderImg,
-        14: coconutPeachImg,
-        15: peachLavenderImg,
-        16: trioImg
-    }
+    const mainImages = getMainCardImages()
 
     const handleH1SetsName = (name: string): React.ReactElement => {
         const splitNames = name.split("+")

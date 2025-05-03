@@ -1,52 +1,16 @@
-import Image from "next/image";
+import Image from "next/image"
 import styles from "../styles/search-list.module.css"
-import { StaticImageData } from "next/image";
-import { fetchFilteredProducts } from "../lib/data";
-import { CloseSearchListButton } from "./buttons";
+import { fetchFilteredProducts } from "../lib/data"
+import { CloseSearchListButton } from "./buttons"
 import { ReviewsStars } from "./reviews"
+import { getSearchImages } from "../lib/images"
 
-import raspberry from "@/public/raspberry/raspberry-main-1200w.png";
-import mango from "@/public/mango/mango-main-1200w.png";
-import mint from "@/public/mint/mint-main-no-mint-1200.png";
-import bubblegum from "@/public/bubblegum/bubblegum-main-1200w.png";
-import caramel from "@/public/caramel/caramel-main-1200w.png";
-import coconut from "@/public/coconut/coconut-main-1200w.png";
-import lavender from "@/public/lavender/lavender-main-1200w.png";
-import peach from "@/public/peach/peach-letual.png";
-import inzhir from "@/public/inzhir/inzhir-320w.png"
-import citrus from "@/public/citrus/citrus-320w.png"
-import apple from "@/public/apple/apple-320w.png"
-
-import mintMango from "@/public/mango-chilli-1200w-1.png"
-import coconutLavender from "@/public/lavender-coconut-1200w-1.png"
-import peachLavender from "@/public/lavender-peach-1200w-1.png"
-import coconutPeach from "@/public/peach-coconut-1200w-1.png"
-import trio from "@/public/trio.png"
-
-
-const images: { [key: number]: StaticImageData } = {
-    1: mango,
-    2: bubblegum,
-    3: inzhir,
-    4: caramel,
-    5: coconut,
-    6: citrus,
-    7: raspberry,
-    8: peach,
-    9: apple,
-    10: lavender,
-    11: mint,
-    12: mintMango,
-    13: coconutLavender,
-    14: coconutPeach,
-    15: peachLavender,
-    16: trio,
-}
+const images = getSearchImages()
 
 
 export async function SearchList({ query }: { query: string }) {
 
-    const products = await fetchFilteredProducts(query);  
+    const products = await fetchFilteredProducts(query)  
   
     const chooseClassName = (id: number) => {
         // выбираем стиль для картинок, так как они требуют разных размеров for better UI

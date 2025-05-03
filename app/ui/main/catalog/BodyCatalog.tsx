@@ -3,50 +3,14 @@ import styles from "../../../styles/catalog.module.css"
 import commonStyles from "../../../styles/common.module.css"
 import Link from "next/link"
 import Image from "next/image"
-import { StaticImageData } from "next/image"
 import { CatalogProductsSchema } from "../../../lib/definitions"
 import { Icons } from "../../header/Icons"
 import { ReviewsStars } from "../../reviews"
-
-import raspberry from "@/public/raspberry/raspberry-1200w.png"
-import mango from "@/public/mango/mango-1200w.png"
-import mint from "@/public/mint/mint-1200w.png"
-import bubblegum from "@/public/bubblegum/bubblegum-1200w.png"
-import caramel from "@/public/caramel/caramel-1200w.png"
-import coconut from "@/public/coconut/coconut-1200w.png"
-import lavender from "@/public/lavender/lavender-1200w.png"
-import peach from "@/public/peach/peach-letual.png"
-import inzhir from "@/public/inzhir/inzhir-320w.png"
-import citrus from "@/public/citrus/citrus-320w.png"
-import apple from "@/public/apple/apple-320w.png"
-
-import mintMango from "@/public/mint-mango-500w.png"
-import coconutLavender from "@/public/coconut-lavender-500w.png"
-import peachLavender from "@/public/peach-lavender-500w.png"
-import coconutPeach from "@/public/coconut-peach-500w.png"
-import trio from "@/public/trio.png"
-
+import { getCatalogImages } from "@/app/lib/images"
 
 export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] }) => {
 
-    const images: { [key: number]: StaticImageData } = {
-        1: mango,
-        2: bubblegum,
-        3: inzhir,
-        4: caramel,
-        5: coconut,
-        6: citrus,
-        7: raspberry,
-        8: peach,
-        9: apple,
-        10: lavender,
-        11: mint,
-        12: mintMango,
-        13: coconutLavender,
-        14: coconutPeach,
-        15: peachLavender,
-        16: trio,
-    }
+    const images = getCatalogImages()
     
     const backgroundStyles: { [key: number]: string } = {
         1: styles.cardItem1,
