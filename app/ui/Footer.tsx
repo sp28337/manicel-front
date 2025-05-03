@@ -1,13 +1,13 @@
-import styles from "../../styles/footer.module.css"
-import commonStyles from "../../styles/common.module.css"
-import { Logo } from "../header/nav/Logo";
+import styles from "../styles/footer.module.css"
+import commonStyles from "../styles/common.module.css"
+import { ManicelLogoSVG } from "./vectors";
 import Link from "next/link";
 
 export const Footer = () => {
     return (
         <footer className={`${styles.footer} ${commonStyles.container}`}>
             <div className={styles.logoWrapper}>
-                <Logo />
+                <ManicelLogoSVG />
             </div>
             <div className={styles.footerNav}>
                 <div>
