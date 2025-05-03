@@ -14,7 +14,7 @@ export function Search({ placeholder, isOpen, onClose }: { placeholder: string, 
 
     const closeSearch = (inputRef: any) => {
         onClose();
-        inputRef.current.value = "";
+        inputRef.current.value = null;
         replace(`${pathname}`);
     }
 

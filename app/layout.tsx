@@ -1,6 +1,6 @@
 import "./styles/globals.css"
 import { TopBar } from "./ui/TopBar"
-import { Navigation } from "./ui/header/nav/Nav"
+import { Navigation } from "./ui/header/Nav"
 import { Footer } from "./ui/Footer"
 import { montserrat } from "./ui/fonts"
 

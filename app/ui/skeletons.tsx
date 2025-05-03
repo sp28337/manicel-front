@@ -10,12 +10,10 @@ import background from "@/public/salt-body-scrub-1140w.png"
 import allPng from "@/public/all-1200w.png"
 import allFront from "@/public/all-front-1200w.png"
 import { WBLogo } from "./logotips"
-import { Wave } from "./header/Wave"
-import { Icons } from "./header/Icons"
+import { IconsSVG, WaveSVG, ReviewsStarsSVG} from "./vectors"
 import bestsellersStyles from "../styles/bestsellers.module.css"
 import inzhirPng from "@/public/inzhir/inzhir-main-790w.png"
 import mango from "@/public/mango/mango-1200w.png"
-import { ReviewsStars } from "./reviews"
 
 export const LoadningSkeleton = () => {
     return (
@@ -62,7 +60,7 @@ export const MainHeaderSkeleton = () => {
                         </h1>
                         <p className={headerStyles.pHeader}>Познакомьтесь с нашими натуральными солевыми скрабами, доступными в разнообразии ароматов, которые подарят вашей коже мягкость и гладкость, словно после спа-процедур!</p>
                         <div className={headerStyles.icons} style={{opacity:0}}>
-                            <Icons />
+                            <IconsSVG />
                         </div>
                     </div>
                     <div className={headerStyles.imgWrapper} style={{opacity:0}}>
@@ -76,7 +74,7 @@ export const MainHeaderSkeleton = () => {
                     </div>
                 </div>
             </div >
-            <Wave />
+            <WaveSVG />
         </>
         
     )
@@ -239,7 +237,7 @@ export const CatalogHeaderSkeleton = () => {
                     </div>
                 </div>
             </div>
-            <Wave />
+            <WaveSVG />
         </>
     )
 }
@@ -255,7 +253,7 @@ export const CatalogBodySkeleton = () => {
             <p className={catalogStyles.description} style={{opacity:0}}>Скрабы для тела SALT BODY SCRUB от российского бренда MANICEL — это эффективное средство для очищения и ухода за кожей рук, ног, живота, ягодиц и других участков тела. Скраб мягко отшелушивает ороговевшие клетки, стимулирует обновление кожи и придаёт ей здоровый сияющий вид.</p>
             <h1 className={catalogStyles.h1Body} style={{opacity:0}}>каталог</h1>
             <ul className={catalogStyles.catalogList}>
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(
+                {[...Array(16).keys()].map(
                     (product: any, index: number) => (
                     <div key={index} className={`${catalogStyles.cardItem}`}>
                         <div className={`${catalogStyles.gradient}`}></div>
@@ -273,7 +271,7 @@ export const CatalogBodySkeleton = () => {
                                 <h3 className={catalogStyles.h3Body}>{product.name_ru}</h3>
                                 <span className={catalogStyles.descScrab}>{product.type}</span>
                                 <span style={{opacity:0}}>
-                                    <ReviewsStars />
+                                    <ReviewsStarsSVG />
                                 </span>
                                 {/* <div className={styles.price}>{"357 P"}<span className={styles.oldPrice}>{"675 P"}</span></div> */}
                             </div>

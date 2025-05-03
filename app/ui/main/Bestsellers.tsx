@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ReviewsStars } from "../reviews"
+import { ReviewsStarsSVG } from "../vectors"
 import { BestsellersSchema } from "../../lib/definitions"
 import { getBestsellersImages } from "../../lib/images"
 import styles from "../../styles/bestsellers.module.css"
@@ -70,7 +70,7 @@ export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => 
                         <div className={styles.infoContainer}>
                             <h3 className={`${styles.h3}`}>{product.name}</h3>
                             <p className={styles.p}>{product.type}</p>
-                            <ReviewsStars />
+                            <ReviewsStarsSVG />
                         </div>
                         <div className={styles.composition}>
                             <h3 className={`${styles.h3}  ${index !== 0 && styles.h3Hide}`}>Состав</h3>
