@@ -4,7 +4,7 @@ import { Header } from "./ui/header/Header";
 import { TextBlock } from "./ui/main/TextBlock";
 import { Bestsellers } from "./ui/main/Bestsellers";
 import { StoreBlock } from "./ui/main/StoreBlock";
-import { fetchBestsellers } from "./data";
+import { fetchBestsellers } from "./lib/data";
 import { Suspense } from "react";
 import { SearchList } from "./ui/SearchList";
 import { LoadningSkeleton } from "./ui/skeletons"

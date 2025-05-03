@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "../styles/search-list.module.css"
 import { StaticImageData } from "next/image";
-import { fetchFilteredProducts } from "../data";
+import { fetchFilteredProducts } from "../lib/data";
 import { CloseSearchListButton } from "./buttons";
 import { ReviewsStars } from "./reviews"
 

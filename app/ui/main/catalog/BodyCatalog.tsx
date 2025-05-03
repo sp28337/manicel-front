@@ -4,7 +4,7 @@ import commonStyles from "../../../styles/common.module.css"
 import Link from "next/link"
 import Image from "next/image"
 import { StaticImageData } from "next/image"
-import { CatalogProductsSchema } from "../../../definitions"
+import { CatalogProductsSchema } from "../../../lib/definitions"
 import { Icons } from "../../header/Icons"
 import { ReviewsStars } from "../../reviews"
 

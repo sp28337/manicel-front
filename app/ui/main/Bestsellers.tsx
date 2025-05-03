@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 import { ReviewsStars } from "../reviews"
-import { BestsellersSchema } from "../../definitions";
+import { BestsellersSchema } from "../../lib/definitions";
 
 
 import raspberryPng from "@/public/raspberry/raspberry-1200w.png";
