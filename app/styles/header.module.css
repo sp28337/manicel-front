@@ -22,7 +22,7 @@
     z-index: 1;    
     transform: translate(-50%, -50%);
     overflow: hidden;
-    filter: blur(1px);
+    filter: blur(3px);
 }
 
 .headerBody {

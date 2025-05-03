@@ -1,125 +1,146 @@
 import { StaticImageData } from "next/image"
 
-import raspberry from "@/public/raspberry/raspberry-1200w.png"
-import mango from "@/public/mango/mango-1200w.png"
-import mint from "@/public/mint/mint-1200w.png"
-import bubblegum from "@/public/bubblegum/bubblegum-1200w.png"
-import caramel from "@/public/caramel/caramel-1200w.png"
-import coconut from "@/public/coconut/coconut-1200w.png"
-import lavender from "@/public/lavender/lavender-1200w.png"
 import peach from "@/public/peach/peach-letual.png"
-import inzhir from "@/public/inzhir/inzhir-320w.png"
-import citrus from "@/public/citrus/citrus-320w.png"
-import apple from "@/public/apple/apple-card-320w.png"
-import mintMango from "@/public/mint-mango-500w.png"
-import coconutLavender from "@/public/coconut-lavender-500w.png"
-import peachLavender from "@/public/peach-lavender-500w.png"
-import coconutPeach from "@/public/coconut-peach-500w.png"
-import trio from "@/public/trio.png"
 
-import inzhirPng from "@/public/inzhir/inzhir-main-790w.png";
-import applePng from "@/public/apple/apple-main-790w.png";
-import citrusPng from "@/public/citrus/citrus-main-790w.png";
+import raspberry90w from "@/public/raspberry/raspberry-main-90w.png"
+import mango90w from "@/public/mango/mango-main-90w.png"
+import mint90w from "@/public/mint/mint-main-90w.png"
+import bubblegum90w from "@/public/bubblegum/bubblegum-main-90w.png"
+import caramel90w from "@/public/caramel/caramel-main-90w.png"
+import coconut90w from "@/public/coconut/coconut-main-90w.png"
+import lavender90w from "@/public/lavender/lavender-main-90w.png"
 
-import searchRaspberry from "@/public/raspberry/raspberry-main-1200w.png";
-import searchMango from "@/public/mango/mango-main-1200w.png";
-import searchMint from "@/public/mint/mint-main-no-mint-1200.png";
-import searchBubblegum from "@/public/bubblegum/bubblegum-main-1200w.png";
-import searchCaramel from "@/public/caramel/caramel-main-1200w.png";
-import searchCoconut from "@/public/coconut/coconut-main-1200w.png";
-import searchLavender from "@/public/lavender/lavender-main-1200w.png";
-import searchPeach from "@/public/peach/peach-letual.png";
-import searchMintMango from "@/public/mango-chilli-1200w-1.png"
-import searchCoconutLavender from "@/public/lavender-coconut-1200w-1.png"
-import searchPeachLavender from "@/public/lavender-peach-1200w-1.png"
-import searchCoconutPeach from "@/public/peach-coconut-1200w-1.png"
+import mintMango120w from "@/public/mint-mango-120w.png"
+import peachLavender120w from "@/public/lavender-peach-120w.png"
+import lavenderCoconut120w from "@/public/lavender-coconut-120w.png"
+import coconutPeach120w from "@/public/peach-coconut-120w.png"
+import inzhirPng120w from "@/public/inzhir/inzhir-main-120w.png"
+import applePng120w from "@/public/apple/apple-main-120w.png"
+import citrusPng120w from "@/public/citrus/citrus-main-120w.png"
+import trio120w from "@/public/trio-120w.png"
 
-import mango0 from "@/public/mango/mango-chilli-pocket-600w.jpg";
-import mango1 from "@/public/mango/mango-chilli-pocket-600w-1.jpg";
-import mango2 from "@/public/mango/mango-chilli-pocket-600w-2.jpg";
-import lavender0 from "@/public/lavender/lavender-black-currant-pocket-600w.jpg";
-import lavender1 from "@/public/lavender/lavender-black-currant-pocket-600w-1.jpg";
-import lavender2 from "@/public/lavender/lavender-black-currant-pocket-600w-2.jpg";
-import coconut0 from "@/public/coconut/coconut-pocket-600w.jpg";
-import coconut1 from "@/public/coconut/coconut-pocket-600w-1.jpg";
-import coconut2 from "@/public/coconut/coconut-pocket-600w-2.jpg";
-import mint0 from "@/public/mint/mint-cucumber-pocket-600w.jpg";
-import mint1 from "@/public/mint/mint-cucumber-pocket-600w-1.jpg";
-import mint2 from "@/public/mint/mint-cucumber-pocket-600w-2.jpg";
-import peach0 from "@/public/peach/peach-pocket-600w.jpg";
-import peach1 from "@/public/peach/peach-pocket-600w-1.jpg";
-import peach2 from "@/public/peach/peach-pocket-600w-2.jpg";
-import inzhir0 from "@/public/inzhir/inzhir-pocket-600w.jpg";
-import inzhir1 from "@/public/inzhir/inzhir-pocket-600w-1.jpg";
-import inzhir2 from "@/public/inzhir/inzhir-pocket-600w-2.jpg";
-import citrus0 from "@/public/citrus/citrus-pocket-600w.jpg";
-import citrus1 from "@/public/citrus/citrus-pocket-600w-1.jpg";
-import citrus2 from "@/public/citrus/citrus-pocket-600w-2.jpg";
-import apple0 from "@/public/apple/apple-pocket-600w.jpg";
-import apple1 from "@/public/apple/apple-pocket-600w-1.jpg";
-import apple2 from "@/public/apple/apple-pocket-600w-2.jpg";
-import trio0 from "@/public/trio-600w.jpg";
-import trio1 from "@/public/trio-600w-1.jpg";
-import trio2 from "@/public/trio-600w-2.jpg";
+import inzhir320w from "@/public/inzhir/inzhir-320w.png"
+import citrus320w from "@/public/citrus/citrus-320w.png"
+import apple320w from "@/public/apple/apple-card-320w.png"
 
-import caramelImg from "@/public/caramel/caramel-main-1200w-1.png";
-import mintImg from "@/public/mint/mint-main-1200w.png";
+import raspberry500w from "@/public/raspberry/raspberry-500w.png"
+import mango500w from "@/public/mango/mango-500w.png"
+import mint500w from "@/public/mint/mint-500w.png"
+import bubblegum500w from "@/public/bubblegum/bubblegum-500w.png"
+import caramel500w from "@/public/caramel/caramel-500w.png"
+import coconut500w from "@/public/coconut/coconut-500w.png"
+import lavender500w from "@/public/lavender/lavender-500w.png"
+import mintMango500w from "@/public/mint-mango-500w.png"
+import coconutLavender500w from "@/public/coconut-lavender-500w.png"
+import peachLavender500w from "@/public/peach-lavender-500w.png"
+import coconutPeach500w from "@/public/coconut-peach-500w.png"
+import inzhir500w from "@/public/inzhir/inzhir-main-500w.png"
+import apple500w from "@/public/apple/apple-main-500w.png"
+import citrus500w from "@/public/citrus/citrus-main-500w.png"
+
+import mango0 from "@/public/mango/mango-chilli-pocket-600w.jpg"
+import mango1 from "@/public/mango/mango-chilli-pocket-600w-1.jpg"
+import mango2 from "@/public/mango/mango-chilli-pocket-600w-2.jpg"
+import lavender0 from "@/public/lavender/lavender-black-currant-pocket-600w.jpg"
+import lavender1 from "@/public/lavender/lavender-black-currant-pocket-600w-1.jpg"
+import lavender2 from "@/public/lavender/lavender-black-currant-pocket-600w-2.jpg"
+import coconut0 from "@/public/coconut/coconut-pocket-600w.jpg"
+import coconut1 from "@/public/coconut/coconut-pocket-600w-1.jpg"
+import coconut2 from "@/public/coconut/coconut-pocket-600w-2.jpg"
+import mint0 from "@/public/mint/mint-cucumber-pocket-600w.jpg"
+import mint1 from "@/public/mint/mint-cucumber-pocket-600w-1.jpg"
+import mint2 from "@/public/mint/mint-cucumber-pocket-600w-2.jpg"
+import peach0 from "@/public/peach/peach-pocket-600w.jpg"
+import peach1 from "@/public/peach/peach-pocket-600w-1.jpg"
+import peach2 from "@/public/peach/peach-pocket-600w-2.jpg"
+import inzhir0 from "@/public/inzhir/inzhir-pocket-600w.jpg"
+import inzhir1 from "@/public/inzhir/inzhir-pocket-600w-1.jpg"
+import inzhir2 from "@/public/inzhir/inzhir-pocket-600w-2.jpg"
+import citrus0 from "@/public/citrus/citrus-pocket-600w.jpg"
+import citrus1 from "@/public/citrus/citrus-pocket-600w-1.jpg"
+import citrus2 from "@/public/citrus/citrus-pocket-600w-2.jpg"
+import apple0 from "@/public/apple/apple-pocket-600w.jpg"
+import apple1 from "@/public/apple/apple-pocket-600w-1.jpg"
+import apple2 from "@/public/apple/apple-pocket-600w-2.jpg"
+import trio0 from "@/public/trio-600w.jpg"
+import trio1 from "@/public/trio-600w-1.jpg"
+import trio2 from "@/public/trio-600w-2.jpg"
+
+import inzhir790w from "@/public/inzhir/inzhir-main-790w.png"
+import apple790w from "@/public/apple/apple-main-790w.png"
+import citrus790w from "@/public/citrus/citrus-main-790w.png"
+
+import raspberry800w from "@/public/raspberry/raspberry-main-800w.png"
+import mango800w from "@/public/mango/mango-main-800w.png"
+import mint800w from "@/public/mint/mint-main-800w.png"
+import bubblegum800w from "@/public/bubblegum/bubblegum-main-800w.png"
+import caramel800w from "@/public/caramel/caramel-main-800w.png"
+import coconut800w from "@/public/coconut/coconut-main-800w.png"
+import lavender800w from "@/public/lavender/lavender-main-800w.png"
+
+import searchMintMango900w from "@/public/mint-mango-900w.png"
+import searchCoconutLavender900w from "@/public/lavender-coconut-900w.png"
+import searchPeachLavender900w from "@/public/lavender-peach-900w.png"
+import searchCoconutPeach900w from "@/public/peach-coconut-900w.png"
+
+import trio1000w from "@/public/trio-1000w.png"
+
 
 const catalogImages: { [key: number]: StaticImageData } = {
-    1: mango,
-    2: bubblegum,
-    3: inzhir,
-    4: caramel,
-    5: coconut,
-    6: citrus,
-    7: raspberry,
+    1: mango500w,
+    2: bubblegum500w,
+    3: inzhir320w,
+    4: caramel500w,
+    5: coconut500w,
+    6: citrus320w,
+    7: raspberry500w,
     8: peach,
-    9: apple,
-    10: lavender,
-    11: mint,
-    12: mintMango,
-    13: coconutLavender,
-    14: coconutPeach,
-    15: peachLavender,
-    16: trio,
+    9: apple320w,
+    10: lavender500w,
+    11: mint500w,
+    12: mintMango500w,
+    13: coconutLavender500w,
+    14: coconutPeach500w,
+    15: peachLavender500w,
+    16: trio1000w,
 }
 
 const bestsellersImages: {[key: number]: StaticImageData} = {
-    1: mango,
-    2: bubblegum,
-    3: inzhirPng,
-    4: caramel,
-    5: coconut,
-    6: citrusPng,
-    7: raspberry,
-    8: mango,
-    9: applePng,
-    10: lavender,
-    11: mint,
-    12: mintMango,
-    13: coconutLavender,
-    14: coconutPeach,
-    15: peachLavender,
-    16: trio
+    1: mango500w,
+    2: bubblegum500w,
+    3: inzhir500w,
+    4: caramel500w,
+    5: coconut500w,
+    6: citrus500w,
+    7: raspberry500w,
+    8: mango500w,
+    9: apple500w,
+    10: lavender500w,
+    11: mint500w,
+    12: mintMango500w,
+    13: coconutLavender500w,
+    14: coconutPeach500w,
+    15: peachLavender500w,
+    16: trio1000w
 }
 
 const searchImages: {[key: number]: StaticImageData} = {
-    1: searchMango,
-    2: searchBubblegum,
-    3: inzhir,
-    4: searchCaramel,
-    5: searchCoconut,
-    6: citrus,
-    7: searchRaspberry,
-    8: searchPeach,
-    9: apple,
-    10: searchLavender,
-    11: searchMint,
-    12: searchMintMango,
-    13: searchCoconutLavender,
-    14: searchCoconutPeach,
-    15: searchPeachLavender,
-    16: trio
+    1: mango90w,
+    2: bubblegum90w,
+    3: inzhirPng120w,
+    4: caramel90w,
+    5: coconut90w,
+    6: citrusPng120w,
+    7: raspberry90w,
+    8: peach,
+    9: applePng120w,
+    10: lavender90w,
+    11: mint90w,
+    12: mintMango120w,
+    13: lavenderCoconut120w,
+    14: coconutPeach120w,
+    15: peachLavender120w,
+    16: trio120w
 }
 
 const productImages: { [key: number]: StaticImageData[] } = {
@@ -142,22 +163,22 @@ const productImages: { [key: number]: StaticImageData[] } = {
 }
 
 const mainCardImages: {[key: number]: StaticImageData} = {
-    1: searchMango,
-    2: searchBubblegum,
-    3: inzhirPng,
-    4: caramelImg,
-    5: searchCoconut,
-    6: citrusPng,
-    7: searchRaspberry,
-    8: searchPeach,
-    9: applePng,
-    10: searchLavender,
-    11: mintImg,
-    12: searchMintMango,
-    13: searchCoconutLavender,
-    14: searchCoconutPeach,
-    15: searchPeachLavender,
-    16: trio
+    1: mango800w,
+    2: bubblegum800w,
+    3: inzhir790w,
+    4: caramel800w,
+    5: coconut800w,
+    6: citrus790w,
+    7: raspberry800w,
+    8: peach,
+    9: apple790w,
+    10: lavender800w,
+    11: mint800w,
+    12: searchMintMango900w,
+    13: searchCoconutLavender900w,
+    14: searchCoconutPeach900w,
+    15: searchPeachLavender900w,
+    16: trio1000w
 }
 
 export const getSearchImages = () => searchImages

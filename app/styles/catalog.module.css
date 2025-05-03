@@ -65,7 +65,7 @@
     width: 100%;
     height: auto;
     overflow: hidden;
-    filter: blur(2px);
+    filter: blur(3px);
 }
 
 .bottomText {

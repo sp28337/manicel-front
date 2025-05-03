@@ -12,16 +12,16 @@ export async function SearchList({ query }: { query: string }) {
 
     const products = await fetchFilteredProducts(query)  
   
-    const chooseClassName = (id: number) => {
-        // выбираем стиль для картинок, так как они требуют разных размеров for better UI
-        if ([3, 6, 9].includes(id)) {
-            return styles.pocketImg
-        } else if ([12, 13, 14, 15, 16].includes(id)) {
-            return styles.setsImg
-        } else {
-            return styles.scrabImg
-        }
-    }
+    // const chooseClassName = (id: number) => {
+    //     // выбираем стиль для картинок, так как они требуют разных размеров for better UI
+    //     if ([3, 6, 9].includes(id)) {
+    //         return styles.pocketImg
+    //     } else if ([12, 13, 14, 15, 16].includes(id)) {
+    //         return styles.setsImg
+    //     } else {
+    //         return styles.scrabImg
+    //     }
+    // }
 
     return (
         <>
@@ -37,10 +37,10 @@ export async function SearchList({ query }: { query: string }) {
                                         <div className={styles.imgWrapper}>
                                             <Image 
                                                 src={images[product.id]}
-                                                className={`${styles.image} ${chooseClassName(product.id)}`}
+                                                className={`${styles.image}`}
                                                 alt={`${product.name}"s profile picture`}
                                                 sizes="100vw"
-                                                width={120}
+                                                // width={120}
                                         />
                                         </div>
                                         <div className={styles.name}>

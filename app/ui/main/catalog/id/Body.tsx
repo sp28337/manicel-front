@@ -4,7 +4,7 @@ import { Description } from "./Description"
 import commonStyles from "../../../../styles/common.module.css"
 import styles from "../../../../styles/body-id.module.css"
 import { ProductImages } from "./ProductImages"
-import howToUseImg from "@/public/all-1200w.png"
+import howToUseImg from "@/public/all-800w.png"
 import { ProductSchema } from "../../../../lib/definitions"
 import { OneSVG, TwoSVG, MarkSVG } from "../../../vectors"
 
