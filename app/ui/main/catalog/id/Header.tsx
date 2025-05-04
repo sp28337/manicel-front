@@ -1,6 +1,5 @@
 import React from "react"
 import Image from "next/image"
-import { Suspense } from "react";
 import commonStyles from "../../../../styles/common.module.css"
 import styles from "../../../../styles/header-id.module.css"
 import { ProductSchema } from "../../../../lib/definitions"

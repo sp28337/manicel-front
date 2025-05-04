@@ -6,14 +6,13 @@ import { CloseSearchListButton } from "./buttons"
 import commonStyles from "../styles/common.module.css"
 import headerStyles from "../styles/header.module.css"
 import Image from "next/image"
-import background from "@/public/salt-body-scrub-1140w.png"
-import allPng from "@/public/all-1200w.png"
 import allFront from "@/public/all-front-1200w.png"
 import { WBLogo } from "./logotips"
-import { IconsSVG, WaveSVG, ReviewsStarsSVG} from "./vectors"
+import { WaveSVG, ReviewsStarsSVG} from "./vectors"
 import bestsellersStyles from "../styles/bestsellers.module.css"
 import inzhirPng from "@/public/inzhir/inzhir-main-790w.png"
 import mango from "@/public/mango/mango-1200w.png"
+import background from "@/public/salt-body-scrub-1140w.png"
 
 export const LoadningSkeleton = () => {
     return (
@@ -43,34 +42,31 @@ export const LoadningSkeleton = () => {
 export const MainHeaderSkeleton = () => {
     return (
         <>
-            <div className={headerStyles.headerWrapper}>
+            <div className={skeletonStyles.headerWrapper}>
+                {/* <div className={headerStyles.image}></div> */}
                 <Image
                     className={headerStyles.image}
                     src={background}
                     alt="pretty salt body scrab text on background"
-                    quality={50}
+                    quality={0}
                     sizes="100vw"
                     priority
                 />
                 <div className={`${commonStyles.container} ${headerStyles.headerBody}` }>
-                    
-                    <div className={headerStyles.textHeader} style={{opacity:0}}>
-                        <h1 className={headerStyles.h1Header}>НАСТОЯЩИЙ СПА-РИТУАЛ<br />
-                            <span className={headerStyles.spanHeader}>ОБНОВЛЕНИЯ<br/> И СИЯНИЯ</span>
-                        </h1>
-                        <p className={headerStyles.pHeader}>Познакомьтесь с нашими натуральными солевыми скрабами, доступными в разнообразии ароматов, которые подарят вашей коже мягкость и гладкость, словно после спа-процедур!</p>
-                        <div className={headerStyles.icons} style={{opacity:0}}>
-                            <IconsSVG />
+                    <div className={skeletonStyles.textHeader}>
+                        <div className={skeletonStyles.h1}></div>
+                        <div className={skeletonStyles.p}></div>
+                        <div className={skeletonStyles.icons}>
+                            <div className={skeletonStyles.ecoFriendly}>
+                            </div>
+                            <div className={skeletonStyles.madeWithLove}>
+                            </div>
+                            <div className={skeletonStyles.crueltyFree}>
+                            </div>
                         </div>
                     </div>
-                    <div className={headerStyles.imgWrapper} style={{opacity:0}}>
-                        <Image className={headerStyles.imgAll}
-                            src={allPng} 
-                            alt="piramyd of all scrubs with raspberry on top of some cans"
-                            quality={100}
-                            sizes="100vw"
-                            priority
-                        />
+
+                    <div className={skeletonStyles.imgWrapper}>
                     </div>
                 </div>
             </div >

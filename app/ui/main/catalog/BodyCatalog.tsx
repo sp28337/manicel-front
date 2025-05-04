@@ -4,7 +4,7 @@ import commonStyles from "../../../styles/common.module.css"
 import Link from "next/link"
 import Image from "next/image"
 import { CatalogProductsSchema } from "../../../lib/definitions"
-import { IconsSVG, ReviewsStarsSVG } from "../../vectors"
+import { EcoFriendlySVG, WithLoveSVG, NoAnimalTestingSVG, ReviewsStarsSVG } from "../../vectors"
 import { getCatalogImages } from "@/app/lib/images"
 
 export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] }) => {
@@ -106,7 +106,24 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
             </ul>
             <div className={styles.bottomWrapper}>
                 <div className={styles.iconsWrapper}>
-                    <IconsSVG />
+                    <div className={styles.iconWrapper}>
+                        <EcoFriendlySVG  />
+                        <span className={styles.iconDescribtion}>
+                            eco friendly
+                        </span>
+                    </div>
+                    <div className={styles.iconWrapper}>
+                        <WithLoveSVG  />
+                        <span className={styles.iconDescribtion}>
+                            made with love
+                        </span>
+                    </div>
+                    <div className={styles.iconWrapper}>
+                        <NoAnimalTestingSVG  />
+                        <span className={styles.iconDescribtion}>
+                            cruelty free
+                        </span>
+                    </div>
                 </div>
                 <div className={styles.partners}>
                     <WBLogo />

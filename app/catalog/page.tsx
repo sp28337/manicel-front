@@ -4,7 +4,6 @@ import styles from "../styles/catalog.module.css";
 import { fetchCatalogProducts } from "../lib/data";
 import { Suspense } from "react";
 import { SearchList } from "../ui/SearchList";
-import { LoadningSkeleton } from "../ui/skeletons"
 
 export default async function Page (props: {searchParams?: Promise<{query?: string}>}) {
 
