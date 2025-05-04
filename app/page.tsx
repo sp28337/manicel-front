@@ -7,7 +7,6 @@ import { StoreBlock } from "./ui/main/StoreBlock"
 import { fetchBestsellers } from "./lib/data"
 import { Suspense } from "react"
 import { SearchList } from "./ui/SearchList"
-import { LoadningSkeleton } from "./ui/skeletons"
 
 export default async function Page(props: { searchParams?: Promise<{ query?: string }>}) {
 
@@ -20,7 +19,7 @@ export default async function Page(props: { searchParams?: Promise<{ query?: str
     
     return (
         <>
-            <Suspense key={query} fallback={query !== "" ? <LoadningSkeleton /> : <></> } >
+            <Suspense key={query} fallback={<div>Loading...</div>}>
                 <SearchList query={query} />
             </Suspense>
             <Header />

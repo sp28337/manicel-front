@@ -1,13 +1,13 @@
 "use client"
 
 import Link from "next/link"
-import styles from "../../styles/nav.module.css"
-import commonStyles from "../../styles/common.module.css"
+import styles from "../styles/nav.module.css"
+import commonStyles from "../styles/common.module.css"
 
-import { Search } from "../Search"
+import { Search } from "./Search"
 import { useState, Suspense } from "react"
-import { ManicelLogoSVG, SearchSVG } from "../vectors"
-import { PopupMenu } from "./PopupMenu"
+import { ManicelLogoSVG, SearchSVG } from "./vectors"
+import { PopupMenu } from "./header/PopupMenu"
 
 export const Navigation = () => {
 
@@ -47,7 +47,7 @@ export const Navigation = () => {
                         </button>  
                     </>
                 }
-                <Suspense>
+                <Suspense fallback={<div>Loading...</div>}>
                     <Search placeholder="Поиск..." isOpen={isOpen} onClose={() => setIsOpen(!isOpen)}/>
                 </Suspense>
                 <PopupMenu isOpen={isOpen} setIsOpen={setIsOpen}/>

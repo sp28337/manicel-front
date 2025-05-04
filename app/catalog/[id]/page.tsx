@@ -33,7 +33,7 @@ export default async function Page(
 
     return (
         <div>
-            <Suspense key={query} fallback={query !== "" ? <LoadningSkeleton /> : <></> }>
+            <Suspense key={query} fallback={<div>Loading...</div>}>
                 <SearchList query={query} />
             </Suspense>
             <Header product={product} />
