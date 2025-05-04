@@ -29,7 +29,7 @@ export async function SearchList({ query }: { query: string }) {
                 <div className={styles.searchListWrapper}>
                     <ul className={styles.searchList}>
                         { 
-                            products.map((product, index) => (
+                            products.map((product) => (
                                 <li key={product.id} className={styles.searchRow} >
                                     <a href={`/catalog/${product.id}`} className={styles.link}>
                                         <div className={styles.rowBackground}></div>

@@ -3,7 +3,7 @@
 import styles from "../styles/search.module.css";
 import { useDebouncedCallback } from "use-debounce";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 
 export function Search({ placeholder, isOpen, onClose }: { placeholder: string, isOpen: boolean, onClose: () => void }) {
     
@@ -12,11 +12,10 @@ export function Search({ placeholder, isOpen, onClose }: { placeholder: string, 
     const { replace } = useRouter();
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const closeSearch = (inputRef: any) => {
+    const closeSearch = useCallback(() => {
         onClose();
-        inputRef.current.value = null;
         replace(`${pathname}`);
-    }
+    }, [onClose, replace, pathname])
 
     const handleSearch = useDebouncedCallback((term) =>  {
         
@@ -47,7 +46,7 @@ export function Search({ placeholder, isOpen, onClose }: { placeholder: string, 
         if (!isOpen) {
             function handleKeyDown(e: KeyboardEvent) {
                 if (e.key === "Escape") {
-                    closeSearch(inputRef);
+                    closeSearch();
                 }
             }
         
@@ -59,7 +58,7 @@ export function Search({ placeholder, isOpen, onClose }: { placeholder: string, 
 
         };
     
-    }, [isOpen, onClose]);
+    }, [isOpen, closeSearch]);
 
 
     return (
@@ -70,7 +69,7 @@ export function Search({ placeholder, isOpen, onClose }: { placeholder: string, 
                     <>
                         <div 
                             className={styles.searchBackground} 
-                            onClick={() => {closeSearch(inputRef)}}
+                            onClick={() => {closeSearch()}}
                         >    
                         </div>
                         <div className={styles.search}>
@@ -84,7 +83,7 @@ export function Search({ placeholder, isOpen, onClose }: { placeholder: string, 
                                 onChange={e => handleSearch(e.target.value)} 
                                 onKeyDown={e => {
                                     if (e.key === "Escape") {
-                                        closeSearch(inputRef);
+                                        closeSearch();
                                     }
                                 }} 
                                 className={styles.input} 

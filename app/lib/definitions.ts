@@ -48,6 +48,7 @@ export type BestsellersSchema = {
     id: number,
     name: string,
     note: string,
+    description: string,
     volumes: VolumeSchema[],
     flavor: FlavorSchema,
     articule: number,

@@ -185,9 +185,9 @@ export const StoreBlockSkeleton = () => {
                     Подарите себе или своим близким возможность насладиться уходом за телом на высшем уровне. 
                 </p>
                 <div className={storeBlokStyles.aWrapper}>
-                    <a href="https://www.wildberries.ru/brands/310747490-manicel" className={storeBlokStyles.a}>
+                    <div className={storeBlokStyles.a}>
                         в магазин
-                    </a>
+                    </div>
                 </div>
             </div>
             
@@ -206,7 +206,7 @@ export const CatalogHeaderSkeleton = () => {
                     className={catalogStyles.saltBodyScrub} 
                     src={background} 
                     alt="pretty salt body scrab text on background"
-                    quality={50}
+                    quality={0}
                     sizes="100vw"
                     priority
                 />
@@ -254,7 +254,7 @@ export const CatalogBodySkeleton = () => {
             <h1 className={catalogStyles.h1Body} style={{opacity:0}}>каталог</h1>
             <ul className={catalogStyles.catalogList}>
                 {[...Array(16).keys()].map(
-                    (product: any, index: number) => (
+                    (index) => (
                     <div key={index} className={`${catalogStyles.cardItem}`}>
                         <div className={`${catalogStyles.gradient}`}></div>
                             <div className={catalogStyles.cardLink}>
@@ -264,12 +264,12 @@ export const CatalogBodySkeleton = () => {
                                     src={mango} 
                                     alt={"scrub image"}
                                     sizes="100vw"
-                                    width={[3, 6, 9].includes(product.id) ? 180 : 210}
+                                    width={210}
                                 />
                             </div>
                             <div className={catalogStyles.cardContent}>
-                                <h3 className={catalogStyles.h3Body}>{product.name_ru}</h3>
-                                <span className={catalogStyles.descScrab}>{product.type}</span>
+                                <h3 className={catalogStyles.h3Body}>{}</h3>
+                                <span className={catalogStyles.descScrab}>{}</span>
                                 <span style={{opacity:0}}>
                                     <ReviewsStarsSVG />
                                 </span>

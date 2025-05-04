@@ -8,7 +8,7 @@ import { LoadningSkeleton } from "../ui/skeletons"
 
 export default async function Page (props: {searchParams?: Promise<{query?: string}>}) {
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
 
     const searchParams = await props.searchParams;
     const query = searchParams?.query || '';
@@ -17,7 +17,7 @@ export default async function Page (props: {searchParams?: Promise<{query?: stri
 
     return (
         <div className={styles.catalogWrapper}>
-            <Suspense key={query} fallback={query !== '' ? <LoadningSkeleton /> : <></> }>
+            <Suspense key={query}>
                 <SearchList query={query} />
             </Suspense>
             <HeaderCatalog />

@@ -15,7 +15,7 @@ export const HeaderCatalog = () => {
                     className={styles.saltBodyScrub}
                     src={background} 
                     alt="pretty salt body scrab text on background"
-                    quality={50}
+                    quality={0}
                     sizes="100vw"
                     priority
                 />

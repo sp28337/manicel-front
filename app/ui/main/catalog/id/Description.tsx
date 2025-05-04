@@ -2,9 +2,10 @@
 
 import styles from "../../../../styles/body-id.module.css";
 import { useState } from "react";
+import { ProductSchema } from "../../../../lib/definitions"
 
 
-export const Description = (props: { product: any }) => {
+export const Description = (props: { product: ProductSchema }) => {
     
     const [openCloseButton, setOpenCloseButton] = useState("больше");
 

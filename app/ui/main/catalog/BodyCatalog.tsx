@@ -67,7 +67,7 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
             <p className={styles.description}>Скрабы для тела SALT BODY SCRUB от российского бренда MANICEL — это эффективное средство для очищения и ухода за кожей рук, ног, живота, ягодиц и других участков тела. Скраб мягко отшелушивает ороговевшие клетки, стимулирует обновление кожи и придаёт ей здоровый сияющий вид.</p>
             <h1 className={styles.h1Body}>каталог</h1>
             <ul className={styles.catalogList}>
-                {products && products.map((product: any, index: number) => (
+                {products && products.map((product, index) => (
                     <div key={index} className={`${styles.cardItem} ${backgroundStyles[product.id]}`}>
                         <div className={`${styles.gradient} ${gradientStyles[product.id]}`}></div>
                             <Link className={styles.cardLink} href={`/catalog/${product.id}`}>
@@ -90,12 +90,12 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                                         {/* <div className={styles.price}>{"357 P"}<span className={styles.oldPrice}>{"675 P"}</span></div> */}
                                     </Link>
                                     <div className={styles.infoButtonWrapper}>                            
-                                        <a 
+                                        <Link 
                                             className={styles.infoButton} 
                                             href={`https://www.wildberries.ru/catalog/${product.articule.toString()}/detail.aspx`}
                                         >
                                             КУПИТЬ
-                                        </a>
+                                        </Link>
                                     </div>  
                                 </>
                             }

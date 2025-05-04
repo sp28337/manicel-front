@@ -1,15 +1,15 @@
-
+import Link from "next/link"
 import styles from "../../../../styles/body-id.module.css";
 
 export const UrlPath = ({ name }: { name: string}) => {
 
     return (
         <div className={styles.urlPath}>
-            <a className={styles.pathLink} href="/">главная </a>
+            <Link className={styles.pathLink} href="/">главная </Link>
             &gt;
-            <a className={styles.pathLink} href="/catalog"> каталог </a>
+            <Link className={styles.pathLink} href="/catalog"> каталог </Link>
             &gt;
-            <a className={styles.activePath}> {name}</a>
+            <div className={styles.activePath}> {name}</div>
         </div>
 
     )
