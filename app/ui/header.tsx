@@ -6,6 +6,9 @@ import background from "@/public/salt-body-scrub-1140w.png"
 import { EcoFriendlySVG, WithLoveSVG, NoAnimalTestingSVG, WaveSVG } from "./vectors"
 
 export const Header = async () => {
+
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+
     return (
         <>
             <header>

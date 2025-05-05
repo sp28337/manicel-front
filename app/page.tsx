@@ -23,7 +23,9 @@ export default async function Page(props: { searchParams?: Promise<{ query?: str
     
     return (
         <>
-            <SearchList query={query} />
+            <Suspense>
+                <SearchList query={query} />
+            </Suspense>
             <Suspense fallback={<MainHeaderSkeleton />}>
                 <Header />
             </Suspense>

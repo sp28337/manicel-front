@@ -14,13 +14,13 @@ const port = {
 }
 
 
-const timeout = async (duration=1000, toggle=false) => {
+const timeout = async (duration=1000, toggle=true) => {
     if (toggle) {
         return await new Promise((resolve) => setTimeout(resolve, duration))
     }
 }
 
-const dataCache = (toggle=true) => {
+const dataCache = (toggle=false) => {
     if (toggle) return "force-cache"
     else return "no-store"
 }
@@ -75,7 +75,7 @@ export async function fetchBestsellers() {
         const bestsellers: BestsellersSchema[] = await data.json()
 
         // timeout for testing
-        await timeout()
+        // await timeout()
 
         return bestsellers
 
