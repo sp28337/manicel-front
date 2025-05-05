@@ -5,7 +5,6 @@ import { TextBlock } from "./ui/main/TextBlock"
 import { Bestsellers } from "./ui/main/Bestsellers"
 import { StoreBlock } from "./ui/main/StoreBlock"
 import { fetchBestsellers } from "./lib/data"
-import { Suspense } from "react"
 import { SearchList } from "./ui/SearchList"
 
 export default async function Page(props: { searchParams?: Promise<{ query?: string }>}) {
@@ -19,9 +18,7 @@ export default async function Page(props: { searchParams?: Promise<{ query?: str
     
     return (
         <>
-            <Suspense key={query} fallback={<div>Loading...</div>}>
-                <SearchList query={query} />
-            </Suspense>
+            <SearchList query={query} />
             <Header />
             <main className={styles.container}>
                 <TextBlock />
