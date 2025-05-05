@@ -10,9 +10,7 @@ import {
     WaveSVG 
 } from "./vectors"
 
-export const Header = async () => {
-
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+export const Header = () => {
 
     return (
         <>
@@ -66,5 +64,5 @@ export const Header = async () => {
                 </header >
             <WaveSVG />
         </>
-    );
-};
+    )
+}

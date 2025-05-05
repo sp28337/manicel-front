@@ -2,9 +2,7 @@ import styles from "../styles/text-block.module.css"
 import Link from "next/link"
 import { TextBlockLogoSVG } from "./vectors"
 
-export const TextBlock = async () => {
-
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+export const TextBlock = () => {
 
     return (
         <div className={styles.textBlockWrapper}>

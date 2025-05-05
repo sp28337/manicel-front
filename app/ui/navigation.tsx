@@ -3,21 +3,24 @@
 import Link from "next/link"
 import styles from "../styles/nav.module.css"
 import commonStyles from "../styles/common.module.css"
-
 import { Search } from "./search"
 import { useState, Suspense } from "react"
 import { ManicelLogoSVG, SearchSVG } from "./vectors"
 import { PopupMenu } from "./popup"
 
 export const Navigation = () => {
-
+    
     const [isOpen, setIsOpen] = useState(false)
   
     return (
         <nav className={`${styles.navWrapper}`}>
             <div className={`${styles.backgroundNav}`}></div>
             <div className={`${styles.nav} ${commonStyles.container}`}>
-                <Link className={styles.logo} href="/">
+                <Link 
+                    className={styles.logo}
+                    href="/"
+                    onClick={() => {window.location.href = "/"}}
+                >
                     <ManicelLogoSVG />
                 </Link>
                 { !isOpen &&

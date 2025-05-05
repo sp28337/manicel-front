@@ -1,18 +1,11 @@
 import "./styles/globals.css"
 import styles from "./styles/common.module.css"
-import { Suspense } from "react"
 import { Header } from "./ui/header"
 import { TextBlock } from "./ui/text-block"
 import { Bestsellers } from "./ui/bestsellers"
 import { StoreBlock } from "./ui/store-block"
 import { fetchBestsellers } from "./lib/data"
 import { SearchList } from "./ui/search-list"
-import { 
-    HomepageHeaderSkeleton,
-    TextBlockSkeleton,
-    BestsellersSkeleton,
-    StoreBlockSkeleton,
-} from "./ui/skeletons"
 
 export default async function Page(props: { searchParams?: Promise<{ query?: string }>}) {
     
@@ -23,24 +16,14 @@ export default async function Page(props: { searchParams?: Promise<{ query?: str
     
     return (
         <>
-            <Suspense>
-                <SearchList query={query} />
-            </Suspense>
-            <Suspense fallback={<HomepageHeaderSkeleton />}>
-                <Header />
-            </Suspense>
+            <SearchList query={query} />
+            <Header />
             <main className={styles.container}>
-                <Suspense fallback={<TextBlockSkeleton />}>
-                    <TextBlock />
-                </Suspense>
+                <TextBlock />
                 <hr />
-                <Suspense fallback={<BestsellersSkeleton />}>
-                    <Bestsellers products={bestsellers}/>
-                </Suspense>
+                <Bestsellers products={bestsellers}/>
                 <hr />
-                <Suspense fallback={<StoreBlockSkeleton />}>
-                    <StoreBlock />
-                </Suspense>
+                <StoreBlock />
             </main>
         </>
     )

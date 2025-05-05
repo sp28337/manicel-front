@@ -3,9 +3,7 @@ import background from "@/public/salt-body-scrub-500w.png"
 import { WBLogo } from "./logotips"
 import Image from "next/image"
 
-export const StoreBlock = async () => {
-
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+export const StoreBlock = () => {
 
     return (
         <div className={styles.wrapper}>

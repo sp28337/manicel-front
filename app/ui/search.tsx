@@ -1,44 +1,44 @@
-"use client";
+"use client"
 
-import styles from "../styles/search.module.css";
-import { useDebouncedCallback } from "use-debounce";
-import { useSearchParams, usePathname, useRouter } from "next/navigation";
-import { useEffect, useRef, useCallback } from "react";
+import styles from "../styles/search.module.css"
+import { useDebouncedCallback } from "use-debounce"
+import { useSearchParams, usePathname, useRouter } from "next/navigation"
+import { useEffect, useRef, useCallback } from "react"
 
-export function Search({ placeholder, isOpen, onClose }: { placeholder: string, isOpen: boolean, onClose: () => void }) {
-    
-    const searchParams = useSearchParams();
-    const pathname = usePathname();
-    const { replace } = useRouter();
-    const inputRef = useRef<HTMLInputElement>(null);
+export function Search(
+    { placeholder, isOpen, onClose }: { placeholder: string, isOpen: boolean, onClose: () => void }
+) {
+    const searchParams = useSearchParams()
+    const pathname = usePathname()
+    const { replace } = useRouter()
+    const inputRef = useRef<HTMLInputElement>(null)
 
     const closeSearch = useCallback(() => {
-        onClose();
-        replace(`${pathname}`);
+        onClose()
+        replace(`${pathname}`)
     }, [onClose, replace, pathname])
 
     const handleSearch = useDebouncedCallback((term) =>  {
         
-        console.log(`Searching... ${term}`);
-        const params = new URLSearchParams(searchParams);
-        // params.set("page", "1");
+        console.log(`Searching... ${term}`)
+        const params = new URLSearchParams(searchParams)
         
         if (term) {
-            params.set("query", term);
+            params.set("query", term)
         } else {
-            params.delete("query");
+            params.delete("query")
         }
         
-        replace(`${pathname}?${params.toString()}`);
-    }, 300);
+        replace(`${pathname}?${params.toString()}`)
+    }, 300)
 
     // Фокус на input при открытии
 
     useEffect(() => {
         if (isOpen) {
-            inputRef.current?.focus();
+            inputRef.current?.focus()
         }
-    }, [isOpen]);
+    }, [isOpen])
 
     // Обработчик Escape на весь документ
 
@@ -50,20 +50,17 @@ export function Search({ placeholder, isOpen, onClose }: { placeholder: string, 
                 }
             }
         
-            document.addEventListener("keydown", handleKeyDown);
+            document.addEventListener("keydown", handleKeyDown)
             return () => {
-                document.removeEventListener("keydown", handleKeyDown);
-              
-            };
-
-        };
+                document.removeEventListener("keydown", handleKeyDown)
+            }
+        }
     
-    }, [isOpen, closeSearch]);
+    }, [isOpen, closeSearch])
 
 
     return (
         <>
-
             { isOpen &&
                 <div className={styles.searchWrapper}>
                     <>
@@ -89,11 +86,10 @@ export function Search({ placeholder, isOpen, onClose }: { placeholder: string, 
                                 className={styles.input} 
                                 placeholder={placeholder}
                             />
-                            
                         </div>
                     </>
                 </div>
             }
         </>
-    );
+    )
 }

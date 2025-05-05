@@ -5,9 +5,9 @@ import { BestsellersSchema } from "../lib/definitions"
 import { getBestsellersImages } from "../lib/images"
 import styles from "../styles/bestsellers.module.css"
 
-export const Bestsellers = async ({ products }: { products: BestsellersSchema[] }) => {
+export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => {
 
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    // await new Promise((resolve) => setTimeout(resolve, 1500))
 
     const backgroundStyles: { [key: number]: string } = {
         1: styles.productItem1,

@@ -14,7 +14,7 @@ const port = {
 }
 
 
-const timeout = async (duration=1000, toggle=true) => {
+const timeout = async (duration=1000, toggle=false) => {
     if (toggle) {
         return await new Promise((resolve) => setTimeout(resolve, duration))
     }

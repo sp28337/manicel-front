@@ -3,7 +3,7 @@ import commonStyles from "../../styles/common.module.css"
 import styles from "../../styles/catalog.module.css"
 import allFront from "@/public/all-front-1200w.png"
 import { WaveSVG } from "../vectors"
-import background from "@/public/salt-body-scrub-1140w.png"
+import background from "@/public/salt-body-scrub-500w.png"
 
 export const HeaderCatalog = () => {
 

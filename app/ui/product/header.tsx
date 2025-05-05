@@ -1,4 +1,4 @@
-import React, { Suspense } from "react"
+import React from "react"
 import Image from "next/image"
 import commonStyles from "../../styles/common.module.css"
 import styles from "../../styles/header-id.module.css"
