@@ -14,11 +14,12 @@ export async function generateStaticParams(){
     ]
   }
 
-export default async function Page(
-    props: {
-        params: Promise<{ id: string }>, 
-        searchParams?: Promise<{ query?: string }>
-    })
+type PageProps = {
+    params: Promise<{ id: string }>,
+    searchParams: Promise<{ query: string }>
+}
+
+export default async function Page(props: PageProps)
 {
 
     const params = await props.params
