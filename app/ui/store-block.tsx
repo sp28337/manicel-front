@@ -1,16 +1,19 @@
 import styles from "../styles/store-block.module.css"
-import background from "@/public/salt-body-scrub-1140w.png"
+import background from "@/public/salt-body-scrub-500w.png"
 import { WBLogo } from "./logotips"
 import Image from "next/image"
 
-export const StoreBlock = () => {
+export const StoreBlock = async () => {
+
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+
     return (
         <div className={styles.wrapper}>
             <Image
                 className={styles.image}
                 src={background}
                 alt="pretty salt body scrab text on background"
-                quality={50}
+                quality={0}
                 sizes="100vw"
             />
             <div className={styles.content}>

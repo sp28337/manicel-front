@@ -2,7 +2,10 @@ import styles from "../styles/text-block.module.css"
 import Link from "next/link"
 import { TextBlockLogoSVG } from "./vectors"
 
-export const TextBlock = () => {
+export const TextBlock = async () => {
+
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+
     return (
         <div className={styles.textBlockWrapper}>
             <div className={styles.textHeaderWrapper}>
@@ -27,8 +30,8 @@ export const TextBlock = () => {
                 </div>
             </div>
             <div className={styles.aboutUsButtonWrapper}>
-                <Link className={styles.aboutUsButton} href="/about">
-                    узнать больше
+                <Link className={styles.aboutUsButton} href="/catalog">
+                    каталог
                 </Link>
             </div>
         </div>

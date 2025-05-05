@@ -1,0 +1,35 @@
+.h1 {
+    height: 35.2031px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.bestsellersFlex {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.productItem {
+    height: 210px;
+    width: 100%;
+    border-radius: 20px;
+    background: linear-gradient(180deg, transparent 0%, rgba(236, 236, 236, 0.5) 100%);
+}
+
+@media (max-width: 768px) {
+    .h1 {
+        height: 30.7969px;
+        margin-bottom: 20px;
+    }
+
+    .productItem {
+        height: 170px;
+    }
+}
+
+@media (max-width: 522px) {
+    .productItem {
+        height: 130px;
+    }
+}

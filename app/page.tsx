@@ -8,7 +8,7 @@ import { StoreBlock } from "./ui/store-block"
 import { fetchBestsellers } from "./lib/data"
 import { SearchList } from "./ui/search-list"
 import { 
-    MainHeaderSkeleton,
+    HomepageHeaderSkeleton,
     TextBlockSkeleton,
     BestsellersSkeleton,
     StoreBlockSkeleton,
@@ -26,7 +26,7 @@ export default async function Page(props: { searchParams?: Promise<{ query?: str
             <Suspense>
                 <SearchList query={query} />
             </Suspense>
-            <Suspense fallback={<MainHeaderSkeleton />}>
+            <Suspense fallback={<HomepageHeaderSkeleton />}>
                 <Header />
             </Suspense>
             <main className={styles.container}>

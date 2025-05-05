@@ -2,8 +2,13 @@ import commonStyles from "../styles/common.module.css"
 import headerStyles from "../styles/header.module.css"
 import Image from "next/image"
 import allPng from "@/public/all-800w.png"
-import background from "@/public/salt-body-scrub-1140w.png"
-import { EcoFriendlySVG, WithLoveSVG, NoAnimalTestingSVG, WaveSVG } from "./vectors"
+import background from "@/public/salt-body-scrub-500w.png"
+import { 
+    EcoFriendlySVG, 
+    WithLoveSVG, 
+    NoAnimalTestingSVG, 
+    WaveSVG 
+} from "./vectors"
 
 export const Header = async () => {
 
@@ -11,8 +16,7 @@ export const Header = async () => {
 
     return (
         <>
-            <header>
-                <div className={headerStyles.headerWrapper}>
+                <header className={headerStyles.headerWrapper}>
                     <Image
                         className={headerStyles.image}
                         src={background}
@@ -59,8 +63,7 @@ export const Header = async () => {
                             />
                         </div>
                     </div>
-                </div >
-            </header>
+                </header >
             <WaveSVG />
         </>
     );
