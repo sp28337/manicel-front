@@ -1,10 +1,10 @@
-import { WBLogo } from "../../logotips"
-import styles from "../../../styles/catalog.module.css"
-import commonStyles from "../../../styles/common.module.css"
+import { WBLogo } from "../logotips"
+import styles from "../../styles/catalog.module.css"
+import commonStyles from "../../styles/common.module.css"
 import Link from "next/link"
 import Image from "next/image"
-import { CatalogProductsSchema } from "../../../lib/definitions"
-import { EcoFriendlySVG, WithLoveSVG, NoAnimalTestingSVG, ReviewsStarsSVG } from "../../vectors"
+import { CatalogProductsSchema } from "../../lib/definitions"
+import { EcoFriendlySVG, WithLoveSVG, NoAnimalTestingSVG, ReviewsStarsSVG } from "../vectors"
 import { getCatalogImages } from "@/app/lib/images"
 
 export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] }) => {

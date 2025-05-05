@@ -1,15 +1,20 @@
 import "./styles/globals.css"
 import styles from "./styles/common.module.css"
-import { Header } from "./ui/header/Header"
-import { TextBlock } from "./ui/main/TextBlock"
-import { Bestsellers } from "./ui/main/Bestsellers"
-import { StoreBlock } from "./ui/main/StoreBlock"
+import { Suspense } from "react"
+import { Header } from "./ui/header"
+import { TextBlock } from "./ui/text-block"
+import { Bestsellers } from "./ui/bestsellers"
+import { StoreBlock } from "./ui/store-block"
 import { fetchBestsellers } from "./lib/data"
-import { SearchList } from "./ui/SearchList"
+import { SearchList } from "./ui/search-list"
+import { 
+    MainHeaderSkeleton,
+    TextBlockSkeleton,
+    BestsellersSkeleton,
+    StoreBlockSkeleton,
+} from "./ui/skeletons"
 
 export default async function Page(props: { searchParams?: Promise<{ query?: string }>}) {
-
-    // await new Promise((resolve) => setTimeout(resolve, 3000));
     
     const searchParams = await props.searchParams
     const query = searchParams?.query || ""
@@ -19,13 +24,21 @@ export default async function Page(props: { searchParams?: Promise<{ query?: str
     return (
         <>
             <SearchList query={query} />
-            <Header />
+            <Suspense fallback={<MainHeaderSkeleton />}>
+                <Header />
+            </Suspense>
             <main className={styles.container}>
-                <TextBlock />
+                <Suspense fallback={<TextBlockSkeleton />}>
+                    <TextBlock />
+                </Suspense>
                 <hr />
-                <Bestsellers products={bestsellers}/>
+                <Suspense fallback={<BestsellersSkeleton />}>
+                    <Bestsellers products={bestsellers}/>
+                </Suspense>
                 <hr />
-                <StoreBlock />
+                <Suspense fallback={<StoreBlockSkeleton />}>
+                    <StoreBlock />
+                </Suspense>
             </main>
         </>
     )

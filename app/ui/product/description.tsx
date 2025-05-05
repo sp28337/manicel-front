@@ -1,8 +1,9 @@
-"use client";
+"use client"
 
-import styles from "../../../../styles/body-id.module.css";
-import { useState } from "react";
-import { ProductSchema } from "../../../../lib/definitions"
+import styles from "../../styles/body-id.module.css"
+import { useState } from "react"
+import { ProductSchema } from "../../lib/definitions"
+
 
 
 export const Description = (props: { product: ProductSchema }) => {

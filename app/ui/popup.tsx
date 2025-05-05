@@ -1,10 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import styles from "../../styles/popup-menu.module.css"
+import styles from "../styles/popup-menu.module.css"
 import { useState } from "react"
 import { createPortal } from "react-dom"
-import { BurgerSVG } from "../vectors"
+import { BurgerSVG } from "./vectors"
 
 export const PopupMenu = (
     { isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (value: boolean) => void }

@@ -1,9 +1,9 @@
 "use client"
 
 import Image from "next/image"
-import styles from "../../../../styles/body-id.module.css"
+import styles from "../../styles/body-id.module.css"
 import { useState } from "react"
-import { getProductImages } from "../../../../lib/images"
+import { getProductImages } from "../../lib/images"
 
 
 const images = getProductImages()

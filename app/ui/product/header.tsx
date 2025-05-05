@@ -1,8 +1,8 @@
 import React from "react"
 import Image from "next/image"
-import commonStyles from "../../../../styles/common.module.css"
-import styles from "../../../../styles/header-id.module.css"
-import { ProductSchema } from "../../../../lib/definitions"
+import commonStyles from "../../styles/common.module.css"
+import styles from "../../styles/header-id.module.css"
+import { ProductSchema } from "../../lib/definitions"
 import { 
     Lavender,
     Fig,
@@ -21,9 +21,9 @@ import {
     PeachCoconut,
     Trio,
  } from "./elements"
-import { getMainCardImages } from "../../../../lib/images"
+import { getMainCardImages } from "../../lib/images"
 import background from "@/public/salt-body-scrub-1140w.png"
-import { LeaveSVG, WaveSVG } from "../../../vectors"
+import { LeaveSVG, WaveSVG } from "../vectors"
 
 export const Header = (props: { product: ProductSchema }) => {
 

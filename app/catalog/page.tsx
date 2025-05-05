@@ -1,8 +1,8 @@
-import { HeaderCatalog } from "../ui/main/catalog/HeaderCatalog";
-import { BodyCatalog } from "../ui/main/catalog/BodyCatalog";
+import { HeaderCatalog } from "../ui/catalog/header";
+import { BodyCatalog } from "../ui/catalog/body";
 import styles from "../styles/catalog.module.css";
 import { fetchCatalogProducts } from "../lib/data";
-import { SearchList } from "../ui/SearchList";
+import { SearchList } from "../ui/search-list";
 
 export default async function Page (props: {searchParams?: Promise<{query?: string}>}) {
 

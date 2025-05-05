@@ -1,11 +1,14 @@
-import commonStyles from "../../styles/common.module.css"
-import headerStyles from "../../styles/header.module.css"
+import commonStyles from "../styles/common.module.css"
+import headerStyles from "../styles/header.module.css"
 import Image from "next/image"
 import allPng from "@/public/all-800w.png"
 import background from "@/public/salt-body-scrub-1140w.png"
-import { EcoFriendlySVG, WithLoveSVG, NoAnimalTestingSVG, WaveSVG } from "../vectors"
+import { EcoFriendlySVG, WithLoveSVG, NoAnimalTestingSVG, WaveSVG } from "./vectors"
 
-export const Header = () => {
+export const Header = async () => {
+
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
     return (
         <>
             <header>

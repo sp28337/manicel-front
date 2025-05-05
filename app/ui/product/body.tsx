@@ -1,12 +1,12 @@
 import Image from "next/image"
-import { UrlPath } from "./UrlPath"
-import { Description } from "./Description"
-import commonStyles from "../../../../styles/common.module.css"
-import styles from "../../../../styles/body-id.module.css"
-import { ProductImages } from "./ProductImages"
+import Link from "next/link"
+import styles from "../../styles/body-id.module.css"
+import commonStyles from "../../styles/common.module.css"
+import { Description } from "./description"
+import { ProductImages } from "./product-Images"
 import howToUseImg from "@/public/all-800w.png"
-import { ProductSchema } from "../../../../lib/definitions"
-import { OneSVG, TwoSVG, MarkSVG } from "../../../vectors"
+import { ProductSchema } from "../../lib/definitions"
+import { OneSVG, TwoSVG, MarkSVG } from "../vectors"
 
 export const Body = (props: { product: ProductSchema }) => {
 
@@ -15,7 +15,13 @@ export const Body = (props: { product: ProductSchema }) => {
     return (
         <div className={`${styles.bodyWrapper} ${commonStyles.container}`}>
             
-            <UrlPath name={props.product.name} />
+            <div className={styles.urlPath}>
+                <Link className={styles.pathLink} href="/">главная </Link>
+                &gt;
+                <Link className={styles.pathLink} href="/catalog"> каталог </Link>
+                &gt;
+                <div className={styles.activePath}> {product.name}</div>
+            </div>
             <Description product={props.product} />
 
             <hr className={styles.hr}/>

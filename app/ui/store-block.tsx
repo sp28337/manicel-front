@@ -1,8 +1,7 @@
-import styles from "../../styles/store-block.module.css";
+import styles from "../styles/store-block.module.css"
 import background from "@/public/salt-body-scrub-1140w.png"
-import { WBLogo } from "../logotips"
-
-import Image from "next/image";
+import { WBLogo } from "./logotips"
+import Image from "next/image"
 
 export const StoreBlock = () => {
     return (

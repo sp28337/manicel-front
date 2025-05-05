@@ -4,10 +4,10 @@ import Link from "next/link"
 import styles from "../styles/nav.module.css"
 import commonStyles from "../styles/common.module.css"
 
-import { Search } from "./Search"
+import { Search } from "./search"
 import { useState, Suspense } from "react"
 import { ManicelLogoSVG, SearchSVG } from "./vectors"
-import { PopupMenu } from "./header/PopupMenu"
+import { PopupMenu } from "./popup"
 
 export const Navigation = () => {
 

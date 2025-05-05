@@ -1,6 +1,6 @@
-import styles from "../../styles/text-block.module.css";
-import Link from "next/link";
-import { TextBlockLogoSVG } from "../vectors"
+import styles from "../styles/text-block.module.css"
+import Link from "next/link"
+import { TextBlockLogoSVG } from "./vectors"
 
 export const TextBlock = () => {
     return (

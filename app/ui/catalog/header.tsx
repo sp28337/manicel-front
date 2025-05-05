@@ -1,9 +1,8 @@
-import Image from "next/image";
-import commonStyles from "../../../styles/common.module.css";
-import styles from "../../../styles/catalog.module.css";
-import { Wave } from "../../header/Wave";
-import allFront from "@/public/all-front-1200w.png";
-
+import Image from "next/image"
+import commonStyles from "../../styles/common.module.css"
+import styles from "../../styles/catalog.module.css"
+import allFront from "@/public/all-front-1200w.png"
+import { WaveSVG } from "../vectors"
 import background from "@/public/salt-body-scrub-1140w.png"
 
 export const HeaderCatalog = () => {
@@ -46,7 +45,7 @@ export const HeaderCatalog = () => {
                     </div>
                 </div>
             </header>
-            <Wave />
+            <WaveSVG />
         </>
     );
 };

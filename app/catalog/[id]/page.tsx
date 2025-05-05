@@ -1,7 +1,7 @@
-import { fetchProduct } from "../../lib/data";
-import { Header } from "../../ui/main/catalog/id/Header";
-import { Body } from "../../ui/main/catalog/id/Body";
-import { SearchList } from "../../ui/SearchList";
+import { fetchProduct } from "../../lib/data"
+import { Header } from "../../ui/product/header"
+import { Body } from "../../ui/product/body"
+import { SearchList } from "../../ui/search-list"
 
 export async function generateStaticParams(){
     return [

@@ -1,7 +1,7 @@
 import "./styles/globals.css"
-import { TopBar } from "./ui/TopBar"
-import { Navigation } from "./ui/Navigation"
-import { Footer } from "./ui/Footer"
+import { TopBar } from "./ui/top-bar"
+import { Navigation } from "./ui/navigation"
+import { Footer } from "./ui/footer"
 import { montserrat } from "./ui/fonts"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
