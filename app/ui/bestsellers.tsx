@@ -2,7 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ReviewsStarsSVG } from "./vectors"
 import { BestsellersSchema } from "../lib/definitions"
-import { getBestsellersImages } from "../lib/images"
+import { bestsellersImages } from "../lib/images"
 import styles from "../styles/bestsellers.module.css"
 
 export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => {
@@ -47,7 +47,7 @@ export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => 
         16: styles.gradient16,
     }
 
-    const images = getBestsellersImages()
+    const images = bestsellersImages
 
     return (
         <div className={styles.bestsellersWrapper}>

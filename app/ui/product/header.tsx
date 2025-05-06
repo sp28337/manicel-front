@@ -21,7 +21,7 @@ import {
     PeachCoconut,
     Trio,
  } from "./elements"
-import { getMainCardImages } from "../../lib/images"
+import { mainCardImages } from "../../lib/images"
 import background from "@/public/salt-body-scrub-500w.png"
 import { LeaveSVG, WaveSVG } from "../vectors"
 
@@ -48,7 +48,7 @@ export const Header = (props: { product: ProductSchema }) => {
         16: <Trio />,
     }
 
-    const mainImages = getMainCardImages()
+    const mainImages = mainCardImages
 
     const handleH1SetsName = (name: string): React.ReactElement => {
         const splitNames = name.split("+")

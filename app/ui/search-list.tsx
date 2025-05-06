@@ -3,9 +3,9 @@ import styles from "../styles/search-list.module.css"
 import { fetchFilteredProducts } from "../lib/data"
 import { CloseSearchListButton } from "./buttons"
 import { ReviewsStarsSVG, ChartBagSVG } from "./vectors"
-import { getSearchImages } from "../lib/images"
+import { searchImages } from "../lib/images"
 
-const images = getSearchImages()
+const images = searchImages
 
 
 export async function SearchList({ query }: { query: string }) {

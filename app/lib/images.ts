@@ -83,10 +83,19 @@ import searchCoconutLavender900w from "@/public/lavender-coconut-900w.png"
 import searchPeachLavender900w from "@/public/lavender-peach-900w.png"
 import searchCoconutPeach900w from "@/public/peach-coconut-900w.png"
 
+import raspberryFront from "@/public/raspberry/ruspberry-front-1200w.png"
+import mangoFront from "@/public/mango/mango-front-1200w.png"
+import mintFront from "@/public/mint/mint-front-1200w.png"
+import caramelFront from "@/public/caramel/caramel-front-1200w.png"
+import coconutFront from "@/public/coconut/coconut-front-1200w.png"
+import bubblegumFront from "@/public/bubblegum/bubblegum-front-1200w.png"
+
 import trio1000w from "@/public/trio-1000w.png"
+import unknown from "@/public/unknown-500w.png"
+import howToUseImg from "@/public/all-800w.png"
 
 
-const catalogImages: { [key: number]: StaticImageData } = {
+export const catalogImages: { [key: number]: StaticImageData } = {
     1: mango500w,
     2: bubblegum500w,
     3: inzhir320w,
@@ -105,7 +114,7 @@ const catalogImages: { [key: number]: StaticImageData } = {
     16: trio1000w,
 }
 
-const bestsellersImages: {[key: number]: StaticImageData} = {
+export const bestsellersImages: {[key: number]: StaticImageData} = {
     1: mango500w,
     2: bubblegum500w,
     3: inzhir500w,
@@ -124,7 +133,7 @@ const bestsellersImages: {[key: number]: StaticImageData} = {
     16: trio1000w
 }
 
-const searchImages: {[key: number]: StaticImageData} = {
+export const searchImages: {[key: number]: StaticImageData} = {
     1: mango90w,
     2: bubblegum90w,
     3: inzhirPng120w,
@@ -143,14 +152,14 @@ const searchImages: {[key: number]: StaticImageData} = {
     16: trio120w
 }
 
-const productImages: { [key: number]: StaticImageData[] } = {
+export const productImages: { [key: number]: StaticImageData[] } = {
     1: [mango0, mango1, mango2,],
-    2: [mango0, mango1, mango2,],
+    2: [unknown, unknown, unknown,],
     3: [inzhir0, inzhir1, inzhir2],
-    4: [mango0, mango1, mango2,],
+    4: [unknown, unknown, unknown,],
     5: [coconut0, coconut1, coconut2,],
     6: [citrus0, citrus1, citrus2],
-    7: [mango0, mango1, mango2,],
+    7: [unknown, unknown, unknown,],
     8: [peach0, peach1, peach2,],
     9: [apple0, apple1, apple2],
     10: [lavender0, lavender1, lavender2,],
@@ -162,7 +171,7 @@ const productImages: { [key: number]: StaticImageData[] } = {
     16: [trio0, trio1, trio2,],  
 }
 
-const mainCardImages: {[key: number]: StaticImageData} = {
+export const mainCardImages: {[key: number]: StaticImageData} = {
     1: mango800w,
     2: bubblegum800w,
     3: inzhir790w,
@@ -181,8 +190,21 @@ const mainCardImages: {[key: number]: StaticImageData} = {
     16: trio1000w
 }
 
-export const getSearchImages = () => searchImages
-export const getBestsellersImages = () => bestsellersImages
-export const getCatalogImages = () => catalogImages
-export const getProductImages = () => productImages
-export const getMainCardImages = () => mainCardImages
+export const howToUseImages: {[key: number]: StaticImageData} = {
+    1: mangoFront,
+    2: bubblegumFront,
+    3: unknown,
+    4: caramelFront,
+    5: coconutFront,
+    6: unknown,
+    7: raspberryFront,
+    8: unknown,
+    9: unknown,
+    10: unknown,
+    11: mintFront,
+    12: unknown,
+    13: howToUseImg,
+    14: howToUseImg,
+    15: howToUseImg,
+    16: howToUseImg
+}

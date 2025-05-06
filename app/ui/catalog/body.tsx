@@ -5,11 +5,11 @@ import Link from "next/link"
 import Image from "next/image"
 import { CatalogProductsSchema } from "../../lib/definitions"
 import { EcoFriendlySVG, WithLoveSVG, NoAnimalTestingSVG, ReviewsStarsSVG } from "../vectors"
-import { getCatalogImages } from "@/app/lib/images"
+import { catalogImages } from "@/app/lib/images"
 
 export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] }) => {
 
-    const images = getCatalogImages()
+    const images = catalogImages
     
     const backgroundStyles: { [key: number]: string } = {
         1: styles.cardItem1,

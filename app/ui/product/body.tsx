@@ -7,10 +7,13 @@ import { ProductImages } from "./product-images"
 import howToUseImg from "@/public/all-800w.png"
 import { ProductSchema } from "../../lib/definitions"
 import { OneSVG, TwoSVG, MarkSVG } from "../vectors"
+import { howToUseImages } from "@/app/lib/images"
 
 export const Body = (props: { product: ProductSchema }) => {
 
     const { product } = props
+
+    const images = howToUseImages
 
     return (
         <div className={`${styles.bodyWrapper} ${commonStyles.container}`}>
@@ -145,7 +148,7 @@ export const Body = (props: { product: ProductSchema }) => {
                 <div className={styles.howToUseImgWrapper}>
                     <Image 
                         className={styles.howToUseImage}
-                        src={howToUseImg} 
+                        src={images[product.id]} 
                         alt="how to use scrub"
                         width={450}
                         sizes="100vw"

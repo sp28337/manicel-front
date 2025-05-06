@@ -3,10 +3,10 @@
 import Image from "next/image"
 import styles from "../../styles/product-body.module.css"
 import { useState } from "react"
-import { getProductImages } from "../../lib/images"
+import { productImages } from "../../lib/images"
 
 
-const images = getProductImages()
+const images = productImages
 
 export const ProductImages = (props: { id: number }) => {
 

@@ -13,6 +13,7 @@ import allFront from "@/public/all-front-1200w.png"
 import { WaveSVG, ReviewsStarsSVG} from "./vectors"
 import mango from "@/public/mango/mango-1200w.png"
 import background from "@/public/salt-body-scrub-500w.png"
+import witeSquare from "@/public/white-square-100w.jpg"
 
 export const SearchListSkeleton = () => {
     return (
@@ -223,6 +224,22 @@ export const ProductHeaderSkeleton= () => {
                     sizes="100vw"
                     priority
                 />
+                <div className={productHeaderStyles.bubbleGumWrapper}></div>
+                <div className={`${productHeaderStyles.content} ${commonStyles.container}`}>
+                    <div className={productHeaderStyles.headerWrapper}>
+                        <div className={productHeaderStyles.imgDefaultWrapper}>
+                            <Image 
+                                className={productHeaderStyles.mainImg}
+                                src={witeSquare} 
+                                alt=""
+                                quality={0}
+                                sizes="100vw"
+                                priority
+                            />
+                        </div>
+                        <div className={productHeaderStyles.text}></div>
+                    </div>
+                </div>
             </div>
             <WaveSVG />
         </>
@@ -231,6 +248,14 @@ export const ProductHeaderSkeleton= () => {
 
 export const ProductBodySkeleton= () => {
     return (
-        <div className={productBodyStyles.wrapper}></div>
+        <div className={`${productBodyStyles.bodyWrapper} ${commonStyles.container}`}>
+            <div className={productBodyStyles.description}>
+            </div>
+            <hr />
+            <div className={productBodyStyles.productCard}>
+            </div>
+            <hr />
+            <div className={productBodyStyles.howToUse}></div>
+        </div>
     )
 }
