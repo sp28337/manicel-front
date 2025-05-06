@@ -1,3 +1,5 @@
+import "./styles/globals.css"
+import styles from "./styles/common.module.css"
 import { 
     HomepageHeaderSkeleton,
     TextBlockSkeleton,
@@ -9,9 +11,13 @@ export default function Loading() {
     return (
         <>
          <HomepageHeaderSkeleton/>
-         <TextBlockSkeleton/>
-         <BestsellersSkeleton/>
-         <StoreBlockSkeleton/>
+         <div className={styles.container}>
+            <TextBlockSkeleton/>
+            <hr />
+            <BestsellersSkeleton/>
+            <hr />
+            <StoreBlockSkeleton/>
+         </div>
         </>
     )
 }

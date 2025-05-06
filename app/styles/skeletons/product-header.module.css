@@ -1,0 +1,31 @@
+.background {
+    height: 650px;
+    position: relative;
+    background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
+    width: 100%;
+    z-index: 1;
+}
+
+.backgroundText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    filter: blur(3px);
+    height: auto;
+    width: 100%;
+    max-width: 1440px;
+}
+
+@media (max-width: 1024px) {
+    .background {
+        height: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .background {
+        height: 550px;
+    }
+}

@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import commonStyles from "../../styles/common.module.css"
-import styles from "../../styles/header-id.module.css"
+import styles from "../../styles/product-header.module.css"
 import { ProductSchema } from "../../lib/definitions"
 import { 
     Lavender,
@@ -22,7 +22,7 @@ import {
     Trio,
  } from "./elements"
 import { getMainCardImages } from "../../lib/images"
-import background from "@/public/salt-body-scrub-1140w.png"
+import background from "@/public/salt-body-scrub-500w.png"
 import { LeaveSVG, WaveSVG } from "../vectors"
 
 export const Header = (props: { product: ProductSchema }) => {
@@ -101,7 +101,7 @@ export const Header = (props: { product: ProductSchema }) => {
                     className={styles.backgroundText}
                     src={background} 
                     alt="salt body scrub written with beautiful font on background"
-                    quality={100}
+                    quality={0}
                     sizes="100vw"
                 />
 
@@ -109,25 +109,6 @@ export const Header = (props: { product: ProductSchema }) => {
                     {checkId(product.id) === 0 &&  backgroundElements[product.id]}
                     {checkId(product.id) === 2 &&  backgroundElements[product.id]}
                 </>
-
-                {/* {product.id === 2 && 
-                    <>
-                        <Image
-                            className={styles.bubble1}
-                            alt="bubble 1"
-                            src={bubble1}
-                            quality={100}
-                            sizes="100vw"
-                        />
-                        <Image
-                            className={styles.bubble2}
-                            alt="bubble 2"
-                            src={bubble2}
-                            quality={100}
-                            sizes="100vw"
-                        />
-                    </>
-                } */}
 
                 <div className={`${styles.content} ${commonStyles.container}`}>
                     <div className={styles.wrapper}>

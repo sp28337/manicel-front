@@ -1,9 +1,11 @@
-import homepageHeaderStyles from "../styles/skeletons/homepage-header.module.css"
+import homepageHeaderStyles from "../styles/skeletons/header.module.css"
 import searchListStyles from "../styles/skeletons/search-list.module.css"
 import textBlockStyles from "../styles/skeletons/text-block.module.css"
 import storeBlokStyles from "../styles/skeletons/store-block.module.css"
 import catalogStyles from "../styles/catalog.module.css"
 import bestsellersStyles from "../styles/skeletons/bestsellers.module.css"
+import productHeaderStyles from "../styles/skeletons/product-header.module.css"
+import productBodyStyles from "../styles/skeletons/product-body.module.css"
 import commonStyles from "../styles/common.module.css"
 import headerStyles from "../styles/header.module.css"
 import Image from "next/image"
@@ -206,5 +208,29 @@ export const CatalogBodySkeleton = () => {
                 </div>
             </div>
         </div>
+    )
+}
+
+export const ProductHeaderSkeleton= () => {
+    return (
+        <>
+            <div className={productHeaderStyles.background}>
+                <Image 
+                    className={productHeaderStyles.backgroundText}
+                    src={background} 
+                    alt=""
+                    quality={0}
+                    sizes="100vw"
+                    priority
+                />
+            </div>
+            <WaveSVG />
+        </>
+    )
+}
+
+export const ProductBodySkeleton= () => {
+    return (
+        <div className={productBodyStyles.wrapper}></div>
     )
 }
