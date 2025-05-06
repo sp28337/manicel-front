@@ -14,13 +14,7 @@ const port = {
 }
 
 
-const timeout = async (duration=1000, toggle=false) => {
-    if (toggle) {
-        return await new Promise((resolve) => setTimeout(resolve, duration))
-    }
-}
-
-const dataCache = (toggle=false) => {
+const dataCache = (toggle=true) => {
     if (toggle) return "force-cache"
     else return "no-store"
 }
@@ -34,9 +28,6 @@ export async function fetchFilteredProducts(query: string) {
             { cache: dataCache()}
         )
         const filteredProducts: CatalogProductsSchema[] = await data.json()
-        
-        // timeout for testing
-        await timeout()
     
         return filteredProducts
     } catch (error) {
@@ -53,9 +44,6 @@ export async function fetchCatalogProducts() {
             { cache: dataCache()}
         )
         const products: CatalogProductsSchema[] = await data.json()
-
-        // timeout for testing
-        await timeout()
 
         return products
 
@@ -74,9 +62,6 @@ export async function fetchBestsellers() {
         )
         const bestsellers: BestsellersSchema[] = await data.json()
 
-        // timeout for testing
-        // await timeout()
-
         return bestsellers
 
     } catch (error) {
@@ -93,9 +78,6 @@ export async function fetchProduct(id: string) {
             { cache: dataCache()}
         )
         const product: ProductSchema = await data.json()
-
-        // timeout for testing
-        await timeout()
 
         return product
     } catch (error) {

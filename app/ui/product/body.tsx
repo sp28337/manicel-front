@@ -7,13 +7,10 @@ import { ProductImages } from "./product-images"
 import howToUseImg from "@/public/all-800w.png"
 import { ProductSchema } from "../../lib/definitions"
 import { OneSVG, TwoSVG, MarkSVG } from "../vectors"
-import { howToUseImages } from "@/app/lib/images"
 
 export const Body = (props: { product: ProductSchema }) => {
 
     const { product } = props
-
-    const images = howToUseImages
 
     return (
         <div className={`${styles.bodyWrapper} ${commonStyles.container}`}>
@@ -77,6 +74,12 @@ export const Body = (props: { product: ProductSchema }) => {
                         <span className={styles.infoItem}>{`${product.volumes[0].volume}`}</span>
                     </div>
 
+                    <div className={styles.infoLine}>
+                        <h3 className={styles.h3}>комплектация:</h3>
+                        <hr className={styles.hrInfoLine}/>
+                        <span className={styles.infoItem}>{`${product.complectation.name}`}</span>
+                    </div>
+
                     <div>
                         <div className={styles.infoLine}>
                             <h3 className={styles.h3}>срок годности:</h3>
@@ -87,10 +90,6 @@ export const Body = (props: { product: ProductSchema }) => {
                     </div>
 
                     <div className={styles.bottom}>
-                        {/* <div className={styles.priceWrapper}>
-                            <span className={styles.price}>358 ₽</span>
-                            <span className={styles.oldPrice}>527 ₽</span>
-                        </div> */}
                         <a 
                             href={`https://www.wildberries.ru/catalog/${props.product.articule.toString()}/detail.aspx`} 
                             className={styles.chartButton}
@@ -148,7 +147,7 @@ export const Body = (props: { product: ProductSchema }) => {
                 <div className={styles.howToUseImgWrapper}>
                     <Image 
                         className={styles.howToUseImage}
-                        src={images[product.id]} 
+                        src={howToUseImg} 
                         alt="how to use scrub"
                         width={450}
                         sizes="100vw"
