@@ -8,4 +8,6 @@ services:
     environment:
       - NODE_ENV=production
     networks:
-      - manicel
+      default:
+        external: true
+        name: manicel
