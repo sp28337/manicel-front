@@ -6,7 +6,8 @@ const protocol = {
 }
 
 const host = {
-    local: "app",
+    local: "localhost",
+    prod: "back"
 }
 
 const port = {
@@ -24,7 +25,7 @@ export async function fetchFilteredProducts(query: string) {
 
     try {
         const data = await fetch(
-            `${protocol.http}://${host.local}:${port.local}/products/search_products?query=${query}`,
+            `${protocol.http}://${host.prod}:${port.local}/products/search_products?query=${query}`,
             { cache: dataCache()}
         )
         const filteredProducts: CatalogProductsSchema[] = await data.json()
@@ -40,7 +41,7 @@ export async function fetchCatalogProducts() {
     
     try {
         const data = await fetch(
-            `${protocol.http}://${host.local}:${port.local}/products/catalog_products`,
+            `${protocol.http}://${host.prod}:${port.local}/products/catalog_products`,
             { cache: dataCache()}
         )
         const products: CatalogProductsSchema[] = await data.json()
@@ -57,7 +58,7 @@ export async function fetchBestsellers() {
     
     try {
         const data = await fetch(
-            `${protocol.http}://${host.local}:${port.local}/products/bestsellers`,
+            `${protocol.http}://${host.prod}:${port.local}/products/bestsellers`,
             { cache: dataCache()}
         )
         const bestsellers: BestsellersSchema[] = await data.json()
@@ -74,7 +75,7 @@ export async function fetchProduct(id: string) {
 
     try {
         const data = await fetch(
-            `${protocol.http}://${host.local}:${port.local}/products/${id}`,
+            `${protocol.http}://${host.prod}:${port.local}/products/${id}`,
             { cache: dataCache()}
         )
         const product: ProductSchema = await data.json()
