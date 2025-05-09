@@ -6,7 +6,7 @@ const protocol = {
 }
 
 const host = {
-    local: "manicel-back-app",
+    local: "app",
 }
 
 const port = {
