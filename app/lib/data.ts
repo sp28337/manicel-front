@@ -6,7 +6,7 @@ const protocol = {
 }
 
 const host = {
-    local: "localhost",
+    local: "0.0.0.0",
 }
 
 const port = {
