@@ -7,8 +7,9 @@ services:
       - '3000:3000'
     environment:
       - NODE_ENV=production
+    networks:
+      - manicel
       
 networks:
-  default:
-    external: true
-    name: manicel
+  manicel:
+    driver: bridge
