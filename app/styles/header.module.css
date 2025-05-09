@@ -83,6 +83,17 @@
     gap: 57px;
 }
 
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.iconDescribtion {
+    text-align: center;
+}
+
 .wave {
     width: 100%;
     height: auto;
@@ -111,6 +122,10 @@
 
     .textHeader {
         padding: 17% 0;
+    }
+
+    .icons {
+        gap: 5%;
     }
 }
 
@@ -152,10 +167,6 @@
     .pHeader {
         width: 350px;
     }
-
-    .icons {
-        gap: 5%;
-    }
 }
 
 @media (max-width: 768px) {
@@ -192,9 +203,6 @@
     }
 
     .headerBody {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
         flex-direction: column-reverse;
     }
 

@@ -1,9 +1,7 @@
-import { fetchProduct } from "../../lib/data";
-import { Header } from "../../ui/main/catalog/id/Header";
-import { Body } from "../../ui/main/catalog/id/Body";
-import { Suspense } from "react";
-import { SearchList } from "../../ui/SearchList";
-import { LoadningSkeleton } from "../../ui/skeletons"
+import { fetchProduct } from "../../lib/data"
+import { Header } from "../../ui/product/header"
+import { Body } from "../../ui/product/body"
+import { SearchList } from "../../ui/search-list"
 
 export async function generateStaticParams(){
     return [
@@ -16,11 +14,12 @@ export async function generateStaticParams(){
     ]
   }
 
-export default async function Page(
-    props: {
-        params: Promise<{ id: string }>, 
-        searchParams?: Promise<{ query?: string }>
-    })
+type PageProps = {
+    params: Promise<{ id: string }>,
+    searchParams: Promise<{ query: string }>
+}
+
+export default async function Page(props: PageProps)
 {
 
     const params = await props.params
@@ -32,12 +31,10 @@ export default async function Page(
     const product = await fetchProduct(id)
 
     return (
-        <div>
-            <Suspense key={query} fallback={query !== "" ? <LoadningSkeleton /> : <></> }>
-                <SearchList query={query} />
-            </Suspense>
+        <>
+            <SearchList query={query} />
             <Header product={product} />
             <Body product={product} />
-        </div>
+        </>
     )
 }

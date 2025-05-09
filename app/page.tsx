@@ -1,17 +1,13 @@
 import "./styles/globals.css"
 import styles from "./styles/common.module.css"
-import { Header } from "./ui/header/Header"
-import { TextBlock } from "./ui/main/TextBlock"
-import { Bestsellers } from "./ui/main/Bestsellers"
-import { StoreBlock } from "./ui/main/StoreBlock"
+import { Header } from "./ui/header"
+import { TextBlock } from "./ui/text-block"
+import { Bestsellers } from "./ui/bestsellers"
+import { StoreBlock } from "./ui/store-block"
 import { fetchBestsellers } from "./lib/data"
-import { Suspense } from "react"
-import { SearchList } from "./ui/SearchList"
-import { LoadningSkeleton } from "./ui/skeletons"
+import { SearchList } from "./ui/search-list"
 
 export default async function Page(props: { searchParams?: Promise<{ query?: string }>}) {
-
-    await new Promise((resolve) => setTimeout(resolve, 1000));
     
     const searchParams = await props.searchParams
     const query = searchParams?.query || ""
@@ -20,9 +16,7 @@ export default async function Page(props: { searchParams?: Promise<{ query?: str
     
     return (
         <>
-            <Suspense key={query} fallback={query !== "" ? <LoadningSkeleton /> : <></> } >
-                <SearchList query={query} />
-            </Suspense>
+            <SearchList query={query} />
             <Header />
             <main className={styles.container}>
                 <TextBlock />

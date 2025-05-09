@@ -138,6 +138,8 @@
     flex-wrap: wrap;
     gap: 10px;
     padding-bottom: 30px;
+    max-height: 140px;
+    overflow: hidden;
 }
 
 .p {

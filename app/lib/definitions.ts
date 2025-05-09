@@ -11,6 +11,10 @@ type CategorySchema = {
     description: string
 }
 
+type ComplectationSchema = {
+    name: string
+}
+
 type ExpirationDateSchema = {
     before_opening: string,
     after_opening: string
@@ -48,12 +52,14 @@ export type BestsellersSchema = {
     id: number,
     name: string,
     note: string,
+    description: string,
     volumes: VolumeSchema[],
     flavor: FlavorSchema,
     articule: number,
     attention: string,
     expiration_date: ExpirationDateSchema,
     category: CategorySchema,
+    complectation: ComplectationSchema,
     effects: EffectSchema[],
 }
 
