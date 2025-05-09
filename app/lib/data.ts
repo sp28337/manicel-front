@@ -28,7 +28,7 @@ export async function fetchFilteredProducts(query: string) {
             { cache: dataCache()}
         )
         const filteredProducts: CatalogProductsSchema[] = await data.json()
-    
+        console.log(`[+] fetching filtered products`)
         return filteredProducts
     } catch (error) {
         console.error("Database Error:", error);
@@ -44,7 +44,7 @@ export async function fetchCatalogProducts() {
             { cache: dataCache()}
         )
         const products: CatalogProductsSchema[] = await data.json()
-
+        console.log(`[+] fetching catalog products`)
         return products
 
     } catch (error) {
@@ -61,7 +61,7 @@ export async function fetchBestsellers() {
             { cache: dataCache()}
         )
         const bestsellers: BestsellersSchema[] = await data.json()
-
+        console.log(`[+] fetching bestsellers`)
         return bestsellers
 
     } catch (error) {
@@ -78,8 +78,9 @@ export async function fetchProduct(id: string) {
             { cache: dataCache()}
         )
         const product: ProductSchema = await data.json()
-
+        console.log(`[+] fetching product`)
         return product
+
     } catch (error) {
         console.error("Database Error:", error);
         throw new Error("Failed to fetch product.");
