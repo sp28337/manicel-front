@@ -1,0 +1,23 @@
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 150px;
+    position: relative;
+}
+
+.wbLogo {
+    width: 170px;
+    height: auto;
+}
+
+@media (max-width: 1248px) {
+    .container {
+        padding: 0 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 5%;
+    }
+}

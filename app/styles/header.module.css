@@ -1,0 +1,277 @@
+.headerWrapper {
+    background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    margin-top: 112px;
+}
+
+.imgAll {
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+.image {
+    height: auto;
+    width: 100%;
+    max-width: 1440px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;    
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    filter: blur(3px);
+}
+
+.headerBody {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.textHeader {
+    position: relative;
+    z-index: 2;
+    padding: 15% 0;
+}
+
+.imgWrapper {
+    width: 674px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 2;
+    transform: translate(-15%, -50%);
+}
+
+.h1Header {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 110%;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #0d0c10;
+    margin-bottom: 20px;
+}
+
+.spanHeader {
+    display: block;
+    padding-top: 20px;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 110%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: rgba(13, 12, 16, 0.9);
+}
+
+.pHeader {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: lowercase;
+    color: #0d0c10;
+    letter-spacing: 0;
+    width: 467px;
+}
+
+.icons {
+    display: flex;
+    padding-top: 63px;
+    gap: 57px;
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.iconDescribtion {
+    text-align: center;
+}
+
+.wave {
+    width: 100%;
+    height: auto;
+    transform: translateY(-3px);
+}
+
+.bottomText {
+    margin: 0 auto;
+    width: 480px;
+    height: 30px;
+    bottom: 0;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 150%;
+    font-variant: small-caps;
+    color: rgba(26, 26, 26, 0.5);
+    letter-spacing: 0;
+}
+
+@media (max-width: 1248px) {
+    .imgWrapper {
+        margin-top: 7%;
+        width: 600px;
+        transform: translate(-12%, -50%);
+    }
+
+    .textHeader {
+        padding: 17% 0;
+    }
+
+    .icons {
+        gap: 5%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .imgWrapper {
+        width: 580px;
+        transform: translate(-7%, -50%);
+    }
+
+    .h1Header {
+        font-size: 26px;
+    }
+
+    .spanHeader {
+        font-size: 36px;
+    }
+    
+    .pHeader {
+        font-size: 12px;
+        max-width: 397px;
+    }
+
+    .textHeader {
+        padding: 17% 0 22%;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .imgWrapper {
+        margin-top: 10%;
+        transform: translate(0%, -50%);
+    }
+
+    .imgAll {
+        width: 540px;
+    }
+
+    .pHeader {
+        width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .headerWrapper {
+        margin-top: 102px;
+    }
+
+    .imgAll {
+        margin: 0;
+        width: 100%;
+    }
+
+    .image {
+        margin-top: 0px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 30%;
+        overflow: hidden;
+        width: 110vw;
+        height: auto;
+    }
+
+    .textHeader {
+        padding: 0 0 20px;
+    }
+
+    .imgWrapper {
+        position: initial;
+        transform: translate(0, 0);
+        margin: 50px auto 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .headerBody {
+        flex-direction: column-reverse;
+    }
+
+    .h1Header {
+        font-size: 28px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #0d0c10;
+        margin-bottom: 10px;
+    }
+
+    .pHeader {
+        width: initial;
+    }
+
+    .icons {
+        gap: 10%;
+        justify-content: center;
+        padding-top: 30px;
+    }
+
+    .spanHeader {
+        padding-top: 10px;
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 566px) {
+    .h1Header {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 500px) {
+    .h1Header {
+        font-size: 22px;
+    }
+
+    .spanHeader {
+        padding-top: 10px;
+        font-size: 34px;
+    }
+
+    .pHeader {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 433px) {
+    .h1Header {
+        font-size: 19px;
+    }
+
+    .spanHeader {
+        padding-top: 10px;
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 374px) {
+    .h1Header {
+        font-size: 17px;
+    }
+
+    .spanHeader {
+        padding-top: 8px;
+        font-size: 28px;
+    }
+    .pHeader {
+        font-size: 9px;
+    }
+}

@@ -1,0 +1,252 @@
+.wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    max-width: 1750px;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+.elem1 {
+    position: absolute;
+    top: 60%;
+    left: 35%;
+    width: 7%;
+    height: auto;
+    opacity: 0.9;
+    transform: rotate(-140deg) scaleY(-1);
+    
+}
+
+.elem2 {
+    transform: rotate(50deg);
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    width: 60px;
+    height: auto;
+    opacity: 0.9;
+    filter: blur(1.5px); 
+    
+}
+
+.elem3 {
+    position: absolute;
+    top: 85%;
+    left: 5%;
+    width: 120px;
+    height: auto;
+}
+
+.elem4 {
+    
+    transform: rotate(120deg);
+    position: absolute;
+    top: 14%;
+    left: 12%;
+    width: 50px;
+    height: auto;
+    opacity: 0.9;
+
+}
+
+.elem5 {
+    position: absolute;
+    top: 27%;
+    right: 32%;
+    width: 70px;
+    height: auto;
+    filter: blur(0.5px);
+    opacity: 0.9;
+    transform: rotate(90deg);
+}
+
+.elem6 {
+    width: 70px;
+    height: auto;
+    position: absolute;
+    right: 19%;
+    top: 13%;
+}
+
+.elem7 {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    left: -7%;
+    top: 40%;
+    transform: scaleX(-1);
+    opacity: 0.9;
+}
+
+.elem8 {
+    width: 90px;
+    height: auto;
+    position: absolute;
+    left: 45%;
+    top: 13%;
+    transform: rotate(20deg);
+    filter: blur(0.5px);    
+}
+
+.elem9 {
+    width: 120px;
+    height: auto;
+    position: absolute;
+    top: 75%;
+    right: 5%;
+    transform: rotate(-90deg);
+    opacity: 0.9;
+    filter: blur(0.1px); 
+}
+
+.elem10 {
+    width: 130px;
+    height: auto;
+    position: absolute;
+    top: 25%;
+    right: -7%;
+    transform: rotate(80deg);
+    opacity: 0.9;
+}
+
+@media (max-width: 1248px) {
+    .elem2 {
+        right: 6%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .elem1 {
+        width: 9%;
+        top: 41%;
+    }
+    
+    .elem2 {
+        width: 30px;
+        top: 87%;
+    }
+    
+    .elem3 {
+        width: 10%;
+        top: 80%;
+        left: -6%;
+    }
+    
+    .elem5 {
+        width: 80px;
+        top: 36%;
+        right: 20%;
+    }
+    
+    .elem6 {
+        width: 50px;
+        right: 10%;
+    }
+    
+    .elem7 {
+        width: 50px;
+        left: 2%;
+        top: 50%;
+        filter: blur(1.7px); 
+    }
+    
+    .elem8 {
+        width: 70px;
+        
+    }
+    
+    .elem9 {
+        width: 50px;
+        right: 63%;
+        top: 80%;
+        filter: blur(1.7px); 
+    }
+    
+    .elem10 {
+        width: 10%;
+        right: -5%;
+        top: 30%;
+    }
+}
+
+@media (max-width: 900px) {
+    .elem2 {
+        right: 2%;
+    }
+}
+
+@media (max-width: 610px) {
+    .elem1 {
+        top: -8%;
+        width: 10%;
+    }
+    
+    .elem2 {
+        width: 8%;
+        right: 30%;
+        top: 70%
+    }
+    
+    .elem3 {
+        width: 15%;
+        opacity: 0.9;
+        left: -9%;
+        top: 87%
+    }
+    
+    .elem4 {
+        width: 10%;
+        left: -4%;
+        top: 20%;
+    }
+    
+    .elem5 {
+        width: 7%;
+        top: -5%;
+        right: 14%;
+        filter: blur(1.7px); 
+    }
+    
+    .elem6 {
+        width: 10%;
+        top: 69%;
+        right: 60%;
+        opacity: 0.8;
+        transform: rotate(140deg);
+    }
+    
+    .elem7 {
+        width: 9%;
+        top: 5%;
+
+    }
+    
+    .elem8 {
+        width: 10%;
+        top: 20%;
+        left: 85%;
+        transform: rotate(-40deg);
+        transform: scaleX(-1);
+        filter: blur(1.7px);
+    }
+    
+    .elem9 {
+        width: 10%;
+        top: 83%;
+        right: 17%;
+        filter: blur(0); 
+        transform: rotate(-90deg);
+    }
+    
+    .elem10 {
+        width: 17%;
+        right: -9%;
+        top: 59%;
+        transform: rotate(180deg);
+        filter: blur(1.0px);
+        opacity: 0.9;
+    }
+}
