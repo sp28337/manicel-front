@@ -8,4 +8,4 @@ services:
     environment:
       - NODE_ENV=production
     networks:
-      - bridge
+      - manicel
