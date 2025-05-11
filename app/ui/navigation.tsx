@@ -19,7 +19,7 @@ export const Navigation = () => {
                 <Link 
                     className={styles.logo}
                     href="/"
-                    onClick={() => {window.location.href = "/"}}
+                    // onClick={() => {window.location.href = "/"}}
                 >
                     <ManicelLogoSVG />
                 </Link>
