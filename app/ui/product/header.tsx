@@ -33,7 +33,7 @@ export const Header = (props: { product: ProductSchema }) => {
         1: <Mango />,
         2: <Bubblegum />,
         3: <Fig />,
-        4: <Caramel />,
+        4: <div />,
         5: <Coconut />,
         6: <Citrus />,
         7: <Raspberry />,
