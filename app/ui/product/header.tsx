@@ -8,7 +8,6 @@ import {
     Fig,
     Mango,
     Bubblegum,
-    Caramel,
     Coconut,
     Citrus,
     Raspberry,
