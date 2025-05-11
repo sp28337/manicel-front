@@ -19,6 +19,7 @@ import inzhirPng120w from "@/public/inzhir/inzhir-main-120w.png"
 import applePng120w from "@/public/apple/apple-main-120w.png"
 import citrusPng120w from "@/public/citrus/citrus-main-120w.png"
 import trio120w from "@/public/trio-120w.png"
+import peach120w from "@/public/peach/peach-120w.png"
 
 import inzhir320w from "@/public/inzhir/inzhir-320w.png"
 import citrus320w from "@/public/citrus/citrus-320w.png"
@@ -142,7 +143,7 @@ export const searchImages: {[key: number]: StaticImageData} = {
     5: coconut90w,
     6: citrusPng120w,
     7: raspberry90w,
-    8: peach,
+    8: peach120w,
     9: applePng120w,
     10: lavender90w,
     11: mint90w,
