@@ -5,10 +5,12 @@ const protocol = {
     https: "https"
 }
 
-const host = {
+const hosts = {
     local: "localhost",
     prod: "back"
 }
+
+const host = hosts.prod
 
 const port = {
     local: "8000", 
@@ -21,11 +23,11 @@ const dataCache = (toggle=true) => {
 }
 
 
-export async function fetchFilteredProducts(query: string) {
+export async function getSearchProducts(query: string) {
 
     try {
         const data = await fetch(
-            `${protocol.http}://${host.prod}:${port.local}/products/search_products?query=${query}`,
+            `${protocol.http}://${host}:${port.local}/products/search_products?query=${query}`,
             { cache: dataCache()}
         )
         const filteredProducts: CatalogProductsSchema[] = await data.json()
@@ -37,11 +39,11 @@ export async function fetchFilteredProducts(query: string) {
       }
 }
 
-export async function fetchCatalogProducts() {
+export async function getCatalogProducts() {
     
     try {
         const data = await fetch(
-            `${protocol.http}://${host.prod}:${port.local}/products/catalog_products`,
+            `${protocol.http}://${host}:${port.local}/products/catalog_products`,
             { cache: dataCache()}
         )
         const products: CatalogProductsSchema[] = await data.json()
@@ -54,11 +56,11 @@ export async function fetchCatalogProducts() {
     }
 }
 
-export async function fetchBestsellers() {
+export async function getBestsellers() {
     
     try {
         const data = await fetch(
-            `${protocol.http}://${host.prod}:${port.local}/products/bestsellers`,
+            `${protocol.http}://${host}:${port.local}/products/bestsellers`,
             { cache: dataCache()}
         )
         const bestsellers: BestsellersSchema[] = await data.json()
@@ -71,11 +73,11 @@ export async function fetchBestsellers() {
       }
 }
 
-export async function fetchProduct(id: string) {
+export async function getProduct(id: string) {
 
     try {
         const data = await fetch(
-            `${protocol.http}://${host.prod}:${port.local}/products/${id}`,
+            `${protocol.http}://${host}:${port.local}/products/${id}`,
             { cache: dataCache()}
         )
         const product: ProductSchema = await data.json()

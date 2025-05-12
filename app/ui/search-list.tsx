@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "../styles/search-list.module.css"
-import { fetchFilteredProducts } from "../lib/data"
+import { getSearchProducts } from "../lib/data"
 import { CloseSearchListButton } from "./buttons"
 import { ReviewsStarsSVG, ChartBagSVG } from "./vectors"
 import { searchImages } from "../lib/images"
@@ -10,7 +10,7 @@ const images = searchImages
 
 export async function SearchList({ query }: { query: string }) {
 
-    const products = await fetchFilteredProducts(query)  
+    const products = await getSearchProducts(query)  
   
     return (
         <>

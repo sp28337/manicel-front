@@ -1,4 +1,4 @@
-import { fetchProduct } from "../../lib/data"
+import { getProduct } from "../../lib/data"
 import { Header } from "../../ui/product/header"
 import { Body } from "../../ui/product/body"
 import { SearchList } from "../../ui/search-list"
@@ -28,7 +28,7 @@ export default async function Page(props: PageProps)
     const searchParams = await props.searchParams
     const query = searchParams?.query || ""
 
-    const product = await fetchProduct(id)
+    const product = await getProduct(id)
 
     return (
         <>
