@@ -30,9 +30,9 @@
 }
 
 .textBlock {
-    margin-bottom: 100px;
     position: absolute;
     z-index: 3;
+    transform: translate(0px, -50px);
 }
 
 .h1 {
@@ -61,7 +61,7 @@
     font-size: 14px;
     line-height: 150%;
     text-transform: lowercase;
-    color: #0d0c10;
+    color: #717171;
     letter-spacing: 0;
     width: 467px;
 }
@@ -137,11 +137,8 @@
 
 @media (max-width: 900px) {
     .imgWrapper {
+        width: 500px;
         transform: translate(0%, -50%);
-    }
-
-    .textBlock {
-        margin-bottom: 200px;
     }
 
     .pHeader {
@@ -156,9 +153,13 @@
 
 @media (max-width: 768px) {
 
+    .backgroundImage {
+        display: none;
+    }
+
     .headerWrapper {
         margin-top: 102px;
-        height: 900px;
+        height: 950px;
     }
 
     .mainImage {
@@ -172,10 +173,11 @@
 
     .textBlock {
         position: static;
-        margin-bottom: 50px;
+        transform: translate(0px, 0px);
     }
 
     .imgWrapper {
+        width: 600px;
         position: initial;
         transform: translate(0, 0);
         margin: 0;
@@ -185,7 +187,7 @@
     .header {
         height: 100%;
         width: auto;
-        justify-content: space-evenly;
+        justify-content: center;
         flex-direction: column-reverse;
     }
 
@@ -215,7 +217,7 @@
 
 @media (max-width: 566px) {
     .headerWrapper {
-        height: 800px;
+        height: 900px;
     }
 
     .h1 {
@@ -244,7 +246,7 @@
 
 @media (max-width: 433px) {
     .headerWrapper {
-        height: 700px;
+        height: 800px;
     }
 
     .h1 {

@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
 import styles from "../../styles/product-body.module.css"
 import commonStyles from "../../styles/common.module.css"
 import { Description } from "./description"
@@ -15,13 +14,13 @@ export const Body = (props: { product: ProductSchema }) => {
     return (
         <div className={`${styles.bodyWrapper} ${commonStyles.container}`}>
             
-            <div className={styles.urlPath}>
+            {/* <div className={styles.urlPath}>
                 <Link className={styles.pathLink} href="/">главная </Link>
                 &gt;
                 <Link className={styles.pathLink} href="/catalog"> каталог </Link>
                 &gt;
                 <div className={styles.activePath}> {product.name}</div>
-            </div>
+            </div> */}
             <Description product={props.product} />
 
             <hr className={styles.hr}/>

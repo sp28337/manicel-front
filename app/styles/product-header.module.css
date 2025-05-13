@@ -1,18 +1,14 @@
 .header {
-    width: 100vw;
+    height: 700px;
+    font-size: 16px;
     position: relative;
-    overflow: hidden;
+    overflow-y: visible;
+    overflow-x: clip;
     z-index: 0;
-}
-
-.background {
-    position: relative;
     background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
-    width: 100%;
-    z-index: 1;
 }
 
-.backgroundText {
+.backgroundImage {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -65,6 +61,7 @@
 }
 
 .note {
+    display: none;
     margin: 0 auto;
     width: 90%;
     font-weight: 400;
@@ -130,12 +127,13 @@
 }
 
 .span {
+    transform: translateX(20px);
     font-weight: 500;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 150%;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: #000;
+    color: #747474;
 }
 
 .list {
@@ -144,10 +142,13 @@
     justify-content: space-between;
     gap: 30px;
     font-weight: 400;
-    font-size: 13px;
     line-height: 150%;
     font-variant: small-caps;
     color: #1a1a1a;
+}
+
+.wrapper {
+    height: 100%;
 }
 
 .listItem {
@@ -161,7 +162,7 @@
     align-items: center;
     gap: 30px;
     display: flex;
-    max-width: 400px;
+    max-width: 600px;
 }
 
 .liItemWrapper {
@@ -184,8 +185,16 @@
     top: 70%;
     filter: blur(1.6px);
     opacity: 0.85;
-    z-index: 5;
-    
+    z-index: 5;   
+}
+
+.wave {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    height: auto;
+    transform: translateY(50%) rotate(180deg);
+    z-index: 1;
 }
 
 @media (max-width: 1248px) {
@@ -234,11 +243,15 @@
 
 @media (max-width: 1024px) {
 
+    .header {
+        height: 600px;
+    }
+
     .content {
         height: 600px;
     }
 
-    .backgroundText {
+    .backgroundImage {
         width: 110vw;
         height: auto;
     }
@@ -254,7 +267,7 @@
     
     .imgDefaultWrapper {
         width: 400px;
-        transform: translate(-25%, -30%);
+        transform: translate(-15%, -40%);
     }
 
     .imgSetsWrapper {
@@ -269,14 +282,6 @@
         font-size: 36px;
     }
 
-    .span {
-        font-size: 9px;
-    }
-
-    .liItemWrapper {
-        font-size: 12px;
-    }
-
     .headerList {
         gap: 25px;
     }
@@ -285,11 +290,11 @@
 @media (max-width: 900px) {
     
     .imgDefaultWrapper {
-        transform: translate(-10%, -30%);
+        transform: translate(0%, -40%);
     }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 
     .content {
         height: 550px;
@@ -344,10 +349,23 @@
     .list {
         gap: 15px;
     }
-}
+} */
 
-@media (max-width: 610px) {
-    .backgroundText {
+@media (max-width: 768px) {
+    .header {
+        height: 1050px;
+    }
+
+    .list {
+        gap: 15px;
+    }
+
+    .listItem {
+        gap: 15px;
+        max-width: initial;
+    }
+
+    .backgroundImage {
         top: 80%;
     }
 
@@ -373,10 +391,11 @@
     }
 
     .wrapper {
-        margin-top: 120px;
+        justify-content: center;
         display: flex;
         flex-direction: column;
-        gap: 50px;
+        gap: 30px;
+        align-items: center;
     }
 
     .content {
@@ -384,25 +403,22 @@
     }
 
     .imgDefaultWrapper {
-        position: relative;
+        position: static;
         display: block;
-        width: 100%;
+        width: 600px;
         transform: translate(0, 0);
-        top: 0px;
-        text-align: center;
+        margin-top: 50px;
     }
 
     .imgSetsWrapper {
         position: relative;
         display: block;
-        width: 100%;
         transform: translate(0, 0);
         top: 0px;
         text-align: center;
-    }
-
-    .mainImg {
-        width: 90%;
+        align-content: end;
+        height: 500px;
+        width: 650px;
     }
 
     .text {
@@ -410,8 +426,6 @@
         /* display: block; */
         top: 0px;
         transform: translate(0, 0);
-        width: 90%;
-        margin: 0 auto 5%;
     }
 
     .textSets{
@@ -419,8 +433,6 @@
         /* display: block; */
         top: 0px;
         transform: translate(0, 0);
-        width: 90%;
-        margin: 0 auto 5%;
     }
 
     .textPockets {
@@ -433,12 +445,12 @@
     }
 
     .h1 {
-        font-size: 28px;
+        font-size: 29px;
         white-space: break-spaces;
     }
 
     .h1Sets {
-        font-size: 28px;
+        font-size: 29px;
         white-space: break-spaces;
     }
 
@@ -449,5 +461,92 @@
     .saltBodyScrub {
         width: 120vw;
         top: 78%;
+    }
+
+    .backgroundImage {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        height: 950px;
+        font-size: 14px;
+    }
+
+    .imgDefaultWrapper {
+        width: 500px;
+    }
+
+
+    .h1 {
+        font-size: 24px;
+        white-space: break-spaces;
+    }
+
+    .h1Sets {
+        font-size: 24px;
+        white-space: break-spaces;
+    }
+
+    .liItemWrapper {
+        line-height: normal;
+    }
+}
+
+@media(max-width: 500px) {
+    .h1Sets {
+        font-size: 20px;
+    }
+
+    .listSetsItem {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 465px) {
+    .header {
+        height: 850px;
+        font-size: 12px;
+    }
+
+    .imgDefaultWrapper {
+        width: 400px;
+    }
+
+    .span {
+        font-size: 10px;
+    }
+
+    .imgSetsWrapper {
+        height: 400px;
+        width: 490px;
+    }
+}
+
+@media (max-width: 365px) {
+    .imgSetsWrapper {
+        height: 350px;
+        width: 350px;
+    }
+
+    .header {
+        height: 750px;
+    }
+    
+    .imgDefaultWrapper {
+        width: 350px;
+    }
+    
+    .h1Sets {
+        font-size: 18px;
+    }
+
+    .h1 {
+        font-size: 18px;
+    }
+
+    .liItemWrapper {
+        font-size: 11px;
     }
 }
