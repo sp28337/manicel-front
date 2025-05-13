@@ -21,7 +21,7 @@ import {
     Trio,
  } from "./elements"
 import { mainCardImages } from "../../lib/images"
-import background from "@/public/salt-body-scrub-500w.png"
+import backgroundImg from "@/public/salt-body-scrub-500w.png"
 import { LeaveSVG, WaveSVG } from "../vectors"
 
 export const Header = (props: { product: ProductSchema }) => {
@@ -95,86 +95,83 @@ export const Header = (props: { product: ProductSchema }) => {
     return (
 
         <header className={styles.header}>
-            <div className={styles.background}>
-                <Image 
-                    className={styles.backgroundText}
-                    src={background} 
-                    alt="salt body scrub written with beautiful font on background"
-                    quality={0}
-                    sizes="100vw"
-                />
+            <Image 
+                className={styles.backgroundImage}
+                src={backgroundImg} 
+                alt="salt body scrub written with beautiful font on background"
+                quality={0}
+                sizes="100vw"
+            />
 
-                <>
-                    {checkId(product.id) === 0 &&  backgroundElements[product.id]}
-                    {checkId(product.id) === 2 &&  backgroundElements[product.id]}
-                </>
+            <>
+                {checkId(product.id) === 0 &&  backgroundElements[product.id]}
+                {checkId(product.id) === 2 &&  backgroundElements[product.id]}
+            </>
 
-                <div className={`${styles.content} ${commonStyles.container}`}>
-                    <div className={styles.wrapper}>
-                        <div className={
-                            checkId(product.id) === 1      ? 
-                            `${styles.imgSetsWrapper}`     : 
-                            `${styles.imgDefaultWrapper}`
-                            }>
-                            <Image 
-                                className={`${styles.mainImg}`}
-                                src={mainImages[product.id]} 
-                                alt={product.category.name}
-                                sizes="100vw"
-                                priority
-                            />
-                            <p className={styles.note}>
-                                {product.note}
-                            </p>
-                        </div>
-
-                        <div className={
-                            checkId(product.id) === 1      ? 
-                            `${styles.textSets}`           : 
-                            checkId(product.id) === 2      ?
-                            `${styles.textPockets}`        : 
-                            `${styles.text}`
-                            }>
-
-                            <h1 className={styles.h1Wrapper}>
-                               {    
-                                    checkId(product.id) === 1         ? 
-                                    handleH1SetsName(product.name)    : 
-                                    <span className={`${styles.h1}`}>
-                                        {product.name}
-                                    </span> 
-                                }
-                                <span className={styles.span}>
-                                    {product.category.name}
-                                </span>
-                            </h1>
-
-                            <ul className={styles.list}>
-                                
-                                {product.effects.map((item, index) => (
-                                    <li key={index} className={
-                                        checkId(product.id) === 1      ? 
-                                        `${styles.listSetsItem}`       : 
-                                        `${styles.listItem}`
-                                        }
-                                    >
-                                        <span className={styles.liItemWrapper}>
-                                            <LeaveSVG />
-                                        </span>
-                                        <span className={styles.liItemWrapper}>
-                                            {item.description}
-                                        </span>
-                                    </li>
-                                ))}
-
-                            </ul>
-                        </div>
-
+            <div className={`${styles.wrapper} ${commonStyles.container}`}>
+                    <div className={
+                        checkId(product.id) === 1      ? 
+                        `${styles.imgSetsWrapper}`     : 
+                        `${styles.imgDefaultWrapper}`
+                        }>
+                        <Image 
+                            className={`${styles.mainImg}`}
+                            src={mainImages[product.id]} 
+                            alt={product.category.name}
+                            sizes="100vw"
+                            priority
+                        />
+                        <p className={styles.note}>
+                            {product.note}
+                        </p>
                     </div>
-                </div>
+
+                    <div className={
+                        checkId(product.id) === 1      ? 
+                        `${styles.textSets}`           : 
+                        checkId(product.id) === 2      ?
+                        `${styles.textPockets}`        : 
+                        `${styles.text}`
+                        }>
+
+                        <h1 className={styles.h1Wrapper}>
+                            {    
+                                checkId(product.id) === 1         ? 
+                                handleH1SetsName(product.name)    : 
+                                <span className={`${styles.h1}`}>
+                                    {product.name}
+                                </span> 
+                            }
+                            <span className={styles.span}>
+                                {product.category.name}
+                            </span>
+                        </h1>
+
+                        <ul className={styles.list}>
+                            
+                            {product.effects.map((item, index) => (
+                                <li key={index} className={
+                                    checkId(product.id) === 1      ? 
+                                    `${styles.listSetsItem}`       : 
+                                    `${styles.listItem}`
+                                    }
+                                >
+                                    <span className={styles.liItemWrapper}>
+                                        <LeaveSVG />
+                                    </span>
+                                    <span className={styles.liItemWrapper}>
+                                        {item.description}
+                                    </span>
+                                </li>
+                            ))}
+
+                        </ul>
+                    </div>
 
             </div>
-            <WaveSVG />
+            <div className={styles.wave}>
+                <WaveSVG />
+            </div>
         </header>
     );
 };
