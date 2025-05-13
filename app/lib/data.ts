@@ -10,7 +10,7 @@ const hosts = {
     prod: "back"
 }
 
-const host = hosts.prod
+const host = hosts.local
 
 const port = {
     local: "8000", 
