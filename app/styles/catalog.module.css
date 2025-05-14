@@ -3,81 +3,6 @@
     
 }
 
-.headerWrapper {
-    background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
-    position: relative;
-    z-index: 2;
-    margin-top: 112px;
-}
-
-.imgWrapper {
-    z-index: 1;
-    margin-top: 120px;
-    width: 100%;
-    text-align: center;   
-    overflow: hidden;
-}
-
-.headerBody {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.textHeader {
-    margin-top: 60px;
-    position: relative;
-    text-align: center;
-}
-
-.h1Header {
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 110%;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    color: rgba(26, 26, 26, 0.9);
-
-    .spanHeader {
-        font-style: italic;
-        font-weight: 400;
-        font-size: 32px;
-        line-height: 110%;
-        letter-spacing: -0.01em;
-        text-transform: uppercase;
-        color: #1a1a1a;
-    }
-}
-
-.spanHeader {
-    margin: 0 0 0 -90px;
-    position: absolute;
-}
-
-.saltBodyScrub {
-    object-fit: cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 1140px;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    filter: blur(3px);
-}
-
-.bottomText {
-    margin: 40px 0 20px auto;
-    width: 580px;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 100%;
-    font-variant: small-caps;
-    color: rgba(26, 26, 26, 0.5);
-}
-
 .iconsWrapper {
     display: flex;
     margin: 3% auto;
@@ -103,11 +28,6 @@
     display: flex;
     justify-content: space-around;
 }
-/* 
-.wbLogo {
-    max-width: 170px;
-    height: auto;
-} */
 
 .description {
     font-weight: 400;
@@ -135,21 +55,6 @@
     justify-content: space-between;
 }
 
-/* @keyframes reverse-gradient {
-    100% {
-        background: linear-gradient(180deg, transparent 30%, #2afd00 100%);
-    }
-    0% {
-        background: linear-gradient(180deg, transparent 0%, #ececec 100%);
-    }
-} */
-
-/* @keyframes apply-gradient {
-    to {
-        background: linear-gradient(180deg, transparent 30%, #2d287087 100%);
-    }
-} */
-
 .cardItem {
     border-radius: 8px;
     margin-bottom: 50px;
@@ -157,9 +62,6 @@
     width: 23%;
     height: auto;
     background: linear-gradient(180deg, transparent 0%, #ececec7c 100%);
-    
-    /* transition: transform 1.25s cubic-bezier(.4,2,.5,1); */
-    /* box-shadow 1.25s cubic-bezier(.4,2,.5,1), */
 }
 
 .cardLink {
@@ -182,12 +84,8 @@
 }
 
 .cardItem1:hover .gradient1 {
-    /* animation: apply-gradient 1.25s forwards; */
     opacity: 1;
     background: linear-gradient(180deg, transparent 30%, #ffa30b87 100%);
-    /* transform: scale(1.01); */
-    /* background: linear-gradient(180deg, transparent 30%, #ffc5807a 100%); */
-    /* box-shadow: 0 8px 32px rgba(143,95,214,0.13); */
 }
 
 .gradient2 {
@@ -346,12 +244,6 @@
     color: #000;
 }
 
-/* .rating {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-} */
-
 .infoButtonWrapper {
     display: flex;
     justify-content: center;
@@ -408,14 +300,6 @@
     color: #9ca3af;
 }
 
-/* .ratio {
-    font-weight: 500;
-    font-size: 12px;
-    text-transform: uppercase;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.8);
-} */
-
 .activePath {
     color: #e58b00;
 }
@@ -432,13 +316,7 @@
     cursor: pointer;
 }
 
-/* end styles for BodyCatalog */
-
 @media (max-width: 1431px) {
-    .scrabImg {
-        width: 180px;
-        height: auto;
-    }
 
     .pocketImg {
         width: 150px;
@@ -454,15 +332,6 @@
     .cardItem {
         width: 31%;
     }
-    .scrub {
-        width: 600px;
-        height: auto;
-    }
-
-    .saltBodyScrub {
-        height: auto;
-        object-fit: initial;
-    }
 
     .h1Body {
         font-size: 32px;
@@ -476,18 +345,6 @@
 
 @media (max-width: 768px) {
 
-    .headerWrapper {
-        margin-top: 102px;
-    }
-
-    .h1Header {
-        font-size: 36px;
-    
-        .spanHeader {
-            font-size: 28px;
-        }
-    }
-
     .description {
         font-size: 12px;
     }
@@ -499,19 +356,6 @@
     .descScrab {
         font-size: 9px;
     }
-
-    .price {
-        font-size: 13px;
-    }
-
-    .oldPrice {
-        font-size: 13px;
-    }
-
-    .saltBodyScrub {
-        height: 102px;
-        object-fit: cover;
-    }
     
     .scrabImg {
         width: 170px;
@@ -520,45 +364,9 @@
     .pocketImg {
         width: 140px;
     }
-
-    .scrub {
-        object-fit: cover;
-        height: 120px;
-        left: 50%;
-        position: absolute;
-        width: auto;
-        transform: translate(-50%, -50%);
-    }
-
-    .bottomText {
-        width: 400px;
-    }
-
-    .bottomText {
-        margin: 90px 0 20px auto;
-        width: 100%;
-    }
-    
-    .imgWrapper {
-        margin-top: 140px;
-    }
 }
 
 @media (max-width: 610px) {
-    .h1Header {
-        font-size: 32px;
-    
-        .spanHeader {
-            font-size: 24px;
-        }
-    }  
-
-    .saltBodyScrub {
-        height: auto;
-        object-fit: initial;
-        width: 110vw;
-        top: 40%;
-    }
  
 }
 
@@ -573,14 +381,6 @@
 
     .cardContent {
         gap: 10px;
-    }
-
-    .h1Header {
-        font-size: 28px;
-    
-        .spanHeader {
-            font-size: 20px;
-        }
     }
 
     .h3Body {
@@ -610,21 +410,9 @@
     .descScrab {
         font-size: 9px;
     }
-
-    .saltBodyScrub {
-        height: 57px;
-        object-fit: cover;
-    }
 }
 
 @media (max-width: 362px) {
-    .h1Header {
-        font-size: 26px;
-    
-        .spanHeader {
-            font-size: 18px;
-        }
-    }
 
     .cardContent {
         padding: 4% 10% 19% 7.5%;
@@ -640,14 +428,6 @@
 
     .descScrab {
         font-size: 8px;
-    }
-
-    .price {
-        font-size: 11px;
-    }
-
-    .oldPrice {
-        font-size: 11px;
     }
 }
 
@@ -676,14 +456,6 @@
 
     .descScrab {
         font-size: 10px;
-    }
-
-    .price {
-        font-size: 14px;
-    }
-
-    .oldPrice {
-        font-size: 14px;
     }
 
     .infoButton {
