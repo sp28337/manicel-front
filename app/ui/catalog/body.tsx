@@ -1,5 +1,5 @@
 import { WBLogo } from "../logotips"
-import styles from "../../styles/catalog.module.css"
+import styles from "../../styles/catalog/body.module.css"
 import commonStyles from "../../styles/common.module.css"
 import Link from "next/link"
 import Image from "next/image"
@@ -11,55 +11,73 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
 
     const images = catalogImages
     
-    // const backgroundStyles: { [key: number]: string } = {
-    //     1: styles.cardItem1,
-    //     2: styles.cardItem2,
-    //     3: styles.cardItem3,
-    //     4: styles.cardItem4,
-    //     5: styles.cardItem5,
-    //     6: styles.cardItem6,
-    //     7: styles.cardItem7,
-    //     8: styles.cardItem8,
-    //     9: styles.cardItem9,
-    //     10: styles.cardItem10,
-    //     11: styles.cardItem11,
-    //     12: styles.cardItem12,
-    //     13: styles.cardItem13,
-    //     14: styles.cardItem14,
-    //     15: styles.cardItem15,
-    //     16: styles.cardItem16,
-    // }
+    const backgroundStyles: { [key: number]: string } = {
+        1: styles.item1,
+        2: styles.item2,
+        3: styles.item3,
+        4: styles.item4,
+        5: styles.item5,
+        6: styles.item6,
+        7: styles.item7,
+        8: styles.item8,
+        9: styles.item9,
+        10: styles.item10,
+        11: styles.item11,
+        12: styles.item12,
+        13: styles.item13,
+        14: styles.item14,
+        15: styles.item15,
+        16: styles.item16,
+    }
 
-    // const gradientStyles: { [key: number]: string } = {
-    //     1: styles.gradient1,
-    //     2: styles.gradient2,
-    //     3: styles.gradient3,
-    //     4: styles.gradient4,
-    //     5: styles.gradient5,
-    //     6: styles.gradient6,
-    //     7: styles.gradient7,
-    //     8: styles.gradient8,
-    //     9: styles.gradient9,
-    //     10: styles.gradient10,
-    //     11: styles.gradient11,
-    //     12: styles.gradient12,
-    //     13: styles.gradient13,
-    //     14: styles.gradient14,
-    //     15: styles.gradient15,
-    //     16: styles.gradient16,
-    // }
+    const gradientStyles: { [key: number]: string } = {
+        1: styles.gradient1,
+        2: styles.gradient2,
+        3: styles.gradient3,
+        4: styles.gradient4,
+        5: styles.gradient5,
+        6: styles.gradient6,
+        7: styles.gradient7,
+        8: styles.gradient8,
+        9: styles.gradient9,
+        10: styles.gradient10,
+        11: styles.gradient11,
+        12: styles.gradient12,
+        13: styles.gradient13,
+        14: styles.gradient14,
+        15: styles.gradient15,
+        16: styles.gradient16,
+    }
 
-    // const chooseClassName = (id: number) => {
+    // const setWidth = (id: number) => {
     //     if ([3, 6, 9].includes(id)) {
-    //         return styles.pocketImg
+    //         return 210
     //     } else {
-    //         return styles.scrabImg
+    //         return 210
     //     }
     // }
 
+    const setStyles = (id: number) => {
+        if ([3, 6, 9].includes(id)) {
+            return styles.pocketLink
+        } else if (id === 8) {
+            return styles.peachLink
+        } else {
+            return styles.link
+        }
+    }
+
+    const setFontSize = (id: number) => {
+        if ([10, 12, 13, 15, 16].includes(id)) {
+            return 14
+        } else {
+            return 16
+        }
+    }
+
     return (
         <div className={`${commonStyles.container}`}>
-                <div className={styles.catalogWrapper}>
+            <div className={styles.catalogWrapper}>
                 {/* <div className={styles.urlPath}>
                     <Link className={styles.pathLink} href="/">главная </Link>
                     &gt;
@@ -71,11 +89,20 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                     ягодиц и других участков тела. Скраб мягко отшелушивает ороговевшие клетки, 
                     стимулирует обновление кожи и придаёт ей здоровый сияющий вид.
                 </p>
-                <h1 className={styles.h1}>каталог</h1>
+                <h1 className={styles.h1}>
+                    каталог
+                </h1>
                 <ul className={styles.list}>
                     {products && products.map((product, index) => (
-                        <div key={index} className={`${styles.item}`}>
-                            <Link className={styles.link} href={`/catalog/${product.id}`}>
+                        <div 
+                            key={index} 
+                            className={`${styles.item} ${backgroundStyles[product.id]}`}
+                        >
+                            <div className={`${styles.gradient} ${gradientStyles[product.id]}`}></div>
+                            <Link 
+                                className={setStyles(product.id)} 
+                                href={`/catalog/${product.id}`}
+                            >
                                 {
                                     images[product.id] && 
                                     <Image 
@@ -95,7 +122,12 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                                     >
                                         {   
                                             product.name_ru && 
-                                            <h3 className={styles.h3}>
+                                            <h3 
+                                                className={styles.h3} 
+                                                style={{
+                                                    fontSize: `${setFontSize(product.id)}px`
+                                                }}
+                                            >
                                                 {product.name_ru}
                                             </h3>
                                         }
@@ -111,7 +143,7 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                                             className={styles.button} 
                                             href={`https://www.wildberries.ru/catalog/${product.articule.toString()}/detail.aspx`}
                                         >
-                                            КУПИТЬ
+                                            купить
                                         </Link>
                                     </div>  
                                 </>
@@ -144,5 +176,5 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                 </div>
             </div>
         </div>
-    );
+    )
 }

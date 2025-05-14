@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image"
 
-import peach from "@/public/peach/peach-letual.png"
+// import peach from "@/public/peach/peach-letual.png"
 import peach600w from "@/public/peach/peach-600w.png"
 
 import raspberry90w from "@/public/raspberry/raspberry-main-90w.png"
@@ -105,7 +105,7 @@ export const catalogImages: { [key: number]: StaticImageData } = {
     5: coconut500w,
     6: citrus500w,
     7: raspberry500w,
-    8: peach,
+    8: peach600w,
     9: apple500w,
     10: lavender500w,
     11: mint500w,
