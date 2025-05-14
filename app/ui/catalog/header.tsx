@@ -32,7 +32,7 @@ export const Header = () => {
                         className={styles.mainImage}
                         src={mainImg} 
                         alt="scrab"
-                        width={800}
+                        width={1000}
                         sizes="100vw"
                         priority
                     />
