@@ -21,9 +21,9 @@ import citrusPng120w from "@/public/citrus/citrus-main-120w.png"
 import trio120w from "@/public/trio-120w.png"
 import peach120w from "@/public/peach/peach-120w.png"
 
-import inzhir320w from "@/public/inzhir/inzhir-320w.png"
-import citrus320w from "@/public/citrus/citrus-320w.png"
-import apple320w from "@/public/apple/apple-card-320w.png"
+// import inzhir320w from "@/public/inzhir/inzhir-320w.png"
+// import citrus320w from "@/public/citrus/citrus-320w.png"
+// import apple320w from "@/public/apple/apple-card-320w.png"
 
 import raspberry500w from "@/public/raspberry/raspberry-500w.png"
 import mango500w from "@/public/mango/mango-500w.png"
@@ -100,13 +100,13 @@ import howToUseImg from "@/public/all-800w.png"
 export const catalogImages: { [key: number]: StaticImageData } = {
     1: mango500w,
     2: bubblegum500w,
-    3: inzhir320w,
+    3: inzhir500w,
     4: caramel500w,
     5: coconut500w,
-    6: citrus320w,
+    6: citrus500w,
     7: raspberry500w,
     8: peach,
-    9: apple320w,
+    9: apple500w,
     10: lavender500w,
     11: mint500w,
     12: mintMango500w,

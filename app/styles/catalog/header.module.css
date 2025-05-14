@@ -1,0 +1,160 @@
+.headerWrapper {
+    background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    margin-top: 112px;
+    height: 550px;
+}
+
+.backgroundImage {
+    height: auto;
+    width: 100%;
+    max-width: 1440px;
+    min-width: 840px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;    
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    filter: blur(3px);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.text {
+    text-align: center;
+}
+
+.h1 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 110%;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: rgba(26, 26, 26, 0.9);
+
+    .span {
+        font-style: italic;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 110%;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        color: #1a1a1a;
+    }
+}
+
+.span {
+    margin: 0 0 0 -90px;
+    position: absolute;
+}
+
+.imgWrapper {
+    width: 950px;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+}
+
+.mainImage {
+    width: 100%;
+    height: auto;
+}
+
+.wave {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    height: auto;
+    transform: translateY(50%) rotate(180deg);
+    z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    .headerWrapper {
+        height: 450px;
+    }
+
+    .imgWrapper {
+        width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .headerWrapper {
+        margin-top: 102px;
+    }
+
+    .h1 {
+        font-size: 36px;
+    
+        .span {
+            font-size: 28px;
+        }
+    }
+
+}
+
+@media (max-width: 470px) {
+    .headerWrapper {
+        height: 350px;
+    }
+
+    .h1 {
+        font-size: 27px;
+    
+        .span {
+            font-size: 23px;
+        }
+    } 
+
+    .imgWrapper {
+        width: 600px;
+    }
+}
+
+@media (max-width: 370px) {
+    .headerWrapper {
+        height: 300px;
+    }
+
+    .h1 {
+        font-size: 25px;
+    
+        .span {
+            font-size: 21px;
+        }
+    } 
+
+    .imgWrapper {
+        width: 500px;
+    }
+}
+
+@media (max-width: 300px) {
+    .headerWrapper {
+        height: 250px;
+    }
+
+    .h1 {
+        font-size: 23px;
+    
+        .span {
+            font-size: 19px;
+        }
+    } 
+
+    .imgWrapper {
+        width: 400px;
+    }
+}

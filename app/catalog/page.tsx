@@ -1,4 +1,4 @@
-import { HeaderCatalog } from "../ui/catalog/header"
+import { Header } from "../ui/catalog/header"
 import { BodyCatalog } from "../ui/catalog/body"
 import styles from "../styles/catalog.module.css"
 import { getCatalogProducts } from "../lib/data"
@@ -14,7 +14,7 @@ export default async function Page (props: {searchParams?: Promise<{query?: stri
     return (
         <div className={styles.catalogWrapper}>
             <SearchList query={query} />
-            <HeaderCatalog />
+            <Header />
             <BodyCatalog products={products}/>
         </div>
     );
