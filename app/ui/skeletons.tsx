@@ -1,10 +1,12 @@
 import Image from "next/image"
 import backgroundImg from "@/public/salt-body-scrub-500w.png"
 import headerStyles from "../styles/header.module.css"
+import catalogHeaderStyles from "../styles/catalog/header.module.css"
+import catalogBodyStyles from "../styles/skeletons/catalog-body.module.css"
 import textBlockStyles from "../styles/skeletons/text-block.module.css"
 import bestsellersStyles from "../styles/skeletons/bestsellers.module.css"
 import storeBlokStyles from "../styles/skeletons/store-block.module.css"
-// import commonStyles from "../styles/common.module.css"
+import commonStyles from "../styles/common.module.css"
 import { 
     WaveSVG 
 } from "./vectors"
@@ -71,6 +73,40 @@ export const StoreBlockSkeleton = () => {
                 quality={0}
                 sizes="100vw"
             />
+        </div>
+    )
+}
+
+export const CatalogHeaderSkeleton = () => {
+    return (
+        <div className={catalogHeaderStyles.headerWrapper}>
+            <Image
+                className={catalogHeaderStyles.backgroundImage}
+                src={backgroundImg}
+                alt="pretty salt body scrab text on background"
+                quality={0}
+                sizes="100vw"
+                priority
+            />
+            <div className={catalogHeaderStyles.wave}>
+                <WaveSVG />
+            </div>
+        </div>
+    )
+}
+
+export const CatalogBodySkeleton = () => {
+    return (
+        <div className={`${catalogBodyStyles.bodyWrapper} ${commonStyles.container}`}>
+            <div className={catalogBodyStyles.p}></div>
+            <div className={catalogBodyStyles.h1}></div>
+            <div className={catalogBodyStyles.list}>
+                {[...Array(16).keys()].map(
+                    (index) => (
+                    <div key={index} className={`${catalogBodyStyles.item}`}>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
