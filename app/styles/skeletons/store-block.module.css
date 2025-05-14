@@ -1,0 +1,39 @@
+.wrapper {
+    height: 297.297px;
+    width: 100%;
+    position: relative;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    margin-top: 30px;
+    filter: blur(3px);
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        height: 292.891px;
+    }
+}
+
+@media (max-width: 500px) {
+    .wrapper {
+        height: 288.5px;
+    }
+}
+
+@media (max-width: 401px) {
+    .wrapper {
+        height: 309.5px;
+    }
+}
+
+@media (max-width: 320px) {
+    .wrapper {
+        height: 335.906px;
+    }
+}

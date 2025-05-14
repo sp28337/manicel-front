@@ -1,19 +1,23 @@
+import commonStyles from "./styles/common.module.css"
+import { 
+    HeaderSkeleton, 
+    TextBlockSkeleton,
+    BestsellersSkeleton,
+    StoreBlockSkeleton
+ } from "./ui/skeletons"
+
 
 export default function Loading() {
     return (
-         <div style={{
-            width: "100vw",
-            height: "100vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-
-         }}>
-            <div style={{
-                fontSize: "18px"
-            }}>
-                Loading...
+         <>
+            <HeaderSkeleton />
+            <div className={commonStyles.container}>
+                <TextBlockSkeleton />
+                <hr />
+                <BestsellersSkeleton />
+                <hr />
+                <StoreBlockSkeleton/>
             </div>
-        </div>
+         </>
     )
 }
