@@ -2,7 +2,6 @@
     display: flex;
     gap: 30px;
     flex-direction: column;
-    margin-top: 30px;
 }
 
 .description {
@@ -11,6 +10,8 @@
     line-height: 150%;
     font-variant: small-caps;
     color: #1a1a1a;
+    height: 100px;
+    align-content: center;
 }
 
 .h1 {
