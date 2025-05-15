@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import commonStyles from "../../styles/common.module.css"
-import styles from "../../styles/product-header.module.css"
+import styles from "../../styles/product/header.module.css"
 import { ProductSchema } from "../../lib/definitions"
 import { 
     Lavender,

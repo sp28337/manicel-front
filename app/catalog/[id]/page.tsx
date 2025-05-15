@@ -2,6 +2,7 @@ import { getProduct } from "../../lib/data"
 import { Header } from "../../ui/product/header"
 import { Body } from "../../ui/product/body"
 import { SearchList } from "../../ui/search-list"
+import { notFound } from "next/navigation"
 
 export async function generateStaticParams(){
     return [
@@ -29,6 +30,10 @@ export default async function Page(props: PageProps)
     const query = searchParams?.query || ""
 
     const product = await getProduct(id)
+
+    if (!product) {
+        notFound()
+    }
 
     return (
         <>

@@ -6,6 +6,7 @@ import { Bestsellers } from "./ui/bestsellers"
 import { StoreBlock } from "./ui/store-block"
 import { getBestsellers } from "./lib/data"
 import { SearchList } from "./ui/search-list"
+import { notFound } from "next/navigation"
 
 export default async function Page(props: { searchParams?: Promise<{ query?: string }>}) {
     
@@ -13,6 +14,11 @@ export default async function Page(props: { searchParams?: Promise<{ query?: str
     const query = searchParams?.query || ""
 
     const bestsellers = await getBestsellers()
+
+    if (!bestsellers) {
+        notFound()
+    }
+    
     
     return (
         <>

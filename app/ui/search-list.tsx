@@ -4,13 +4,18 @@ import { getSearchProducts } from "../lib/data"
 import { CloseSearchListButton } from "./buttons"
 import { ReviewsStarsSVG, ChartBagSVG } from "./vectors"
 import { searchImages } from "../lib/images"
+import { notFound } from "next/navigation"
 
 const images = searchImages
 
 
 export async function SearchList({ query }: { query: string }) {
 
-    const products = await getSearchProducts(query)  
+    const products = await getSearchProducts(query)
+
+    if (!products) {
+        notFound()
+    }
   
     return (
         <>
