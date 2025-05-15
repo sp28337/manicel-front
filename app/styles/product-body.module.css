@@ -59,7 +59,7 @@
     gap: 20px;
 }
 
-.infoWrapper {
+.info {
     width: 48%;
     flex-direction: column;
     display: flex;
@@ -83,27 +83,6 @@
 .bottom {
     display: flex;
     justify-content: space-evenly;
-}
-
-.priceWrapper {
-    align-items: center;
-    white-space: nowrap;
-    display: flex;
-    gap: 15px;
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 150%;
-    letter-spacing: 0.02em;
-    color: #000;
-}
-
-.oldPrice {
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 150%;
-    letter-spacing: 0.02em;
-    text-decoration: line-through;
-    color: #9ca3af;
 }
 
 .infoList {
@@ -359,13 +338,6 @@
     align-content: center;
 }
 
-    
-.openCloseButton {
-    display: block;
-    margin: 1% 0 0 0;
-    color: #9f9f9f;
-}
-
 @media (max-width: 1024px) {
     .attentionWrapper {
         width: 95%;
@@ -392,15 +364,7 @@
         padding: 12px 30px;
     }
 
-    .priceWrapper {
-        font-size: 20px;
-    }
-
-    .oldPrice {
-        font-size: 20px;
-    }
-
-    .infoWrapper {
+    .info {
         margin: 5% 0 0 0;
         width: 100%;
         gap: 35px;
@@ -410,11 +374,6 @@
         width: 80%;
         margin: auto;
     }
-
-    /* .imgSliderItem {
-        width: 120px;
-        height: 120px;
-    } */
 
     .scrubPhotoMini {
         width: 100%;
@@ -431,7 +390,7 @@
 }
 
 @media (max-width: 610px) {
-    .infoWrapper {
+    .info {
         margin: 12% 0 0 0;
     }
 
@@ -477,11 +436,6 @@
 
     .h3 {
         font-size: 12px;
-    }
-
-    .urlPath {
-        font-size: 10px;
-        gap: 5px;
     }
 }
 

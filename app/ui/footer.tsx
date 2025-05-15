@@ -13,9 +13,18 @@ export const Footer = () => {
                 <div>
                     <h3 className={styles.h3}>навигация</h3>
                     <div className={styles.linksWrapper}>
-                        <Link className={styles.footerLink} href="">о нас</Link>
+                        {/* <Link className={styles.footerLink} href=""> */}
+                            <p style={{color: "#747474"}}>
+                                о нас
+                            </p>
+                        {/* </Link> */}
                         <Link className={styles.footerLink} href="/catalog">каталог</Link>
-                        <a className={styles.footerLink} href="https://www.wildberries.ru/brands/310747490-manicel">в магазин</a>
+                        <a 
+                            className={styles.footerLink} 
+                            href="https://www.wildberries.ru/brands/310747490-manicel"
+                        >
+                            в магазин
+                        </a>
                     </div>
                 </div>
                 <div id="contacts" className={styles.contactsWrapper}>
