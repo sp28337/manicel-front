@@ -1,5 +1,5 @@
 import Image from "next/image"
-import styles from "../../styles/product-body.module.css"
+import styles from "../../styles/product/body.module.css"
 import commonStyles from "../../styles/common.module.css"
 import { Description } from "./description"
 import { ProductImages } from "./product-images"

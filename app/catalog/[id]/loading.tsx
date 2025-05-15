@@ -6,8 +6,8 @@ import {
 export default function Loading() {
     return (
         <>
-         <ProductHeaderSkeleton/>
-         <ProductBodySkeleton/>
+            <ProductHeaderSkeleton/>
+            <ProductBodySkeleton/>
         </>
     )
 }

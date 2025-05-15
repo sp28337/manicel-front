@@ -94,7 +94,7 @@ import bubblegumFront from "@/public/bubblegum/bubblegum-front-1200w.png"
 
 import trio1000w from "@/public/trio-1000w.png"
 import unknown from "@/public/unknown-500w.png"
-import howToUseImg from "@/public/all-800w.png"
+import all from "@/public/all-800w.png"
 
 
 export const catalogImages: { [key: number]: StaticImageData } = {
@@ -205,8 +205,8 @@ export const howToUseImages: {[key: number]: StaticImageData} = {
     10: unknown,
     11: mintFront,
     12: unknown,
-    13: howToUseImg,
-    14: howToUseImg,
-    15: howToUseImg,
-    16: howToUseImg
+    13: all,
+    14: all,
+    15: all,
+    16: all
 }

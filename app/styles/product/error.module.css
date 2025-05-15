@@ -1,0 +1,241 @@
+.header {
+    height: 700px;
+    font-size: 16px;
+    position: relative;
+    overflow-y: visible;
+    overflow-x: clip;
+    z-index: 0;
+    background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
+}
+
+.backgroundImage {
+    height: auto;
+    width: 100%;
+    max-width: 530px;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    z-index: 1;
+    opacity: 0.4;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    filter: blur(1px);
+}
+
+.wrapper {
+    height: 100%;
+}
+
+.imgDefaultWrapper {
+    transition: 1s;
+    width: 450px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -40%);
+    z-index: 4;
+}
+
+.mainImage {
+    width: 100%;
+    height: auto;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(20%, -35%);
+    z-index: 5;
+}
+
+.h1 {
+    transition: 1s;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 110%;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #0d0c10;
+    margin-bottom: 20px;
+}
+
+.span {
+    transition: 1s;
+    display: block;
+    padding-top: 20px;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 110%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: rgba(13, 12, 16, 0.9);
+}
+
+.buttonText {
+    margin: 0 0 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    transform: translateY(150%);
+    border: 1px solid #CB11AB;
+    border-radius: 20px;
+    height: 40px;
+    width: 200px;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.wave {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    height: auto;
+    transform: translateY(50%) rotate(180deg);
+    z-index: 1;
+}
+
+.body {
+    height: 100dvh;
+}
+
+@media (max-width: 1248px) {
+    .imgDefaultWrapper {
+        transform: translate(-35%, -40%);
+    }
+
+    .text {
+        transform: translate(10%, -35%);
+    }
+}
+
+@media (max-width: 1140px) {
+    .imgDefaultWrapper {
+        transform: translate(-25%, -40%);
+    }
+
+    .text {
+        transform: translate(5%, -35%);
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        height: 600px;
+    }
+    
+    .imgDefaultWrapper {
+        width: 400px;
+        transform: translate(-15%, -40%);
+    }
+}
+
+@media (max-width: 900px) {
+    .imgDefaultWrapper {
+        transform: translate(0%, -40%);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 1050px;
+    }
+
+    .backgroundImage {
+        width: 70vw;
+        color: transparent;
+        left: 50%;
+        transform: translate(-50%, 90%);
+        max-width: 460px;
+    }
+
+    .wrapper {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .imgDefaultWrapper {
+        position: static;
+        display: block;
+        width: 600px;
+        transform: translate(0, 0);
+        margin-top: 50px;
+    }
+
+    .text {
+        position: relative;
+        top: 0px;
+        transform: translate(0, 0);
+    }
+
+    .h1 {
+        font-size: 29px;
+        white-space: break-spaces;
+    }
+
+    .span {
+        white-space: break-spaces;
+    }
+
+    .buttonText {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        height: 950px;
+        font-size: 14px;
+    }
+
+    .imgDefaultWrapper {
+        width: 500px;
+    }
+
+    .h1 {
+        white-space: break-spaces;
+    }
+
+    .span {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 465px) {
+    .header {
+        height: 850px;
+        font-size: 12px;
+    }
+    
+    .backgroundImage {
+        transform: translate(-50%, 120%);
+    }
+
+    .imgDefaultWrapper {
+        width: 400px;
+    }
+
+    .span {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 365px) {
+
+    .header {
+        height: 750px;
+    }
+    
+    .imgDefaultWrapper {
+        width: 350px;
+    }
+
+    .h1 {
+        font-size: 18px;
+    }
+}
