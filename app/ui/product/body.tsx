@@ -30,9 +30,11 @@ export const Body = (props: { product: ProductSchema }) => {
                 <div className={styles.infoWrapper}>
                     
                     <div className={styles.infoLine}>
-                        <h3 className={styles.h3}>состав:</h3>
-                        <hr className={styles.hrInfoLine}/>
-                        <ul className={styles.infoList}>
+                        <h3 className={`${styles.h3} ${styles.h3Sostav}`}>
+                            состав:
+                        </h3>
+                        {/* <hr className={styles.hrInfoLine}/> */}
+                        <ul className={styles.sostavList}>
                             {
                                 product.flavor.ingredients.map((
                                     ingredient: {name: string, description: string}, 
@@ -46,9 +48,9 @@ export const Body = (props: { product: ProductSchema }) => {
                     </div>
 
                     <div className={styles.infoLine}>
-                        <h3 className={styles.h3}>действие:</h3>
-                        <hr className={styles.hrInfoLine}/>
-                        <ul className={styles.infoList}>
+                        <h3 className={`${styles.h3} ${styles.h3Action}`}>действие:</h3>
+                        {/* <hr className={styles.hrInfoLine}/> */}
+                        <ul className={styles.actionList}>
                             <li className={styles.infoItem}>
                                 против растяжек
                             </li>
@@ -74,7 +76,7 @@ export const Body = (props: { product: ProductSchema }) => {
                     </div>
 
                     <div className={styles.infoLine}>
-                        <h3 className={styles.h3}>комплектация:</h3>
+                        <h3 className={styles.h3}>комплект:</h3>
                         <hr className={styles.hrInfoLine}/>
                         <span className={styles.infoItem}>{`${product.complectation.name}`}</span>
                     </div>
