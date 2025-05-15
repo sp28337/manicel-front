@@ -12,23 +12,16 @@ export const Body = (props: { product: ProductSchema }) => {
     const { product } = props
 
     return (
-        <div className={`${styles.bodyWrapper} ${commonStyles.container}`}>
-            
-            {/* <div className={styles.urlPath}>
-                <Link className={styles.pathLink} href="/">главная </Link>
-                &gt;
-                <Link className={styles.pathLink} href="/catalog"> каталог </Link>
-                &gt;
-                <div className={styles.activePath}> {product.name}</div>
-            </div> */}
+        <div className={`${commonStyles.container}`}>
             <Description product={props.product} />
 
             <hr className={styles.hr}/>
 
             <div className={styles.productCard}>
+                
                 <ProductImages id={props.product.id}/>
-                <div className={styles.infoWrapper}>
-                    
+
+                <div className={styles.info}>
                     <div className={styles.infoLine}>
                         <h3 className={`${styles.h3} ${styles.h3Sostav}`}>
                             состав:
@@ -39,10 +32,11 @@ export const Body = (props: { product: ProductSchema }) => {
                                 product.flavor.ingredients.map((
                                     ingredient: {name: string, description: string}, 
                                     index: number
-                                ) => (<li className={styles.infoItem} key={index}>
+                                ) => (
+                                    <li className={styles.infoItem} key={index}>
                                         {ingredient.name}
-                                      </li>
-                                      ))
+                                    </li>
+                                ))
                             }
                         </ul>
                     </div>
@@ -87,7 +81,10 @@ export const Body = (props: { product: ProductSchema }) => {
                             <hr className={styles.hrInfoLine}/>
                             <span className={styles.infoItem}>{`${product.expiration_date.before_opening}`}</span>
                         </div>
-                        <p className={styles.pInfo}>рекомендованный срок хранения и использования после вскрытия упаковки - {`${props.product.expiration_date.after_opening}`}</p>
+                        <p className={styles.pInfo}>
+                            рекомендованный срок хранения и использования после вскрытия 
+                            упаковки - {`${props.product.expiration_date.after_opening}`}
+                        </p>
                     </div>
 
                     <div className={styles.bottom}>
@@ -99,10 +96,11 @@ export const Body = (props: { product: ProductSchema }) => {
                             купить на wb
                         </a>
                     </div>
-                    
                 </div>
             </div>
+
             <hr className={styles.hr}/>
+
             {product.attention && 
                 <>
                     <div className={styles.attentionWrapper}>
@@ -114,17 +112,21 @@ export const Body = (props: { product: ProductSchema }) => {
                     <hr className={styles.hr}/>
                 </>
             }
+            
             <div className={styles.howToUse}>
                 <div className={styles.howToUseText}>
                     <h2 className={styles.h2}>как использовать</h2>
                     <div className={styles.howToUseDescription}>
-                        <h4 className={styles.h4}>Используйте антицеллюлитный скраб во время душа, похода в баню или сауну</h4>
+                        <h4 className={styles.h4}>
+                            Используйте антицеллюлитный скраб во время душа, похода в баню или сауну
+                        </h4>
                         <div className={`${styles.howToUseDescLine}`}>
                             <div className={styles.howToUseDiv}>
                                 <OneSVG />
                             </div>
                             <p className={styles.howToUseP}>
-                                Массажными движениями нанесите скраб на распаренную очищенную кожу, уделяя особое внимание “проблемным зонам”
+                                Массажными движениями нанесите скраб на распаренную очищенную кожу, 
+                                уделяя особое внимание “проблемным зонам”
                             </p>
                         </div>
                         <div className={styles.howToUseDescLine}>
@@ -132,7 +134,8 @@ export const Body = (props: { product: ProductSchema }) => {
                                 <TwoSVG />
                             </div>
                             <p className={styles.howToUseP}>
-                                Оставьте на оставьте на {`${[1, 11, 12].includes(props.product.id) ? "1-2 минуты" : "3-5 минут"}`}, затем смойте теплой водой 
+                                Оставьте на оставьте на {`${[1, 11, 12].includes(props.product.id) ? 
+                                "1-2 минуты" : "3-5 минут"}`}, затем смойте теплой водой 
                             </p>
                         </div>
                         <div className={styles.howToUseDescLine}>
@@ -140,7 +143,8 @@ export const Body = (props: { product: ProductSchema }) => {
                                 <MarkSVG />
                             </div>
                             <p className={styles.howToUseP}>
-                                Не используйте соляной скраб ежедневно. Не подходит для проблемной и поврежденной кожи
+                                Не используйте соляной скраб ежедневно. 
+                                Не подходит для проблемной и поврежденной кожи
                             </p>
                         </div>
                     </div>
