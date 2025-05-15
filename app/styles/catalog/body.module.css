@@ -33,6 +33,7 @@
 
 .item {
     border-radius: 8px;
+    transition: 1s;
     position: relative;
     width: 23%;
     height: 300px;

@@ -1,14 +1,3 @@
-.h1Sets {
-    font-weight: 500;
-    font-size: 40px;
-    text-transform: uppercase;
-    color: rgba(26, 26, 26, 0.9);
-}
-
-.plus {
-    text-align: center;
-}
-
 .header {
     height: 700px;
     font-size: 16px;
@@ -37,6 +26,7 @@
 }
 
 .imgSetsWrapper {
+    transition: 1s;
     width: 650px;
     position: absolute;
     top: 50%;
@@ -46,6 +36,7 @@
 }
 
 .imgDefaultWrapper {
+    transition: 1s;
     width: 450px;
     position: absolute;
     top: 50%;
@@ -59,18 +50,6 @@
     width: 100%;
     height: auto;
 }
-
-/* .note {
-    display: none;
-    margin: 0 auto;
-    width: 90%;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 100%;
-    font-variant: small-caps;
-    text-align: center;
-    color: rgba(26, 26, 26, 0.5);
-} */
 
 .text {
     display: flex;
@@ -105,14 +84,29 @@
 .h1Wrapper {
     display: flex;
     flex-direction: column;
+    padding: 0 0 0 5%;
 }
 
 .h1 {
+    transition: 1s;
     white-space: nowrap;
     font-weight: 500;
-    font-size: 40px;
     text-transform: uppercase;
     color: rgba(26, 26, 26, 0.9);
+}
+
+.h1Sets {
+    transition: 1s;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgba(26, 26, 26, 0.9);
+}
+
+.plus {
+    text-align: center;
+    position: absolute;
+    left: 1%;
+    top: 5%;
 }
 
 .span {
@@ -126,6 +120,7 @@
 }
 
 .list {
+    transition: 1s;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -225,14 +220,6 @@
 
     .imgSetsWrapper {
         width: 550px;
-    }
-
-    .h1 {
-        font-size: 36px;
-    }
-
-    .h1Sets {
-        font-size: 36px;
     }
 
     .headerList {

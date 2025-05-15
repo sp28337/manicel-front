@@ -64,9 +64,9 @@ export const Header = (props: { product: ProductSchema }) => {
             return (
                 <div className={styles.h1Sets}>
                     <div>{splitNames[0].trim()}</div>
-                    <div style={{marginLeft: "-33%"}} className={styles.plus}>+</div>
-                    <div style={{textAlign: "center"}}>{splitNames[1].trim()}</div>
-                    <div style={{marginLeft: "33%"}} className={styles.plus}>+</div>
+                    {/* <div style={{marginLeft: "-33%"}} className={styles.plus}>+</div> */}
+                    <div style={{textAlign: "center"}}>+        {splitNames[1].trim()}        +</div>
+                    {/* <div style={{marginLeft: "33%"}} className={styles.plus}>+</div> */}
                     <div style={{textAlign: "right"}}>{splitNames[2].trim()}</div>
                 </div>
             )

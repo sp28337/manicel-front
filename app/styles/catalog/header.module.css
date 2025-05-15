@@ -59,6 +59,7 @@
 }
 
 .imgWrapper {
+    transition: 1s;
     width: 950px;
     display: flex;
     justify-content: center;

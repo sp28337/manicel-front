@@ -338,13 +338,6 @@
     align-content: center;
 }
 
-    
-.openCloseButton {
-    display: block;
-    margin: 1% 0 0 0;
-    color: #9f9f9f;
-}
-
 @media (max-width: 1024px) {
     .attentionWrapper {
         width: 95%;
@@ -371,14 +364,6 @@
         padding: 12px 30px;
     }
 
-    .priceWrapper {
-        font-size: 20px;
-    }
-
-    .oldPrice {
-        font-size: 20px;
-    }
-
     .info {
         margin: 5% 0 0 0;
         width: 100%;
@@ -389,11 +374,6 @@
         width: 80%;
         margin: auto;
     }
-
-    /* .imgSliderItem {
-        width: 120px;
-        height: 120px;
-    } */
 
     .scrubPhotoMini {
         width: 100%;
@@ -456,11 +436,6 @@
 
     .h3 {
         font-size: 12px;
-    }
-
-    .urlPath {
-        font-size: 10px;
-        gap: 5px;
     }
 }
 

@@ -29,9 +29,9 @@ export const PopupMenu = (
                             <Link href="/" className={styles.navLink}>
                                 <p>ГЛАВНАЯ</p>
                             </Link>
-                            <Link href="#" className={styles.navLink}>
-                                <p>O НАС</p>
-                            </Link>
+                            {/* <Link href="#" className={styles.navLink}> */}
+                                <p style={{color: "#747474"}}>O НАС</p>
+                            {/* </Link> */}
                             <Link href="/catalog" className={styles.navLink}>
                                 <p>КАТАЛОГ</p>
                             </Link>
