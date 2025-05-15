@@ -341,6 +341,10 @@
 }
 
 @media (max-width: 1024px) {
+    .attentionWrapper {
+        width: 95%;
+    }
+
     .productCard {
         flex-direction: column;
     }

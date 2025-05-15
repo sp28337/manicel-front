@@ -6,6 +6,8 @@ import catalogBodyStyles from "../styles/skeletons/catalog-body.module.css"
 import textBlockStyles from "../styles/skeletons/text-block.module.css"
 import bestsellersStyles from "../styles/skeletons/bestsellers.module.css"
 import storeBlokStyles from "../styles/skeletons/store-block.module.css"
+import productHeaderStyles from "../styles/skeletons/product-header.module.css"
+import productBodyStyles from "../styles/skeletons/product-body.module.css"
 import commonStyles from "../styles/common.module.css"
 import { 
     WaveSVG 
@@ -108,5 +110,29 @@ export const CatalogBodySkeleton = () => {
                 ))}
             </div>
         </div>
+    )
+}
+
+export const ProductHeaderSkeleton= () => {
+    return (
+        <div className={productHeaderStyles.header}>
+            <Image
+                className={headerStyles.backgroundImage}
+                src={backgroundImg}
+                alt="pretty salt body scrab text on background"
+                quality={0}
+                sizes="100vw"
+                priority
+            />
+            <div className={productHeaderStyles.wave}>
+                <WaveSVG />
+            </div>
+        </div>
+    )
+}
+
+export const ProductBodySkeleton= () => {
+    return (
+        <div className={productBodyStyles.body}></div>
     )
 }
