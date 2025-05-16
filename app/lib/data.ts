@@ -31,11 +31,11 @@ export async function getSearchProducts(query: string) {
             { cache: dataCache()}
         )
         const filteredProducts: CatalogProductsSchema[] = await data.json()
-        console.log(`[+] fetching filtered products`)
+        console.log(`[+] fetching search products`)
         return filteredProducts
     } catch (error) {
         console.error("Database Error:", error);
-        throw new Error("Failed to fetch filtered products.");
+        throw new Error("Failed to fetch search products.");
       }
 }
 
