@@ -5,13 +5,9 @@ import { TextBlock } from "./ui/text-block"
 import { Bestsellers } from "./ui/bestsellers"
 import { StoreBlock } from "./ui/store-block"
 import { getBestsellers } from "./lib/data"
-import { SearchList } from "./ui/search-list"
 import { notFound } from "next/navigation"
 
-export default async function Page(props: { searchParams?: Promise<{ query?: string }>}) {
-    
-    const searchParams = await props.searchParams
-    const query = searchParams?.query || ""
+export default async function Page() {
 
     const bestsellers = await getBestsellers()
 
@@ -19,10 +15,8 @@ export default async function Page(props: { searchParams?: Promise<{ query?: str
         notFound()
     }
     
-    
     return (
         <>
-            <SearchList query={query} />
             <Header />
             <main className={styles.container}>
                 <TextBlock />

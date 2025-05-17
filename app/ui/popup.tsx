@@ -2,29 +2,23 @@
 
 import Link from "next/link"
 import styles from "../styles/popup-menu.module.css"
-import { useState } from "react"
 import { createPortal } from "react-dom"
 import { BurgerSVG } from "./vectors"
+import { useMyPopupContext } from "./contexts"
 
-export const PopupMenu = (
-    { isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (value: boolean) => void }
-) => {
-    const [isPopupOpen, setIsPopupOpen] = useState(false)
+export const PopupMenu = () => {
 
-    const closeMenu = () => {
-        setIsPopupOpen(false)
-    }
+    const context = useMyPopupContext()
+    const { open, switchOpen } = context
 
     return (
         <> 
-            { !isOpen && 
-                <button className={styles.burger} onClick={() => setIsPopupOpen((isPopupOpen) => !isPopupOpen)}>
-                    <BurgerSVG />
-                </button>
-            }
+            <button className={styles.burger} onClick={switchOpen} >
+                <BurgerSVG />
+            </button>
             {
-                isPopupOpen && createPortal(
-                    <div className={styles.popupMenu} onClick={closeMenu}>
+                open && createPortal(
+                    <div className={styles.popupMenu} onClick={switchOpen}>
                         <div className={styles.links}>
                             <Link href="/" className={styles.navLink}>
                                 <p>ГЛАВНАЯ</p>
@@ -40,7 +34,7 @@ export const PopupMenu = (
                             </Link>
                             <button 
                                 className={styles.navLink} 
-                                onClick={() => setIsOpen(!isOpen)}
+                                // onClick={() => setOpen(!open)}
                             >
                                 <p>ПОИСК</p>
                             </button>
@@ -49,8 +43,8 @@ export const PopupMenu = (
                             </a>
                         </div>
                     </div>
-                    , document.body
-                )
+                    , document.getElementById("menu")!
+                )   
             }
         </>
     )

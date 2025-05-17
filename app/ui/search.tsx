@@ -1,49 +1,58 @@
 "use client"
 
 import styles from "../styles/search.module.css"
+import commonStyles from "../styles/common.module.css"
 import { useDebouncedCallback } from "use-debounce"
-import { useSearchParams, usePathname, useRouter } from "next/navigation"
 import { useEffect, useRef, useCallback } from "react"
+import { useMySearchContext } from "./contexts"
+import { SearchSVG } from "./vectors"
+import { createPortal } from "react-dom"
 
-export function Search(
-    { placeholder, isOpen, onClose }: { placeholder: string, isOpen: boolean, onClose: () => void }
-) {
-    const searchParams = useSearchParams()
-    const pathname = usePathname()
-    const { replace } = useRouter()
+
+export function Search() {
+    const context = useMySearchContext()
+
+    const { 
+        open, 
+        switchOpen, 
+        searchParams,
+        pathname,
+        replace
+    } = context
+
     const inputRef = useRef<HTMLInputElement>(null)
 
     const closeSearch = useCallback(() => {
-        onClose()
-        replace(`${pathname}`)
-    }, [onClose, replace, pathname])
+        switchOpen()
+        replace(`${pathname}`, { scroll: false } )
+    }, [switchOpen, replace, pathname])
 
-    const handleSearch = useDebouncedCallback((term) =>  {
-        
-        console.log(`Searching... ${term}`)
-        const params = new URLSearchParams(searchParams)
-        
-        if (term) {
-            params.set("query", term)
-        } else {
-            params.delete("query")
-        }
-        
-        replace(`${pathname}?${params.toString()}`)
-    }, 300)
+    const createQueryString = useDebouncedCallback(
+        (name: string, value: string) =>  {
+            console.log(`Searching... ${value}`)
+            const params = new URLSearchParams(searchParams.toString())
+            
+            if (value) {
+                params.set(name, value)
+            } else {
+                params.delete(name)
+            }
+            replace(`${pathname}?${params}`, { scroll: false })
+        }, 300
+    )
 
     // Фокус на input при открытии
 
     useEffect(() => {
-        if (isOpen) {
+        if (open) {
             inputRef.current?.focus()
         }
-    }, [isOpen])
+    }, [open])
 
     // Обработчик Escape на весь документ
 
     useEffect(() => {
-        if (!isOpen) {
+        if (open) {
             function handleKeyDown(e: KeyboardEvent) {
                 if (e.key === "Escape") {
                     closeSearch();
@@ -56,39 +65,44 @@ export function Search(
             }
         }
     
-    }, [isOpen, closeSearch])
+    }, [open, closeSearch])
 
 
     return (
         <>
-            { isOpen &&
-                <div className={styles.searchWrapper}>
-                    <>
+            <button 
+                className={styles.searchButton}
+                onClick={switchOpen}
+            >
+                <SearchSVG />
+            </button> 
+            { open && 
+                createPortal(
+                    <div className={styles.searchWrapper}>
                         <div 
                             className={styles.searchBackground} 
                             onClick={() => {closeSearch()}}
                         >    
                         </div>
-                        <div className={styles.search}>
-                            <label htmlFor="input">   
-                            </label>
+                        <div className={`${styles.search} ${commonStyles.container}`}>
+                            <label htmlFor="input"></label>
                             <input
                                 id="input"
                                 ref={inputRef} 
                                 onClick={() => {inputRef.current?.focus();}}
                                 defaultValue={searchParams.get("query")?.toString()} 
-                                onChange={e => handleSearch(e.target.value)} 
+                                onChange={e => createQueryString("query", e.target.value)} 
                                 onKeyDown={e => {
                                     if (e.key === "Escape") {
                                         closeSearch();
                                     }
                                 }} 
                                 className={styles.input} 
-                                placeholder={placeholder}
+                                placeholder={"Поиск..."}
                             />
                         </div>
-                    </>
-                </div>
+                    </div>, document.getElementById("search")!
+                )
             }
         </>
     )
