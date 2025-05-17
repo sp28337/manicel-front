@@ -94,83 +94,90 @@ export const Header = (props: { product: ProductSchema }) => {
 
     return (
 
-        <header className={styles.header}>
-            <Image 
-                className={styles.backgroundImage}
-                src={backgroundImg} 
-                alt="salt body scrub written with beautiful font on background"
-                quality={0}
-                sizes="100vw"
-            />
-            <>
-                {checkId(product.id) === 0 &&  backgroundElements[product.id]}
-                {checkId(product.id) === 2 &&  backgroundElements[product.id]}
-            </>
-            <div className={`${styles.wrapper} ${commonStyles.container}`}>
-                <div className={
-                    checkId(product.id) === 1      ? 
-                    `${styles.imgSetsWrapper}`     : 
-                    `${styles.imgDefaultWrapper}`
-                    }
-                >
-                    <Image 
-                        className={`${styles.mainImage}`}
-                        src={mainImages[product.id]} 
-                        alt={product.category.name}
-                        sizes="100vw"
-                        priority
-                    />
-                    {/* <p className={styles.note}>
-                        {product.note}
-                    </p> */}
+        <>
+            <header className={styles.headerWrapper}>
+                <div className={styles.backgroundElementsWrapper}>
+                    {checkId(product.id) === 0 &&  backgroundElements[product.id]}
+                    {checkId(product.id) === 2 &&  backgroundElements[product.id]}
                 </div>
-
-                <div className={
-                    checkId(product.id) === 1      ? 
-                    `${styles.textSets}`           : 
-                    checkId(product.id) === 2      ?
-                    `${styles.textPockets}`        : 
-                    `${styles.text}`
-                    }
-                >
-
-                    <h1 className={styles.h1Wrapper}>
-                        {    
-                            checkId(product.id) === 1         ? 
-                            handleH1SetsName(product.name)    : 
-                            <span className={`${styles.h1}`}>
-                                {product.name}
-                            </span> 
+                <Image 
+                    className={styles.backgroundImage}
+                    src={backgroundImg} 
+                    alt="salt body scrub written with beautiful font on background"
+                    quality={0}
+                    sizes="100vw"
+                />
+                {/* <>
+                    {checkId(product.id) === 0 &&  backgroundElements[product.id]}
+                    {checkId(product.id) === 2 &&  backgroundElements[product.id]}
+                </> */}
+                <div className={`${styles.wrapper} ${commonStyles.container}`}>
+                    <div className={
+                        checkId(product.id) === 1      ? 
+                        `${styles.imgSetsWrapper}`     : 
+                        `${styles.imgDefaultWrapper}`
                         }
-                        <span className={styles.span}>
-                            {product.category.name}
-                        </span>
-                    </h1>
+                    >
+                        <Image 
+                            className={`${styles.mainImage}`}
+                            src={mainImages[product.id]} 
+                            alt={product.category.name}
+                            sizes="100vw"
+                            priority
+                        />
+                        {/* <p className={styles.note}>
+                            {product.note}
+                        </p> */}
+                    </div>
 
-                    <ul className={styles.list}>
-                        
-                        {product.effects.map((item, index) => (
-                            <li key={index} className={
-                                checkId(product.id) === 1      ? 
-                                `${styles.listSetsItem}`       : 
-                                `${styles.listItem}`
-                                }
-                            >
-                                <span className={styles.liItemWrapper}>
-                                    <LeaveSVG />
-                                </span>
-                                <span className={styles.liItemWrapper}>
-                                    {item.description}
-                                </span>
-                            </li>
-                        ))}
+                    <div className={
+                        checkId(product.id) === 1      ? 
+                        `${styles.textSets}`           : 
+                        checkId(product.id) === 2      ?
+                        `${styles.textPockets}`        : 
+                        `${styles.text}`
+                        }
+                    >
 
-                    </ul>
+                        <h1 className={styles.h1Wrapper}>
+                            {    
+                                checkId(product.id) === 1         ? 
+                                handleH1SetsName(product.name)    : 
+                                <span className={`${styles.h1}`}>
+                                    {product.name}
+                                </span> 
+                            }
+                            <span className={styles.span}>
+                                {product.category.name}
+                            </span>
+                        </h1>
+
+                        <ul className={styles.list}>
+                            
+                            {product.effects.map((item, index) => (
+                                <li key={index} className={
+                                    checkId(product.id) === 1      ? 
+                                    `${styles.listSetsItem}`       : 
+                                    `${styles.listItem}`
+                                    }
+                                >
+                                    <span className={styles.liItemWrapper}>
+                                        <LeaveSVG />
+                                    </span>
+                                    <span className={styles.liItemWrapper}>
+                                        {item.description}
+                                    </span>
+                                </li>
+                            ))}
+
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div className={styles.wave}>
-                <WaveSVG />
-            </div>
-        </header>
+                <div className={styles.wave}>
+                    <WaveSVG />
+                </div>
+            </header>
+        </>
+
     )
 }
