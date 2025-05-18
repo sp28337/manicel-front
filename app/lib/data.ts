@@ -6,7 +6,7 @@ const protocol = {
 }
 
 const hosts = {
-    local: "localhost",
+    local: "127.0.0.1",
     prod: "back"
 }
 
