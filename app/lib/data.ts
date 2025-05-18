@@ -1,33 +1,22 @@
 import { CatalogProductsSchema, BestsellersSchema, ProductSchema } from "./definitions"
 
-const protocol = {
-    http: "http",
-    https: "https"
+const protocol = process.env.NEXT_PUBLIC_API_PROTOCOL
+const port = process.env.NEXT_PUBLIC_API_PORT
+const host = process.env.NEXT_PUBLIC_API_HOST
+
+function dataCache(cache=true) {
+    if (cache) {
+        return "force-cache"
+    } else {
+        return "no-store"
+    }
 }
-
-const hosts = {
-    local: "localhost",
-    prod: "back"
-}
-
-const host = hosts.prod
-
-const port = {
-    local: "8000", 
-}
-
-
-const dataCache = (toggle=true) => {
-    if (toggle) return "force-cache"
-    else return "no-store"
-}
-
 
 export async function getSearchProducts(query: string) {
 
     try {
         const data = await fetch(
-            `${protocol.http}://${host}:${port.local}/products/search_products?query=${query}`,
+            `${protocol}://${host}:${port}/products/search_products?query=${query}`,
             { cache: dataCache()}
         )
         const filteredProducts: CatalogProductsSchema[] = await data.json()
@@ -43,7 +32,7 @@ export async function getCatalogProducts() {
     
     try {
         const data = await fetch(
-            `${protocol.http}://${host}:${port.local}/products/catalog_products`,
+            `${protocol}://${host}:${port}/products/catalog_products`,
             { cache: dataCache()}
         )
         const products: CatalogProductsSchema[] = await data.json()
@@ -60,7 +49,7 @@ export async function getBestsellers() {
     
     try {
         const data = await fetch(
-            `${protocol.http}://${host}:${port.local}/products/bestsellers`,
+            `${protocol}://${host}:${port}/products/bestsellers`,
             { cache: dataCache()}
         )
         const bestsellers: BestsellersSchema[] = await data.json()
@@ -77,7 +66,7 @@ export async function getProduct(id: string) {
 
     try {
         const data = await fetch(
-            `${protocol.http}://${host}:${port.local}/products/${id}`,
+            `${protocol}://${host}:${port}/products/${id}`,
             { cache: dataCache()}
         )
         const product: ProductSchema = await data.json()
