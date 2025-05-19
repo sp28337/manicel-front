@@ -5,12 +5,7 @@ const protocol = {
     https: "https"
 }
 
-const hosts = {
-    local: "127.0.0.1",
-    prod: "back"
-}
-
-const host = hosts.prod
+const host = process.env.NEXT_PUBLIC_API_URL
 
 const port = {
     local: "8000", 

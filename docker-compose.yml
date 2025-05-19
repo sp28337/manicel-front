@@ -1,7 +1,15 @@
 services:
-  app:
+  frontend:
     build:
       dockerfile: ./Dockerfile
       context: ./
     ports:
       - '3000:3000'
+    networks:
+      - manicel_network
+    environment:
+      - NEXT_PUBLIC_API_URL=backend
+    
+
+networks:
+  manicel_network:
