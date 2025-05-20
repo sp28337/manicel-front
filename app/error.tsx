@@ -1,14 +1,22 @@
-import Link from 'next/link'
+"use client"
+
+import Link from "next/link"
 import Image from "next/image"
 import styles from "./styles/header.module.css"
 import textBlockStyles from "./styles/text-block.module.css"
 import commonStyles from "./styles/common.module.css"
-import React from "react"
+import React, { useEffect } from "react"
 import { WaveSVG } from "./ui/vectors"
 import backgroundImg from "@/public/salt-body-scrub-500w.png"
 import all from "@/public/all-800w.png"
+
+export default function Error({error, reset,}: {error: Error & { digest?: string } 
+    reset: () => void}
+) {
+    useEffect(() => {
+        console.error(error)
+    }, [error])
  
-export default async function NotFound() {
     return (
         <>
             <div className={styles.headerWrapper}>
@@ -21,16 +29,20 @@ export default async function NotFound() {
                     priority
                 />
                 <div className={`${commonStyles.container} ${styles.header}` }>
+                    
                     <div className={styles.textBlock} style={{gap: "30px"}}>
-                        <h1 className={styles.h1} style={{margin: "0 auto"}}>
-                            страничка не найдена
-                            <span className={styles.span} style={{margin: "5% 0 0", textAlign: "center"}}>
-                                4 0 4
+                        <h1 className={styles.h1}>
+                            <span className={styles.span}>
+                                УПС . . . 
                             </span>
+                            что-то пошло не так
                         </h1>
                         <Link href="/catalog" 
                             className={textBlockStyles.aboutUsButton}
                             style={{margin: "0 auto"}}
+                            onClick={
+                                () => reset()
+                            }
                         >
                             в каталог
                         </Link>
