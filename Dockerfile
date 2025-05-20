@@ -2,7 +2,7 @@ FROM node:22.14.0-alpine
 
 WORKDIR /app
 
-ENV NEXT_PUBLIC_API_URL=backend
+ENV NEXT_PUBLIC_API_HOST=backend
 
 COPY package*.json ./
 
