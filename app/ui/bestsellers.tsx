@@ -51,24 +51,25 @@ export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => 
 
     return (
         <div className={styles.bestsellersWrapper}>
-            <h1 className={styles.h1}>
+            <h2 className={styles.h2}>
                 бестселлеры
-            </h1>
+            </h2>
             <div className={`${styles.bestsellersGrid} ${styles.bestsellersFlex}`}>
             {products && Array.isArray(products) && products.map((product, index) => (
-                <Link key={index} href={`/catalog/${product.id}`}>
-                    <div className={`${styles.productItem} ${backgroundStyles[product.id]}`}>
+                <div key={index} className={`${styles.productItem} ${backgroundStyles[product.id]}`}>
                         <div className={`${styles.gradient} ${gradientStyles[product.id]}`}></div>
                         <div className={styles.background}></div>
-                        <div className={`${styles.scrubWrapper}`}>
-                            <Image 
-                                className={`${styles.scrub}`} 
-                                src={images[product.id]} 
-                                alt={product.type}
-                                sizes="100vw"
-                                width={400}
-                            />
-                        </div>
+                        <Link className={styles.link} key={index} href={`/catalog/${product.id}`}>
+                            <div className={`${styles.scrubWrapper}`}>
+                                <Image 
+                                    className={`${styles.scrub}`} 
+                                    src={images[product.id]} 
+                                    alt={product.type}
+                                    sizes="100vw"
+                                    width={400}
+                                />
+                            </div>
+                        </Link >
                         <div className={styles.infoContainer}>
                             <h3 className={`${styles.h3}`}>{product.name}</h3>
                             <p className={styles.p}>{product.type}</p>
@@ -87,7 +88,6 @@ export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => 
                             </div>  
                         </div>
                     </div>
-                </Link >
             ))}
             </div>
         </div>

@@ -16,6 +16,10 @@
     z-index: 0;
 }
 
+.link {
+    display: contents;
+}
+
 .bestsellersFlex {
     display: flex;
     flex-direction: column;
@@ -78,7 +82,7 @@
     transform: scale(1.05);
 }
 
-.h1 {
+.h2 {
     margin-bottom: 20px;
     font-weight: 400;
     font-size: 32px;
@@ -406,7 +410,7 @@
 
 @media (max-width: 768px) {
     
-    .h1 {
+    .h2 {
         margin-bottom: 20px;
         font-size: 28px;
     }
