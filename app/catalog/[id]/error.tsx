@@ -2,14 +2,14 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import styles from "../../styles/product/error.module.css"
+import styles from "../../styles/header.module.css"
+import textBlockStyles from "../../styles/text-block.module.css"
 import commonStyles from "../../styles/common.module.css"
 import React, { useEffect } from "react"
 import { WaveSVG } from "../../ui/vectors"
-import backgroundImg from "@/public/404.png"
+import backgroundImg from "@/public/salt-body-scrub-500w.png"
 import all from "@/public/all-800w.png"
 
- 
 export default function Error({error, reset,}: {error: Error & { digest?: string } 
     reset: () => void}
 ) {
@@ -19,7 +19,7 @@ export default function Error({error, reset,}: {error: Error & { digest?: string
  
     return (
         <>
-            <header className={styles.header}>
+            <div className={styles.headerWrapper}>
                 <Image
                     className={styles.backgroundImage}
                     src={backgroundImg}
@@ -28,37 +28,40 @@ export default function Error({error, reset,}: {error: Error & { digest?: string
                     sizes="100vw"
                     priority
                 />
-                <div className={`${styles.wrapper} ${commonStyles.container}`}>
-                    <div className={styles.imgDefaultWrapper}>
-                        <Image 
-                            className={`${styles.mainImage}`}
+                <div className={`${commonStyles.container} ${styles.header}` }>
+                    
+                    <div className={styles.textBlock} style={{gap: "30px"}}>
+                        <h1 className={styles.h1}>
+                            <span className={styles.span}>
+                                УПС . . . 
+                            </span>
+                            что-то пошло не так
+                        </h1>
+                        <Link href="/catalog" 
+                            className={textBlockStyles.aboutUsButton}
+                            style={{margin: "0 auto"}}
+                            onClick={
+                                () => reset()
+                            }
+                        >
+                            в каталог
+                        </Link>
+                    </div>
+                    <div className={styles.imgWrapper}>
+                        <Image className={styles.mainImage}
                             src={all} 
-                            alt={""}
+                            alt="piramyd of all scrubs with raspberry on top of some cans"
+                            quality={100}
                             sizes="100vw"
                             priority
                         />
-                    </div>
-
-                    <div className={styles.text}>
-                        <h1 className={styles.h1}>упс . . .<br />
-                            <span className={styles.span}>что-то пошло не так</span>
-                        </h1>
-                        <button>
-                            <Link 
-                                href="/"
-                                className={styles.buttonText}
-                                onClick={() => reset()}
-                            >
-                                обновить
-                            </Link>
-                        </button>
                     </div>
                 </div>
                 <div className={styles.wave}>
                     <WaveSVG />
                 </div>
-            </header>
-            <div className={styles.body}></div>
+            </div >
+            <div style={{height: "100dvh"}}></div>
         </>
     )
-    }
+}
