@@ -19,7 +19,7 @@ export const HeaderSkeleton = () => {
             <Image
                 className={headerStyles.backgroundImage}
                 src={backgroundImg}
-                alt="pretty salt body scrab text on background"
+                alt=""
                 quality={0}
                 sizes="100vw"
                 priority
@@ -115,7 +115,7 @@ export const CatalogBodySkeleton = () => {
 
 export const ProductHeaderSkeleton= () => {
     return (
-        <div className={productHeaderStyles.header}>
+        <div className={productHeaderStyles.headerWrapper}>
             <Image
                 className={headerStyles.backgroundImage}
                 src={backgroundImg}

@@ -1,11 +1,24 @@
-.header {
-    height: 700px;
+
+.backgroundElementsWrapper {
+    margin-top: -112px;
+    height: 761px;
+    width: 100dvw;
+    position: absolute;
+    overflow-y: visible;
+    overflow-x: clip;
+    z-index: 4;
+}
+
+.headerWrapper {
+    height: 650px;
     font-size: 16px;
+    margin-top: 112px;
     position: relative;
     overflow-y: visible;
     overflow-x: clip;
     z-index: 0;
     background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
+    transition: 1s;
 }
 
 .backgroundImage {
@@ -31,7 +44,7 @@
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translate(-10%, -30%);
+    transform: translate(-10%, -50%);
     z-index: 4;
 }
 
@@ -41,7 +54,7 @@
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -50%);
     z-index: 4;
 
 }
@@ -57,7 +70,7 @@
     gap: 30px;
     position: absolute;
     top: 50%;
-    transform: translate(20%, -35%);
+    transform: translate(20%, -50%);
     z-index: 5;
 }
 
@@ -67,7 +80,7 @@
     gap: 30px;
     position: absolute;
     top: 50%;
-    transform: translate(10%, -35%);
+    transform: translate(10%, -50%);
     z-index: 5;
 }
 
@@ -77,7 +90,7 @@
     gap: 30px;
     position: absolute;
     top: 50%;
-    transform: translate(50%, -35%);
+    transform: translate(50%, -50%);
     z-index: 5;
 }
 
@@ -160,62 +173,61 @@
 }
 
 @media (max-width: 1248px) {
+    .headerWrapper {
+        height: 570px;
+    }
+
     .imgDefaultWrapper {
-        transform: translate(-35%, -40%);
+        transform: translate(-35%, -50%);
     }
 
     .imgSetsWrapper {
-        transform: translate(0%, -30%);
+        transform: translate(0%, -50%);
     }
 
     .text {
-        transform: translate(10%, -35%);
+        transform: translate(10%, -50%);
     }
 
     .textSets{
-        transform: translate(5%, -35%);
+        transform: translate(5%, -50%);
     }
 
     .textPockets {
-        transform: translate(40%, -35%);
+        transform: translate(40%, -50%);
     }
 }
 
 @media (max-width: 1140px) {
     .imgDefaultWrapper {
-        transform: translate(-25%, -40%);
+        transform: translate(-25%, -50%);
     }
 
     .imgSetsWrapper {
-        transform: translate(1%, -30%);
+        transform: translate(1%, -50%);
     }
 
     .text {
-        transform: translate(5%, -35%);
+        transform: translate(5%, -50%);
     }
 
     .textSets{
-        transform: translate(2%, -35%);
+        transform: translate(2%, -50%);
     }
 
     .textPockets {
-        transform: translate(30%, -35%);
+        transform: translate(30%, -50%);
     }
 }
 
 @media (max-width: 1024px) {
-
-    .header {
-        height: 600px;
-    }
-
     .content {
         height: 600px;
     }
     
     .imgDefaultWrapper {
         width: 400px;
-        transform: translate(-15%, -40%);
+        transform: translate(-15%, -50%);
     }
 
     .imgSetsWrapper {
@@ -229,14 +241,19 @@
 
 @media (max-width: 900px) {
     
+    .headerWrapper {
+        height: 500px;
+    }
+
     .imgDefaultWrapper {
-        transform: translate(0%, -40%);
+        transform: translate(0%, -50%);
     }
 }
 
 @media (max-width: 768px) {
-    .header {
-        height: 1050px;
+    .headerWrapper {
+        margin-top: 102px;
+        height: 900px;
     }
 
     .list {
@@ -258,16 +275,14 @@
         justify-content: center;
         display: flex;
         flex-direction: column;
-        gap: 30px;
         align-items: center;
     }
 
     .imgDefaultWrapper {
         position: static;
         display: block;
-        width: 600px;
+        width: 500px;
         transform: translate(0, 0);
-        margin-top: 50px;
     }
 
     .imgSetsWrapper {
@@ -323,15 +338,9 @@
 }
 
 @media (max-width: 600px) {
-    .header {
-        height: 950px;
+    .headerWrapper {
         font-size: 14px;
     }
-
-    .imgDefaultWrapper {
-        width: 500px;
-    }
-
 
     .h1 {
         font-size: 24px;
@@ -358,10 +367,16 @@
     }
 }
 
+@media (max-width: 566px) {
+    .headerWrapper {
+        height: 800px;
+    }
+}
+
+
 @media (max-width: 465px) {
-    .header {
-        height: 850px;
-        font-size: 12px;
+    .headerWrapper {
+        font-size: 13px;
     }
 
     .imgDefaultWrapper {
@@ -378,14 +393,16 @@
     }
 }
 
+@media (max-width: 433px) {
+    .headerWrapper {
+        height: 700px;
+    }
+}
+
 @media (max-width: 365px) {
     .imgSetsWrapper {
         height: 350px;
         width: 350px;
-    }
-
-    .header {
-        height: 750px;
     }
     
     .imgDefaultWrapper {
