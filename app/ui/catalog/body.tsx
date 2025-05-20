@@ -153,19 +153,25 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                 </ul>
                 <div className={styles.iconsWrapper}>
                     <div className={styles.iconWrapper}>
-                        <EcoFriendlySVG  />
+                        <div className={styles.swgWrapper}>
+                            <EcoFriendlySVG  />
+                        </div>
                         <span className={styles.iconDescribtion}>
                             eco friendly
                         </span>
                     </div>
                     <div className={styles.iconWrapper}>
-                        <WithLoveSVG  />
+                        <div className={styles.swgWrapper}>
+                            <WithLoveSVG  />
+                        </div>
                         <span className={styles.iconDescribtion}>
                             made with love
                         </span>
                     </div>
                     <div className={styles.iconWrapper}>
-                        <NoAnimalTestingSVG  />
+                        <div className={styles.swgWrapper}>
+                            <NoAnimalTestingSVG  />
+                        </div>
                         <span className={styles.iconDescribtion}>
                             cruelty free
                         </span>

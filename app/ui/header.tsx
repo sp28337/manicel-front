@@ -25,25 +25,40 @@ export const Header = () => {
             <div className={`${commonStyles.container} ${styles.header}` }>
                 
                 <div className={styles.textBlock}>
-                    <h1 className={styles.h1}>НАСТОЯЩИЙ СПА-РИТУАЛ<br />
-                        <span className={styles.span}>ОБНОВЛЕНИЯ<br/> И СИЯНИЯ</span>
+                    <h1 className={styles.h1}>
+                        <span className={styles.span}>
+                            SALT BODY SCRUB
+                        </span>
+                        забота в каждом мгновении
+                        <br />
                     </h1>
-                    <p className={styles.p}>Познакомьтесь с нашими натуральными солевыми скрабами, доступными в разнообразии ароматов, которые подарят вашей коже мягкость и гладкость, словно после спа-процедур!</p>
+                    <p className={styles.p}>
+                        специально для тебя мы создали ароматы, 
+                        превращающие заботу о коже в райское наслаждение
+                        <br />
+                        Собери всю коллекцию и получи подарок от <span style={{textTransform: "uppercase"}}>MANICEL</span>
+                    </p>
                     <div className={styles.icons}>
                         <div className={styles.iconWrapper}>
-                            <EcoFriendlySVG  />
+                            <div className={styles.svgWrapper}>                        
+                                <EcoFriendlySVG  />
+                            </div>
                             <span className={styles.iconDescribtion}>
                                 eco friendly
                             </span>
                         </div>
                         <div className={styles.iconWrapper}>
-                            <WithLoveSVG  />
+                            <div className={styles.svgWrapper}>                        
+                                <WithLoveSVG  />
+                            </div>
                             <span className={styles.iconDescribtion}>
                                 made with love
                             </span>
                         </div>
                         <div className={styles.iconWrapper}>
-                            <NoAnimalTestingSVG  />
+                            <div className={styles.svgWrapper}>                        
+                                <NoAnimalTestingSVG  />
+                            </div>
                             <span className={styles.iconDescribtion}>
                                 cruelty free
                             </span>

@@ -4,6 +4,12 @@
     flex-direction: column;
 }
 
+.swgWrapper {
+    width: 54px;
+    height: 53px;
+    transition: 1s;
+}
+
 .description {
     font-weight: 400;
     font-size: 14px;
@@ -342,6 +348,10 @@
     .productDescription {
         font-size: 9px;
     }
+
+    .iconsWrapper {
+        width: 100%;
+    }
 }
 
 @media (max-width: 546px) {
@@ -357,6 +367,11 @@
     .productDescription {
         font-size: 10px;
     }
+
+    .swgWrapper {
+        width: 50px;
+        height: 50px;
+    } 
 }
 
 @media (max-width: 430px) {

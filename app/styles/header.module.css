@@ -1,10 +1,11 @@
 .headerWrapper {
     background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
     position: relative;
-    z-index: 2;
     overflow: hidden;
     margin-top: 112px;
     height: 650px;
+    transition: 1s;
+    z-index: 2;
 }
 
 .backgroundImage {
@@ -30,15 +31,17 @@
 }
 
 .textBlock {
-    position: absolute;
     z-index: 3;
-    transform: translate(0px, -50px);
+    display: flex;
+    flex-direction: column;
+    transform: translate(50px, -40px);
 }
 
 .h1 {
+    justify-content: center;
     transition: 1s;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 110%;
     letter-spacing: 0.09em;
     text-transform: uppercase;
@@ -49,7 +52,7 @@
 .span {
     transition: 1s;
     display: block;
-    padding-top: 20px;
+    margin-bottom: 20px;
     font-weight: 600;
     font-size: 38px;
     line-height: 110%;
@@ -73,7 +76,9 @@
     transition: 1s;
     display: flex;
     padding-top: 30px;
-    gap: 50px;
+    gap: 10%;
+    width: 80%;
+    justify-content: flex-start;
 }
 
 .iconWrapper {
@@ -83,8 +88,15 @@
     gap: 10px;
 }
 
+.svgWrapper {
+    width: 54px;
+    height: 53px;
+    transition: 1s;
+}
+
 .iconDescribtion {
     text-align: center;
+    color: #717171;
 }
 
 .imgWrapper {
@@ -112,11 +124,23 @@
 }
 
 @media (max-width: 1248px) {
+    .headerWrapper {
+        height: 570px;
+    }
+
     .imgWrapper {
-        margin-top: 50px;
         width: 600px;
         transform: translate(-12%, -50%);
     }
+
+    .textBlock {
+        transform: translate(0px, -40px);
+    }
+
+    .svgWrapper {
+        width: 50px;
+        height: 50px;
+    } 
 }
 
 @media (max-width: 1024px) {
@@ -126,21 +150,29 @@
     }
 
     .h1 {
-        font-size: 26px;
+        font-size: 22px;
     }
 
     .span {
         font-size: 36px;
     }
-    
-    .p {
-        font-size: 12px;
-        max-width: 397px;
+
+    .icons {
+        gap: 7%;
     }
+
+    .svgWrapper {
+        width: 45px;
+        height: 45px;
+    } 
 }
 
 
 @media (max-width: 900px) {
+    .headerWrapper {
+        height: 500px;
+    }
+
     .imgWrapper {
         width: 500px;
         transform: translate(0%, -50%);
@@ -164,7 +196,7 @@
 
     .headerWrapper {
         margin-top: 102px;
-        height: 950px;
+        height: 900px;
     }
 
     .mainImage {
@@ -178,6 +210,7 @@
 
     .textBlock {
         position: static;
+        text-align: center;
         transform: translate(0px, 0px);
     }
 
@@ -197,7 +230,7 @@
     }
 
     .h1 {
-        font-size: 28px;
+        font-size: 24px;
         letter-spacing: 0.07em;
         text-transform: uppercase;
         color: #0d0c10;
@@ -205,43 +238,52 @@
     }
 
     .p {
-        max-width: initial;
         width: initial;
+        max-width: 90%;
+        margin: 0 auto;
     }
 
     .icons {
         gap: 10%;
+        width: 100%;
         padding-top: 30px;
+        justify-content: center;
     }
 
+    .svgWrapper {
+        width: 50px;
+        height: 50px;
+    } 
+
     .span {
-        padding-top: 10px;
-        font-size: 38px;
+        font-size: 36px;
     }
 }
 
 @media (max-width: 566px) {
     .headerWrapper {
-        height: 900px;
+        height: 800px;
     }
 
     .h1 {
-        font-size: 25px;
+        font-size: 22px;
     }
 
     .imgWrapper {
         width: 500px;
     }
+    .span {
+        font-size: 34px;
+    }
 }
 
 @media (max-width: 500px) {
     .h1 {
-        font-size: 22px;
+        font-size: 19px;
     }
 
     .span {
-        padding-top: 10px;
-        font-size: 34px;
+        font-size: 30px;
     }
 
     .p {
@@ -251,37 +293,46 @@
 
 @media (max-width: 433px) {
     .headerWrapper {
-        height: 800px;
+        height: 700px;
     }
 
-    .h1 {
-        font-size: 19px;
-    }
-
-    .span {
-        padding-top: 10px;
-        font-size: 32px;
-    }
-
-    .imgWrapper {
-        width: 450px;
-    }
-}
-
-@media (max-width: 374px) {
     .h1 {
         font-size: 17px;
     }
 
     .span {
-        padding-top: 8px;
         font-size: 28px;
     }
+
+    .imgWrapper {
+        width: 450px;
+    }
+
+    .svgWrapper {
+        width: 45px;
+        height: 45px;
+    } 
+}
+
+@media (max-width: 374px) {
+    .h1 {
+        font-size: 16px;
+    }
+
     .p {
         font-size: 9px;
     }
 
     .imgWrapper {
         width: 400px;
+    }
+
+    .svgWrapper {
+        width: 40px;
+        height: 40px;
+    }
+
+    .iconDescribtion {
+        font-size: 8px;
     }
 }

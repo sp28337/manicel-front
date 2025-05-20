@@ -15,7 +15,7 @@ export function Search(
 
     const closeSearch = useCallback(() => {
         onClose()
-        replace(`${pathname}`)
+        replace(`${pathname}`, { scroll: false })
     }, [onClose, replace, pathname])
 
     const handleSearch = useDebouncedCallback((term) =>  {
@@ -29,7 +29,7 @@ export function Search(
             params.delete("query")
         }
         
-        replace(`${pathname}?${params.toString()}`)
+        replace(`${pathname}?${params.toString()}`, { scroll: false })
     }, 300)
 
     // Фокус на input при открытии

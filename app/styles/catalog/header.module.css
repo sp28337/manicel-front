@@ -4,7 +4,8 @@
     z-index: 2;
     overflow: hidden;
     margin-top: 112px;
-    height: 550px;
+    height: 650px;
+    transition: 1s;
 }
 
 .backgroundImage {
@@ -80,13 +81,25 @@
     z-index: 1;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1248px) {
     .headerWrapper {
-        height: 450px;
+        height: 570px;
     }
+}
+
+@media (max-width: 1024px) {
+    /* .headerWrapper {
+        height: 450px;
+    } */
 
     .imgWrapper {
         width: 700px;
+    }
+}
+
+@media (max-width: 900px) {
+    .headerWrapper {
+        height: 500px;
     }
 }
 
