@@ -48,11 +48,15 @@ jobs:
 
     - name: Deploy to server via SSH
       run: |
-        ssh -o StrictHostKeyChecking=no sp28337@109.73.207.195 -p 45515 "
-          cd manicel-front &&
-          git checkout dev &&
+        ssh -o StrictHostKeyChecking=no sp28337@109.73.207.195 -p 45515 '
+          cd ~/manicel-front &&
+          export NVM_DIR="$HOME/.nvm" 
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          nvm use 22.15.1 &&
+          git switch dev &&
           git pull &&
-          cd .. &&
-          docker compose down &&
-          docker compose up -d --build
-        "
+          npm install pm2 -g &&
+          pm2 stop all &&
+          npm run build &&
+          pm2 start "npm start"
+        '

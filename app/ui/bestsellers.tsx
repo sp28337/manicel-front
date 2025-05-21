@@ -50,13 +50,13 @@ export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => 
     const images = bestsellersImages
 
     return (
-        <div className={styles.bestsellersWrapper}>
+        <section className={styles.bestsellersWrapper}>
             <h2 className={styles.h2}>
                 бестселлеры
             </h2>
-            <div className={`${styles.bestsellersGrid} ${styles.bestsellersFlex}`}>
+            <main className={`${styles.bestsellersGrid} ${styles.bestsellersFlex}`}>
             {products && Array.isArray(products) && products.map((product, index) => (
-                <div key={index} className={`${styles.productItem} ${backgroundStyles[product.id]}`}>
+                <article key={index} className={`${styles.productItem} ${backgroundStyles[product.id]}`}>
                         <div className={`${styles.gradient} ${gradientStyles[product.id]}`}></div>
                         <div className={styles.background}></div>
                         <Link className={styles.link} key={index} href={`/catalog/${product.id}`}>
@@ -87,9 +87,9 @@ export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => 
                                 }
                             </div>  
                         </div>
-                    </div>
+                    </article>
             ))}
-            </div>
-        </div>
+            </main>
+        </section>
     )
 }

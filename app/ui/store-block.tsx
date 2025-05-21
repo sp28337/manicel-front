@@ -6,7 +6,7 @@ import Image from "next/image"
 export const StoreBlock = () => {
 
     return (
-        <div className={styles.wrapper}>
+        <section className={styles.wrapper}>
             <Image
                 className={styles.image}
                 src={background}
@@ -31,6 +31,6 @@ export const StoreBlock = () => {
             <div className={styles.partners}>
                 <WBLogo />
             </div>
-        </div>
+        </section>
     );
 };
