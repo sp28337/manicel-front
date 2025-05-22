@@ -24,7 +24,7 @@ export const PopupMenu = (
             }
             {
                 isPopupOpen && createPortal(
-                    <div className={styles.popupMenu} onClick={closeMenu}>
+                    <nav className={styles.popupMenu} onClick={closeMenu}>
                         <div className={styles.links}>
                             <Link href="/" className={styles.navLink}>
                                 <p>ГЛАВНАЯ</p>
@@ -48,7 +48,7 @@ export const PopupMenu = (
                                 <p>В МАГАЗИН</p>
                             </a>
                         </div>
-                    </div>
+                    </nav>
                     , document.body
                 )
             }

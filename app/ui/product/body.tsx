@@ -17,16 +17,17 @@ export const Body = (props: { product: ProductSchema }) => {
 
             <hr className={styles.hr}/>
 
-            <div className={styles.productCard}>
-                
+            <section className={styles.productCard}>
+                <h2 className={commonStyles.h2Hidden}>карточка продукта</h2>
                 <ProductImages id={props.product.id}/>
-
-                <div className={styles.info}>
-                    <div className={styles.infoLine}>
+                <section className={styles.info}>
+                    <article className={styles.infoLine}>
                         <h3 className={`${styles.h3} ${styles.h3Sostav}`}>
                             состав:
                         </h3>
-                        {/* <hr className={styles.hrInfoLine}/> */}
+                        <p className={commonStyles.pHidden}>
+                            список ингредиентов содержащихся в продукте
+                        </p>
                         <ul className={styles.sostavList}>
                             {
                                 product.flavor.ingredients.map((
@@ -39,11 +40,13 @@ export const Body = (props: { product: ProductSchema }) => {
                                 ))
                             }
                         </ul>
-                    </div>
+                    </article>
 
-                    <div className={styles.infoLine}>
+                    <article className={styles.infoLine}>
                         <h3 className={`${styles.h3} ${styles.h3Action}`}>действие:</h3>
-                        {/* <hr className={styles.hrInfoLine}/> */}
+                        <p className={commonStyles.pHidden}>
+                            список эффектов после применения продукта
+                        </p>
                         <ul className={styles.actionList}>
                             <li className={styles.infoItem}>
                                 против растяжек
@@ -55,27 +58,36 @@ export const Body = (props: { product: ProductSchema }) => {
                                 отшелушивание
                             </li>
                         </ul>
-                    </div>
+                    </article>
 
-                    <div className={styles.infoLine}>
+                    <article className={styles.infoLine}>
                         <h3 className={styles.h3}>аромат:</h3>
+                        <p className={commonStyles.pHidden}>
+                            список ароматов продукта
+                        </p>
                         <hr className={styles.hrInfoLine}/>
                         <span className={styles.infoItem}>{product.flavor.name}</span>
-                    </div>
+                    </article>
 
-                    <div className={styles.infoLine}>
+                    <article className={styles.infoLine}>
                         <h3 className={styles.h3}>объем товара:</h3>
+                        <p className={commonStyles.pHidden}>
+                            доступный объём
+                        </p>
                         <hr className={styles.hrInfoLine}/>
                         <span className={styles.infoItem}>{`${product.volumes[0].volume}`}</span>
-                    </div>
+                    </article>
 
-                    <div className={styles.infoLine}>
+                    <article className={styles.infoLine}>
                         <h3 className={styles.h3}>комплект:</h3>
+                        <p className={commonStyles.pHidden}>
+                            что входит в комплектацию при покупке
+                        </p>
                         <hr className={styles.hrInfoLine}/>
                         <span className={styles.infoItem}>{`${product.complectation.name}`}</span>
-                    </div>
+                    </article>
 
-                    <div>
+                    <article>
                         <div className={styles.infoLine}>
                             <h3 className={styles.h3}>срок годности:</h3>
                             <hr className={styles.hrInfoLine}/>
@@ -85,35 +97,36 @@ export const Body = (props: { product: ProductSchema }) => {
                             рекомендованный срок хранения и использования после вскрытия 
                             упаковки - {`${props.product.expiration_date.after_opening}`}
                         </p>
-                    </div>
+                    </article>
 
                     <div className={styles.bottom}>
                         <a 
                             href={`https://www.wildberries.ru/catalog/${props.product.articule.toString()}/detail.aspx`} 
                             className={styles.chartButton}
                             target="_blank"
+                            type="button"
                         >
                             купить на wb
                         </a>
                     </div>
-                </div>
-            </div>
+                </section>
+            </section>
 
             <hr className={styles.hr}/>
 
             {product.attention && 
                 <>
-                    <div className={styles.attentionWrapper}>
+                    <article className={styles.attentionWrapper}>
                         <h3 className={styles.h3Attention}>внимание</h3>
                         <p className={styles.pAttention}>
                             {product.attention}
                         </p>
-                    </div>
+                    </article>
                     <hr className={styles.hr}/>
                 </>
             }
             
-            <div className={styles.howToUse}>
+            <section className={styles.howToUse}>
                 <div className={styles.howToUseText}>
                     <h2 className={styles.h2}>как использовать</h2>
                     <div className={styles.howToUseDescription}>
@@ -158,7 +171,7 @@ export const Body = (props: { product: ProductSchema }) => {
                         sizes="100vw"
                     />
                 </div>
-            </div>
+            </section>
         </div>
     )
 }

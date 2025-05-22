@@ -9,7 +9,7 @@ export const Footer = () => {
             <div className={styles.logoWrapper}>
                 <ManicelLogoSVG />
             </div>
-            <div className={styles.footerNav}>
+            <nav className={styles.footerNav}>
                 <div>
                     <h3 className={styles.h3}>навигация</h3>
                     <div className={styles.linksWrapper}>
@@ -35,7 +35,7 @@ export const Footer = () => {
                         <address className={styles.address}>г. Вязники, ул Сенькова, д 9/8</address>
                     </div>
                 </div>
-            </div>
+            </nav>
             <div className={styles.contactUsButtonWrapper}>
                 <a className={styles.contactUsButton}
                     href="mailto:rejx.nikita@bk.ru"

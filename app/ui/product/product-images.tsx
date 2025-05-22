@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import styles from "../../styles/product/body.module.css"
+import commonStyles from "../../styles/common.module.css"
 import { useState } from "react"
 import { productImages } from "../../lib/images"
 
@@ -14,7 +15,8 @@ export const ProductImages = (props: { id: number }) => {
     const [ imgIndex, setImgIndex ] = useState(0);
 
     return (
-        <div className={styles.imgWrapper}>
+        <section className={styles.imgWrapper}>
+            <h2 className={commonStyles.h2Hidden}>раздел с фотографиями продукта</h2>
             <div 
                 className={styles.imgSlider}
             >
@@ -28,7 +30,7 @@ export const ProductImages = (props: { id: number }) => {
                             <Image 
                                 className={`${styles.scrubPhotoMini}`}
                                 src={image} 
-                                alt="scrub photo"
+                                alt="дополнительное фото продукта"
                                 width={81}
                                 sizes="100vw"
                                 draggable={false}
@@ -40,11 +42,11 @@ export const ProductImages = (props: { id: number }) => {
             <Image 
                 className={`${styles.scrubPhoto}`}
                 src={images[id][imgIndex]} 
-                alt="scrub photo"
+                alt="основное фото продукта"
                 width={520}
                 sizes="100vw"
             />
-        </div>
+        </section>
     )
 }
 

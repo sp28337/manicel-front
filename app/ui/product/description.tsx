@@ -20,15 +20,15 @@ export const Description = (props: { product: ProductSchema }) => {
 
 
     return (
-        <div className={styles.description}>
+        <section className={styles.description}>
             <h2 className={`${styles.h2} ${styles.h2Description}`}>описание</h2>
-            <div className={styles.firstDesc}>
+            <p className={styles.firstDesc}>
                 <span className={styles.saltBodyScrub}>salt body scrab - </span>{props.product.description}
-            </div>
-            {openCloseButton === "скрыть" && <div className={styles.secondDesc}>
+            </p>
+            {openCloseButton === "скрыть" && <p className={styles.secondDesc}>
                 {props.product.flavor.description}
-            </div>}
+            </p>}
             <button className={styles.openCloseButton} onClick={handleClick}>{openCloseButton}</button>
-        </div>
+        </section>
     )
 }
