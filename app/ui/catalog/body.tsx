@@ -83,75 +83,92 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                     &gt;
                     <Link className={styles.activePath} href="/catalog"> каталог </Link>
                 </div> */}
-                <p className={styles.description}>
-                    Скрабы для тела SALT BODY SCRUB от российского бренда MANICEL — это 
-                    эффективное средство для очищения и ухода за кожей рук, ног, живота, 
-                    ягодиц и других участков тела. Скраб мягко отшелушивает ороговевшие клетки, 
-                    стимулирует обновление кожи и придаёт ей здоровый сияющий вид.
-                </p>
-                <h1 className={styles.h1}>
-                    каталог
-                </h1>
-                <ul className={styles.list}>
-                    {products && products.map((product, index) => (
-                        <div 
-                            key={index} 
-                            className={`${styles.item} ${backgroundStyles[product.id]}`}
-                        >
-                            <div className={`${styles.gradient} ${gradientStyles[product.id]}`}></div>
-                            <Link 
-                                className={setStyles(product.id)} 
-                                href={`/catalog/${product.id}`}
+                <section>
+                    <h2 className={styles.h2Hidden}>описание</h2>
+                    <p className={styles.description}>
+                        Скрабы для тела SALT BODY SCRUB от российского бренда MANICEL — это 
+                        эффективное средство для очищения и ухода за кожей рук, ног, живота, 
+                        ягодиц и других участков тела. Скраб мягко отшелушивает ороговевшие клетки, 
+                        стимулирует обновление кожи и придаёт ей здоровый сияющий вид.
+                    </p>
+                </section>
+                <section>
+
+                    <h2 className={styles.h2}>
+                        каталог
+                    </h2>
+                    <div className={styles.list}>
+                        {products && products.map((product, index) => (
+                            <article 
+                                key={index} 
+                                className={`${styles.item} ${backgroundStyles[product.id]}`}
                             >
-                                {
-                                    images[product.id] && 
-                                    <Image 
-                                        className={`${styles.img}`} 
-                                        src={images[product.id]} 
-                                        alt={"scrub image"}
-                                        sizes="100vw"
-                                        width={210}
-                                    />
-                                }
-                            </Link>
-                            {product.name_ru && 
-                                <>  
-                                    <Link 
-                                        className={styles.productCard} 
-                                        href={`/catalog/${product.id}`}
-                                    >
-                                        {   
-                                            product.name_ru && 
-                                            <h3 
-                                                className={styles.h3} 
-                                                style={{
-                                                    fontSize: `${setFontSize(product.id)}px`
-                                                }}
-                                            >
-                                                {product.name_ru}
-                                            </h3>
-                                        }
-                                        <span className={styles.productDescription}>
-                                            {product.type}
-                                        </span>
-                                        <span>
-                                            <ReviewsStarsSVG />
-                                        </span>
-                                    </Link>
-                                    <div className={styles.buttonWrapper}>                            
-                                        <Link 
-                                            className={styles.button} 
-                                            href={`https://www.wildberries.ru/catalog/${product.articule.toString()}/detail.aspx`}
+                                <Link  
+                                    href={`/catalog/${product.id}`} 
+                                    className={`${styles.gradient} ${gradientStyles[product.id]}`}
+                                >
+
+                                </Link>
+                                <Link 
+                                    className={setStyles(product.id)} 
+                                    href={`/catalog/${product.id}`}
+                                >
+                                    {
+                                        images[product.id] && 
+                                        <Image 
+                                            className={`${styles.img}`} 
+                                            src={images[product.id]} 
+                                            alt={"фотография продукта на прозрачном фоне с ингридиентами"}
+                                            sizes="100vw"
+                                            width={210}
+                                        />
+                                    }
+                                </Link>
+                                {product.name_ru && 
+                                    <>  
+                                        <section 
+                                            className={styles.productCard} 
+                                            // href={`/catalog/${product.id}`}
                                         >
-                                            купить
-                                        </Link>
-                                    </div>  
-                                </>
-                            }
-                        </div>
-                    ))}
-                </ul>
-                <div className={styles.iconsWrapper}>
+                                            {   
+                                                product.name_ru && 
+                                                <h3 
+                                                    className={styles.h3} 
+                                                    style={{
+                                                        fontSize: `${setFontSize(product.id)}px`
+                                                    }}
+                                                >
+                                                    {product.name_ru}
+                                                </h3>
+                                            }
+                                            <p className={styles.productDescription}>
+                                                {product.type}
+                                            </p>
+                                            <span>
+                                                <ReviewsStarsSVG />
+                                            </span>
+                                        </section>
+                                        <div className={styles.buttonWrapper}>                            
+                                            <Link
+                                                type="button"
+                                                className={styles.button} 
+                                                href={`https://www.wildberries.ru/catalog/${product.articule.toString()}/detail.aspx`}
+                                            >
+                                                купить
+                                            </Link>
+                                        </div>  
+                                    </>
+                                }
+                            </article>
+                        ))}
+                    </div>
+                </section>
+
+                <section className={styles.iconsWrapper}>
+                    <h2 className={styles.h2Hidden}>наш подход к бизнесу</h2>
+                    <p className={styles.pHidden}>мы заботимся о природе и окружающей среде при создании наших продуктов, 
+                        ручная работа наполняет скраб любовью и заботой. Не тестируется на животных.
+                    </p>
                     <div className={styles.iconWrapper}>
                         <div className={styles.swgWrapper}>
                             <EcoFriendlySVG  />
@@ -176,10 +193,17 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                             cruelty free
                         </span>
                     </div>
-                </div>
-                <div className={styles.partners}>
-                    <WBLogo />
-                </div>
+                </section>
+
+                <section>
+                    <h2 className={styles.h2Hidden}>партнеры</h2>
+                    <p className={styles.pHidden}>
+                        MANICEL является партнером Wildberries
+                    </p>
+                    <div className={styles.partners}>
+                        <WBLogo />
+                    </div>
+                </section>
             </div>
         </div>
     )
