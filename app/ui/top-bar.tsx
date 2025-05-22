@@ -4,8 +4,9 @@ import { useState, useEffect } from "react"
 import styles from "../styles/top-bar.module.css"
 
 const messages = [
-    "БЕСПЛАТНАЯ ДОСТАВКА ЧЕРЕЗ ИНТЕРНЕТ-МАГАЗИН WILDBERRIES",
-    "Вы можете приобрести наши скрабы на маркет-плейсе WILDBERRIES",
+    "САЙТ РАБОТАЕТ В ТЕСТОВОМ РЕЖИМЕ",
+    // "БЕСПЛАТНАЯ ДОСТАВКА ЧЕРЕЗ ИНТЕРНЕТ-МАГАЗИН WILDBERRIES",
+    // "Вы можете приобрести наши скрабы на маркет-плейсе WILDBERRIES",
     "MANICEL",
 ]
 
