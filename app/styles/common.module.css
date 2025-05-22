@@ -10,6 +10,14 @@
     height: auto;
 }
 
+.h2Hidden {
+    display: none;
+}
+
+.pHidden {
+    display: none;
+}
+
 @media (max-width: 1248px) {
     .container {
         padding: 0 10%;

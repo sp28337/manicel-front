@@ -32,7 +32,7 @@ export const TopBar = () => {
     }, [flip])
 
     return (
-        <div className={styles.topbar}>
+        <section className={styles.topbar}>
             <div
                 className={`${
                     flip ? styles.flipOut : styles.flipIn
@@ -41,6 +41,6 @@ export const TopBar = () => {
             >
                 {messages[index]}
             </div>
-        </div>
+        </section>
     )
 }
