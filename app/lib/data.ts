@@ -14,7 +14,7 @@ export async function getSearchProducts(query: string) {
 
     try {
         const data = await fetch(
-            `${protocol}://${host}:${port}/products/search_products?query=${query}`,
+            `${protocol}://${host}:${port}/search/search_products?query=${query}`,
             { cache: dataCache()}
         )
         const filteredProducts: CatalogProductsSchema[] = await data.json()
@@ -47,7 +47,7 @@ export async function getBestsellers() {
     
     try {
         const data = await fetch(
-            `${protocol}://${host}:${port}/products/bestsellers`,
+            `${protocol}://${host}:${port}/bestsellers/bestsellers`,
             { cache: dataCache()}
         )
         const bestsellers: BestsellersSchema[] = await data.json()
