@@ -1,7 +1,7 @@
 "use client"
 
-import Link from "next/link"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 import styles from "./styles/header.module.css"
 import textBlockStyles from "./styles/text-block.module.css"
 import commonStyles from "./styles/common.module.css"
@@ -10,12 +10,13 @@ import { WaveSVG } from "./ui/vectors"
 import backgroundImg from "@/public/salt-body-scrub-500w.png"
 import all from "@/public/all-800w.png"
 
-export default function Error({error, reset,}: {error: Error & { digest?: string } 
-    reset: () => void}
-) {
+export default function Error({ error }: { error: Error & { digest?: string } }) {
     useEffect(() => {
         console.error(error)
     }, [error])
+
+
+    const { replace } = useRouter()
  
     return (
         <>
@@ -37,15 +38,16 @@ export default function Error({error, reset,}: {error: Error & { digest?: string
                             </span>
                             что-то пошло не так
                         </h1>
-                        <Link href="/catalog" 
+                        <button 
+                            type="button"
                             className={textBlockStyles.aboutUsButton}
                             style={{margin: "0 auto"}}
                             onClick={
-                                () => reset()
+                                () => replace("/catalog", { scroll: false })
                             }
                         >
                             в каталог
-                        </Link>
+                        </button>
                     </div>
                     <div className={styles.imgWrapper}>
                         <Image className={styles.mainImage}

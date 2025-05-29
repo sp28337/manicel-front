@@ -84,7 +84,6 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                     <Link className={styles.activePath} href="/catalog"> каталог </Link>
                 </div> */}
                 <section>
-                    <h2 className={styles.h2Hidden}>описание</h2>
                     <p className={styles.description}>
                         Скрабы для тела SALT BODY SCRUB от российского бренда MANICEL — это 
                         эффективное средство для очищения и ухода за кожей рук, ног, живота, 
@@ -93,14 +92,13 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                     </p>
                 </section>
                 <section>
-
                     <h2 className={styles.h2}>
                         каталог
                     </h2>
                     <div className={styles.list}>
-                        {products && products.map((product, index) => (
+                        {products && products.map((product) => (
                             <article 
-                                key={index} 
+                                key={product.id} 
                                 className={`${styles.item} ${backgroundStyles[product.id]}`}
                             >
                                 <Link  
@@ -165,10 +163,6 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                 </section>
 
                 <section className={styles.iconsWrapper}>
-                    <h2 className={styles.h2Hidden}>наш подход к бизнесу</h2>
-                    <p className={styles.pHidden}>мы заботимся о природе и окружающей среде при создании наших продуктов, 
-                        ручная работа наполняет скраб любовью и заботой. Не тестируется на животных.
-                    </p>
                     <div className={styles.iconWrapper}>
                         <div className={styles.swgWrapper}>
                             <EcoFriendlySVG  />
@@ -195,14 +189,8 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                     </div>
                 </section>
 
-                <section>
-                    <h2 className={styles.h2Hidden}>партнеры</h2>
-                    <p className={styles.pHidden}>
-                        MANICEL является партнером Wildberries
-                    </p>
-                    <div className={styles.partners}>
-                        <WBLogo />
-                    </div>
+                <section className={styles.partners}>
+                    <WBLogo />
                 </section>
             </div>
         </div>

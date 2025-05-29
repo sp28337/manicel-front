@@ -13,21 +13,17 @@ export const Body = (props: { product: ProductSchema }) => {
 
     return (
         <div className={`${commonStyles.container}`}>
-            <Description product={props.product} />
+            <Description product={product} />
 
             <hr className={styles.hr}/>
 
             <section className={styles.productCard}>
-                <h2 className={commonStyles.h2Hidden}>карточка продукта</h2>
-                <ProductImages id={props.product.id}/>
+                <ProductImages id={product.id}/>
                 <section className={styles.info}>
                     <article className={styles.infoLine}>
                         <h3 className={`${styles.h3} ${styles.h3Sostav}`}>
                             состав:
                         </h3>
-                        <p className={commonStyles.pHidden}>
-                            список ингредиентов содержащихся в продукте
-                        </p>
                         <ul className={styles.sostavList}>
                             {
                                 product.flavor.ingredients.map((
@@ -44,9 +40,6 @@ export const Body = (props: { product: ProductSchema }) => {
 
                     <article className={styles.infoLine}>
                         <h3 className={`${styles.h3} ${styles.h3Action}`}>действие:</h3>
-                        <p className={commonStyles.pHidden}>
-                            список эффектов после применения продукта
-                        </p>
                         <ul className={styles.actionList}>
                             <li className={styles.infoItem}>
                                 против растяжек
@@ -62,27 +55,18 @@ export const Body = (props: { product: ProductSchema }) => {
 
                     <article className={styles.infoLine}>
                         <h3 className={styles.h3}>аромат:</h3>
-                        <p className={commonStyles.pHidden}>
-                            список ароматов продукта
-                        </p>
                         <hr className={styles.hrInfoLine}/>
                         <span className={styles.infoItem}>{product.flavor.name}</span>
                     </article>
 
                     <article className={styles.infoLine}>
                         <h3 className={styles.h3}>объем товара:</h3>
-                        <p className={commonStyles.pHidden}>
-                            доступный объём
-                        </p>
                         <hr className={styles.hrInfoLine}/>
                         <span className={styles.infoItem}>{`${product.volumes[0].volume}`}</span>
                     </article>
 
                     <article className={styles.infoLine}>
                         <h3 className={styles.h3}>комплект:</h3>
-                        <p className={commonStyles.pHidden}>
-                            что входит в комплектацию при покупке
-                        </p>
                         <hr className={styles.hrInfoLine}/>
                         <span className={styles.infoItem}>{`${product.complectation.name}`}</span>
                     </article>
@@ -95,13 +79,13 @@ export const Body = (props: { product: ProductSchema }) => {
                         </div>
                         <p className={styles.pInfo}>
                             рекомендованный срок хранения и использования после вскрытия 
-                            упаковки - {`${props.product.expiration_date.after_opening}`}
+                            упаковки - {`${product.expiration_date.after_opening}`}
                         </p>
                     </article>
 
                     <div className={styles.bottom}>
                         <a 
-                            href={`https://www.wildberries.ru/catalog/${props.product.articule.toString()}/detail.aspx`} 
+                            href={`https://www.wildberries.ru/catalog/${product.articule.toString()}/detail.aspx`} 
                             className={styles.chartButton}
                             target="_blank"
                             type="button"
@@ -147,7 +131,7 @@ export const Body = (props: { product: ProductSchema }) => {
                                 <TwoSVG />
                             </div>
                             <p className={styles.howToUseP}>
-                                Оставьте на оставьте на {`${[1, 11, 12].includes(props.product.id) ? 
+                                Оставьте на оставьте на {`${[1, 11, 12].includes(product.id) ? 
                                 "1-2 минуты" : "3-5 минут"}`}, затем смойте теплой водой 
                             </p>
                         </div>

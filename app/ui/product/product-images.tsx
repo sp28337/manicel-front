@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import styles from "../../styles/product/body.module.css"
-import commonStyles from "../../styles/common.module.css"
 import { useState } from "react"
 import { productImages } from "../../lib/images"
 
@@ -16,7 +15,6 @@ export const ProductImages = (props: { id: number }) => {
 
     return (
         <section className={styles.imgWrapper}>
-            <h2 className={commonStyles.h2Hidden}>раздел с фотографиями продукта</h2>
             <div 
                 className={styles.imgSlider}
             >
