@@ -16,10 +16,10 @@ export default async function Page (props: {searchParams?: Promise<{query?: stri
     }
         
     return (
-        <div>
+        <>
             <SearchList query={query} />
             <Header />
             <BodyCatalog products={products}/>
-        </div>
+        </>
     );
 }

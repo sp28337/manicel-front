@@ -54,42 +54,42 @@ export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => 
             <h2 className={styles.h2}>
                 бестселлеры
             </h2>
-            <main className={`${styles.bestsellersGrid} ${styles.bestsellersFlex}`}>
+            <div className={`${styles.bestsellersGrid} ${styles.bestsellersFlex}`}>
             {products && Array.isArray(products) && products.map((product, index) => (
                 <article key={index} className={`${styles.productItem} ${backgroundStyles[product.id]}`}>
-                        <div className={`${styles.gradient} ${gradientStyles[product.id]}`}></div>
-                        <div className={styles.background}></div>
-                        <Link className={styles.link} key={index} href={`/catalog/${product.id}`}>
-                            <div className={`${styles.scrubWrapper}`}>
-                                <Image 
-                                    className={`${styles.scrub}`} 
-                                    src={images[product.id]} 
-                                    alt={product.type}
-                                    sizes="100vw"
-                                    width={400}
-                                />
-                            </div>
-                        </Link >
-                        <div className={styles.infoContainer}>
-                            <h3 className={`${styles.h3}`}>{product.name}</h3>
-                            <p className={styles.p}>{product.type}</p>
-                            <ReviewsStarsSVG />
+                    <div className={`${styles.gradient} ${gradientStyles[product.id]}`}></div>
+                    <div className={styles.background}></div>
+                    <Link className={styles.link} key={index} href={`/catalog/${product.id}`}>
+                        <div className={`${styles.scrubWrapper}`}>
+                            <Image 
+                                className={`${styles.scrub}`} 
+                                src={images[product.id]} 
+                                alt={product.type}
+                                sizes="100vw"
+                                width={400}
+                            />
                         </div>
-                        <div className={styles.composition}>
-                            <h3 className={`${styles.h3}  ${index !== 0 && styles.h3Hide}`}>Состав</h3>
-                            <div className={styles.ingredientsWrapper}>
-                                {
-                                    product.ingredients?.map((ingredient: string, index: number) => (
-                                        <span className={styles.infoItem} key={index}>
-                                            {ingredient}
-                                        </span>)
-                                    )
-                                }
-                            </div>  
-                        </div>
-                    </article>
+                    </Link >
+                    <section className={styles.infoContainer}>
+                        <h3 className={`${styles.h3}`}>{product.name}</h3>
+                        <p className={styles.p}>{product.type}</p>
+                        <ReviewsStarsSVG />
+                    </section>
+                    <section className={styles.composition}>
+                        <h3 className={`${styles.h3}  ${index !== 0 && styles.h3Hide}`}>Состав</h3>
+                        <div className={styles.ingredientsWrapper}>
+                            {
+                                product.ingredients?.map((ingredient: string, index: number) => (
+                                    <span className={styles.infoItem} key={index}>
+                                        {ingredient}
+                                    </span>)
+                                )
+                            }
+                        </div>  
+                    </section>
+                </article>
             ))}
-            </main>
+            </div>
         </section>
     )
 }

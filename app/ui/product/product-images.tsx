@@ -14,7 +14,7 @@ export const ProductImages = (props: { id: number }) => {
     const [ imgIndex, setImgIndex ] = useState(0);
 
     return (
-        <section className={styles.imgWrapper}>
+        <div className={styles.imgWrapper}>
             <div 
                 className={styles.imgSlider}
             >
@@ -44,7 +44,7 @@ export const ProductImages = (props: { id: number }) => {
                 width={520}
                 sizes="100vw"
             />
-        </section>
+        </div>
     )
 }
 

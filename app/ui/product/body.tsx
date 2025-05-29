@@ -20,7 +20,7 @@ export const Body = (props: { product: ProductSchema }) => {
             <section className={styles.productCard}>
                 <ProductImages id={product.id}/>
                 <section className={styles.info}>
-                    <article className={styles.infoLine}>
+                    <section className={styles.infoLine}>
                         <h3 className={`${styles.h3} ${styles.h3Sostav}`}>
                             состав:
                         </h3>
@@ -36,9 +36,9 @@ export const Body = (props: { product: ProductSchema }) => {
                                 ))
                             }
                         </ul>
-                    </article>
+                    </section>
 
-                    <article className={styles.infoLine}>
+                    <section className={styles.infoLine}>
                         <h3 className={`${styles.h3} ${styles.h3Action}`}>действие:</h3>
                         <ul className={styles.actionList}>
                             <li className={styles.infoItem}>
@@ -51,27 +51,27 @@ export const Body = (props: { product: ProductSchema }) => {
                                 отшелушивание
                             </li>
                         </ul>
-                    </article>
+                    </section>
 
-                    <article className={styles.infoLine}>
+                    <section className={styles.infoLine}>
                         <h3 className={styles.h3}>аромат:</h3>
                         <hr className={styles.hrInfoLine}/>
                         <span className={styles.infoItem}>{product.flavor.name}</span>
-                    </article>
+                    </section>
 
-                    <article className={styles.infoLine}>
+                    <section className={styles.infoLine}>
                         <h3 className={styles.h3}>объем товара:</h3>
                         <hr className={styles.hrInfoLine}/>
                         <span className={styles.infoItem}>{`${product.volumes[0].volume}`}</span>
-                    </article>
+                    </section>
 
-                    <article className={styles.infoLine}>
+                    <section className={styles.infoLine}>
                         <h3 className={styles.h3}>комплект:</h3>
                         <hr className={styles.hrInfoLine}/>
                         <span className={styles.infoItem}>{`${product.complectation.name}`}</span>
-                    </article>
+                    </section>
 
-                    <article>
+                    <section>
                         <div className={styles.infoLine}>
                             <h3 className={styles.h3}>срок годности:</h3>
                             <hr className={styles.hrInfoLine}/>
@@ -81,7 +81,7 @@ export const Body = (props: { product: ProductSchema }) => {
                             рекомендованный срок хранения и использования после вскрытия 
                             упаковки - {`${product.expiration_date.after_opening}`}
                         </p>
-                    </article>
+                    </section>
 
                     <div className={styles.bottom}>
                         <a 
@@ -100,23 +100,23 @@ export const Body = (props: { product: ProductSchema }) => {
 
             {product.attention && 
                 <>
-                    <article className={styles.attentionWrapper}>
+                    <section className={styles.attentionWrapper}>
                         <h3 className={styles.h3Attention}>внимание</h3>
                         <p className={styles.pAttention}>
                             {product.attention}
                         </p>
-                    </article>
+                    </section>
                     <hr className={styles.hr}/>
                 </>
             }
             
             <section className={styles.howToUse}>
-                <div className={styles.howToUseText}>
+                <div className={styles.textWrapper}>             
                     <h2 className={styles.h2}>как использовать</h2>
-                    <div className={styles.howToUseDescription}>
-                        <h4 className={styles.h4}>
+                    <section className={styles.howToUseDescription}>
+                        <p className={styles.h4}>
                             Используйте антицеллюлитный скраб во время душа, похода в баню или сауну
-                        </h4>
+                        </p>
                         <div className={`${styles.howToUseDescLine}`}>
                             <div className={styles.howToUseDiv}>
                                 <OneSVG />
@@ -131,7 +131,7 @@ export const Body = (props: { product: ProductSchema }) => {
                                 <TwoSVG />
                             </div>
                             <p className={styles.howToUseP}>
-                                Оставьте на оставьте на {`${[1, 11, 12].includes(product.id) ? 
+                                Оставьте на {`${[1, 11, 12].includes(product.id) ? 
                                 "1-2 минуты" : "3-5 минут"}`}, затем смойте теплой водой 
                             </p>
                         </div>
@@ -144,7 +144,7 @@ export const Body = (props: { product: ProductSchema }) => {
                                 Не подходит для проблемной и поврежденной кожи
                             </p>
                         </div>
-                    </div>
+                    </section>
                 </div>
                 <div className={styles.howToUseImgWrapper}>
                     <Image 

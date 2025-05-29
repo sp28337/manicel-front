@@ -124,7 +124,7 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                                 </Link>
                                 {product.name_ru && 
                                     <>  
-                                        <section 
+                                        <div 
                                             className={styles.productCard} 
                                             // href={`/catalog/${product.id}`}
                                         >
@@ -145,7 +145,7 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                                             <span>
                                                 <ReviewsStarsSVG />
                                             </span>
-                                        </section>
+                                        </div>
                                         <div className={styles.buttonWrapper}>                            
                                             <Link
                                                 type="button"
