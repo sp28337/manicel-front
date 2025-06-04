@@ -49,10 +49,10 @@ export function LoginForm() {
                         className={styles.input}
                         />
                 </div>
+                {state?.message && 
                 <div className={styles.wrapper}>
-                    {state?.message && <p className={styles.authError}>{state.message}</p>}
-                </div>
-                <div className={styles.wrapper} ><hr className={styles.hr}/></div>
+                    <p className={styles.authError}>{state.message}</p>
+                </div>}
                 <div className={styles.wrapper} >
                     <button 
                         disabled={isPending} 

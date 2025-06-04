@@ -8,11 +8,12 @@ import { useState, Suspense } from "react"
 import { 
     ManicelLogoSVG, 
     SearchSVG,
-    LoginSVG, 
+    LoginSVG,
+    ProfileSVG,
 } from "./vectors"
 import { PopupMenu } from "./popup"
 
-export const Navigation = () => {
+export const Navigation = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
     
     const [isOpen, setIsOpen] = useState(false)
   
@@ -50,12 +51,22 @@ export const Navigation = () => {
                             >
                                 <SearchSVG />
                             </button>
-                            <Link
-                                href="/login"
-                                className={styles.login} 
-                            >
-                                <LoginSVG />
-                            </Link>
+                            { isLoggedIn            ? 
+                            
+                                <Link
+                                    href="/user/1"
+                                    className={styles.login} 
+                                >
+                                    <ProfileSVG />
+                                </Link>    
+                                                    :
+                                <Link
+                                    href="/login"
+                                    className={styles.login} 
+                                >
+                                    <LoginSVG />
+                                </Link>
+                            }
                         </div>
                     </>
                 }
