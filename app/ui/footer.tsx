@@ -1,7 +1,7 @@
 import styles from "../styles/footer.module.css"
 import commonStyles from "../styles/common.module.css"
-import { ManicelLogoSVG } from "./vectors";
-import Link from "next/link";
+import { ManicelLogoSVG } from "./vectors"
+import Link from "next/link"
 
 export const Footer = () => {
     return (

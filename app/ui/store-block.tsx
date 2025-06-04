@@ -1,6 +1,6 @@
 import styles from "../styles/store-block.module.css"
 import background from "@/public/salt-body-scrub-500w.png"
-import { WBLogo } from "./logotips"
+import { WBLogoSVG } from "./vectors"
 import Image from "next/image"
 
 export const StoreBlock = () => {
@@ -29,7 +29,7 @@ export const StoreBlock = () => {
             </div>
             
             <div className={styles.partners}>
-                <WBLogo />
+                <WBLogoSVG />
             </div>
         </section>
     );
