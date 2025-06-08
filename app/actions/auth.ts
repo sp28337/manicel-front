@@ -39,13 +39,8 @@ export async function login(state: FormState, formData: FormData) {
     }
 
     const user = await loginUser(formData)
-
     if ([401, 404].includes(user)) {
         return {
-            errors: {
-                username: ["Неверное имя пользователя"],
-                password: ["Неверный пароль"],
-            },
             message: "неверное имя пользователя или пароль"       
         }
     }

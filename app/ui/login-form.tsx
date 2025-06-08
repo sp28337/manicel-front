@@ -62,15 +62,15 @@ export function LoginForm() {
                         продолжить
                     </button>
                 </div>
-                {/* <div className={styles.wrapper}>
+                <div className={styles.wrapper}>
                     <hr className={styles.hr}/>
                         <span className={styles.or}>или</span>
                     <hr className={styles.hr}/>
                 </div>
                 <div className={styles.wrapper}>
                     <button 
-                        disabled={isPending} 
-                        type="submit"
+                        // disabled={isPending} 
+                        type="button"
                         className={styles.oauthButton}
                     >
                         продолжить c Google
@@ -78,13 +78,13 @@ export function LoginForm() {
                 </div>
                 <div className={styles.wrapper}>
                     <button 
-                        disabled={isPending} 
-                        type="submit"
+                        // disabled={isPending} 
+                        type="button"
                         className={styles.oauthButton}
                     >
                         продолжить с Yandex
                     </button>
-                </div> */}
+                </div>
             </form>            
         </div>
     )

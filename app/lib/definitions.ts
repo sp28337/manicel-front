@@ -25,12 +25,59 @@ export const LoginFormSchema = z.object({
         .string()
         .trim(),
 })
- 
+
+export const UpdatePasswordSchema = z.object({
+    oldPassword: z
+        .string()
+        .trim(),
+    newPassword: z
+        .string()
+        .min(8, { message: "Be at least 8 characters long" })
+        .regex(/[a-zA-Z]/, { message: "Contain at least one letter." })
+        .regex(/[0-9]/, { message: "Contain at least one number." })
+        .regex(
+            /[^a-zA-Z0-9]/, 
+            { message: "Contain at least one special character." }
+        ).trim(),
+    repeatedPassword: z
+        .string()
+        .min(8, { message: "Be at least 8 characters long" })
+        .regex(/[a-zA-Z]/, { message: "Contain at least one letter." })
+        .regex(/[0-9]/, { message: "Contain at least one number." })
+        .regex(
+            /[^a-zA-Z0-9]/, 
+            { message: "Contain at least one special character." }
+        ).trim(),
+})
+
+export const ChangeNameSchema = z.object({
+    name: z
+        .string()
+        .min(2, { message: "Длина имени должна быть как минимум 2 символа" })
+        .trim(),
+})
+
+export const ChangeUsernameSchema = z.object({
+    username: z
+        .string()
+        .min(2, { message: "Длина логина должна быть как минимум 2 символа" })
+        .trim(),
+})
+
+export const ChangeEmailSchema = z.object({
+    email: z.string().email({ message: "Пожалуйста, введите корректный email" }).nullable(),
+})
+
 export type FormState =
   | {
       errors?: {
+        name?: string[]
+        email?: string[]
         username?: string[]
         password?: string[]
+        oldPassword?: string[]
+        newPassword?: string[]
+        repeatedPassword?: string[]
       }
       message?: string
     }

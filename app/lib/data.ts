@@ -123,7 +123,6 @@ export async function loginUser(formData: FormData) {
         )
         if (response.ok) {
             const userData = await response.json()
-            console.log(`response: ${userData}`)
             return userData
         } else {
             return response.status
@@ -131,11 +130,10 @@ export async function loginUser(formData: FormData) {
 
     } catch (error) {
         console.error("Backend Error:", error);
-        // redirect("/auth/sign-up")
     }
 }
 
-export async function getUserProfile({ userId, authToken }: { userId: number, authToken: string }) {
+export async function getUserProfile({ userId, authToken }: { userId: string, authToken: string }) {
     try {
         const response = await fetch(
             `${protocol}://${host}:${port}/user/profile/${userId}`, 
@@ -146,13 +144,131 @@ export async function getUserProfile({ userId, authToken }: { userId: number, au
                 }
             }
         )
-
-        const userProfile: UserProfileSchema = await response.json()
-
-        return userProfile
+        
+        if (response.ok) {
+            const userProfile: UserProfileSchema = await response.json()
+            return userProfile
+        } else {
+            return response.status
+        }
 
     } catch (error) {
         console.error("Backend Error:", error);
-        redirect("/auth/sign-up")
+        redirect("/sign-up")
+    }
+}
+
+export async function changeUsername(formData: FormData, authToken: string | undefined, userId: number | unknown) {
+    try {
+        const response = await fetch(
+            `${protocol}://${host}:${port}/user/update_username/${userId}`, 
+            {
+                method: "PATCH",
+                headers: {
+                    "accept": "application/json",
+                    "Authorization": `Bearer ${authToken}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    username: formData.get("username"),
+                }),        
+            }
+        )
+        if (response.ok) {
+            const userData = await response.json()
+            return userData
+        } else {
+            return response.status
+        }
+
+    } catch (error) {
+        console.error("Backend Error:", error);
+    }
+}
+
+export async function updatePassword(formData: FormData, authToken: string | undefined, userId: number | unknown) {
+    try {
+        const response = await fetch(
+            `${protocol}://${host}:${port}/user/update_password/${userId}`, 
+            {
+                method: "PATCH",
+                headers: {
+                    "accept": "application/json",
+                    "Authorization": `Bearer ${authToken}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    old_password: formData.get("oldPassword"),
+                    new_password: formData.get("newPassword"),
+                    repeat_new_password: formData.get("repeatedPassword"),
+                }),        
+            }
+        )
+        console.log(response.status, response.statusText)
+        if (response.ok) {
+            const userData = await response.json()
+            return userData
+        } else {
+            return response.status
+        }
+
+    } catch (error) {
+        console.error("Backend Error:", error);
+    }
+}
+
+export async function changeName(formData: FormData, authToken: string | undefined, userId: string | unknown) {
+    try {
+        const response = await fetch(
+            `${protocol}://${host}:${port}/user/update_name/${userId}`, 
+            {
+                method: "PATCH",
+                headers: {
+                    "accept": "application/json",
+                    "Authorization": `Bearer ${authToken}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: formData.get("name"),
+                }),        
+            }
+        )
+        if (response.ok) {
+            const userData = await response.json()
+            return userData
+        } else {
+            return response.status
+        }
+
+    } catch (error) {
+        console.error("Backend Error:", error);
+    }
+}
+
+export async function changeEmail(formData: FormData, authToken: string | undefined, userId: string | unknown) {
+    try {
+        const response = await fetch(
+            `${protocol}://${host}:${port}/user/update_email/${userId}`, 
+            {
+                method: "PATCH",
+                headers: {
+                    "accept": "application/json",
+                    "Authorization": `Bearer ${authToken}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    email: formData.get("email"),
+                }),        
+            }
+        )
+        if (response.ok) {
+            const userData = await response.json()
+            return userData
+        } else {
+            return response.status
+        }
+
+    } catch (error) {
+        console.error("Backend Error:", error);
     }
 }

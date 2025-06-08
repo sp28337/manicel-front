@@ -1,0 +1,419 @@
+@keyframes inputOn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.headerWrapper {
+    background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
+    position: relative;
+    overflow: hidden;
+    margin-top: 112px;
+    height: 650px;
+    transition: 1s;
+    z-index: 2;
+}
+
+.backgroundImage {
+    height: auto;
+    width: 100%;
+    max-width: 1440px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;    
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    filter: blur(3px);
+}
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    height: 100%;
+}
+
+.profilePanel {
+    width: 100%;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.h1 {
+    justify-content: center;
+    transition: 1s;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 110%;
+    text-transform: uppercase;
+    color: #0d0c10;
+    text-align: center;
+    /* margin-bottom: 20px; */
+}
+
+.span {
+    transition: 1s;
+    display: block;
+    margin-bottom: 28px;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 110%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: rgba(13, 12, 16, 0.9);
+}
+
+.settingsPanel {
+    width: 20%;
+    border-left: rgba(0, 0, 0, 0.1) 1px solid;
+    margin: 30px 0;
+    padding: 0 0 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.p {
+    text-align: center;
+    transition: 1s;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: #717171;
+    letter-spacing: 0;
+}
+
+.formsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    width: 510px;
+    margin: 0 auto;
+    /* flex-grow: 0.5; */
+}
+
+.form {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.passwordForm {
+    flex-direction: column;
+}
+
+.inputPasswordWrapper {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    animation: inputOn 0.5s;
+    position: relative;
+    /* transition: 1s; */
+}
+
+
+
+.label {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000000;
+    text-transform: capitalize;
+    animation: inputOn 0.5s;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* gap: 15px; */
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 0.2px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    width: 340px;
+    animation: inputOn 0.5s;
+}
+
+.inputPassword {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 0.2px solid rgba(0, 0, 0, 0.7);
+}
+
+.editButton {
+    /* fill: #0000005a */
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+    animation: inputOn 0.5s;
+}
+
+.editButton:hover {
+    scale: 1.2;
+    transition: 0.2s;
+}
+
+.submitButton {
+    fill: #09b45fcf;
+    animation: inputOn 1s;
+    display: flex;
+    align-items: center;
+}
+
+.submitButton:hover {
+    scale: 1.2;
+    fill: #0b924f;
+}
+
+.inputLine {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 0.2px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    width: 340px;
+}
+
+.inputLine:focus {
+    border: 0.2px solid rgba(0, 0, 0, 0.7);
+}
+
+.eyeButton {
+    position: absolute;
+    right: 10px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+
+}
+
+.userInfo {
+    font-size: 16px;
+    line-height: 150%;
+    color: #333333;
+}
+
+.wave {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    height: auto;
+    transform: translateY(50%) rotate(180deg);
+}
+
+.body {
+    height:50vh;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    bottom: -15px;
+    margin: 0 auto;
+}
+
+
+@keyframes inputOnError {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0)}
+}
+
+.authError {
+    margin: 0 auto;
+    color:rgba(240, 35, 35, 0.7);
+    width: 100%;
+    animation: inputOn 0.5s;
+}
+
+
+@media (max-width: 1248px) {
+    .headerWrapper {
+        height: 570px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .imgWrapper {
+        width: 580px;
+        transform: translate(-7%, -50%);
+    }
+
+    .h1 {
+        font-size: 22px;
+    }
+
+    .span {
+        font-size: 36px;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .headerWrapper {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .formsWrapper {
+        width: 100%;
+    }
+
+    .settingsPanel {
+        display: none;
+        /* width: 100%;
+        border-left: initial;
+        border-top: rgba(0, 0, 0, 0.1) 1px solid;
+        margin: 30px 0;
+        padding: 15px 0 0 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px; */
+    }
+
+    .backgroundImage {
+        display: none;
+    }
+
+    .headerWrapper {
+        margin-top: 102px;
+        height: 70dvh;
+        /* height: 900px; */
+    }
+
+    .header {
+        height: 100%;
+        width: auto;
+        flex-direction: column;
+    }
+
+    .h1 {
+        font-size: 24px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #0d0c10;
+        margin-bottom: 10px;
+    }
+
+    .p {
+        width: initial;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .span {
+        font-size: 36px;
+    }
+
+    .inputWrapper {
+        width: 65%;
+    }
+
+    .input {
+        width: 100%;
+    }
+
+    .inputPassword {
+        width: 100%;
+    }
+
+    .inputLine {
+        width: 100%;
+    }
+}
+
+@media (max-width: 566px) {
+    /* .headerWrapper {
+        height: 800px;
+    } */
+
+    .h1 {
+        font-size: 22px;
+    }
+
+    .span {
+        font-size: 34px;
+    }
+
+    .label {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .span {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 433px) {
+    /* .headerWrapper {
+        height: 700px;
+    } */
+
+    .span {
+        font-size: 28px;
+    }
+
+    .input {
+        font-size: 12px;
+    }
+
+    .inputLine {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 374px) {
+    .inputWrapper {
+        width: 55%;
+    }
+
+    .h1 {
+        font-size: 20px;
+    }
+
+    .p {
+        font-size: 14px;
+    }
+
+    .label {
+        font-size: 10px;
+    }
+
+    .input {
+        font-size: 10px;
+    }
+
+    .inputLine {
+        font-size: 10px;
+    }
+}

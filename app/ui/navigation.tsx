@@ -55,14 +55,14 @@ export const Navigation = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
                             
                                 <Link
                                     href="/user/1"
-                                    className={styles.login} 
+                                    className={styles.profileIcon} 
                                 >
                                     <ProfileSVG />
                                 </Link>    
                                                     :
                                 <Link
                                     href="/login"
-                                    className={styles.login} 
+                                    className={styles.profileIcon} 
                                 >
                                     <LoginSVG />
                                 </Link>

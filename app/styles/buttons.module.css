@@ -4,6 +4,31 @@
     right: 0;
     transform: translate(300%, -50%)
     /* bottom: -30px; */
-    /* left: 50%; */
-    
+    /* left: 50%; */   
+}
+
+.button {
+    transition: 1s;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #717171;
+    letter-spacing: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* text-align: right; */
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.button:hover {
+    .icon{
+        transition: 0.2s;
+        scale: 1.2;
+    }
 }

@@ -20,6 +20,7 @@
 .search {
     width: 100%;
     height: auto;
+    transition: 0.2s;
 }
 
 .nav {
@@ -72,9 +73,13 @@
 
 .search:hover {
     transform: scale(1.2);
-    }
+    transition: 0.2s;
+}
 
 .navLink {
+    height: 20px;
+    display: flex;
+    align-items: center;
     transition: 
         background-color 0.3s ease,
         transform 0.3s ease, 
@@ -82,7 +87,8 @@
 }
 
 .navLink:hover {
-    transform: scale(1.2);
+    /* transform: scale(1.2); */
+    border-bottom: 0.9px solid rgba(0, 0, 0, 0.2);
 }
 
  
@@ -101,6 +107,17 @@
     display: flex;
     width: 15px;
     height: 15px;
+}
+
+.profileIcon {
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.profileIcon:hover {
+    transform: scale(1.2);
+    transition: 0.2s;
 }
 
 .searchOff {

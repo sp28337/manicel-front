@@ -3,6 +3,7 @@
 import styles from "../styles/buttons.module.css"
 import { usePathname, useRouter } from "next/navigation"
 import { logout } from "../actions/auth"
+import { LogoutSVG, Settings2SVG } from "./vectors"
 
 export const CloseSearchListButton = () => {
     
@@ -21,9 +22,35 @@ export const CloseSearchListButton = () => {
     )
 }
 
-export const ExitProfileButton = () => {
+// Profile buttons
+
+export const LogoutButton = () => {
     
     return (
-        <button onClick={() => {logout()}}>выход</button>
+        <>
+            <button 
+                onClick={() => {logout()}}
+                className={styles.button}
+            >
+                <span className={styles.icon}>
+                    <LogoutSVG />
+                </span>
+                выход
+            </button>
+        </>
     )
 }
+
+export const ProfileSettingsButton = () => {
+    
+    return (
+        <button className={styles.button} >
+            <span className={styles.icon}>
+                <Settings2SVG />
+            </span>
+            настройки
+        </button>
+    )
+}
+
+//
