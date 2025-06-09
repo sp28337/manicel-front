@@ -1,6 +1,6 @@
 "use client"
 
-import styles from "../styles/signup-form.module.css"
+import styles from "../../styles/forms/signup-form.module.css"
 import { signup } from "@/app/actions/auth"
 import { useActionState } from "react"
 

@@ -2,8 +2,8 @@
 
 import { useRouter } from "next/navigation"
 import Image from "next/image"
-import styles from "../../styles/header.module.css"
-import textBlockStyles from "../../styles/text-block.module.css"
+import styles from "../../styles/homepage/header.module.css"
+import textBlockStyles from "../../styles/homepage/text-block.module.css"
 import commonStyles from "../../styles/common.module.css"
 import React, { useEffect } from "react"
 import { WaveSVG } from "../../ui/vectors"

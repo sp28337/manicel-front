@@ -1,8 +1,8 @@
 import "../styles/globals.css"
-import { TopBar } from "../ui/top-bar"
-import { Navigation } from "../ui/navigation"
+import { TopBar } from "../ui/layout/top-bar"
+import { Navigation } from "../ui/layout/navigation"
 import { Footer } from "../ui/footer"
-import { montserrat } from "../ui/fonts"
+import { montserrat } from "../lib/fonts"
 import { cookies } from "next/headers"
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

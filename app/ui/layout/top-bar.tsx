@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import styles from "../styles/top-bar.module.css"
+import styles from "../../styles/layout/top-bar.module.css"
 
 const messages = [
     "САЙТ РАБОТАЕТ В ТЕСТОВОМ РЕЖИМЕ",

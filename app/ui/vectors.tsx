@@ -1,6 +1,6 @@
-import searchStyles from "../styles/nav.module.css"
-import textBlockStyles from "../styles/text-block.module.css"
-import reviewsStyles from "../styles/reviews.module.css"
+import searchStyles from "../styles/layout/navigation.module.css"
+import textBlockStyles from "../styles/homepage/text-block.module.css"
+import reviewsStyles from "../styles/homepage/reviews.module.css"
 import commonStyles from "../styles/common.module.css"
 
 export const WBLogoSVG = () => {
