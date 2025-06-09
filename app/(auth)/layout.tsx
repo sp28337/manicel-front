@@ -1,7 +1,7 @@
 import "../styles/globals.css"
-import { TopBar } from "../ui/top-bar"
+import { TopBar } from "../ui/layout/top-bar"
 
-import { montserrat } from "../ui/fonts"
+import { montserrat } from "../lib/fonts"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (

@@ -1,6 +1,6 @@
-import styles from "../styles/store-block.module.css"
+import styles from "../../styles/homepage/store-block.module.css"
 import background from "@/public/salt-body-scrub-500w.png"
-import { WBLogoSVG } from "./vectors"
+import { WBLogoSVG } from "../vectors"
 import Image from "next/image"
 
 export const StoreBlock = () => {

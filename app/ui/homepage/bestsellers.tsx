@@ -1,9 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ReviewsStarsSVG } from "./vectors"
-import { BestsellersSchema } from "../lib/definitions"
-import { bestsellersImages } from "../lib/images"
-import styles from "../styles/bestsellers.module.css"
+import { ReviewsStarsSVG } from "../vectors"
+import { BestsellersSchema } from "../../lib/definitions"
+import { bestsellersImages } from "../../lib/images"
+import styles from "../../styles/homepage/bestsellers.module.css"
 
 export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => {
 

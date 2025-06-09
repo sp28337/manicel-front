@@ -1,6 +1,6 @@
 import Image from "next/image"
 import backgroundImg from "@/public/salt-body-scrub-500w.png"
-import headerStyles from "../styles/header.module.css"
+import headerStyles from "../styles/homepage/header.module.css"
 import catalogHeaderStyles from "../styles/catalog/header.module.css"
 import catalogBodyStyles from "../styles/skeletons/catalog-body.module.css"
 import textBlockStyles from "../styles/skeletons/text-block.module.css"

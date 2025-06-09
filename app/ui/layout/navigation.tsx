@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import styles from "../styles/nav.module.css"
-import commonStyles from "../styles/common.module.css"
+import styles from "../../styles/layout/navigation.module.css"
+import commonStyles from "../../styles/common.module.css"
 import { Search } from "./search"
 import { useState, Suspense } from "react"
 import { 
@@ -10,8 +10,8 @@ import {
     SearchSVG,
     LoginSVG,
     ProfileSVG,
-} from "./vectors"
-import { PopupMenu } from "./popup"
+} from "../vectors"
+import { PopupMenu } from "../popup"
 
 export const Navigation = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
     

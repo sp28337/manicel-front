@@ -1,6 +1,5 @@
 import Image from "next/image"
 import styles from "../styles/search-list.module.css"
-import commonStyles from "../styles/common.module.css"
 import { getSearchProducts } from "../lib/data"
 import { CloseSearchListButton } from "./buttons"
 import { ReviewsStarsSVG, ChartBagSVG } from "./vectors"
@@ -22,7 +21,6 @@ export async function SearchList({ query }: { query: string }) {
         <>
             { products.length > 0 &&
                 <section className={styles.searchListWrapper}>
-                    <h2 className={commonStyles.h2Hidden}>список найденных продуктов</h2>
                     <ul className={styles.searchList}>
                         { 
                             products.map((product) => (

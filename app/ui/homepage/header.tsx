@@ -1,5 +1,5 @@
-import commonStyles from "../styles/common.module.css"
-import styles from "../styles/header.module.css"
+import commonStyles from "../../styles/common.module.css"
+import styles from "../../styles/homepage/header.module.css"
 import Image from "next/image"
 import mainImg from "@/public/all-800w.png"
 import backgroundImg from "@/public/salt-body-scrub-500w.png"
@@ -8,7 +8,7 @@ import {
     WithLoveSVG, 
     NoAnimalTestingSVG, 
     WaveSVG 
-} from "./vectors"
+} from "../vectors"
 
 export const Header = () => {
 

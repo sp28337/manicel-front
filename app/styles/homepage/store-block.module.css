@@ -32,7 +32,7 @@
 
 .p {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 150%;
     letter-spacing: 0.07em;
     font-variant: small-caps;
@@ -88,5 +88,9 @@
 @media (max-width: 500px) {
     .h2 {
         font-size: 24px;
+    }
+
+    .p {
+        font-size: 14px;
     }
 }

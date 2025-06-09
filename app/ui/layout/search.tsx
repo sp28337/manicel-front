@@ -1,6 +1,6 @@
 "use client"
 
-import styles from "../styles/search.module.css"
+import styles from "../../styles/layout/search.module.css"
 import { useDebouncedCallback } from "use-debounce"
 import { useSearchParams, usePathname, useRouter } from "next/navigation"
 import { useEffect, useRef, useCallback } from "react"

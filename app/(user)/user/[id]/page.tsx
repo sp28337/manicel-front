@@ -3,12 +3,18 @@ import { cookies } from "next/headers"
 import { Profile } from "../../../ui/user/profile"
 import { UserProfileSchema } from "@/app/lib/definitions"
 import { redirect } from "next/navigation"
+import { SearchList } from "@/app/ui/search-list"
+
+interface PageProps {
+    searchParams?: Promise<{ query?: string }>;
+    params: Promise<{ userId: string }>;
+}
 
 export default async function Page({
-  params,
-}: {
-  params: Promise<{ userId: string }>
-}) {
+       searchParams,
+       params,
+}: PageProps) {
+    const query = (await searchParams)?.query || "";
     const { userId } = await params
     const cookieStore = await cookies()
     const token = cookieStore.get("session")?.value
@@ -18,6 +24,9 @@ export default async function Page({
     }
 
     return (
+      <>
+        <SearchList query={query} />
         <Profile userProfile={userProfile} />
+      </>
     )
 }

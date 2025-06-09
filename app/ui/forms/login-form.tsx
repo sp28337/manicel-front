@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import styles from "../styles/login-form.module.css"
+import styles from "../../styles/forms/login-form.module.css"
 import { login } from "@/app/actions/auth"
 import { useActionState } from "react"
 import backgroundImg from "@/public/salt-body-scrub-500w.png"
