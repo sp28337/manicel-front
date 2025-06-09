@@ -27,6 +27,7 @@
 }
 
 .button:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.2);
     .icon{
         transition: 0.2s;
         scale: 1.2;

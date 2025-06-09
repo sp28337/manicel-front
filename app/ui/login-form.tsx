@@ -62,7 +62,7 @@ export function LoginForm() {
                         продолжить
                     </button>
                 </div>
-                <div className={styles.wrapper}>
+                {/* <div className={styles.wrapper}>
                     <hr className={styles.hr}/>
                         <span className={styles.or}>или</span>
                     <hr className={styles.hr}/>
@@ -84,7 +84,7 @@ export function LoginForm() {
                     >
                         продолжить с Yandex
                     </button>
-                </div>
+                </div> */}
             </form>            
         </div>
     )

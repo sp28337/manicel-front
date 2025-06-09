@@ -73,7 +73,7 @@ export const Navigation = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
                 <Suspense fallback={<div>Loading...</div>}>
                     <Search placeholder="Поиск..." isOpen={isOpen} onClose={() => setIsOpen(!isOpen)}/>
                 </Suspense>
-                <PopupMenu isOpen={isOpen} setIsOpen={setIsOpen}/>
+                <PopupMenu isOpen={isOpen} isLoggedIn={isLoggedIn}/>
             </div>
         </nav>
     )
