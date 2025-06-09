@@ -1,4 +1,4 @@
-import { WBLogo } from "../logotips"
+import { WBLogoSVG } from "../vectors"
 import styles from "../../styles/catalog/body.module.css"
 import commonStyles from "../../styles/common.module.css"
 import Link from "next/link"
@@ -190,7 +190,7 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                 </section>
 
                 <section className={styles.partners}>
-                    <WBLogo />
+                    <WBLogoSVG />
                 </section>
             </div>
         </div>

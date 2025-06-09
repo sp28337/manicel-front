@@ -4,10 +4,21 @@ import Link from "next/link"
 import styles from "../styles/popup-menu.module.css"
 import { useState } from "react"
 import { createPortal } from "react-dom"
-import { BurgerSVG } from "./vectors"
+import { logout } from "../actions/auth"
+import { 
+    BurgerSVG,
+    HomepageSVG,
+    LogoutSVG,
+    StoreSVG,
+    InfoSVG,
+    ShopSVG,
+    ProfileSVG,
+    LoginSVG
+ } from "./vectors"
 
 export const PopupMenu = (
-    { isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (value: boolean) => void }
+    { isOpen, isLoggedIn }: 
+    { isOpen: boolean, isLoggedIn: boolean }
 ) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false)
 
@@ -27,26 +38,58 @@ export const PopupMenu = (
                     <nav className={styles.popupMenu} onClick={closeMenu}>
                         <div className={styles.links}>
                             <Link href="/" className={styles.navLink}>
+                                <span className={styles.icon}>
+                                    <HomepageSVG />
+                                </span>
                                 <p>ГЛАВНАЯ</p>
                             </Link>
-                            {/* <Link href="#" className={styles.navLink}> */}
-                                <p style={{color: "#747474"}}>O НАС</p>
-                            {/* </Link> */}
                             <Link href="/catalog" className={styles.navLink}>
+                                <span className={styles.icon}>
+                                    <StoreSVG />
+                                </span>
                                 <p>КАТАЛОГ</p>
                             </Link>
                             <Link href="#contacts" className={styles.navLink}>
+                                <span className={styles.icon}>
+                                    <InfoSVG />
+                                </span>
                                 <p>КОНТАКТЫ</p>
                             </Link>
-                            <button 
-                                className={styles.navLink} 
-                                onClick={() => setIsOpen(!isOpen)}
-                            >
-                                <p>ПОИСК</p>
-                            </button>
                             <a href="https://www.wildberries.ru/brands/310747490-manicel" className={styles.navLink}>
-                                <p>В МАГАЗИН</p>
+                                <span className={styles.icon}>
+                                    <ShopSVG />
+                                </span>
+                                <p>МАГАЗИН</p>
                             </a>
+                            { isLoggedIn            ? 
+                                <Link
+                                    href="/user/1"
+                                    className={styles.navLink} 
+                                >
+                                <span className={styles.icon}>
+                                    <ProfileSVG />
+                                </span>
+                                <p>ПРОФИЛЬ</p>
+                                </Link>    
+                                                    :
+                                <Link
+                                    href="/login"
+                                    className={styles.navLink} 
+                                >
+                                    <span className={styles.icon}>
+                                        <LoginSVG />
+                                    </span>
+                                    <p>ВХОД</p>
+                                </Link>
+                            }
+                            { isLoggedIn  &&
+                                <button className={styles.navLink} onClick={() => {logout()}}>
+                                    <span className={styles.icon}>
+                                        <LogoutSVG />
+                                    </span>
+                                    <p>ВЫХОД</p>
+                                </button>
+                            }
                         </div>
                     </nav>
                     , document.body

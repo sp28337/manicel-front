@@ -5,10 +5,15 @@ import styles from "../styles/nav.module.css"
 import commonStyles from "../styles/common.module.css"
 import { Search } from "./search"
 import { useState, Suspense } from "react"
-import { ManicelLogoSVG, SearchSVG } from "./vectors"
+import { 
+    ManicelLogoSVG, 
+    SearchSVG,
+    LoginSVG,
+    ProfileSVG,
+} from "./vectors"
 import { PopupMenu } from "./popup"
 
-export const Navigation = () => {
+export const Navigation = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
     
     const [isOpen, setIsOpen] = useState(false)
   
@@ -26,9 +31,12 @@ export const Navigation = () => {
                 { !isOpen &&
                     <>
                         <div className={styles.links}>
-                            {/* <Link href="#" className={styles.navLink}> */}
-                                <p style={{color: "#747474"}}>O НАС</p>
-                            {/* </Link> */}
+                            <Link 
+                                href="https://www.wildberries.ru/brands/310747490-manicel" 
+                                className={styles.navLink}
+                            >
+                                <p>МАГАЗИН</p>
+                            </Link>
                             <Link href="/catalog" className={styles.navLink}>
                                 <p>КАТАЛОГ</p>
                             </Link>
@@ -36,24 +44,36 @@ export const Navigation = () => {
                                 <p>КОНТАКТЫ</p>
                             </Link>
                         </div>
-                        <a 
-                            className={styles.wblink} 
-                            href="https://www.wildberries.ru/brands/310747490-manicel"
-                        >
-                            МАГАЗИН
-                        </a>               
-                        <button 
-                            className={styles.searchButton} 
-                            onClick={() => setIsOpen(!isOpen)}
-                        >
-                            <SearchSVG />
-                        </button>  
+                        <div className={styles.svgWrapper}>
+                            <button 
+                                className={styles.searchButton} 
+                                onClick={() => setIsOpen(!isOpen)}
+                            >
+                                <SearchSVG />
+                            </button>
+                            { isLoggedIn            ? 
+                            
+                                <Link
+                                    href="/user/1"
+                                    className={styles.profileIcon} 
+                                >
+                                    <ProfileSVG />
+                                </Link>    
+                                                    :
+                                <Link
+                                    href="/login"
+                                    className={styles.profileIcon} 
+                                >
+                                    <LoginSVG />
+                                </Link>
+                            }
+                        </div>
                     </>
                 }
                 <Suspense fallback={<div>Loading...</div>}>
                     <Search placeholder="Поиск..." isOpen={isOpen} onClose={() => setIsOpen(!isOpen)}/>
                 </Suspense>
-                <PopupMenu isOpen={isOpen} setIsOpen={setIsOpen}/>
+                <PopupMenu isOpen={isOpen} isLoggedIn={isLoggedIn}/>
             </div>
         </nav>
     )

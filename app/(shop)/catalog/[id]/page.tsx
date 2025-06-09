@@ -1,7 +1,7 @@
-import { getCatalogProducts, getProduct } from "../../lib/data"
-import { Header } from "../../ui/product/header"
-import { Body } from "../../ui/product/body"
-import { SearchList } from "../../ui/search-list"
+import { getCatalogProducts, getProduct } from "../../../lib/data"
+import { Header } from "../../../ui/product/header"
+import { Body } from "../../../ui/product/body"
+import { SearchList } from "../../../ui/search-list"
 import { notFound } from "next/navigation"
 
 

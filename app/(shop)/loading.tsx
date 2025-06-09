@@ -1,10 +1,10 @@
-import commonStyles from "./styles/common.module.css"
+import commonStyles from "../styles/common.module.css"
 import { 
     HeaderSkeleton, 
     TextBlockSkeleton,
     BestsellersSkeleton,
     StoreBlockSkeleton
- } from "./ui/skeletons"
+ } from "../ui/skeletons"
 
 
 export default function Loading() {

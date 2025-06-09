@@ -2,11 +2,11 @@
 
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import styles from "./styles/header.module.css"
-import textBlockStyles from "./styles/text-block.module.css"
-import commonStyles from "./styles/common.module.css"
+import styles from "../styles/header.module.css"
+import textBlockStyles from "../styles/text-block.module.css"
+import commonStyles from "../styles/common.module.css"
 import React, { useEffect } from "react"
-import { WaveSVG } from "./ui/vectors"
+import { WaveSVG } from "../ui/vectors"
 import backgroundImg from "@/public/salt-body-scrub-500w.png"
 import all from "@/public/all-800w.png"
 

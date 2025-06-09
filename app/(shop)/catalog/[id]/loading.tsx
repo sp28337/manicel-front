@@ -1,7 +1,7 @@
 import { 
     HeaderSkeleton,
     ProductBodySkeleton,
-} from "../../ui/skeletons"
+} from "../../../ui/skeletons"
 
 export default function Loading() {
     return (
