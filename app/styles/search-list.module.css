@@ -12,8 +12,8 @@
     left: 50%;
     top: 0;
     margin-top: 160px;
-    z-index: 100;
     animation: search 0.3s;
+    z-index: 101;
 }
 
 .searchList {
