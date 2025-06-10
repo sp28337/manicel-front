@@ -27,12 +27,21 @@ export const Footer = () => {
                         </a>
                     </div>
                 </div>
-                <div id="contacts" className={styles.contactsWrapper}>
-                    <h3 className={styles.h3}>контакты</h3>
+                <div id="documents">
+                    <h3 className={styles.h3}>документы</h3>
                     <div className={styles.linksWrapper}>
-                        <a href="">+7-(920)-941-53-89</a>
+                        <Link href="/privacy">
+                            политика конфиденциальности
+                        </Link>
+                        <Link href="/agreement#contacts">
+                            контакты
+                        </Link>
+                        <Link href="#">
+                            пользовательское соглашение
+                        </Link>
+                        {/* <a href="">+7-(920)-941-53-89</a>
                         <a className={styles.email} href="">rejx.nikita@bk.ru</a>
-                        <address className={styles.address}>г. Вязники, ул Сенькова, д 9/8</address>
+                        <address className={styles.address}>г. Вязники, ул Сенькова, д 9/8</address> */}
                     </div>
                 </div>
             </nav>
