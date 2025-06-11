@@ -30,8 +30,6 @@
     flex-direction: column;
     gap: 5px;
     color: #000;
-    padding: 30px;
-    width: 200px;
     color: #717171;
     height: 100dvh;
     /* background-color: #fff;
@@ -44,14 +42,15 @@
 }
 
 .navLink {
+    width: 175px;
     display: flex;
     align-items: center;
     gap: 20px;
-    width: 150px;
     letter-spacing: 1px;
     text-align: left;
     font-size: 12px;
-    padding: 20px;
+    padding: 10px 20px;
+    border-bottom: 0.2px solid rgba(0, 0, 0, 0.1);
     transition: 
         background-color 0.3s ease,
         transform 0.3s ease, 

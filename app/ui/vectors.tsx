@@ -176,7 +176,7 @@ export const SearchSVG = () => {
     return (
         <svg 
             className={searchStyles.search} 
-            width="13" height="14" 
+            width="15" height="16" 
             viewBox="0 0 13 14" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
@@ -224,7 +224,7 @@ export const ChartBagSVG = () => {
 export const LoginSVG = () => {
     return (
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-            width="13pt" height="13pt" viewBox="0 0 512.000000 512.000000"
+            width="15pt" height="15pt" viewBox="0 0 512.000000 512.000000"
             preserveAspectRatio="xMidYMid meet">
             <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
             fill="#000000" stroke="none">
@@ -265,7 +265,7 @@ export const LoginSVG = () => {
 export const LogoutSVG = () => {
     return (
        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-            width="12.000000pt" height="12.000000pt" viewBox="0 0 512.000000 512.000000"
+            width="15.000000pt" height="15.000000pt" viewBox="0 0 512.000000 512.000000"
             preserveAspectRatio="xMidYMid meet">
 
             <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
@@ -299,7 +299,7 @@ export const LogoutSVG = () => {
 export const ProfileSVG = () => {
     return (
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-            width="13.000000pt" height="13.000000pt" viewBox="0 0 512.000000 512.000000"
+            width="15.000000pt" height="15.000000pt" viewBox="0 0 512.000000 512.000000"
             preserveAspectRatio="xMidYMid meet">
 
             <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
@@ -468,7 +468,7 @@ export const SettingsSVG = () => {
 export const Settings2SVG = () => {
     return (
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-            width="12.000000pt" height="12.000000pt" viewBox="0 0 512.000000 512.000000"
+            width="15.000000pt" height="15.000000pt" viewBox="0 0 512.000000 512.000000"
             preserveAspectRatio="xMidYMid meet">
 
             <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
@@ -551,7 +551,7 @@ export const Settings2SVG = () => {
 export const HomepageSVG = () => {
     return (
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-        width="12.000000pt" height="12.000000pt" viewBox="0 0 800.000000 800.000000"
+        width="15.000000pt" height="15.000000pt" viewBox="0 0 800.000000 800.000000"
         preserveAspectRatio="xMidYMid meet">
             <g transform="translate(0.000000,800.000000) scale(0.100000,-0.100000)"
             fill="#000000" stroke="none">
@@ -580,7 +580,7 @@ export const HomepageSVG = () => {
 export const StoreSVG = () => {
     return (
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-        width="12.000000pt" height="12.000000pt" viewBox="0 0 256.000000 256.000000"
+        width="15.000000pt" height="15.000000pt" viewBox="0 0 256.000000 256.000000"
         preserveAspectRatio="xMidYMid meet">
 
             <g transform="translate(0.000000,256.000000) scale(0.100000,-0.100000)"
@@ -616,7 +616,7 @@ export const StoreSVG = () => {
 export const InfoSVG = () => {
     return (
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-            width="12.000000pt" height="12.000000pt" viewBox="0 0 600.000000 600.000000"
+            width="15.000000pt" height="15.000000pt" viewBox="0 0 600.000000 600.000000"
             preserveAspectRatio="xMidYMid meet">
 
             <g transform="translate(0.000000,600.000000) scale(0.100000,-0.100000)"
@@ -646,7 +646,7 @@ export const InfoSVG = () => {
 export const ShopSVG = () => {
     return (
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-        width="12.000000pt" height="12.000000pt" viewBox="0 0 256.000000 256.000000"
+        width="15.000000pt" height="15.000000pt" viewBox="0 0 256.000000 256.000000"
         preserveAspectRatio="xMidYMid meet">
 
             <g transform="translate(0.000000,256.000000) scale(0.100000,-0.100000)"
@@ -665,6 +665,22 @@ export const ShopSVG = () => {
             109 42 139 101 30 59 31 97 6 151 -41 88 -133 132 -222 105z"/>
             <path d="M1889 580 c-44 -13 -88 -51 -109 -95 -64 -133 39 -279 186 -262 60 6
             109 42 139 101 30 59 31 97 6 151 -41 88 -133 132 -222 105z"/>
+            </g>
+        </svg>
+    )
+}
+
+export const MoreSVG = () => {
+    return (
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="14pt" height="14pt" viewBox="0 0 298 292"
+            preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0.000000,292.000000) scale(0.100000,-0.100000)"
+            fill="#000000" stroke="none">
+                <path d="M676 2333 c-30 -52 -45 -88 -38 -92 6 -3 343 -193 751 -421 407 -228
+                740 -417 740 -420 0 -3 -333 -192 -740 -420 -407 -228 -745 -418 -751 -421 -6
+                -4 8 -39 37 -92 l48 -86 67 37 c468 261 1739 978 1739 982 0 4 -1290 732
+                -1739 982 l-66 36 -48 -85z"/>
             </g>
         </svg>
     )
