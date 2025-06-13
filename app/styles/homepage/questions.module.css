@@ -1,0 +1,36 @@
+.questions {
+    display: flex;
+    color: #717171;
+    font-size: clamp(14px, 2.08vw, 16px);
+    align-items: center;
+    gap: 5px;
+    width: max-content;
+}
+
+.icon {
+    transition: 0.2s;
+    fill: #717171;
+}
+
+.questions:hover {
+    color: rgba(0, 0, 0, .8);
+    text-decoration: underline solid rgba(0, 0, 0, .8);
+
+    .icon {
+        transform: scale(1.2);
+        fill: rgba(0, 0, 0, .8);
+    }
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: max-content;
+}
+
+@media(max-width: 522px) {
+    .questions {
+        font-size: clamp(16px, 2.08vw, 20px);
+    }
+}

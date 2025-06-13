@@ -57,7 +57,7 @@ export const PopupMenu = (
                             </Link>
                             <a href="https://www.wildberries.ru/brands/310747490-manicel" className={styles.navLink}>
                                 <span className={styles.icon}>
-                                    <ShopSVG />
+                                    <ShopSVG color="#000" h={15} w={15}/>
                                 </span>
                                 <p>МАГАЗИН</p>
                             </a>

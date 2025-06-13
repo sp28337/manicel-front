@@ -1,7 +1,9 @@
 import searchStyles from "../styles/layout/navigation.module.css"
 import textBlockStyles from "../styles/homepage/text-block.module.css"
 import reviewsStyles from "../styles/homepage/reviews.module.css"
+import questionsStyles from "../styles/homepage/questions.module.css"
 import commonStyles from "../styles/common.module.css"
+import Link from "next/link"
 
 export const WBLogoSVG = () => {
     return (
@@ -189,14 +191,10 @@ export const SearchSVG = () => {
 export const ReviewsStarsSVG = () => {
     return (
         <div className={reviewsStyles.rating}>
-            <svg width="96" height="20" viewBox="0 0 96 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.99996 14.375L4.85671 17.5163L6.25496 11.6538L1.67871 7.73375L7.68559 7.2525L9.99996 1.6875L12.3143 7.2525L18.3221 7.73375L13.745 11.6538L15.1432 17.5163L9.99996 14.375Z" fill="#b6b6b6"/>
-                <path d="M29 14.375L23.8567 17.5163L25.255 11.6538L20.6787 7.73375L26.6856 7.2525L29 1.6875L31.3143 7.2525L37.3221 7.73375L32.745 11.6538L34.1432 17.5163L29 14.375Z" fill="#b6b6b6"/>
-                <path d="M48 14.375L42.8567 17.5163L44.255 11.6538L39.6787 7.73375L45.6856 7.2525L48 1.6875L50.3143 7.2525L56.3221 7.73375L51.745 11.6538L53.1432 17.5163L48 14.375Z" fill="#b6b6b6"/>
-                <path d="M67 14.375L61.8567 17.5163L63.255 11.6538L58.6787 7.73375L64.6856 7.2525L67 1.6875L69.3143 7.2525L75.3221 7.73375L70.745 11.6538L72.1432 17.5163L67 14.375Z" fill="#b6b6b6"/>
-                <path d="M86 14.375L80.8567 17.5163L82.255 11.6538L77.6787 7.73375L83.6856 7.2525L86 1.6875L88.3143 7.2525L94.3221 7.73375L89.745 11.6538L91.1432 17.5163L86 14.375Z" fill="#b6b6b6"/>
+            <svg  className={reviewsStyles.star} width="25" height="25" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.99996 14.375L4.85671 17.5163L6.25496 11.6538L1.67871 7.73375L7.68559 7.2525L9.99996 1.6875L12.3143 7.2525L18.3221 7.73375L13.745 11.6538L15.1432 17.5163L9.99996 14.375Z"></path>
             </svg>
-            <span className={reviewsStyles.ratio}>{"(4.8)"}</span>
+            <span className={reviewsStyles.ratio}>{"(0.0)"}</span>
         </div>
     )
 }
@@ -643,14 +641,14 @@ export const InfoSVG = () => {
     )
 }
 
-export const ShopSVG = () => {
+export const ShopSVG = ({ color, w, h }: { color: string, w: number, h: number }) => {
     return (
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-        width="15.000000pt" height="15.000000pt" viewBox="0 0 256.000000 256.000000"
+        width={`${w}.000000pt`} height={`${h}.000000pt`} viewBox="0 0 256.000000 256.000000"
         preserveAspectRatio="xMidYMid meet">
 
             <g transform="translate(0.000000,256.000000) scale(0.100000,-0.100000)"
-            fill="#000000" stroke="none">
+            fill={color} stroke="none">
             <path d="M54 2417 c-73 -34 -64 -135 13 -156 21 -6 88 -11 149 -11 99 0 115
             -2 145 -23 19 -12 42 -38 51 -57 10 -19 72 -281 139 -582 l121 -546 -22 -22
             c-49 -49 -64 -138 -35 -207 20 -48 41 -71 87 -94 35 -18 70 -19 733 -19 l696
@@ -683,5 +681,41 @@ export const MoreSVG = () => {
                 -1739 982 l-66 36 -48 -85z"/>
             </g>
         </svg>
+    )
+}
+
+
+export const QuestionSVG = ({ articule }: { articule: number }) => {
+
+    return (
+        <Link 
+            href={`https://www.wildberries.ru/catalog/${articule}/questions`}
+            className={questionsStyles.questions}
+        >
+            <svg className={questionsStyles.icon} version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="15.000000pt" height="15.000000pt" viewBox="0 0 256.000000 256.000000"
+            preserveAspectRatio="xMidYMid meet">
+                <g transform="translate(0.000000,256.000000) scale(0.100000,-0.100000)"
+                 stroke="none">
+                <path d="M2095 2544 c-236 -31 -637 -82 -1440 -184 -176 -22 -333 -46 -348
+                -52 -15 -6 -32 -19 -37 -29 -6 -11 -10 -346 -10 -878 l0 -860 24 -28 c23 -27
+                28 -28 140 -31 l116 -4 0 -210 0 -210 29 -29 c20 -19 40 -29 60 -29 37 0 43 6
+                281 279 l175 200 473 1 c517 0 528 1 550 56 9 23 169 1612 189 1876 7 86 -1
+                114 -37 133 -33 17 -30 17 -165 -1z m25 -196 c-1 -13 -38 -399 -83 -858 l-82
+                -835 -475 -5 c-261 -3 -476 -7 -476 -8 -1 -1 -66 -75 -145 -164 l-144 -163 -5
+                147 c-6 188 -1 181 -158 188 l-117 5 -3 752 -2 751 37 6 c21 3 272 35 558 71
+                656 83 973 123 1005 128 14 2 40 5 58 6 27 1 32 -2 32 -21z"/>
+                <path d="M1275 2074 c-156 -38 -294 -187 -259 -279 4 -8 20 -23 36 -31 45 -23
+                82 -10 119 41 18 24 50 57 73 72 37 25 50 28 123 28 74 0 85 -3 125 -30 118
+                -84 126 -247 16 -352 -39 -38 -68 -49 -246 -93 -73 -18 -143 -41 -156 -51 -36
+                -29 -98 -147 -98 -188 0 -61 68 -100 123 -71 11 6 33 35 50 65 34 60 30 58
+                198 100 142 36 185 58 262 136 87 87 112 148 113 274 1 81 -2 97 -31 157 -42
+                89 -101 151 -182 191 -58 28 -76 32 -156 34 -49 1 -99 -1 -110 -3z"/>
+                <path d="M894 1046 c-70 -31 -87 -120 -35 -178 26 -29 35 -33 81 -33 46 0 55
+                4 81 33 53 59 35 148 -37 178 -41 17 -50 17 -90 0z"/>
+                </g>
+            </svg>
+            <span className={questionsStyles.text}>вопросы</span>
+        </Link>
     )
 }

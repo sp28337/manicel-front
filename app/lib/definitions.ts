@@ -125,6 +125,7 @@ export type CatalogProductsSchema = {
 }
 
 export type BestsellersSchema = {
+    articule: number,
     id: number,
     name: string,
     name_ru: string,
