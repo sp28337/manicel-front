@@ -1,51 +1,11 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ReviewsStarsSVG } from "../vectors"
+import { ReviewsStarsSVG, QuestionSVG, ShopSVG } from "../vectors"
 import { BestsellersSchema } from "../../lib/definitions"
 import { bestsellersImages } from "../../lib/images"
 import styles from "../../styles/homepage/bestsellers.module.css"
 
 export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => {
-
-    // await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    const backgroundStyles: { [key: number]: string } = {
-        1: styles.productItem1,
-        2: styles.productItem2,
-        3: styles.productItem3,
-        4: styles.productItem4,
-        5: styles.productItem5,
-        6: styles.productItem6,
-        7: styles.productItem7,
-        8: styles.productItem8,
-        9: styles.productItem9,
-        10: styles.productItem10,
-        11: styles.productItem11,
-        12: styles.productItem12,
-        13: styles.productItem13,
-        14: styles.productItem14,
-        15: styles.productItem15,
-        16: styles.productItem16,
-    }
-
-    const gradientStyles: { [key: number]: string } = {
-        1: styles.gradient1,
-        2: styles.gradient2,
-        3: styles.gradient3,
-        4: styles.gradient4,
-        5: styles.gradient5,
-        6: styles.gradient6,
-        7: styles.gradient7,
-        8: styles.gradient8,
-        9: styles.gradient9,
-        10: styles.gradient10,
-        11: styles.gradient11,
-        12: styles.gradient12,
-        13: styles.gradient13,
-        14: styles.gradient14,
-        15: styles.gradient15,
-        16: styles.gradient16,
-    }
 
     const images = bestsellersImages
 
@@ -54,13 +14,15 @@ export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => 
             <h2 className={styles.h2}>
                 бестселлеры
             </h2>
-            <div className={`${styles.bestsellersGrid} ${styles.bestsellersFlex}`}>
+            <div className={styles.bestsellersFlex}>
             {products && Array.isArray(products) && products.map((product, index) => (
-                <article key={index} className={`${styles.productItem} ${backgroundStyles[product.id]}`}>
-                    <div className={`${styles.gradient} ${gradientStyles[product.id]}`}></div>
-                    <div className={styles.background}></div>
-                    <Link className={styles.link} key={index} href={`/catalog/${product.id}`}>
-                        <div className={`${styles.scrubWrapper}`}>
+                <article key={index} className={styles.productItem}>
+                    <Link 
+                        className={styles.link} 
+                        key={index} 
+                        href={`/catalog/${product.id}`}
+                    >
+                        <div className={styles.scrubWrapper}>
                             <Image 
                                 className={`${styles.scrub}`} 
                                 src={images[product.id]} 
@@ -71,22 +33,31 @@ export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => 
                         </div>
                     </Link >
                     <section className={styles.infoContainer}>
-                        <h3 className={`${styles.h3}`}>{product.name}</h3>
+                        <h3 
+                            className={styles.h3}
+                            style={product.name_ru.length > 10 ? {letterSpacing: 0} : {}} 
+                        >
+                            {product.name_ru}
+                        </h3>
                         <p className={styles.p}>{product.type}</p>
-                        <ReviewsStarsSVG />
+                        <div className={styles.svgWrapper}>
+                            <ReviewsStarsSVG />
+                            <QuestionSVG articule={product.articule} />
+                        </div>
                     </section>
-                    <section className={styles.composition}>
-                        <h3 className={`${styles.h3}  ${index !== 0 && styles.h3Hide}`}>Состав</h3>
-                        <div className={styles.ingredientsWrapper}>
-                            {
-                                product.ingredients?.map((ingredient: string, index: number) => (
-                                    <span className={styles.infoItem} key={index}>
-                                        {ingredient}
-                                    </span>)
-                                )
-                            }
-                        </div>  
-                    </section>
+                    <Link 
+                        className={styles.buyButtonLink} 
+                        href={`https://www.wildberries.ru/catalog/${product.articule}/detail.aspx`}
+                    >
+                        <button className={styles.buyButton} title="купить">
+                            <span className={styles.iconButtonWrapper}>
+                                <ShopSVG color="#fff" h={30} w={30}/>
+                            </span>
+                            <span className={styles.textButtonWrapper}>
+                                купить
+                            </span>
+                        </button>
+                    </Link>
                 </article>
             ))}
             </div>

@@ -6,10 +6,6 @@ import {
 } from "./definitions"
 import { redirect } from "next/navigation"
 
-const protocol = process.env.NEXT_PUBLIC_API_PROTOCOL
-const host = process.env.NEXT_PUBLIC_API_HOST
-const port = process.env.NEXT_PUBLIC_API_PORT
-
 const dataCache = (toggle=true) => {
     if (toggle) return "force-cache"
     else return "no-store"
@@ -20,7 +16,7 @@ export async function getSearchProducts(query: string) {
 
     try {
         const data = await fetch(
-            `${protocol}://${host}:${port}/search/search_products?query=${query}`,
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/search/search_products?query=${query}`,
             { cache: dataCache()}
         )
         const filteredProducts: CatalogProductsSchema[] = await data.json()
@@ -35,7 +31,7 @@ export async function getCatalogProducts() {
     
     try {
         const data = await fetch(
-            `${protocol}://${host}:${port}/products/catalog_products`,
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/products/catalog_products`,
             { cache: dataCache()}
         )
         const products: CatalogProductsSchema[] = await data.json()
@@ -51,7 +47,7 @@ export async function getBestsellers() {
     
     try {
         const data = await fetch(
-            `${protocol}://${host}:${port}/bestsellers/bestsellers`,
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/bestsellers/bestsellers`,
             { cache: dataCache()}
         )
         const bestsellers: BestsellersSchema[] = await data.json()
@@ -67,7 +63,7 @@ export async function getProduct(id: string) {
 
     try {
         const data = await fetch(
-            `${protocol}://${host}:${port}/products/${id}`,
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/products/${id}`,
             { cache: dataCache()}
         )
         const product: ProductSchema = await data.json()
@@ -82,7 +78,7 @@ export async function getProduct(id: string) {
 export async function createUser(formData: FormData) {
     try {
         const response = await fetch(
-            `${protocol}://${host}:${port}/user`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/user`, 
             {
                 method: "POST",
                 headers: {
@@ -108,7 +104,7 @@ export async function createUser(formData: FormData) {
 export async function loginUser(formData: FormData) {
     try {
         const response = await fetch(
-            `${protocol}://${host}:${port}/auth/login`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/auth/login`, 
             {
                 method: "POST",
                 headers: {
@@ -136,7 +132,7 @@ export async function loginUser(formData: FormData) {
 export async function getUserProfile({ userId, authToken }: { userId: string, authToken: string }) {
     try {
         const response = await fetch(
-            `${protocol}://${host}:${port}/user/profile/${userId}`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/user/profile/${userId}`, 
             { 
                 cache: dataCache(),
                 headers: {
@@ -161,7 +157,7 @@ export async function getUserProfile({ userId, authToken }: { userId: string, au
 export async function changeUsername(formData: FormData, authToken: string | undefined, userId: number | unknown) {
     try {
         const response = await fetch(
-            `${protocol}://${host}:${port}/user/update_username/${userId}`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/user/update_username/${userId}`, 
             {
                 method: "PATCH",
                 headers: {
@@ -189,7 +185,7 @@ export async function changeUsername(formData: FormData, authToken: string | und
 export async function updatePassword(formData: FormData, authToken: string | undefined, userId: number | unknown) {
     try {
         const response = await fetch(
-            `${protocol}://${host}:${port}/user/update_password/${userId}`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/user/update_password/${userId}`, 
             {
                 method: "PATCH",
                 headers: {
@@ -220,7 +216,7 @@ export async function updatePassword(formData: FormData, authToken: string | und
 export async function changeName(formData: FormData, authToken: string | undefined, userId: string | unknown) {
     try {
         const response = await fetch(
-            `${protocol}://${host}:${port}/user/update_name/${userId}`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/user/update_name/${userId}`, 
             {
                 method: "PATCH",
                 headers: {
@@ -248,7 +244,7 @@ export async function changeName(formData: FormData, authToken: string | undefin
 export async function changeEmail(formData: FormData, authToken: string | undefined, userId: string | unknown) {
     try {
         const response = await fetch(
-            `${protocol}://${host}:${port}/user/update_email/${userId}`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/user/update_email/${userId}`, 
             {
                 method: "PATCH",
                 headers: {

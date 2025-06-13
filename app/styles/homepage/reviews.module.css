@@ -1,6 +1,6 @@
 .ratio {
     font-weight: 500;
-    font-size: 12px;
+    font-size: clamp(14px, 2.08vw, 16px);
     text-transform: uppercase;
     text-align: center;
     color: rgba(0, 0, 0, 0.8);
@@ -10,4 +10,24 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    width: max-content;
+}
+
+.star {
+    fill: #b6b6b6;
+    transition: 0.3s;
+}
+
+.rating:hover {
+
+    .star {
+        transform: scale(1.2);
+        fill: #f1df14;
+    }
+}
+
+@media(max-width: 522px) {
+    .ratio {
+        font-size: clamp(16px, 2.08vw, 20px);
+    }
 }

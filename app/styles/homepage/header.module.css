@@ -4,7 +4,7 @@
     overflow: hidden;
     margin-top: 112px;
     height: 650px;
-    transition: 1s;
+    transition: 0.3s;
     z-index: 2;
 }
 
@@ -39,7 +39,7 @@
 
 .h1 {
     justify-content: center;
-    transition: 1s;
+    transition: 0.3s;
     font-weight: 400;
     font-size: 24px;
     line-height: 110%;
@@ -50,7 +50,7 @@
 }
 
 .span {
-    transition: 1s;
+    transition: 0.3s;
     display: block;
     margin-bottom: 20px;
     font-weight: 600;
@@ -62,7 +62,7 @@
 }
 
 .p {
-    transition: 1s;
+    transition: 0.3s;
     font-weight: 400;
     font-size: 14px;
     line-height: 150%;
@@ -73,7 +73,7 @@
 }
 
 .icons {
-    transition: 1s;
+    transition: 0.3s;
     display: flex;
     padding-top: 30px;
     gap: 10%;
@@ -91,7 +91,7 @@
 .svgWrapper {
     width: 54px;
     height: 53px;
-    transition: 1s;
+    transition: 0.3s;
 }
 
 .iconDescribtion {
@@ -100,7 +100,7 @@
 }
 
 .imgWrapper {
-    transition: 1s;
+    transition: 0.3s;
     width: 674px;
     position: absolute;
     right: 0;
