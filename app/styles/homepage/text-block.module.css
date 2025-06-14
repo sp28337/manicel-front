@@ -66,6 +66,8 @@
     .p {
         display: flex;
         align-items: center;
+        mask-image: none;
+        -webkit-mask-image: none;
     }
 }
 
@@ -84,8 +86,8 @@
     height: 100%;
     align-content: center;
     font-size: clamp(14px, 2vw, 16px);
-    /* mask-image: linear-gradient(to bottom, black 60%, transparent 100%); */
-    /* -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%); */
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 
 .aboutUsButton {
