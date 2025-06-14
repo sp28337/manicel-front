@@ -6,18 +6,13 @@ import {
 } from "./definitions"
 import { redirect } from "next/navigation"
 
-const dataCache = (toggle=true) => {
-    if (toggle) return "force-cache"
-    else return "no-store"
-}
-
 
 export async function getSearchProducts(query: string) {
 
     try {
         const data = await fetch(
             `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/search/search_products?query=${query}`,
-            { cache: dataCache()}
+            { cache: "force-cache"}
         )
         const filteredProducts: CatalogProductsSchema[] = await data.json()
         return filteredProducts
@@ -32,7 +27,7 @@ export async function getCatalogProducts() {
     try {
         const data = await fetch(
             `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/products/catalog_products`,
-            { cache: dataCache()}
+            { cache: "force-cache"}
         )
         const products: CatalogProductsSchema[] = await data.json()
         return products
@@ -48,7 +43,7 @@ export async function getBestsellers() {
     try {
         const data = await fetch(
             `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/bestsellers/bestsellers`,
-            { cache: dataCache()}
+            { cache: "no-store"}
         )
         const bestsellers: BestsellersSchema[] = await data.json()
         return bestsellers
@@ -64,7 +59,7 @@ export async function getProduct(id: string) {
     try {
         const data = await fetch(
             `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/products/${id}`,
-            { cache: dataCache()}
+            { cache: "force-cache"}
         )
         const product: ProductSchema = await data.json()
         return product
@@ -134,7 +129,7 @@ export async function getUserProfile({ userId, authToken }: { userId: string, au
         const response = await fetch(
             `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/user/profile/${userId}`, 
             { 
-                cache: dataCache(),
+                cache: "force-cache",
                 headers: {
                     "Authorization": `Bearer ${authToken}`,
                 }
