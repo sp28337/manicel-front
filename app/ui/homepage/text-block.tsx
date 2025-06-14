@@ -35,11 +35,9 @@ export const TextBlock = () => {
                     </span>
                 </section>
             </div>
-            <div className={styles.aboutUsButton}>
-                <Link href="/catalog">
-                    каталог
-                </Link>
-            </div>
+            <Link href="/catalog" className={styles.aboutUsButton}>
+                каталог
+            </Link>
         </article>
     )
 }

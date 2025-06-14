@@ -3,43 +3,39 @@
     position: relative;
 }
 
-.image {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    z-index: 1;
-    margin-top: 30px;
-    filter: blur(3px);
-    opacity: 0.8;
-}
-
 .content {
     text-align: center;
     position: relative;
     z-index: 2;
-    margin: 0 0 50px;
 }
 
 .h2 {
     font-weight: 400;
-    font-size: 32px;
+    font-size: clamp(24px, 4vw, 32px);
     line-height: 110%;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #0d0c10;
+    color: rgba(0, 0, 0, 0.8);
     margin: 0 0 20px;   
 }
 
 .p {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0.07em;
-    font-variant: small-caps;
     text-align: center;
-    color: #0d0c10;    
-    max-width: 412px;
+    color: #717171; 
     margin: 0 auto;
+    width: 100%;
+    text-transform: uppercase;
+    height: 100%;
+    align-content: center;
+    font-size: clamp(14px, 2vw, 16px);
+}
+
+.wb {
+    color: rgba(227, 19, 191, 0.7);
 }
 
 .aWrapper {
@@ -48,30 +44,24 @@
     margin: 30px 0 0 0;
 }
 
-.a {
+.wbStore {
     display: flex;
     justify-content: center;
-    border: 1px solid rgba(0, 0, 0, 0.9);
+    transition: 0.3s;
     border-radius: 20px;
-    width: 262px;
-    height: 42px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 15px;
-    letter-spacing: 0.07em;
+    font-size: 18px;
     text-transform: uppercase;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     align-items: center;
-    transition: 
-        background-color 0.3s ease,
-        transform 0.3s ease, 
-        color 0.3s ease;
+    background-color: rgba(227, 19, 191, 0.5);
+    height: 60px;
+    max-width: 340px;
+    margin: 20px auto;
+    font-weight: 700;
 }
 
-.a:hover {
-    border-color: #CB11AB;
-    background-color: #ffffff;
+.wbStore:hover {
+    background-color: rgba(227, 19, 191, 0.7);
 }
 
 .partners {
@@ -79,18 +69,25 @@
     justify-content: space-around;
 }
 
-@media (max-width: 768px) {
-    .h2 {
-        font-size: 28px;
-    }
-}
-
-@media (max-width: 500px) {
-    .h2 {
-        font-size: 24px;
+@media (max-width: 610px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 
-    .p {
-        font-size: 14px;
+    .text {
+        background: rgba(0, 0, 0, .02);
+        border-radius: 15px;
+        padding: 15px 25px;
+    }
+
+    .wbStore {
+        max-width: initial;
+        height: 50px;
+        border-radius: 10px;
+        width: 100%;
+        margin: 0;
     }
 }
