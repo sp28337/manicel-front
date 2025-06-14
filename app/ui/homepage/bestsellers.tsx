@@ -49,14 +49,14 @@ export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => 
                         className={styles.buyButtonLink} 
                         href={`https://www.wildberries.ru/catalog/${product.articule}/detail.aspx`}
                     >
-                        <button className={styles.buyButton} title="купить">
+                        <div className={styles.buyButton} title="купить">
                             <span className={styles.iconButtonWrapper}>
                                 <ShopSVG color="#fff" h={30} w={30}/>
                             </span>
                             <span className={styles.textButtonWrapper}>
                                 купить
                             </span>
-                        </button>
+                        </div>
                     </Link>
                 </article>
             ))}

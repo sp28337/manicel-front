@@ -106,9 +106,10 @@
     color: rgba(255, 255, 255, 0.9);
     align-items: center;
     background-color: rgba(227, 19, 191, 0.5);
-    font-weight: 600;
+    font-weight: 700;
     width: 100%;
     height: 60px;
+    align-content: center;
 }
 
 .buyButton:hover {

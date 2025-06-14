@@ -1,31 +1,26 @@
 import styles from "../../styles/homepage/store-block.module.css"
-import background from "@/public/salt-body-scrub-500w.png"
 import { WBLogoSVG } from "../vectors"
-import Image from "next/image"
+import Link from "next/link"
 
 export const StoreBlock = () => {
 
     return (
         <section className={styles.wrapper}>
-            <Image
-                className={styles.image}
-                src={background}
-                alt="pretty salt body scrab text on background"
-                quality={0}
-                sizes="100vw"
-            />
             <div className={styles.content}>
-                <h2 className={styles.h2}>
-                    закажите сегодня
-                </h2>
-                <p className={styles.p}>
-                    Подарите себе или своим близким возможность насладиться уходом за телом на высшем уровне. 
-                </p>
-                <div className={styles.aWrapper}>
-                    <a href="https://www.wildberries.ru/brands/310747490-manicel" className={styles.a}>
-                        в магазин
-                    </a>
+                <div className={styles.text}>
+                    <h2 className={styles.h2}>
+                        закажите сегодня
+                    </h2>
+                    <p className={styles.p}>
+                        Вы можете приобрести официальную продукцию MANICEL на маркетплейсах 
+                        <Link className={styles.wb} href="https://www.wildberries.ru/brands/310747490-manicel">
+                            &emsp;Wildberries
+                        </Link>
+                    </p>
                 </div>
+                <Link href="https://www.wildberries.ru/brands/310747490-manicel" className={styles.wbStore}>
+                    в магазин
+                </Link>
             </div>
             
             <div className={styles.partners}>
