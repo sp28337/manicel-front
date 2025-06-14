@@ -4,13 +4,13 @@
 }
 
 .h2 {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     font-weight: 400;
     font-size: clamp(28px, 4vw, 32px);
     line-height: 110%;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #0d0c10;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .bestsellersFlex {
@@ -72,9 +72,9 @@
     white-space: nowrap;
     letter-spacing: 3px;
     font-weight: 500;
-    color: #000;
+    color: rgba(0, 0, 0, 0.8);
     text-transform: uppercase;
-    font-size: clamp(16px, 2.5vw, 22px) 
+    font-size: clamp(16px, 2.5vw, 22px);
 }
 
 .p {
