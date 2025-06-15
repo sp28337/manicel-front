@@ -1,7 +1,7 @@
 .questions {
     display: flex;
     color: #717171;
-    font-size: clamp(14px, 2.08vw, 16px);
+    font-size: clamp(16px, 2.08vw, 18px);
     align-items: center;
     gap: 5px;
     width: max-content;
@@ -31,6 +31,6 @@
 
 @media(max-width: 522px) {
     .questions {
-        font-size: clamp(16px, 2.08vw, 20px);
+        font-size: clamp(16px, 4vw, 20px);
     }
 }
