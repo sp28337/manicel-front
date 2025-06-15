@@ -218,7 +218,7 @@
     }
 
     .p {
-        font-size: clamp(16px, 4vw, 20px);
+        font-size: clamp(16px, 5.5vw, 20px);
     }
 
     .infoContainer {

@@ -1,7 +1,9 @@
+import styles from "../../styles/common.module.css"
 import { Header } from "../../ui/catalog/header"
 import { BodyCatalog } from "../../ui/catalog/body"
 import { getCatalogProducts } from "../../lib/data"
 import { SearchList } from "../../ui/search-list"
+import { StoreBlock } from "../../ui/homepage/store-block"
 import { notFound } from "next/navigation"
 
 export default async function Page (props: {searchParams?: Promise<{query?: string}>}) {
@@ -19,7 +21,11 @@ export default async function Page (props: {searchParams?: Promise<{query?: stri
         <>
             <SearchList query={query} />
             <Header />
-            <BodyCatalog products={products}/>
+            <div className={styles.container}> 
+                <BodyCatalog products={products}/>
+                <hr />
+                <StoreBlock />
+            </div>
         </>
     );
 }

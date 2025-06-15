@@ -1,6 +1,6 @@
 .ratio {
     font-weight: 500;
-    font-size: clamp(14px, 2.08vw, 16px);
+    font-size: clamp(16px, 2.08vw, 18px);
     text-transform: uppercase;
     text-align: center;
     color: rgba(0, 0, 0, 0.8);
@@ -28,6 +28,6 @@
 
 @media(max-width: 522px) {
     .ratio {
-        font-size: clamp(16px, 2.08vw, 20px);
+        font-size: clamp(16px, 4vw, 20px);
     }
 }

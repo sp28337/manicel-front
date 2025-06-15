@@ -1,7 +1,6 @@
 import Image from "next/image"
 import styles from "../../styles/catalog/header.module.css"
 import commonStyles from "../../styles/common.module.css"
-import { WaveSVG } from "../vectors"
 import mainImg from "@/public/all-front-1200w.png"
 import backgroundImg from "@/public/salt-body-scrub-500w.png"
 
@@ -37,9 +36,18 @@ export const Header = () => {
                         priority
                     />
                 </div>
-            </div>
-            <div className={styles.wave}>
-                <WaveSVG />
+                <section className={styles.descriptionWrapper}>
+                    <p className={styles.description}>
+                        <span className={styles.uppercase}>&emsp;&emsp;SALT BODY SCRUB</span> — это 
+                        эффективное средство для очищения и ухода за кожей рук, ног, живота, 
+                        ягодиц и других участков тела, от 
+                        российского бренда <span className={styles.uppercase}>MANICEL</span>
+                    </p>
+                    <p className={styles.description}>
+                        &emsp;&emsp;Скраб мягко отшелушивает ороговевшие клетки, 
+                        стимулирует обновление кожи и придаёт ей здоровый сияющий вид.
+                    </p>
+                </section>
             </div>
         </header>
     )
