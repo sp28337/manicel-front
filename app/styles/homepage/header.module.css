@@ -85,7 +85,7 @@
     content: "- ";
 }
 
-.aboutUsButton {
+.catalogLink {
     display: flex;
     justify-content: center;
     transition: 0.3s;
@@ -94,14 +94,14 @@
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.9);
     align-items: center;
-    background-color: rgb(157 19 227 / .5);
+    background-color: rgba(19, 48, 227, 0.5);
     height: 60px;
     width: 60%;
     font-weight: 700;
 }
 
-.aboutUsButton:hover {
-    background-color: rgb(157 19 227 / .7);
+.catalogLink:hover {
+    background-color: rgba(19, 48, 227, 0.7);
 }
 
 .imgWrapper {
@@ -176,18 +176,18 @@
         position: static;
         text-align: center;
         transform: translate(0px, 0px);
+        margin: 0 0 30px;
     }
 
     .imgWrapper {
+        margin: 20px 0 0 0;
         width: 100dvw;
         position: initial;
         transform: translate(0, 0);
-        margin: 0;
         height: auto;
     }
 
     .header {
-        margin: 20px 0 30px;
         height: 100%;
         width: auto;
         justify-content: center;
@@ -213,14 +213,9 @@
         margin: 0 auto;
     }
 
-    .aboutUsButton {
+    .catalogLink {
         width: 100%;
-    }
-}
-
-@media (max-width: 610px) {
-    .aboutUsButton {
-        border-radius: 15px;
+        border-radius: 17px;
     }
 }
 

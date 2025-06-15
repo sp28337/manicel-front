@@ -39,7 +39,7 @@ export const Header = () => {
                             </span>
                         </p>
                     </div>
-                    <Link href="/catalog" className={styles.aboutUsButton}>
+                    <Link href="/catalog" className={styles.catalogLink}>
                         каталог
                     </Link>
                 </div>
