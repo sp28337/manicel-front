@@ -9,22 +9,22 @@
 }
 
 .h2 {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 24px;
     text-transform: uppercase;
     color: rgba(0, 0, 0, 0.8);
 }
 
-
-
 .logoSvgWrapper {
     margin: -20px 0 0 120px;
+    width: 218px; 
+    height: 53px;
 }
 
 .blocks {
     display: flex;
     justify-content: space-between;
-    margin: 50px 0 0 0;
+    margin: 35px 0 0 0;
     flex-direction: column;
     gap: 20px;
     background: rgb(248 241 241 / 33%);
@@ -42,6 +42,8 @@
 
 .h3 {
     text-decoration: underline solid rgba(0, 0, 0, 0.8);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
     font-weight: 500;
     font-size: 18px;
     letter-spacing: 0.07em;
@@ -90,28 +92,11 @@
     -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 
-.aboutUsButton {
-    display: flex;
-    justify-content: center;
-    transition: 0.3s;
-    border-radius: 20px;
-    font-size: 18px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
-    align-items: center;
-    background-color: rgb(157 19 227 / .5);
-    height: 60px;
-    max-width: 340px;
-    margin: 20px auto;
-    font-weight: 700;
-}
-
-.aboutUsButton:hover {
-    background-color: rgb(157 19 227 / .7);
-}
-
 @media (max-width: 768px) {   
- 
+    .blocks {
+        margin: 20px 0 0 0;
+    }
+
     .pBackground:hover {
         height: 150px;
     }
@@ -122,12 +107,6 @@
 }
 
 @media (max-width: 610px) {
-    .aboutUsButton {
-        max-width: initial;
-        height: 50px;
-        border-radius: 10px;
-    }
-
     .pBackground {
         border-radius: 10px;
     }
@@ -136,22 +115,21 @@
 @media (max-width: 450px) {
     
     .logoSvgWrapper {
-        width: 180px;
         height: 48px;
-        margin: -20px 0 0 110px;
+        width: 180px;
     }
 }
 
 @media (max-width: 380px) {
 
     .h2 {
-        font-size: 18px;
+        font-size: 20px;
     }      
     
     .logoSvgWrapper {
         width: 150px;
         height: 38px;
-        margin: -30px 0 0 90px;
+        margin: -20px 0 0 100px;
     }
 }
 

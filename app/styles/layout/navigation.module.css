@@ -92,6 +92,8 @@
     transition: 0.5s;
     opacity: 1;
     text-decoration: underline solid rgba(0, 0, 0, 0.8);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
 }
 
  

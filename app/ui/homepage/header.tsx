@@ -3,12 +3,7 @@ import styles from "../../styles/homepage/header.module.css"
 import Image from "next/image"
 import mainImg from "@/public/all-800w.png"
 import backgroundImg from "@/public/salt-body-scrub-500w.png"
-import { 
-    EcoFriendlySVG, 
-    WithLoveSVG, 
-    NoAnimalTestingSVG, 
-    WaveSVG 
-} from "../vectors"
+import Link from "next/link"
 
 export const Header = () => {
 
@@ -32,38 +27,21 @@ export const Header = () => {
                         забота в каждом мгновении
                         <br />
                     </h1>
-                    <p className={styles.p}>
-                        специально для тебя мы создали ароматы, 
-                        превращающие заботу о коже в райское наслаждение
-                        <br />
-                        Собери всю коллекцию и получи подарок от <span style={{textTransform: "uppercase"}}>MANICEL</span>
-                    </p>
-                    <div className={styles.icons}>
-                        <div className={styles.iconWrapper}>
-                            <div className={styles.svgWrapper}>                        
-                                <EcoFriendlySVG  />
-                            </div>
-                            <span className={styles.iconDescribtion}>
-                                eco friendly
+                    <div className={styles.p}>
+                        <p className={styles.pText1}>
+                            специально для тебя мы создали ароматы, 
+                            превращающие заботу о коже в райское наслаждение
+                        </p>
+                        <p className={styles.pText2}>
+                            Собери всю коллекцию и получи подарок от&emsp;
+                            <span style={{textTransform: "uppercase"}}>
+                                MANICEL
                             </span>
-                        </div>
-                        <div className={styles.iconWrapper}>
-                            <div className={styles.svgWrapper}>                        
-                                <WithLoveSVG  />
-                            </div>
-                            <span className={styles.iconDescribtion}>
-                                made with love
-                            </span>
-                        </div>
-                        <div className={styles.iconWrapper}>
-                            <div className={styles.svgWrapper}>                        
-                                <NoAnimalTestingSVG  />
-                            </div>
-                            <span className={styles.iconDescribtion}>
-                                cruelty free
-                            </span>
-                        </div>
+                        </p>
                     </div>
+                    <Link href="/catalog" className={styles.aboutUsButton}>
+                        каталог
+                    </Link>
                 </div>
                 <div className={styles.imgWrapper}>
                     <Image className={styles.mainImage}
@@ -74,9 +52,6 @@ export const Header = () => {
                         priority
                     />
                 </div>
-            </div>
-            <div className={styles.wave}>
-                <WaveSVG />
             </div>
         </header >
     )

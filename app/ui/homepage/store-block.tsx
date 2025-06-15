@@ -1,5 +1,4 @@
 import styles from "../../styles/homepage/store-block.module.css"
-import { WBLogoSVG } from "../vectors"
 import Link from "next/link"
 
 export const StoreBlock = () => {
@@ -12,19 +11,15 @@ export const StoreBlock = () => {
                         закажите сегодня
                     </h2>
                     <p className={styles.p}>
-                        Вы можете приобрести официальную продукцию MANICEL на маркетплейсах 
+                        Вы можете приобрести официальную продукцию MANICEL на маркетплейсах&emsp;
                         <Link className={styles.wb} href="https://www.wildberries.ru/brands/310747490-manicel">
-                            &emsp;Wildberries
+                            Wildberries
                         </Link>
                     </p>
                 </div>
                 <Link href="https://www.wildberries.ru/brands/310747490-manicel" className={styles.wbStore}>
                     в магазин
                 </Link>
-            </div>
-            
-            <div className={styles.partners}>
-                <WBLogoSVG />
             </div>
         </section>
     );

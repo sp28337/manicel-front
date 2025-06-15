@@ -1,6 +1,6 @@
 import styles from "../styles/footer.module.css"
 import commonStyles from "../styles/common.module.css"
-import { ManicelLogoSVG } from "./vectors"
+import { ManicelLogoSVG, WBLogoSVG } from "./vectors"
 import Link from "next/link"
 
 export const Footer = () => {
@@ -17,13 +17,18 @@ export const Footer = () => {
                                         о нас
                                     </p>
                                 {/* </Link> */}
-                                <Link className={styles.footerLink} href="/catalog">каталог</Link>
-                                <a 
+                                <Link 
+                                    className={styles.footerLink} 
+                                    href="/catalog"
+                                >
+                                    каталог
+                                </Link>
+                                <Link 
                                     className={styles.footerLink} 
                                     href="https://www.wildberries.ru/brands/310747490-manicel"
                                 >
                                     магазин
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         
@@ -31,13 +36,22 @@ export const Footer = () => {
                             <h3 className={styles.h3}>документы</h3>
                             <div className={styles.linksWrapper}>
                                 
-                                <Link className={styles.footerLink} href="/agreement#contacts">
+                                <Link 
+                                    className={styles.footerLink} 
+                                    href="/agreement#contacts"
+                                >
                                     контакты
                                 </Link>
-                                <Link className={styles.footerLink} href="#">
+                                <Link 
+                                    className={styles.footerLink}
+                                    href="#"
+                                >
                                     пользовательское соглашение
                                 </Link>
-                                <Link className={styles.footerLink} href="/privacy">
+                                <Link 
+                                    className={styles.footerLink} 
+                                    href="/privacy"
+                                >
                                     политика конфиденциальности
                                 </Link>
                                 {/* <a href="">+7-(920)-941-53-89</a>
@@ -46,13 +60,21 @@ export const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <Link 
-                        href="/"
-                        className={styles.logoWrapper}
-                        scroll={true}
-                    >
-                        <ManicelLogoSVG />
-                    </Link>
+                    <div className={styles.partnersWrapper}>
+                        <Link
+                            title="Manicel" 
+                            href="/"
+                            scroll={true}
+                        >
+                            <ManicelLogoSVG />
+                        </Link>
+                        <Link
+                            title="Wildberries" 
+                            href="https://www.wildberries.ru/brands/310747490-manicel"
+                            className={styles.wbLogo}>
+                            <WBLogoSVG />
+                        </Link>
+                    </div>
                 </nav>
                 {/* <div className={styles.contactUsButtonWrapper}>
                     <a className={styles.contactUsButton}
