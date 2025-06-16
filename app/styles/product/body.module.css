@@ -54,14 +54,14 @@
     display: flex;
     justify-content: center;
     gap: 20px;
+    width: 100%;
 }
 
 .smallImage {
     cursor: pointer;
     width: 100%;
     height: auto;
-    max-height: 160px;
-    border-radius: 100px;
+    border-radius: 200px;
 }
 
 .bigImage {
