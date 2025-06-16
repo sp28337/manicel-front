@@ -11,8 +11,8 @@ interface PageProps {
 }
 
 export default async function Page({
-       searchParams,
-       params,
+    searchParams,
+    params,
 }: PageProps) {
     const query = (await searchParams)?.query || "";
     const { userId } = await params
@@ -24,9 +24,9 @@ export default async function Page({
     }
 
     return (
-      <>
+    <>
         <SearchList query={query} />
         <Profile userProfile={userProfile} />
-      </>
+    </>
     )
 }

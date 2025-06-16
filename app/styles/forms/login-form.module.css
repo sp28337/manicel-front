@@ -70,6 +70,10 @@
     color: rgba(255, 255, 255, 1);
 }
 
+.submitButton:hover {
+    background-color: rgb(56 118 107 / 66%);
+}
+
 .oauthButton {
     border-radius: 15px;
     padding: 10px 20px;
