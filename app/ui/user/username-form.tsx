@@ -38,6 +38,7 @@ export const UsernameForm = ({ username }: { username: string }) => {
             >
                 логин:
             </label>
+
             <div className={styles.inputWrapper}>
                 <input 
                     id="username"
@@ -99,7 +100,8 @@ export const UsernameForm = ({ username }: { username: string }) => {
                     }}
                 >
                     <ApproveSVG />
-                </button>}
+                </button>
+                }
         </form>
     )
 }                        

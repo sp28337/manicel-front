@@ -2,9 +2,6 @@ import { UserProfileSchema } from "@/app/lib/definitions"
 import { LogoutButton, ProfileSettingsButton } from "../buttons"
 import commonStyles from "../../styles/common.module.css"
 import styles from "../../styles/user/profile.module.css"
-import { 
-    WaveSVG, 
-} from "../vectors"
 import { PasswordForm } from "./password-form"
 import { UsernameForm } from "./username-form"
 import { NameForm } from "./name-form"
@@ -33,9 +30,6 @@ export function Profile({ userProfile }: { userProfile: UserProfileSchema }) {
                         <ProfileSettingsButton />
                         <LogoutButton />
                     </div>
-                </div>
-                <div className={styles.wave}>
-                    <WaveSVG />
                 </div>
             </div >
             <div className={styles.body}>

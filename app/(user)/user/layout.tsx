@@ -16,7 +16,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 <TopBar />
                 <Navigation isLoggedIn={loggedIn} />
                 {children}
-                <hr />
                 <Footer />
             </body>
         </html>

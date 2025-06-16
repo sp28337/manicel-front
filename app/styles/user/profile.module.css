@@ -8,8 +8,8 @@
     position: relative;
     overflow: hidden;
     margin-top: 112px;
-    height: 650px;
-    transition: 1s;
+    height: 520px;
+    transition: 0.3s;
     z-index: 2;
 }
 
@@ -44,19 +44,19 @@
 }
 
 .h1 {
-    justify-content: center;
-    transition: 1s;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 110%;
+    font-weight: 500;
+    font-size: clamp(18px, 6vw, 22px);
     text-transform: uppercase;
-    color: #0d0c10;
+    color: rgba(0, 0, 0, .8);
     text-align: center;
-    /* margin-bottom: 20px; */
+    -webkit-text-decoration: underline solid rgba(0,0,0,.8);
+    text-decoration: underline solid rgba(0, 0, 0, .8);
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
 }
 
 .span {
-    transition: 1s;
+    transition: 0.3s;
     display: block;
     margin-bottom: 28px;
     font-weight: 300;
@@ -79,7 +79,7 @@
 
 .p {
     text-align: center;
-    transition: 1s;
+    transition: 0.3s;
     font-weight: 400;
     font-size: 20px;
     line-height: 150%;
@@ -94,7 +94,6 @@
     justify-content: center;
     width: 510px;
     margin: 0 auto;
-    /* flex-grow: 0.5; */
 }
 
 .form {
@@ -113,17 +112,14 @@
     width: 100%;
     animation: inputOn 0.5s;
     position: relative;
-    /* transition: 1s; */
 }
-
-
 
 .label {
     width: 15%;
     display: flex;
     align-items: center;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 150%;
     color: #000000;
     text-transform: capitalize;
@@ -144,10 +140,11 @@
     border-radius: 15px;
     padding: 10px 20px;
     background-color: rgba(255, 255, 255, 0.1);
-    border: 0.2px solid rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     width: 340px;
     animation: inputOn 0.5s;
+    border: .2px solid rgba(0, 0, 0, .1);
+    height: 45px;
 }
 
 .inputPassword {
@@ -175,7 +172,7 @@
 
 .submitButton {
     fill: #09b45fcf;
-    animation: inputOn 1s;
+    animation: inputOn 0.3s;
     display: flex;
     align-items: center;
 }
@@ -186,17 +183,19 @@
 }
 
 .inputLine {
-    border: none;
-    width: 100%;
-    background-color: transparent;
-    display: flex;
+    font-size: 16px;
+    display: flex
+;
     justify-content: space-between;
     border-radius: 15px;
     padding: 10px 20px;
     background-color: rgba(255, 255, 255, 0.1);
-    border: 0.2px solid rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     width: 340px;
+    animation: profile_inputOn__0D35u 0.5s;
+    border: .2px solid rgba(0, 0, 0, .1);
+    height: 45px;
 }
 
 .inputLine:focus {
@@ -252,32 +251,10 @@
     animation: inputOn 0.5s;
 }
 
-
-@media (max-width: 1248px) {
-    .headerWrapper {
-        height: 570px;
-    }
-}
-
 @media (max-width: 1024px) {
     .imgWrapper {
         width: 580px;
         transform: translate(-7%, -50%);
-    }
-
-    .h1 {
-        font-size: 22px;
-    }
-
-    .span {
-        font-size: 36px;
-    }
-}
-
-
-@media (max-width: 900px) {
-    .headerWrapper {
-        height: 500px;
     }
 }
 
@@ -285,18 +262,12 @@
 
     .formsWrapper {
         width: 100%;
+        margin-top: 30px;
+        gap: 40px;
     }
 
     .settingsPanel {
         display: none;
-        /* width: 100%;
-        border-left: initial;
-        border-top: rgba(0, 0, 0, 0.1) 1px solid;
-        margin: 30px 0;
-        padding: 15px 0 0 15px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px; */
     }
 
     .backgroundImage {
@@ -305,8 +276,7 @@
 
     .headerWrapper {
         margin-top: 102px;
-        height: 70dvh;
-        /* height: 900px; */
+        height: 620px;
     }
 
     .header {
@@ -316,8 +286,6 @@
     }
 
     .h1 {
-        font-size: 24px;
-        letter-spacing: 0.07em;
         text-transform: uppercase;
         color: #0d0c10;
         margin-bottom: 10px;
@@ -329,12 +297,13 @@
         margin: 0 auto;
     }
 
-    .span {
-        font-size: 36px;
+    .label {
+        position: absolute;
+        transform: translateY(-30px);
     }
 
     .inputWrapper {
-        width: 65%;
+        width: 80%;
     }
 
     .input {
@@ -350,71 +319,8 @@
     }
 }
 
-@media (max-width: 566px) {
-    /* .headerWrapper {
-        height: 800px;
-    } */
-
-    .h1 {
-        font-size: 22px;
-    }
-
-    .span {
-        font-size: 34px;
-    }
-
-    .label {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 500px) {
-
-    .span {
-        font-size: 30px;
-    }
-}
-
-@media (max-width: 433px) {
-    /* .headerWrapper {
-        height: 700px;
-    } */
-
-    .span {
-        font-size: 28px;
-    }
-
-    .input {
-        font-size: 12px;
-    }
-
-    .inputLine {
-        font-size: 12px;
-    }
-}
-
 @media (max-width: 374px) {
     .inputWrapper {
-        width: 55%;
-    }
-
-    .h1 {
-        font-size: 20px;
-    }
-
-    .p {
-        font-size: 14px;
-    }
-
-    .label {
-        font-size: 10px;
-    }
-
-    .input {
-        font-size: 10px;
-    }
-
-    .inputLine {
-        font-size: 10px;
+        width: 77%;
     }
 }
