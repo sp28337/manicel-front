@@ -1,25 +1,15 @@
 "use client"
 
-import Image from "next/image"
 import styles from "../../styles/forms/login-form.module.css"
 import { login } from "@/app/actions/auth"
 import { useActionState } from "react"
-import backgroundImg from "@/public/salt-body-scrub-500w.png"
 
 export function LoginForm() {
 
     const [state, formAction, isPending] = useActionState(login, undefined)
 
     return (
-        <div className={`${styles.formWrapper} `}>
-            <Image
-                className={styles.backgroundImage}
-                src={backgroundImg}
-                alt=""
-                quality={0}
-                sizes="100vw"
-                priority
-            />
+        <div className={styles.formWrapper}>
             <form className={styles.form} action={formAction}>
                 <h1 className={styles.h1}>вход</h1>
                 <div className={styles.wrapper}>
