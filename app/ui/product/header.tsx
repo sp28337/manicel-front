@@ -1,103 +1,19 @@
 import React from "react"
 import Image from "next/image"
+import Link from "next/link"
 import commonStyles from "../../styles/common.module.css"
 import styles from "../../styles/product/header.module.css"
 import { ProductSchema } from "../../lib/definitions"
-import { 
-    Lavender,
-    Fig,
-    Mango,
-    Bubblegum,
-    Coconut,
-    Citrus,
-    Raspberry,
-    Peach,
-    Apple,
-    Mint,
-    MintMango,
-    LavenderCoconut,
-    LavenderPeach,
-    PeachCoconut,
-    Trio,
- } from "./elements"
 import { mainCardImages } from "../../lib/images"
 import backgroundImg from "@/public/salt-body-scrub-500w.png"
-import { LeaveSVG, WaveSVG } from "../vectors"
 
-export const Header = (props: { product: ProductSchema }) => {
-
-    const { product } = props
-
-    const backgroundElements: {[key: number]: React.ReactElement} = {
-        1: <Mango />,
-        2: <Bubblegum />,
-        3: <Fig />,
-        4: <div />,
-        5: <Coconut />,
-        6: <Citrus />,
-        7: <Raspberry />,
-        8: <Peach />,
-        9: <Apple />,
-        10: <Lavender />,
-        11: <Mint />,
-        12: <MintMango />,
-        13: <LavenderCoconut />,
-        14: <PeachCoconut />,
-        15: <LavenderPeach />,
-        16: <Trio />,
-    }
+export const Header = ({ product }: { product: ProductSchema }) => {
 
     const mainImages = mainCardImages
 
-    const handleH1SetsName = (name: string): React.ReactElement => {
-        const splitNames = name.split("+")
-
-        if (splitNames.length === 2) {
-            return (
-                <div className={styles.h1Sets}>
-                    <div>{splitNames[0].trim()}</div>
-                    <div className={styles.plus}>+</div>
-                    <div>{splitNames[1].trim()}</div>
-                </div>
-            )
-        } else {
-            return (
-                <div className={styles.h1Sets}>
-                    <div>{splitNames[0].trim()}</div>
-                    <div style={{textAlign: "center"}}>+        {splitNames[1].trim()}        +</div>
-                    <div style={{textAlign: "right"}}>{splitNames[2].trim()}</div>
-                </div>
-            )
-        }
-    }
-
-    const checkId = (productId: number): number => {
-        const setsId = [12, 13, 14, 15, 16]
-        const pocketsId = [3, 6, 9]
-        
-        for (const id of setsId) {
-            if (id === productId) {
-                return 1
-            }
-        }
-
-        for (const id of pocketsId) {
-            if (id === productId) {
-                return 2
-            }
-        }
-
-        return 0
-    }
-
     return (
-
         <>
             <header className={styles.headerWrapper}>
-                <div className={styles.backgroundElementsWrapper}>
-                    {checkId(product.id) === 0 &&  backgroundElements[product.id]}
-                    {checkId(product.id) === 2 &&  backgroundElements[product.id]}
-                </div>
                 <Image 
                     className={styles.backgroundImage}
                     src={backgroundImg} 
@@ -105,77 +21,40 @@ export const Header = (props: { product: ProductSchema }) => {
                     quality={0}
                     sizes="100vw"
                 />
-                {/* <>
-                    {checkId(product.id) === 0 &&  backgroundElements[product.id]}
-                    {checkId(product.id) === 2 &&  backgroundElements[product.id]}
-                </> */}
-                <div className={`${styles.wrapper} ${commonStyles.container}`}>
-                    <div className={
-                        checkId(product.id) === 1      ? 
-                        `${styles.imgSetsWrapper}`     : 
-                        `${styles.imgDefaultWrapper}`
-                        }
-                    >
+                <div className={`${styles.header} ${commonStyles.container}`}>
+                    <div className={styles.imgWrapper}>
                         <Image 
-                            className={`${styles.mainImage}`}
+                            className={styles.mainImage}
                             src={mainImages[product.id]} 
                             alt={product.category.name}
                             sizes="100vw"
                             priority
                         />
-                        {/* <p className={styles.note}>
-                            {product.note}
-                        </p> */}
                     </div>
-
-                    <div className={
-                        checkId(product.id) === 1      ? 
-                        `${styles.textSets}`           : 
-                        checkId(product.id) === 2      ?
-                        `${styles.textPockets}`        : 
-                        `${styles.text}`
-                        }
-                    >
-
-                        <h1 className={styles.h1Wrapper}>
-                            {    
-                                checkId(product.id) === 1         ? 
-                                handleH1SetsName(product.name)    : 
-                                <span className={`${styles.h1}`}>
-                                    {product.name}
-                                </span> 
-                            }
+                    <div className={styles.textBlock}>
+                        <h1 className={styles.h1}>
                             <span className={styles.span}>
-                                {product.category.name}
+                                
+                                {product.name}
                             </span>
+                            {product.category.name}
                         </h1>
-
                         <ul className={styles.list}>
-                            
                             {product.effects.map((item, index) => (
-                                <li key={index} className={
-                                    checkId(product.id) === 1      ? 
-                                    `${styles.listSetsItem}`       : 
-                                    `${styles.listItem}`
-                                    }
-                                >
-                                    <span className={styles.liItemWrapper}>
-                                        <LeaveSVG />
-                                    </span>
-                                    <span className={styles.liItemWrapper}>
-                                        {item.description}
-                                    </span>
+                                <li key={index} className={styles.listItem}>
+                                    {item.description}
                                 </li>
                             ))}
-
                         </ul>
+                        <Link 
+                            href={`https://www.wildberries.ru/catalog/${product.articule.toString()}/detail.aspx`}
+                            className={styles.buyLink}
+                        >
+                            купить
+                        </Link>
                     </div>
-                </div>
-                <div className={styles.wave}>
-                    <WaveSVG />
                 </div>
             </header>
         </>
-
     )
 }

@@ -311,6 +311,10 @@
         max-width: 300px;
         height: 230px;
     }
+
+    .peachLink {
+        max-width: 320px;
+    }
 }
 
 @media (max-width: 522px) {
