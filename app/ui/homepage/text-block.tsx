@@ -15,7 +15,7 @@ export const TextBlock = () => {
             </div>
 
             <div className={styles.blocks}>
-                <section className={`${styles.blockWrapper} ${styles.block1}`}>
+                <section className={styles.blockWrapper}>
                     <h3 className={styles.h3}>БЕЗОПАСНОСТЬ</h3>
                     <span className={styles.pBackground}>
                         <p className={styles.p}>
@@ -24,7 +24,7 @@ export const TextBlock = () => {
                         </p>
                     </span>
                 </section>
-                <section className={`${styles.blockWrapper} ${styles.block2}`}>
+                <section className={styles.blockWrapper}>
                     <h3 className={styles.h3}>ЭФФЕКТИВНОСТЬ</h3>
                     <span className={styles.pBackground}>
                         <p className={styles.p}>
@@ -33,7 +33,7 @@ export const TextBlock = () => {
                         </p>        
                     </span>
                 </section>
-                <section className={`${styles.blockWrapper} ${styles.block3}`}>
+                <section className={styles.blockWrapper}>
                     <h3 className={styles.h3}>КАЧЕСТВО</h3>
                     <span className={styles.pBackground}>
                         <p className={styles.p}>

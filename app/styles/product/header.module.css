@@ -1,24 +1,12 @@
-
-.backgroundElementsWrapper {
-    margin-top: -112px;
-    height: 761px;
-    width: 100dvw;
-    position: absolute;
-    overflow-y: visible;
-    overflow-x: clip;
-    z-index: 4;
-}
-
 .headerWrapper {
-    height: 650px;
-    font-size: 16px;
-    margin-top: 112px;
-    position: relative;
-    overflow-y: visible;
-    overflow-x: clip;
-    z-index: 0;
     background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
-    transition: 1s;
+    position: relative;
+    overflow: hidden;
+    margin-top: 112px;
+    height: 650px;
+    transition: 0.3s;
+    z-index: 2;
+    border-bottom: 0.2px solid rgba(0, 0, 0, 0.1);
 }
 
 .backgroundImage {
@@ -34,29 +22,32 @@
     filter: blur(3px);
 }
 
-.wrapper {
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
     height: 100%;
 }
 
-.imgSetsWrapper {
-    transition: 1s;
-    width: 650px;
+.imgWrapper {
+    transition: .3s;
     position: absolute;
-    top: 50%;
     right: 0;
-    transform: translate(-10%, -50%);
-    z-index: 4;
+    top: 50%;
+    z-index: 2;
+    transform: translate(-15%, -50%);
+    width: 45%;
+    max-width: 550px;
+    min-width: 300px;
 }
 
-.imgDefaultWrapper {
-    transition: 1s;
-    width: 450px;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(-50%, -50%);
-    z-index: 4;
-
+.textBlock {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-40px);
+    gap: 20px;
 }
 
 .mainImage {
@@ -64,360 +55,140 @@
     height: auto;
 }
 
-.text {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    position: absolute;
-    top: 50%;
-    transform: translate(20%, -50%);
-    z-index: 5;
-}
-
-.textSets {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    position: absolute;
-    top: 50%;
-    transform: translate(10%, -50%);
-    z-index: 5;
-}
-
-.textPockets {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    position: absolute;
-    top: 50%;
-    transform: translate(50%, -50%);
-    z-index: 5;
-}
-
-.h1Wrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 0 0 0 5%;
-}
-
 .h1 {
-    transition: 1s;
-    white-space: nowrap;
-    font-weight: 500;
+    transition: 0.3s;
+    font-weight: 400;
+    font-size: clamp(22px,2.7vw, 24px);
+    line-height: 110%;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
-    color: rgba(26, 26, 26, 0.9);
-}
-
-.h1Sets {
-    transition: 1s;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: rgba(26, 26, 26, 0.9);
-}
-
-.plus {
-    text-align: center;
-    position: absolute;
-    left: 1%;
-    top: 5%;
+    color: #0d0c10;
 }
 
 .span {
-    transform: translateX(20px);
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 150%;
-    letter-spacing: 0.3em;
+    transition: 0.3s;
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: clamp(30px, 4vw, 38px);
+    line-height: 110%;
+    letter-spacing: 0;
     text-transform: uppercase;
-    color: #747474;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.p {
+    transition: 0.3s;
+    font-weight: 400;
+    font-size: clamp(16px, 2vw, 18px);
+    line-height: 150%;
+    text-transform: lowercase;
+    color: #717171;
+    letter-spacing: 0;
+    width: 520px;
 }
 
 .list {
-    transition: 1s;
+    transition: .3s;
+    font-weight: 400;
+    font-size: clamp(14px, 2vw, 18px);
+    line-height: 150%;
+    text-transform: lowercase;
+    color: #717171;
+    letter-spacing: 0;
+    width: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 30px;
-    font-weight: 400;
-    line-height: 150%;
-    font-variant: small-caps;
-    color: #1a1a1a;
+    gap: 15px;
 }
 
 .listItem {
     align-items: center;
     gap: 30px;
     display: flex;
-    max-width: 370px;
 }
 
-.listSetsItem {
-    align-items: center;
-    gap: 30px;
+.listItem::before {
+    content: url("../../../public/svg/leave.svg");
+}
+
+.buyLink {
     display: flex;
-    max-width: 600px;
-}
-
-.liItemWrapper {
-    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+    border-radius: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
     align-items: center;
+    background-color: rgba(19, 48, 227, 0.5);
+    height: 60px;
+    width: 60%;
+    font-weight: 700;
 }
 
-.wave {
-    position: absolute;
-    width: 100vw;
-    bottom: 0;
-    height: auto;
-    transform: translateY(50%) rotate(180deg);
-    z-index: 1;
+.buyLink:hover {
+    background-color: rgba(19, 48, 227, 0.7);
 }
 
 @media (max-width: 1248px) {
-    .headerWrapper {
-        height: 570px;
-    }
-
-    .imgDefaultWrapper {
-        transform: translate(-35%, -50%);
-    }
-
-    .imgSetsWrapper {
-        transform: translate(0%, -50%);
-    }
-
-    .text {
-        transform: translate(10%, -50%);
-    }
-
-    .textSets{
-        transform: translate(5%, -50%);
-    }
-
-    .textPockets {
-        transform: translate(40%, -50%);
-    }
-}
-
-@media (max-width: 1140px) {
-    .imgDefaultWrapper {
-        transform: translate(-25%, -50%);
-    }
-
-    .imgSetsWrapper {
-        transform: translate(1%, -50%);
-    }
-
-    .text {
-        transform: translate(5%, -50%);
-    }
-
-    .textSets{
-        transform: translate(2%, -50%);
-    }
-
-    .textPockets {
-        transform: translate(30%, -50%);
+    .imgWrapper {
+        transform: translate(-10%, -50%);
     }
 }
 
 @media (max-width: 1024px) {
-    .content {
-        height: 600px;
-    }
-    
-    .imgDefaultWrapper {
-        width: 400px;
-        transform: translate(-15%, -50%);
+    .backgroundImage {
+        display: none;
     }
 
-    .imgSetsWrapper {
-        width: 550px;
-    }
-
-    .headerList {
-        gap: 25px;
-    }
-}
-
-@media (max-width: 900px) {
-    
-    .headerWrapper {
-        height: 500px;
-    }
-
-    .imgDefaultWrapper {
-        transform: translate(0%, -50%);
-    }
-}
-
-@media (max-width: 768px) {
-    .headerWrapper {
-        margin-top: 102px;
-        height: 900px;
+    .textBlock {
+        width: 100%;
     }
 
     .list {
-        gap: 15px;
+        width: initial;
     }
 
     .listItem {
         gap: 15px;
+    }
+
+    .imgWrapper {
+        position: initial;
+        transform: translate(0, 0);
+        margin-top: 30px;
+        width: 90%;
         max-width: initial;
     }
 
-    .elements {
-        width: 250vw;
-        top: 150px;
+    .headerWrapper {
         height: auto;
     }
 
-    .wrapper {
+    .textBlock {
+        transform: translate(0px, 0px);
+        margin: 0 0 30px;
+    }
+
+    .header {
         justify-content: center;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .imgDefaultWrapper {
-        position: static;
-        display: block;
-        width: 500px;
-        transform: translate(0, 0);
+    .headerList {
+        gap: 25px;
     }
 
-    .imgSetsWrapper {
-        position: relative;
-        display: block;
-        transform: translate(0, 0);
-        top: 0px;
-        text-align: center;
-        align-content: end;
-        height: 500px;
-        width: 650px;
-    }
-
-    .text {
-        position: relative;
-        /* display: block; */
-        top: 0px;
-        transform: translate(0, 0);
-    }
-
-    .textSets{
-        position: relative;
-        /* display: block; */
-        top: 0px;
-        transform: translate(0, 0);
-    }
-
-    .textPockets {
-        position: relative;
-        /* display: block; */
-        top: 0px;
-        transform: translate(0, 0);
-        width: 90%;
-    }
-
-    .h1 {
-        font-size: 29px;
-        white-space: break-spaces;
-    }
-
-    .h1Sets {
-        font-size: 29px;
-        white-space: break-spaces;
-    }
-
-    .span {
-        white-space: break-spaces;
-    }
-
-    .backgroundImage {
-        display: none;
+    .buyLink {
+        width: 100%;
     }
 }
 
-@media (max-width: 600px) {
-    .headerWrapper {
-        font-size: 14px;
-    }
-
-    .h1 {
-        font-size: 24px;
-        white-space: break-spaces;
-    }
-
-    .h1Sets {
-        font-size: 24px;
-        white-space: break-spaces;
-    }
-
-    .liItemWrapper {
-        line-height: normal;
-    }
-}
-
-@media(max-width: 500px) {
-    .h1Sets {
-        font-size: 20px;
-    }
-
-    .listSetsItem {
-        gap: 15px;
-    }
-}
-
-@media (max-width: 566px) {
-    .headerWrapper {
-        height: 800px;
-    }
-}
-
-
-@media (max-width: 465px) {
-    .headerWrapper {
-        font-size: 13px;
-    }
-
-    .imgDefaultWrapper {
-        width: 400px;
-    }
-
-    .span {
-        font-size: 10px;
-    }
-
-    .imgSetsWrapper {
-        height: 400px;
-        width: 490px;
-    }
-}
-
-@media (max-width: 433px) {
-    .headerWrapper {
-        height: 700px;
-    }
-}
-
-@media (max-width: 365px) {
-    .imgSetsWrapper {
-        height: 350px;
-        width: 350px;
-    }
-    
-    .imgDefaultWrapper {
-        width: 350px;
-    }
-    
-    .h1Sets {
-        font-size: 18px;
-    }
-
-    .h1 {
-        font-size: 18px;
-    }
-
-    .liItemWrapper {
-        font-size: 11px;
+@media (max-width: 768px) {
+    .imgWrapper {
+        width: 100%;
     }
 }
