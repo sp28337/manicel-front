@@ -27,7 +27,7 @@ export async function getCatalogProducts() {
     try {
         const data = await fetch(
             `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/products/catalog_products`,
-            { cache: "force-cache"}
+            { cache: "no-store"}
         )
         const products: CatalogProductsSchema[] = await data.json()
         return products

@@ -18,9 +18,7 @@ type PageProps = {
     searchParams: Promise<{ query: string }>
 }
 
-export default async function Page(props: PageProps)
-{
-
+export default async function Page(props: PageProps) {
     const params = await props.params
     const id = params?.id || ""
 

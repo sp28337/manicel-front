@@ -2,7 +2,7 @@
 
 import { useEffect } from "react"
 
-export default function ClientBoundary({ children }: { children: React.ReactNode }) {
+export function ClientBoundary({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         let lastScrollY = window.scrollY;
         const header = document.getElementById("main-header");

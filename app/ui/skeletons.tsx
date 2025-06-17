@@ -1,6 +1,6 @@
 import Image from "next/image"
 import backgroundImg from "@/public/salt-body-scrub-500w.png"
-import headerStyles from "../styles/homepage/header.module.css"
+import headerStyles from "../styles/skeletons/header.module.css"
 import catalogHeaderStyles from "../styles/catalog/header.module.css"
 import catalogBodyStyles from "../styles/skeletons/catalog-body.module.css"
 import textBlockStyles from "../styles/skeletons/text-block.module.css"
@@ -13,9 +13,9 @@ import {
     WaveSVG 
 } from "./vectors"
 
-export const HeaderSkeleton = () => {
+export const HeaderSkeleton = ({ children }: { children?: React.ReactNode }) => {
     return (
-        <div className={headerStyles.headerWrapper}>
+        <header className={headerStyles.headerWrapper}>
             <Image
                 className={headerStyles.backgroundImage}
                 src={backgroundImg}
@@ -24,10 +24,8 @@ export const HeaderSkeleton = () => {
                 sizes="100vw"
                 priority
             />
-            <div className={headerStyles.wave}>
-                <WaveSVG />
-            </div>
-        </div>
+            {children}
+        </header>
     )
 }
 

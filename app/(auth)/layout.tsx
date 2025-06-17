@@ -1,4 +1,6 @@
 import "../styles/globals.css"
+import "../styles/variables.css"
+
 import { TopBar } from "../ui/layout/top-bar"
 
 import { montserrat } from "../lib/fonts"

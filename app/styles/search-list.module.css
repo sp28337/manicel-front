@@ -18,7 +18,7 @@
     padding-top: 112px;
     animation: search 0.7s;
     z-index: 99;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: var(--search-list-background);
     backdrop-filter: blur(7px);
     width: 100dvw;
     height: 80%;
@@ -30,7 +30,7 @@
     position: fixed;
     transform: translateY(-112px);
     padding-top: 112px;
-    animation: search-list_search__gxOGX 0.7s;
+    animation: search 0.7s;
     z-index: 99;
     width: 100dvw;
 }
@@ -54,11 +54,11 @@
 .searchRow {
     position: relative;
     display: flex;
-    min-width: 400px;
+    min-width: 550px;
     gap: 30px;
     justify-content: space-between;
     height: 70px;
-    border-bottom: 0.2px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0.2px solid var(--border);
 }
 
 .link {
@@ -102,13 +102,13 @@
     align-items: center;
     font-weight: 500;
     font-size: 14px;
-    color: #000;
+    color: var(--black);
     text-transform: uppercase;
     transition: 0.3s;
 }
 
 .name:hover {
-    text-decoration: underline solid rgba(0, 0, 0, .8);
+    text-decoration: underline solid var(--text-black);
     text-underline-offset: 3px;
     text-decoration-thickness: 1px;
     .imgWrapper {
@@ -154,7 +154,7 @@
     font-size: 12px;
     text-transform: uppercase;
     text-align: center;
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--text-black);
     align-items: center;    
 }
 
@@ -208,14 +208,7 @@
     .scrabImg {
         width: 70px;
     }
-
 }
-
-/* @media (max-width: 610px) {
-    .imgWrapper {
-        height: auto;
-    }
-} */
 
 @media (max-width: 475px) {
     .imgWrapper {

@@ -1,6 +1,6 @@
 .questions {
     display: flex;
-    color: #717171;
+    color: var(--text-grey);
     font-size: clamp(16px, 2.08vw, 18px);
     align-items: center;
     gap: 5px;
@@ -9,16 +9,16 @@
 
 .icon {
     transition: 0.2s;
-    fill: #717171;
+    fill: var(--text-grey);
 }
 
 .questions:hover {
-    color: rgba(0, 0, 0, .8);
-    text-decoration: underline solid rgba(0, 0, 0, .8);
+    color: var(--text-black);
+    text-decoration: underline solid var(--text-black);;
 
     .icon {
         transform: scale(1.2);
-        fill: rgba(0, 0, 0, .8);
+        fill: var(--text-black);;
     }
 }
 

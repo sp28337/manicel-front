@@ -19,12 +19,12 @@ export const Navigation = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
                 >
                 </Link>
                 <div className={styles.links}>
-                    <Link 
+                    <a 
                         href="https://www.wildberries.ru/brands/310747490-manicel" 
                         className={styles.navLink}
                     >
                         <p>МАГАЗИН</p>
-                    </Link>
+                    </a>
                     <Link href="/catalog" className={styles.navLink}>
                         <p>КАТАЛОГ</p>
                     </Link>

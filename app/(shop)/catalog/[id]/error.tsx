@@ -6,7 +6,6 @@ import styles from "../../../styles/homepage/header.module.css"
 import textBlockStyles from "../../../styles/homepage/text-block.module.css"
 import commonStyles from "../../../styles/common.module.css"
 import React, { useEffect } from "react"
-import { WaveSVG } from "../../../ui/vectors"
 import backgroundImg from "@/public/salt-body-scrub-500w.png"
 import all from "@/public/all-800w.png"
 
@@ -57,9 +56,6 @@ export default function Error({error}: {error: Error & { digest?: string } }) {
                             priority
                         />
                     </div>
-                </div>
-                <div className={styles.wave}>
-                    <WaveSVG />
                 </div>
             </div >
             <div style={{height: "100dvh"}}></div>
