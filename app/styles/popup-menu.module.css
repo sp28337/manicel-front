@@ -21,14 +21,11 @@
 
 .burger {
     display: none;
-    border: none;
-    background-color: transparent;
 }
 
 .links {
     display: flex;
     flex-direction: column;
-    gap: 5px;
     color: #000;
     color: #717171;
     height: 100dvh;
@@ -42,19 +39,16 @@
 }
 
 .navLink {
-    width: 175px;
     display: flex;
     align-items: center;
     gap: 20px;
     letter-spacing: 1px;
     text-align: left;
-    font-size: 12px;
-    padding: 10px 20px;
+    font-size: 14px;
     border-bottom: 0.2px solid rgba(0, 0, 0, 0.1);
-    transition: 
-        background-color 0.3s ease,
-        transform 0.3s ease, 
-        color 0.3s ease;
+    transition: 0.3s;
+    padding: 15px 20px;
+    width: 215px;
 }
 
 .icon {
@@ -64,6 +58,7 @@
 }
 
 .navLink:hover {
+    background-color: rgba(225, 225, 225, 0.9);
     text-decoration: underline solid rgba(0, 0, 0, 0.2);
     .icon{
         transition: 0.2s;
@@ -73,7 +68,20 @@
 
 @media (max-width: 768px) {
     .burger {
-        display: block;
+        display: flex;
+        border: none;
+        background-color: transparent;
+        align-items: center;
+        transition: 0.2s;
+        font-size: 16px;
+        font-weight: 700;
+        display: flex;
+        background: #0083417f;
+        height: 45px;
+        border-radius: 15px;
+        /* color: #ffffff; */
+        min-width: 60px;
+        justify-content: center;
     }
 }
 

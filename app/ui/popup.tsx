@@ -17,8 +17,8 @@ import {
  } from "./vectors"
 
 export const PopupMenu = (
-    { isOpen, isLoggedIn }: 
-    { isOpen: boolean, isLoggedIn: boolean }
+    { isLoggedIn }: 
+    { isLoggedIn: boolean }
 ) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false)
 
@@ -28,11 +28,9 @@ export const PopupMenu = (
 
     return (
         <> 
-            { !isOpen && 
-                <button className={styles.burger} onClick={() => setIsPopupOpen((isPopupOpen) => !isPopupOpen)}>
-                    <BurgerSVG />
-                </button>
-            }
+            <button className={styles.burger} onClick={() => setIsPopupOpen((isPopupOpen) => !isPopupOpen)}>
+                <BurgerSVG />
+            </button>
             {
                 isPopupOpen && createPortal(
                     <nav className={styles.popupMenu} onClick={closeMenu}>
@@ -67,7 +65,7 @@ export const PopupMenu = (
                                     className={styles.navLink} 
                                 >
                                 <span className={styles.icon}>
-                                    <ProfileSVG />
+                                    <ProfileSVG color="#000" h={15} w={15} />
                                 </span>
                                 <p>ПРОФИЛЬ</p>
                                 </Link>    

@@ -1,48 +1,70 @@
 @keyframes search {
-    0% { transform: translate(0%); opacity: 0; }
-    100% { transform: translate(-50%); opacity: 1; }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes searchList {
+    0% { opacity: 0;  transform: translateY(-100%);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+.wrapper {
+    position: relative;
+}
+
+.background {
+    position: fixed;
+    transform: translateY(-112px);
+    padding-top: 112px;
+    animation: search 0.7s;
+    z-index: 99;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(7px);
+    width: 100dvw;
+    height: 80%;
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);    
 }
 
 .searchListWrapper {
     position: fixed;
-    transform: translate(-50%);
-    height: auto;
-    width: 80%;
-    max-width: 1024px;
-    left: 50%;
-    top: 0;
-    margin-top: 160px;
-    animation: search 0.3s;
-    z-index: 101;
+    transform: translateY(-112px);
+    padding-top: 112px;
+    animation: search-list_search__gxOGX 0.7s;
+    z-index: 99;
+    width: 100dvw;
 }
 
 .searchList {
+    animation: searchList 0.6s;
     display: flex;
     flex-direction: column;
-    gap: 10px;
     height: max-content;
     border-radius: 10px;
-    backdrop-filter: saturate(110%) blur(5px);
-    /* background-color: #fffffff0; */
-    background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: saturate(50%) blur(5px);
-    
+    margin-top: 10px;
+    width: fit-content;
+}
+
+.linkSpace {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
 }
 
 .searchRow {
     position: relative;
-    padding: 0 20px;
-    margin: 15px;
     display: flex;
-    border-radius: 10px;
+    min-width: 400px;
     gap: 30px;
     justify-content: space-between;
     height: 70px;
+    border-bottom: 0.2px solid rgba(0, 0, 0, 0.1);
 }
 
 .link {
     display: flex;
     gap: 15px;
+    flex-grow: 1;
 }
 
 .rowBackground {
@@ -51,8 +73,6 @@
     top: 0;
     left: 0;
     z-index: -1;
-    border-radius: 10px;
-    background: linear-gradient(180deg, transparent 0%, rgba(236, 236, 236, 0.5) 100%);
     height: 70px;
 }
 
@@ -63,23 +83,45 @@
     display: flex;
     width: 120px;
     height: auto;
+    transition: 0.3s;
+    min-width: 80px;
+}
+
+.imgWrapper:hover {
+    cursor: pointer;
+    transform: scale(1.1)
 }
 
 .image {
     height: auto;
+    width: 100%;
 }
 
 .name {
-    width: 400px;
     display: flex;
     align-items: center;
     font-weight: 500;
     font-size: 14px;
     color: #000;
     text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.name:hover {
+    text-decoration: underline solid rgba(0, 0, 0, .8);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    .imgWrapper {
+        transform: scale(1.1);
+    }
 }
 
 .reviews {
+    display: flex;
+    align-items: center;
+}
+
+.questions {
     display: flex;
     align-items: center;
 }
@@ -88,6 +130,13 @@
     display: flex;
     align-items: center;
     justify-content: right;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+.buttonWrapper:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .button{
@@ -109,24 +158,16 @@
     align-items: center;    
 }
 
-
 @media (max-width: 1024px) {
-    .name {
-        max-width: 200px;
-    }
-
     .searchRow {
         gap: 15px;
     }
 }
 
 @media (max-width: 768px) {
-    .searchListWrapper {
-        width: initial;
-    }
-
     .searchList {
         gap: 0px;
+        width: initial;
     }
 
     .button {
@@ -137,14 +178,19 @@
     .name {
         font-size: 12px;
     }
-    
-    .searchRow {
-        padding: 0 10px;
+
+    .questions {
+        display: none   ;
     }
 
     .rowBackground {
         height: 50px;
         top: 20%;
+    }
+
+    .searchRow {
+        gap: 0px;
+        min-width: initial;
     }
 
     .imgWrapper {
@@ -165,41 +211,19 @@
 
 }
 
-@media (max-width: 610px) {
-
-    .searchListWrapper {
-        width: 90%;
-    }
-
+/* @media (max-width: 610px) {
     .imgWrapper {
         height: auto;
     }
+} */
 
-    .button {
-        height: 45%;
-    }
-
-    .name {
-        max-width: initial;
-        width: initial;
-    }
-
-    .reviews {
-        display: none;
+@media (max-width: 475px) {
+    .imgWrapper {
+        width: 80px;
     }
 
     .searchRow {
-        margin: 5px;
-    }
-}
-
-@media (max-width: 475px) {
-    .link {
-        gap: 0px;
-    }
-    
-    .imgWrapper {
-        width: 80px;
+        height: 60px;
     }
 
     .setsImg {
@@ -212,9 +236,5 @@
     
     .scrabImg {
         width: 50px;
-    }
-
-    .name {
-        font-size: 10px;
     }
 }

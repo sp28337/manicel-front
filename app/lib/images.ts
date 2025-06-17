@@ -1,15 +1,6 @@
 import { StaticImageData } from "next/image"
 
-// import peach from "@/public/peach/peach-letual.png"
 import peach600w from "@/public/peach/peach-600w.png"
-
-import raspberry90w from "@/public/raspberry/raspberry-main-90w.png"
-import mango90w from "@/public/mango/mango-main-90w.png"
-import mint90w from "@/public/mint/mint-main-90w.png"
-import bubblegum90w from "@/public/bubblegum/bubblegum-main-90w.png"
-import caramel90w from "@/public/caramel/caramel-main-90w.png"
-import coconut90w from "@/public/coconut/coconut-main-90w.png"
-import lavender90w from "@/public/lavender/lavender-main-90w.png"
 
 import mintMango120w from "@/public/mint-mango-120w.png"
 import peachLavender120w from "@/public/lavender-peach-120w.png"
@@ -21,9 +12,13 @@ import citrusPng120w from "@/public/citrus/citrus-main-120w.png"
 import trio120w from "@/public/trio-120w.png"
 import peach120w from "@/public/peach/peach-120w.png"
 
-// import inzhir320w from "@/public/inzhir/inzhir-320w.png"
-// import citrus320w from "@/public/citrus/citrus-320w.png"
-// import apple320w from "@/public/apple/apple-card-320w.png"
+import raspberry300w from "@/public/raspberry/raspberry-300w.png"
+import mango300w from "@/public/mango/mango-300w.png"
+import mint300w from "@/public/mint/mint-300w.png"
+import bubblegum300w from "@/public/bubblegum/bubblegum-300w.png"
+import caramel300w from "@/public/caramel/caramel-300w.png"
+import coconut300w from "@/public/coconut/coconut-300w.png"
+import lavender300w from "@/public/lavender/lavender-300w.png"
 
 import raspberry500w from "@/public/raspberry/raspberry-500w.png"
 import mango500w from "@/public/mango/mango-500w.png"
@@ -136,17 +131,17 @@ export const bestsellersImages: {[key: number]: StaticImageData} = {
 }
 
 export const searchImages: {[key: number]: StaticImageData} = {
-    1: mango90w,
-    2: bubblegum90w,
+    1: mango300w,
+    2: bubblegum300w,
     3: inzhirPng120w,
-    4: caramel90w,
-    5: coconut90w,
+    4: caramel300w,
+    5: coconut300w,
     6: citrusPng120w,
-    7: raspberry90w,
+    7: raspberry300w,
     8: peach120w,
     9: applePng120w,
-    10: lavender90w,
-    11: mint90w,
+    10: lavender300w,
+    11: mint300w,
     12: mintMango120w,
     13: lavenderCoconut120w,
     14: coconutPeach120w,

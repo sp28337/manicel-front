@@ -20,7 +20,7 @@ export default async function Page(props: { searchParams?: Promise<{ query?: str
     }
     
     return (
-        <>
+        <>  
             <SearchList query={query} />
             <Header />
             <main className={styles.container}>
