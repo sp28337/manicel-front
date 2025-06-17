@@ -1,27 +1,3 @@
-.headerWrapper {
-    background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
-    position: relative;
-    overflow: hidden;
-    margin-top: 112px;
-    height: 650px;
-    transition: 0.3s;
-    z-index: 2;
-    border-bottom: 0.2px solid rgba(0, 0, 0, 0.1);
-}
-
-.backgroundImage {
-    height: auto;
-    width: 100%;
-    max-width: 1440px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 1;    
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-    filter: blur(3px);
-}
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -62,7 +38,7 @@
     line-height: 110%;
     letter-spacing: 0.09em;
     text-transform: uppercase;
-    color: #0d0c10;
+    color: var(--text-black);
 }
 
 .span {
@@ -74,7 +50,7 @@
     line-height: 110%;
     letter-spacing: 0;
     text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--text-black);
 }
 
 .p {
@@ -83,7 +59,7 @@
     font-size: clamp(16px, 2vw, 18px);
     line-height: 150%;
     text-transform: lowercase;
-    color: #717171;
+    color: var(--text-grey);
     letter-spacing: 0;
     width: 520px;
 }
@@ -94,7 +70,7 @@
     font-size: clamp(14px, 2vw, 18px);
     line-height: 150%;
     text-transform: lowercase;
-    color: #717171;
+    color: var(--text-grey);
     letter-spacing: 0;
     width: 500px;
     display: flex;
@@ -119,16 +95,16 @@
     border-radius: 20px;
     font-size: 18px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--white);
     align-items: center;
-    background-color: rgba(19, 48, 227, 0.5);
+    background-color: var(--button-mint);
     height: 60px;
     width: 60%;
     font-weight: 700;
 }
 
 .buyLink:hover {
-    background-color: rgba(19, 48, 227, 0.7);
+    background-color: var(--button-mint-hover);
 }
 
 @media (max-width: 1248px) {
@@ -138,10 +114,6 @@
 }
 
 @media (max-width: 1024px) {
-    .backgroundImage {
-        display: none;
-    }
-
     .textBlock {
         width: 100%;
     }
@@ -160,10 +132,6 @@
         margin-top: 30px;
         width: 90%;
         max-width: initial;
-    }
-
-    .headerWrapper {
-        height: auto;
     }
 
     .textBlock {
@@ -190,5 +158,9 @@
 @media (max-width: 768px) {
     .imgWrapper {
         width: 100%;
+    }
+
+    .headerWrapper {
+        height: auto;
     }
 }

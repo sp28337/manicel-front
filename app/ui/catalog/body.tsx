@@ -109,12 +109,12 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                                             <QuestionSVG articule={product.articule} />
                                         </div>
                                     </div>
-                                    <Link
+                                    <a
                                         className={styles.buyButton} 
                                         href={`https://www.wildberries.ru/catalog/${product.articule.toString()}/detail.aspx`}
                                     >
                                         купить
-                                    </Link>
+                                    </a>
                                 </>
                             }
                         </article>

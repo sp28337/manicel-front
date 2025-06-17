@@ -1,10 +1,10 @@
 import "../styles/globals.css"
+import "../styles/variables.css"
 import { TopBar } from "../ui/layout/top-bar"
 import { Navigation } from "../ui/layout/navigation"
 import { Footer } from "../ui/footer"
 import { montserrat } from "../lib/fonts"
 import { cookies } from "next/headers"
-import ClientBoundary from "../ui/client-boundary"
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 
@@ -15,9 +15,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <html lang="en">
             <body className={`${montserrat.className}`}>
                 <TopBar />
-                <ClientBoundary>
-                    <Navigation isLoggedIn={loggedIn} />
-                </ClientBoundary>
+                <Navigation isLoggedIn={loggedIn} />
                 {children}
                 <Footer />
             </body>

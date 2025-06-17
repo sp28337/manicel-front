@@ -33,7 +33,7 @@ export const PopupMenu = (
             </button>
             {
                 isPopupOpen && createPortal(
-                    <nav className={styles.popupMenu} onClick={closeMenu}>
+                    <nav id="menu" className={styles.popupMenu} onClick={closeMenu}>
                         <div className={styles.links}>
                             <Link href="/" className={styles.navLink}>
                                 <span className={styles.icon}>

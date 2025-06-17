@@ -45,11 +45,11 @@ export async function SearchList({ query }: { query: string }) {
                                         </Link>
 
                                         <div className={styles.buttonWrapper}>
-                                            <Link 
+                                            <a 
                                                 href={`https://www.wildberries.ru/catalog/${product.articule.toString()}/detail.aspx`}
                                             >
                                                 <ShopSVG color="#00000080" w={20} h={20} />
-                                            </Link>
+                                            </a>
                                         </div>
                                     </li>
                                 ))

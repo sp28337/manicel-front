@@ -2,21 +2,13 @@ import commonStyles from "../../styles/common.module.css"
 import styles from "../../styles/homepage/header.module.css"
 import Image from "next/image"
 import mainImg from "@/public/all-800w.png"
-import backgroundImg from "@/public/salt-body-scrub-500w.png"
 import Link from "next/link"
+import { HeaderSkeleton } from "../skeletons"
 
 export const Header = () => {
 
     return (
-        <header className={styles.headerWrapper}>
-            <Image
-                className={styles.backgroundImage}
-                src={backgroundImg}
-                alt="pretty salt body scrab text on background"
-                quality={0}
-                sizes="100vw"
-                priority
-            />
+        <HeaderSkeleton>
             <div className={`${commonStyles.container} ${styles.header}` }>
                 
                 <div className={styles.textBlock}>
@@ -53,6 +45,6 @@ export const Header = () => {
                     />
                 </div>
             </div>
-        </header >
+        </HeaderSkeleton>
     )
 }

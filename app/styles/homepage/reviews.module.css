@@ -3,7 +3,7 @@
     font-size: clamp(16px, 2.08vw, 18px);
     text-transform: uppercase;
     text-align: center;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--text-black);
 }
 
 .rating {
@@ -14,7 +14,7 @@
 }
 
 .star {
-    fill: #b6b6b6;
+    fill: var(--star-grey);
     transition: 0.3s;
 }
 
@@ -22,7 +22,7 @@
 
     .star {
         transform: scale(1.2);
-        fill: #f1df14;
+        fill: var(--star-yellow);
     }
 }
 
