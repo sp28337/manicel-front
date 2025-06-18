@@ -2,7 +2,7 @@
     background: linear-gradient(180deg, #fff 0%, #f7efef 100%);
     position: relative;
     overflow: hidden;
-    margin-top: 112px;
+    margin-top: 115px;
     height: 650px;
     transition: 0.3s;
     z-index: 2;
@@ -28,7 +28,7 @@
     }
 
     .headerWrapper {
-        margin-top: 102px;
+        margin-top: 105px;
         height: auto;
     }
 }

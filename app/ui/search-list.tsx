@@ -20,7 +20,7 @@ export async function SearchList({ query }: { query: string }) {
     }
   
     return (
-        <div className={styles.wrapper}>
+        <>
             { products.length > 0 &&
                 <>
                     <div className={styles.background}>
@@ -54,11 +54,11 @@ export async function SearchList({ query }: { query: string }) {
                                     </li>
                                 ))
                             }
-                            <CloseSearchListButton />
                         </ul>
+                        <CloseSearchListButton />
                     </section>
                 </>
             }
-        </div>
+        </>
     )
 }
