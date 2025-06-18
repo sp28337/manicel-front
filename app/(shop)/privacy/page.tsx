@@ -1,10 +1,17 @@
 import styles from "../../styles/privacy.module.css"
 import commonStyles from "../../styles/common.module.css"
 import { Aside } from "../../ui/privacy/aside"
+import { SearchList } from "../../ui/search-list"
 
-export default function Page() {
+
+export default async function Page(props: { searchParams?: Promise<{ query?: string }>}) {
+
+    const searchParams = await props.searchParams
+    const query = searchParams?.query || ""
+
     return (
         <>
+            <SearchList query={query} />
             <div className={`${styles.wrapper} ${commonStyles.container}`}>
                 <main className={styles.privacy}>
                     <h1 className={styles.h1}>
