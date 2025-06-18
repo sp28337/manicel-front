@@ -2,7 +2,6 @@ import searchStyles from "../styles/layout/navigation.module.css"
 import textBlockStyles from "../styles/homepage/text-block.module.css"
 import reviewsStyles from "../styles/homepage/reviews.module.css"
 import questionsStyles from "../styles/homepage/questions.module.css"
-import Link from "next/link"
 
 export const WBLogoSVG = () => {
     return (
@@ -194,14 +193,21 @@ export const SearchSVG = () => {
     )
 }
 
-export const ReviewsStarsSVG = () => {
+export const ReviewsStarsSVG = ({ articule }: { articule: number }) => {
     return (
-        <div className={reviewsStyles.rating}>
-            <svg  className={reviewsStyles.star} width="25" height="25" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.99996 14.375L4.85671 17.5163L6.25496 11.6538L1.67871 7.73375L7.68559 7.2525L9.99996 1.6875L12.3143 7.2525L18.3221 7.73375L13.745 11.6538L15.1432 17.5163L9.99996 14.375Z"></path>
-            </svg>
-            <span className={reviewsStyles.ratio}>{"(0.0)"}</span>
-        </div>
+        <a 
+            href={`https://www.wildberries.ru/catalog/${articule}/feedbacks`}
+            className={questionsStyles.questions}
+            title="Отзывы"
+            
+        >
+            <div className={reviewsStyles.rating}>
+                <svg  className={reviewsStyles.star} width="25" height="25" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.99996 14.375L4.85671 17.5163L6.25496 11.6538L1.67871 7.73375L7.68559 7.2525L9.99996 1.6875L12.3143 7.2525L18.3221 7.73375L13.745 11.6538L15.1432 17.5163L9.99996 14.375Z"></path>
+                </svg>
+                <span className={reviewsStyles.ratio}>{"(0.0)"}</span>
+            </div>
+        </a>
     )
 }
 
@@ -694,9 +700,10 @@ export const MoreSVG = () => {
 export const QuestionSVG = ({ articule }: { articule: number }) => {
 
     return (
-        <Link 
+        <a 
             href={`https://www.wildberries.ru/catalog/${articule}/questions`}
             className={questionsStyles.questions}
+            title="Вопросы и ответы"
         >
             <svg className={questionsStyles.icon} version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="15.000000pt" height="15.000000pt" viewBox="0 0 256.000000 256.000000"
@@ -722,6 +729,6 @@ export const QuestionSVG = ({ articule }: { articule: number }) => {
                 </g>
             </svg>
             <span className={questionsStyles.text}>вопросы</span>
-        </Link>
+        </a>
     )
 }

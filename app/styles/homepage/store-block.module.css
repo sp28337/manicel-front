@@ -67,14 +67,12 @@
 
     .text {
         background: var(--background);
-        border-radius: 15px;
+        border-radius: 20px;
         padding: 15px 25px;
     }
 
     .wbStore {
         max-width: initial;
-        height: 50px;
-        border-radius: 10px;
         width: 100%;
         margin: 0 0 20px 0;
     }

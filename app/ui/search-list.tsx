@@ -40,7 +40,7 @@ export async function SearchList({ query }: { query: string }) {
                                                 />
                                             </div>
                                             <div className={styles.name}>
-                                                {product.name}
+                                                {product.name_ru}
                                             </div>
                                         </Link>
 

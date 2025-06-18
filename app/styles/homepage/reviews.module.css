@@ -3,7 +3,7 @@
     font-size: clamp(16px, 2.08vw, 18px);
     text-transform: uppercase;
     text-align: center;
-    color: var(--text-black);
+    color: var(--text-grey);
 }
 
 .rating {
@@ -19,6 +19,10 @@
 }
 
 .rating:hover {
+
+    .ratio {
+        color: var(--text-black);
+    }
 
     .star {
         transform: scale(1.2);
