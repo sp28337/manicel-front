@@ -14,7 +14,7 @@
     animation: search 0.7s;
     z-index: 99;
     background-color: var(--search-list-background);
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(5px);
     width: 100dvw;
     height: 80%;
     mask-image: linear-gradient(to bottom, black 80%, transparent 100%);

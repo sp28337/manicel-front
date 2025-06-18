@@ -22,7 +22,7 @@
     font-weight: 500;
     color: var(--text-grey);
     background: var(--background);
-    border-radius: 15px;
+    border-radius: 20px;
     width: 100%;
     height: auto;
     transition: 0.3s;
@@ -32,7 +32,7 @@
     font-weight: 400;
     line-height: 150%;
     letter-spacing: 0px;
-    border-radius: 15px;
+    border-radius: 20px;
     font-size: clamp(14px, 2vw, 18px);
 }
 
@@ -172,7 +172,7 @@
     letter-spacing: 0px;
     padding: 3%;
     background: var(--text-blocks-background);
-    border-radius: 15px;
+    border-radius: 20px;
     font-weight: 400;
     font-size: clamp(14px, 2vw, 18px);
     color: var(--text-grey);
@@ -183,7 +183,7 @@
     display: flex;
     padding: 3%;
     background: var(--background);
-    border-radius: 12px;
+    border-radius: 20px;
     gap: 20px;
 }
 

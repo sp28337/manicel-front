@@ -105,7 +105,7 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
                                             {product.type}
                                         </p>
                                         <div className={styles.svgWrapper}>
-                                            <ReviewsStarsSVG />
+                                            <ReviewsStarsSVG articule={product.articule}/>
                                             <QuestionSVG articule={product.articule} />
                                         </div>
                                     </div>

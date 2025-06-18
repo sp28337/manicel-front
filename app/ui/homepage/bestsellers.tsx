@@ -41,7 +41,7 @@ export const Bestsellers = ({ products }: { products: BestsellersSchema[] }) => 
                         </h3>
                         <p className={styles.p}>{product.type}</p>
                         <div className={styles.svgWrapper}>
-                            <ReviewsStarsSVG />
+                            <ReviewsStarsSVG articule={product.articule}/>
                             <QuestionSVG articule={product.articule} />
                         </div>
                     </section>
