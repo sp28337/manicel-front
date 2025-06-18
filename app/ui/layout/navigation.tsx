@@ -6,10 +6,9 @@ import { ProfileSVG } from "../vectors"
 import { PopupMenu } from "../popup"
 
 export const Navigation = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
-  
     return (
-        <nav id="main-header" className={`${styles.navWrapper}`}>
-            <div className={`${styles.backgroundNav}`}></div>
+        <nav id="main-header" className={styles.navWrapper}>
+            <div className={styles.backgroundNav}></div>
             <div className={`${styles.nav} ${commonStyles.container}`}>
                 <Link 
                     className={styles.logo}

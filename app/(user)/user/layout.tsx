@@ -1,4 +1,6 @@
 import "../../styles/globals.css"
+import "../../styles/variables.css"
+
 import { TopBar } from "../../ui/layout/top-bar"
 import { Navigation } from "../../ui/layout/navigation"
 import { Footer } from "../../ui/footer"
