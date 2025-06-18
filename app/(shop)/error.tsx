@@ -1,23 +1,22 @@
 "use client"
 
-import Image from "next/image"
 import { useRouter } from "next/navigation"
-import styles from "../styles/homepage/header.module.css"
-import textBlockStyles from "../styles/homepage/text-block.module.css"
+import Image from "next/image"
+import styles from "../styles/skeletons/header.module.css"
+import headerStyles from "../styles/homepage/header.module.css"
 import commonStyles from "../styles/common.module.css"
 import React, { useEffect } from "react"
-import { WaveSVG } from "../ui/vectors"
 import backgroundImg from "@/public/salt-body-scrub-500w.png"
 import all from "@/public/all-800w.png"
-
+ 
 export default function Error({ error }: { error: Error & { digest?: string } }) {
+   
     useEffect(() => {
         console.error(error)
     }, [error])
-
-
-    const { replace } = useRouter()
  
+    const { replace } = useRouter()
+
     return (
         <>
             <div className={styles.headerWrapper}>
@@ -29,19 +28,18 @@ export default function Error({ error }: { error: Error & { digest?: string } })
                     sizes="100vw"
                     priority
                 />
-                <div className={`${commonStyles.container} ${styles.header}` }>
+                <div className={`${commonStyles.container} ${headerStyles.header}` }>
                     
-                    <div className={styles.textBlock} style={{gap: "30px"}}>
-                        <h1 className={styles.h1}>
-                            <span className={styles.span}>
+                    <div className={headerStyles.textBlock} style={{gap: "30px"}}>
+                        <h1 className={headerStyles.h1}>
+                            <span className={headerStyles.span}>
                                 УПС . . . 
                             </span>
                             что-то пошло не так
                         </h1>
-                        <button 
+                        <button
                             type="button"
-                            className={textBlockStyles.aboutUsButton}
-                            style={{margin: "0 auto"}}
+                            className={headerStyles.catalogLink}
                             onClick={
                                 () => replace("/catalog", { scroll: false })
                             }
@@ -49,8 +47,8 @@ export default function Error({ error }: { error: Error & { digest?: string } })
                             в каталог
                         </button>
                     </div>
-                    <div className={styles.imgWrapper}>
-                        <Image className={styles.mainImage}
+                    <div className={headerStyles.imgWrapper}>
+                        <Image className={headerStyles.mainImage}
                             src={all} 
                             alt="piramyd of all scrubs with raspberry on top of some cans"
                             quality={100}
@@ -58,9 +56,6 @@ export default function Error({ error }: { error: Error & { digest?: string } })
                             priority
                         />
                     </div>
-                </div>
-                <div className={styles.wave}>
-                    <WaveSVG />
                 </div>
             </div >
             <div style={{height: "100dvh"}}></div>

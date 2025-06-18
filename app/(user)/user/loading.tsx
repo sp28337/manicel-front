@@ -1,4 +1,4 @@
-import styles from "../styles/skeletons/spinner.module.css"
+import styles from "../../styles/skeletons/spinner.module.css"
 
 export default function Loading() {
     return (
