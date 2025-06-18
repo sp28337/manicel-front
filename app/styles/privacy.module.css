@@ -1,7 +1,7 @@
 
 
 .wrapper {
-    padding-top: 150px;
+    padding: 150px 150px 0 !important;
     font-size: 16px;
     gap: 30px;
     display: flex;
@@ -122,11 +122,12 @@
 .h1 {
     font-weight: 500;
     letter-spacing: 0;
+    font-size: clamp(24px, 4vw, 32px);
 }
 
 .h2 {
     font-weight: 500;
-    font-size: 24px;
+    font-size: clamp(20px, 4vw, 24px);
 }
 
 .section {
@@ -151,10 +152,12 @@
 
 .p {
     color: #717171;
+    font-size: clamp(14px, 4vw, 16px);
 }
 
 .li {
     color: #717171;
+    font-size: clamp(14px, 4vw, 16px);
 }
 
 .span {
@@ -162,6 +165,10 @@
 }
 
 @media (max-width: 1248px) {
+    .wrapper {
+        padding: 150px 10% 0 !important;
+    }
+ 
     .buttonOpen {
         padding: 0 10%;
     }
@@ -170,6 +177,10 @@
 @media (max-width: 768px) {
     .buttonOpen {
         padding: 0 5%;
+    }
+
+    .wrapper {
+        padding: 150px 5% 0 !important;
     }
 
     .buttonOpenContainer {
@@ -182,10 +193,6 @@
 
     .section {
         gap: 25px;
-    }
-
-    .h1 {
-        font-size: 28px;
     }
 
     .menuList {
@@ -216,23 +223,5 @@
         -webkit-backdrop-filter: saturate(150%) blur(5px);
         backdrop-filter: saturate(150%) blur(5px);
         transform: translateY(-9px);
-    }
-}
-
-@media (max-width: 500px) {
-    .h1 {
-        font-size: 24px;
-    }
-
-    .h2 {
-        font-size: 20px;
-    }
-
-    .p {
-        font-size: 14px;
-    }
-
-    .li {
-        font-size: 14px;
     }
 }

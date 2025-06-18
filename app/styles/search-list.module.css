@@ -28,8 +28,6 @@
 
 .searchListWrapper {
     position: fixed;
-    transform: translateY(-112px);
-    padding-top: 112px;
     animation: search 0.7s;
     z-index: 99;
     width: 100dvw;
