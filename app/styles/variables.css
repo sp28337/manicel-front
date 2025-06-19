@@ -1,6 +1,8 @@
 :root {
     --white: #fff;
     --black: #000;
+    --link: rgba(18, 61, 250, .8);
+    --link-hover: rgba(18, 61, 250, 1);
     --text-black: rgba(0, 0, 0, .8);
     --text-grey: rgb(113, 113, 113);
     --button-mint: rgba(0, 131, 65, .5);

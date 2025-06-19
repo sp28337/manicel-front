@@ -27,7 +27,7 @@ export const Navigation = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
                     <Link href="/catalog" className={styles.navLink}>
                         <p>КАТАЛОГ</p>
                     </Link>
-                    <Link href="#" className={styles.navLink}>
+                    <Link href="/agreement#contacts" className={styles.navLink}>
                         <p>КОНТАКТЫ</p>
                     </Link>
                 </div>

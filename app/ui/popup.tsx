@@ -47,7 +47,7 @@ export const PopupMenu = (
                                 </span>
                                 <p>КАТАЛОГ</p>
                             </Link>
-                            <Link href="#contacts" className={styles.navLink}>
+                            <Link href="/agreement#contacts" className={styles.navLink}>
                                 <span className={styles.icon}>
                                     <InfoSVG />
                                 </span>
