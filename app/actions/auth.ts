@@ -8,8 +8,9 @@ import { createSession, deleteSession } from "../lib/sessions"
 export async function signup(state: FormState, formData: FormData) {
 
     const validatedFields = SignupFormSchema.safeParse({
-        name: formData.get('name'),
+        username: formData.get('username'),
         password: formData.get('password'),
+        email: formData.get('email'),
     })
  
     if (!validatedFields.success) {
@@ -19,10 +20,15 @@ export async function signup(state: FormState, formData: FormData) {
     }
 
     const userData = await createUser(formData)
-    console.log(userData)
+
+    if ([403].includes(userData)) {
+        return {
+            message: "пользователь с таким именем уже существует"       
+        }
+    }
+
     await createSession(userData)
-    
-    redirect('/user/[id]')
+    redirect(`/user/${userData.user_id}`)
 }
 
 export async function login(state: FormState, formData: FormData) {
@@ -50,6 +56,6 @@ export async function login(state: FormState, formData: FormData) {
 }
 
 export async function logout() {
-    await deleteSession()
+    await deleteSession("session")
     redirect('/')
 }
