@@ -1,11 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import styles from "../../styles/privacy.module.css"
+import styles from "../../styles/agreement.module.css"
 import Link from "next/link"
 import { MoreSVG } from "../vectors"
 
-export function PrivacyAside() {
+export function AgreementAside() {
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -39,7 +39,7 @@ export function PrivacyAside() {
                             className={styles.menuLink} 
                             href="#section2"
                         >
-                            2. Обработка персональных данных
+                            2. Предмет соглашения
                         </Link>
                     </li>
                     <li onClick={() => {setIsOpen(!isOpen)} } className={styles.menuItem} >
@@ -47,7 +47,7 @@ export function PrivacyAside() {
                             className={styles.menuLink} 
                             href="#section3"
                         >
-                            3. Порядок обработки персональных данных
+                            3. Регистрация
                         </Link>
                     </li>
                     <li onClick={() => {setIsOpen(!isOpen)} } className={styles.menuItem} >
@@ -55,7 +55,7 @@ export function PrivacyAside() {
                             className={styles.menuLink} 
                             href="#section4"
                         >
-                            4. Порядок передачи персональных данных
+                            4. Права и обязанности Администратора
                         </Link>
                     </li>
                     <li onClick={() => {setIsOpen(!isOpen)} } className={styles.menuItem} >
@@ -63,7 +63,7 @@ export function PrivacyAside() {
                             className={styles.menuLink} 
                             href="#section5"
                         >
-                            5. Порядок хранения персональных данных
+                            5. Права и обязанности Пользователя
                         </Link>
                     </li>
                     <li onClick={() => {setIsOpen(!isOpen)} } className={styles.menuItem} >
@@ -71,7 +71,7 @@ export function PrivacyAside() {
                             className={styles.menuLink} 
                             href="#section6"
                         >
-                            6. Порядок уничтожения персональных данных
+                            6. Ограничение ответственности Администратора
                         </Link>
                     </li>
                     <li onClick={() => {setIsOpen(!isOpen)} } className={styles.menuItem} >
@@ -79,7 +79,7 @@ export function PrivacyAside() {
                             className={styles.menuLink} 
                             href="#section7"
                         >
-                            7. Порядок обеспечения безопасности персональных данных
+                            7. Доступ к ресурсам третьих лиц
                         </Link>
                     </li>
                     <li onClick={() => {setIsOpen(!isOpen)} } className={styles.menuItem} >
@@ -87,7 +87,7 @@ export function PrivacyAside() {
                             className={styles.menuLink} 
                             href="#section8"
                         >
-                            8. Порядок обеспечения безопасности персональных данных
+                            8. Использование информации, хранящейся на стороне браузера
                         </Link>
                     </li>
                     <li onClick={() => {setIsOpen(!isOpen)} } className={styles.menuItem} >
@@ -95,7 +95,7 @@ export function PrivacyAside() {
                             className={styles.menuLink} 
                             href="#section9"
                         >
-                            9. Порядок обеспечения безопасности персональных данных
+                            9. Согласие на обработку персональных данных
                         </Link>
                     </li>
                     <li onClick={() => {setIsOpen(!isOpen)} } className={styles.menuItem} >
@@ -103,23 +103,15 @@ export function PrivacyAside() {
                             className={styles.menuLink} 
                             href="#section10"
                         >
-                            10. Порядок обеспечения безопасности персональных данных
+                            10. Изменение условий и расторжение договора
                         </Link>
                     </li>
                     <li onClick={() => {setIsOpen(!isOpen)} } className={styles.menuItem} >
                         <Link 
                             className={styles.menuLink} 
-                            href="#section11"
+                            href="#contacts"
                         >
-                            11. Порядок обеспечения безопасности персональных данных
-                        </Link>
-                    </li>
-                    <li onClick={() => {setIsOpen(!isOpen)} } className={styles.menuItem} >
-                        <Link 
-                            className={styles.menuLink} 
-                            href="#section12"
-                        >
-                            12. Порядок обеспечения безопасности персональных данных
+                            11. Информация об Администраторе
                         </Link>
                     </li>
                 </ol>

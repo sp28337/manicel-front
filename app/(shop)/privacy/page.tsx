@@ -1,6 +1,7 @@
 import styles from "../../styles/privacy.module.css"
 import commonStyles from "../../styles/common.module.css"
-import { Aside } from "../../ui/privacy/aside"
+import { PrivacyAside } from "../../ui/privacy/aside"
+import Link from "next/link"
 import { SearchList } from "../../ui/search-list"
 
 
@@ -29,7 +30,9 @@ export default async function Page(props: { searchParams?: Promise<{ query?: str
                                 <span className={styles.span} >1.1.</span> Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.
                             </li>
                             <li className={styles.li} >
-                                <span className={styles.span} >1.2.</span> Настоящая политика Оператора в отношении обработки персональных данных (далее — Политика) применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта https://manicel.ru.
+                                <span className={styles.span} >1.2.</span> Настоящая политика Оператора в отношении обработки 
+                                персональных данных (далее — Политика) применяется ко всей информации, которую Оператор может получить 
+                                о посетителях веб-сайта <Link className={styles.link} href="https://manicel.ru">https://manicel.ru</Link>.
                             </li>
                         </ol>
                     </section>
@@ -45,7 +48,7 @@ export default async function Page(props: { searchParams?: Promise<{ query?: str
                                 <span className={styles.span} >2.2.</span> Блокирование персональных данных — временное прекращение обработки персональных данных (за исключением случаев, если обработка необходима для уточнения персональных данных).
                             </li>
                             <li className={styles.li} >
-                                <span className={styles.span} >2.3.</span> Веб-сайт — совокупность графических и информационных материалов, а также программ для ЭВМ и баз данных, обеспечивающих их доступность в сети интернет по сетевому адресу https://manicel.ru.
+                                <span className={styles.span} >2.3.</span> Веб-сайт — совокупность графических и информационных материалов, а также программ для ЭВМ и баз данных, обеспечивающих их доступность в сети интернет по сетевому адресу <Link className={styles.link} href="https://manicel.ru">https://manicel.ru</Link>.
                             </li>
                             <li className={styles.li} >
                                 <span className={styles.span} >2.4.</span> Информационная система персональных данных — совокупность содержащихся в базах данных персональных данных и обеспечивающих их обработку информационных технологий и технических средств.
@@ -60,13 +63,13 @@ export default async function Page(props: { searchParams?: Promise<{ query?: str
                                 <span className={styles.span} >2.7.</span> Оператор — государственный орган, муниципальный орган, юридическое или физическое лицо, самостоятельно или совместно с другими лицами организующие и/или осуществляющие обработку персональных данных, а также определяющие цели обработки персональных данных, состав персональных данных, подлежащих обработке, действия (операции), совершаемые с персональными данными.
                             </li>
                             <li className={styles.li} >
-                                <span className={styles.span} >2.8.</span> Персональные данные — любая информация, относящаяся прямо или косвенно к определенному или определяемому Пользователю веб-сайта https://manicel.ru.
+                                <span className={styles.span} >2.8.</span> Персональные данные — любая информация, относящаяся прямо или косвенно к определенному или определяемому Пользователю веб-сайта <Link className={styles.link} href="https://manicel.ru">https://manicel.ru</Link>.
                             </li>
                             <li className={styles.li} >
                                 <span className={styles.span} >2.9.</span> Персональные данные, разрешенные субъектом персональных данных для распространения, — персональные данные, доступ неограниченного круга лиц к которым предоставлен субъектом персональных данных путем дачи согласия на обработку персональных данных, разрешенных субъектом персональных данных для распространения в порядке, предусмотренном Законом о персональных данных (далее — персональные данные, разрешенные для распространения).
                             </li>
                             <li className={styles.li} >
-                                <span className={styles.span} >2.10.</span> Пользователь — любой посетитель веб-сайта https://manicel.ru.
+                                <span className={styles.span} >2.10.</span> Пользователь — любой посетитель веб-сайта <Link className={styles.link} href="https://manicel.ru">https://manicel.ru</Link>.
                             </li>
                             <li className={styles.li} >
                                 <span className={styles.span} >2.11.</span> Предоставление персональных данных — действия, направленные на раскрытие персональных данных определенному лицу или определенному кругу лиц.
@@ -335,12 +338,12 @@ export default async function Page(props: { searchParams?: Promise<{ query?: str
                                 <span className={styles.span} >12.2.</span> В данном документе будут отражены любые изменения политики обработки персональных данных Оператором. Политика действует бессрочно до замены ее новой версией.
                             </li>
                             <li className={styles.li} >
-                                <span className={styles.span} >12.3.</span> Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу https://manicel.ru/privacy/.
+                                <span className={styles.span} >12.3.</span> Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу <Link className={styles.link} href="https://manicel.ru/privacy">https://manicel.ru/privacy/</Link>.
                             </li>
                         </ol>
                     </section>
                 </main>
-                <Aside />               
+                <PrivacyAside />               
             </div>
         </>
     )

@@ -23,12 +23,12 @@ export const Footer = () => {
                                 >
                                     каталог
                                 </Link>
-                                <Link 
+                                <a 
                                     className={styles.footerLink} 
                                     href="https://www.wildberries.ru/brands/310747490-manicel"
                                 >
                                     магазин
-                                </Link>
+                                </a>
                             </div>
                         </div>
                         
@@ -44,7 +44,7 @@ export const Footer = () => {
                                 </Link>
                                 <Link 
                                     className={styles.footerLink}
-                                    href="#"
+                                    href="/agreement"
                                 >
                                     пользовательское соглашение
                                 </Link>
@@ -54,9 +54,6 @@ export const Footer = () => {
                                 >
                                     политика конфиденциальности
                                 </Link>
-                                {/* <a href="">+7-(920)-941-53-89</a>
-                                <a className={styles.email} href="">rejx.nikita@bk.ru</a>
-                                <address className={styles.address}>г. Вязники, ул Сенькова, д 9/8</address> */}
                             </div>
                         </div>
                     </div>
@@ -68,12 +65,12 @@ export const Footer = () => {
                         >
                             <ManicelLogoSVG />
                         </Link>
-                        <Link
+                        <a
                             title="Wildberries" 
                             href="https://www.wildberries.ru/brands/310747490-manicel"
                             className={styles.wbLogo}>
                             <WBLogoSVG />
-                        </Link>
+                        </a>
                     </div>
                 </nav>
                 {/* <div className={styles.contactUsButtonWrapper}>
