@@ -59,8 +59,7 @@ export function LoginForm() {
                 </div>
                 <div className={styles.wrapper}>
                     <a 
-                        type="button"
-                        href="http://127.0.0.1:8000/auth/login/google" 
+                        href={`${process.env.NEXT_REDIRECT_API}/auth/login/google`}
                         className={styles.oauthButtonGoogle}
                     >
                         продолжить c Google
@@ -70,7 +69,7 @@ export function LoginForm() {
                     <button  
                         disabled={true}
                         type="button"
-                        // href="http://127.0.0.1:8000/auth/login/yandex"
+                        // {`${process.env.NEXT_REDIRECT_API}/auth/login/yandex`}"
                         className={styles.oauthButtonYandex}
                     >
                         продолжить с Yandex

@@ -119,31 +119,6 @@ export function SignUpForm() {
                         подтвердить
                     </button>
                 </div>
-
-                {/* <div className={styles.wrapper}>
-                    <hr className={styles.hr}/>
-                        <span className={styles.or}>или</span>
-                    <hr className={styles.hr}/>
-                </div>
-                <div className={styles.wrapper}>
-                    <a 
-                        // onClick={oauthGoogle}
-                        type="button"
-                        href="http://127.0.0.1:8000/auth/login/google" 
-                        className={styles.oauthButton}
-                    >
-                        продолжить c Google
-                    </a>
-                </div>
-                <div className={styles.wrapper} >
-                    <button 
-                        // disabled={isPending} 
-                        type="button"
-                        className={styles.oauthButton}
-                    >
-                        продолжить с Yandex
-                    </button>
-                </div> */}
             </form>            
         </div>
     )
