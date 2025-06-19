@@ -1,6 +1,6 @@
 "use client"
 
-import styles from "../../styles/forms/login-form.module.css"
+import styles from "../../styles/auth.module.css"
 import { login } from "@/app/actions/auth"
 import { useActionState } from "react"
 
@@ -52,29 +52,33 @@ export function LoginForm() {
                         продолжить
                     </button>
                 </div>
-                {/* <div className={styles.wrapper}>
+                <div className={styles.wrapper}>
                     <hr className={styles.hr}/>
                         <span className={styles.or}>или</span>
                     <hr className={styles.hr}/>
                 </div>
                 <div className={styles.wrapper}>
-                    <button 
-                        // disabled={isPending} 
+                    <a 
                         type="button"
-                        className={styles.oauthButton}
+                        href="http://127.0.0.1:8000/auth/login/google" 
+                        className={styles.oauthButtonGoogle}
                     >
                         продолжить c Google
-                    </button>
+                    </a>
                 </div>
-                <div className={styles.wrapper}>
-                    <button 
-                        // disabled={isPending} 
+                <div className={styles.wrapper} >
+                    <button  
+                        disabled={true}
                         type="button"
-                        className={styles.oauthButton}
+                        // href="http://127.0.0.1:8000/auth/login/yandex"
+                        className={styles.oauthButtonYandex}
                     >
                         продолжить с Yandex
                     </button>
-                </div> */}
+                </div>
+                <div className={styles.signup}>
+                    <p>Нет аккаунта? <a className={styles.link} href="/sign-up">зарегистрируйтесь</a></p>
+                </div>
             </form>            
         </div>
     )

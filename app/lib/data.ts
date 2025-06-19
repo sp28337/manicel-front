@@ -77,10 +77,11 @@ export async function createUser(formData: FormData) {
             {
                 method: "POST",
                 headers: {
+                    "accept": "application/json",
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    name: formData.get("name"),
+                    username: formData.get("username"),
                     email: formData.get("email"),
                     password: formData.get("password"),
                 }),        
