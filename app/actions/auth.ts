@@ -57,5 +57,6 @@ export async function login(state: FormState, formData: FormData) {
 
 export async function logout() {
     await deleteSession("session")
+    await deleteSession("id")
     redirect('/')
 }
