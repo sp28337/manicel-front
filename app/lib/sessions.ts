@@ -1,4 +1,5 @@
-import "server-only"
+"use server"
+
 import { cookies } from "next/headers"
 import { jwtVerify } from "jose"
  

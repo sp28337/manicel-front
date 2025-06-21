@@ -59,21 +59,19 @@ export function LoginForm() {
                 </div>
                 <div className={styles.wrapper}>
                     <a 
-                        href={`${process.env.NEXT_REDIRECT_API}/auth/login/google`}
+                        href={`${process.env.NEXT_PUBLIC_REDIRECT_API}/auth/login/google`}
                         className={styles.oauthButtonGoogle}
                     >
                         продолжить c Google
                     </a>
                 </div>
                 <div className={styles.wrapper} >
-                    <button  
-                        disabled={true}
-                        type="button"
-                        // {`${process.env.NEXT_REDIRECT_API}/auth/login/yandex`}"
+                    <a  
+                        href={`${process.env.NEXT_PUBLIC_REDIRECT_API}/auth/login/yandex`}
                         className={styles.oauthButtonYandex}
                     >
                         продолжить с Yandex
-                    </button>
+                    </a>
                 </div>
                 <div className={styles.signup}>
                     <p>Нет аккаунта? <a className={styles.link} href="/sign-up">зарегистрируйтесь</a></p>
