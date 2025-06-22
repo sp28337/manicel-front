@@ -1,11 +1,8 @@
 "use client"
 
+import Link from "next/link"
 import styles from "../../styles/auth.module.css"
-import { 
-    login, 
-    oAuthGoogle, 
-    oAuthYandex 
-} from "@/app/actions/auth"
+import { login } from "@/app/actions/auth"
 import { useActionState } from "react"
 
 export function LoginForm() {
@@ -62,20 +59,20 @@ export function LoginForm() {
                     <hr className={styles.hr}/>
                 </div>
                 <div className={styles.wrapper}>
-                    <button 
-                        onClick={oAuthGoogle}
+                    <Link 
+                        href={`${process.env.NEXT_PUBLIC_REDIRECT_API}/auth/login/google`}
                         className={styles.oauthButtonGoogle}
                     >
                         продолжить c Google
-                    </button>
+                    </Link>
                 </div>
                 <div className={styles.wrapper} >
-                    <button  
-                        onClick={oAuthYandex}
+                    <Link  
+                        href={`${process.env.NEXT_PUBLIC_REDIRECT_API}/auth/login/yandex`}
                         className={styles.oauthButtonYandex}
                     >
                         продолжить с Yandex
-                    </button>
+                    </Link>
                 </div>
                 <div className={styles.signup}>
                     <p>Нет аккаунта? <a className={styles.link} href="/sign-up">зарегистрируйтесь</a></p>

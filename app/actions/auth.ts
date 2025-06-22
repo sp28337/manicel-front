@@ -5,14 +5,6 @@ import { createUser, loginUser } from "../lib/data"
 import { redirect } from "next/navigation"
 import { createSession, deleteSession } from "../lib/sessions"
 
-export async function oAuthGoogle() {
-    redirect(`${process.env.NEXT_PUBLIC_REDIRECT_API}/auth/login/google`)
-}
-
-export async function oAuthYandex() {
-    redirect(`${process.env.NEXT_PUBLIC_REDIRECT_API}/auth/login/yandex`)
-}
-
 export async function signup(state: FormState, formData: FormData) {
 
     const validatedFields = SignupFormSchema.safeParse({

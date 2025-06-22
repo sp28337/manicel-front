@@ -11,7 +11,7 @@ export async function getSearchProducts(query: string) {
 
     try {
         const data = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/search/search_products?query=${query}`,
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/search/search_products?query=${query}`,
             { cache: "force-cache"}
         )
         const filteredProducts: CatalogProductsSchema[] = await data.json()
@@ -26,7 +26,7 @@ export async function getCatalogProducts() {
     
     try {
         const data = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/products/catalog_products`,
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/products/catalog_products`,
             { cache: "no-store"}
         )
         const products: CatalogProductsSchema[] = await data.json()
@@ -42,7 +42,7 @@ export async function getBestsellers() {
     
     try {
         const data = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/bestsellers/bestsellers`,
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/bestsellers/bestsellers`,
             { cache: "no-store"}
         )
         const bestsellers: BestsellersSchema[] = await data.json()
@@ -58,7 +58,7 @@ export async function getProduct(id: string) {
 
     try {
         const data = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/products/${id}`,
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/products/${id}`,
             { cache: "force-cache"}
         )
         const product: ProductSchema = await data.json()
@@ -73,7 +73,7 @@ export async function getProduct(id: string) {
 export async function createUser(formData: FormData) {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/user`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user`, 
             {
                 method: "POST",
                 headers: {
@@ -100,7 +100,7 @@ export async function createUser(formData: FormData) {
 export async function loginUser(formData: FormData) {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/auth/login`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/auth/login`, 
             {
                 method: "POST",
                 headers: {
@@ -128,7 +128,7 @@ export async function loginUser(formData: FormData) {
 export async function getUserProfile({ userId, authToken }: { userId: string, authToken: string }) {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/user/profile/${userId}`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/profile/${userId}`, 
             { 
                 cache: "force-cache",
                 headers: {
@@ -153,7 +153,7 @@ export async function getUserProfile({ userId, authToken }: { userId: string, au
 export async function changeUsername(formData: FormData, authToken: string | undefined, userId: number | unknown) {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/user/update_username/${userId}`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/update_username/${userId}`, 
             {
                 method: "PATCH",
                 headers: {
@@ -181,7 +181,7 @@ export async function changeUsername(formData: FormData, authToken: string | und
 export async function updatePassword(formData: FormData, authToken: string | undefined, userId: number | unknown) {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/user/update_password/${userId}`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/update_password/${userId}`, 
             {
                 method: "PATCH",
                 headers: {
@@ -212,7 +212,7 @@ export async function updatePassword(formData: FormData, authToken: string | und
 export async function changeName(formData: FormData, authToken: string | undefined, userId: string | unknown) {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/user/update_name/${userId}`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/update_name/${userId}`, 
             {
                 method: "PATCH",
                 headers: {
@@ -240,7 +240,7 @@ export async function changeName(formData: FormData, authToken: string | undefin
 export async function changeEmail(formData: FormData, authToken: string | undefined, userId: string | unknown) {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/user/update_email/${userId}`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/update_email/${userId}`, 
             {
                 method: "PATCH",
                 headers: {
