@@ -14,7 +14,7 @@ export const Body = (props: { product: ProductSchema }) => {
                 <h2 className={styles.h2}>описание</h2>
                 <div className={styles.pWrapper}>
                     <p className={styles.p}>
-                        <span className={styles.saltBodyScrub}>&emsp;salt body scrab</span> - {props.product.description}
+                        <span className={styles.saltBodyScrub}>&emsp;salt body scrub</span> - {props.product.description}
                     </p>
                     <br/>
                     <p className={styles.p}>
