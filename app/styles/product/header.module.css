@@ -85,6 +85,7 @@
 }
 
 .listItem::before {
+    height: 26px;
     content: url("../../../public/svg/leave.svg");
 }
 
