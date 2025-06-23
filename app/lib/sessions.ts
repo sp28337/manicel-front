@@ -37,5 +37,8 @@ export async function createSession(userData: {user_id: number, access_token: st
 
 export async function deleteSession(name: string) {
     const cookieStore = await cookies()
-    cookieStore.delete(name)
+    cookieStore.delete({
+        name,
+        domain: process.env.COOKIE_DOMAIN
+    })
 }
