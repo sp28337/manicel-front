@@ -5,6 +5,7 @@
     font-size: 16px;
     gap: 30px;
     display: flex;
+    font-family: Arial;
 }
 
 .menu {
@@ -135,12 +136,6 @@
     margin-bottom: 15px;
     font-size: clamp(20px, 4vw, 24px);
 }
-
-/* .section {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-} */
 
 .ol {
     display: flex;

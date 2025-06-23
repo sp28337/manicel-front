@@ -17,109 +17,111 @@ export function SignUpForm() {
 
     return (
         <div className={styles.formWrapper}>
-            <form className={styles.form} action={formAction}>
-                <h1 className={styles.h1}>регистрация</h1>
-                
-                <div className={styles.wrapper}>
-                    <label 
-                        htmlFor="username"
-                        className={styles.label}
-                    >
-                    </label>
-                    <input 
-                        id="username"
-                        name="username"
-                        placeholder="Логин"
-                        className={styles.input}
-                    />
-                </div>
-                {state?.errors?.username && 
-                <div className={styles.wrapper}>
-                    <p className={styles.authError}>{state.errors.username}</p>
-                </div>}
-
-                <div className={styles.wrapper}>
-                    <label 
-                        htmlFor="password"
-                        className={styles.label}
+            <main className={styles.main}>
+                <form className={styles.form} action={formAction}>
+                    <h1 className={styles.h1}>регистрация</h1>
+                    
+                    <div className={styles.wrapper}>
+                        <label 
+                            htmlFor="username"
+                            className={styles.label}
                         >
-                    </label>
-                    <input 
-                        id="password" 
-                        name="password" 
-                        type="password"
-                        placeholder="Пароль"
-                        className={styles.input}
+                        </label>
+                        <input 
+                            id="username"
+                            name="username"
+                            placeholder="Логин"
+                            className={styles.input}
                         />
-                </div>
-                {state?.errors?.password && !state?.errors?.username && 
-                <div className={styles.wrapper}>
-                    <p className={styles.authError}>{state.errors.password[0]}</p>
-                </div>}
+                    </div>
+                    {state?.errors?.username && 
+                    <div className={styles.wrapper}>
+                        <p className={styles.authError}>{state.errors.username}</p>
+                    </div>}
 
-                <div className={styles.wrapper}>
-                    <label 
-                        htmlFor="email"
-                        className={styles.label}
-                        >
-                    </label>
-                    <input 
-                        id="email" 
-                        name="email" 
-                        type="email"
-                        placeholder="Email"
-                        className={styles.input}
+                    <div className={styles.wrapper}>
+                        <label 
+                            htmlFor="password"
+                            className={styles.label}
+                            >
+                        </label>
+                        <input 
+                            id="password" 
+                            name="password" 
+                            type="password"
+                            placeholder="Пароль"
+                            className={styles.input}
+                            />
+                    </div>
+                    {state?.errors?.password && !state?.errors?.username && 
+                    <div className={styles.wrapper}>
+                        <p className={styles.authError}>{state.errors.password[0]}</p>
+                    </div>}
+
+                    <div className={styles.wrapper}>
+                        <label 
+                            htmlFor="email"
+                            className={styles.label}
+                            >
+                        </label>
+                        <input 
+                            id="email" 
+                            name="email" 
+                            type="email"
+                            placeholder="Email"
+                            className={styles.input}
+                            />
+                    </div>
+                    {state?.errors?.email && !state?.errors?.password && !state?.errors?.username &&
+                    <div className={styles.wrapper}>
+                        <p className={styles.authError}>{state.errors.email}</p>
+                    </div>}
+
+                    <div className={styles.wrapper}>
+                        <input 
+                            type="checkbox" 
+                            id="agree" 
+                            name="agree"
+                            checked={agree}
+                            onChange={handleCheckboxChange}
+                            className={styles.checkbox}
                         />
-                </div>
-                {state?.errors?.email && !state?.errors?.password && !state?.errors?.username &&
-                <div className={styles.wrapper}>
-                    <p className={styles.authError}>{state.errors.email}</p>
-                </div>}
-
-                <div className={styles.wrapper}>
-                    <input 
-                        type="checkbox" 
-                        id="agree" 
-                        name="agree"
-                        checked={agree}
-                        onChange={handleCheckboxChange}
-                        className={styles.checkbox}
-                    />
-                    <label htmlFor="agree" className={styles.checkbox}>
-                        Регистрируясь, вы соглашаетесь с{" "}
-                        <Link 
-                            href="/privacy" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className={styles.link}
+                        <label htmlFor="agree" className={styles.checkbox}>
+                            Регистрируясь, вы соглашаетесь с{" "}
+                            <Link 
+                                href="/privacy" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className={styles.link}
+                            >
+                                политикой конфиденциальности
+                            </Link>
+                            {" и "}
+                            <Link 
+                                href="/agreement" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className={styles.link}
+                            >
+                                пользовательским соглашением
+                            </Link>
+                        </label>
+                    </div>
+                    {state?.message && 
+                    <div className={styles.wrapper}>
+                        <p className={styles.authError}>{state.message}</p>
+                    </div>}
+                    <div className={styles.wrapper} >
+                        <button
+                            disabled={isPending || !agree} 
+                            type="submit"
+                            className={agree ? styles.submitButton : styles.submitButtonDisabled}
                         >
-                            политикой конфиденциальности
-                        </Link>
-                        {" и "}
-                        <Link 
-                            href="/agreement" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className={styles.link}
-                        >
-                            пользовательским соглашением
-                        </Link>
-                    </label>
-                </div>
-                {state?.message && 
-                <div className={styles.wrapper}>
-                    <p className={styles.authError}>{state.message}</p>
-                </div>}
-                <div className={styles.wrapper} >
-                    <button
-                        disabled={isPending || !agree} 
-                        type="submit"
-                        className={agree ? styles.submitButton : styles.submitButtonDisabled}
-                    >
-                        подтвердить
-                    </button>
-                </div>
-            </form>            
+                            подтвердить
+                        </button>
+                    </div>
+                </form>            
+            </main>
         </div>
     )
 }
