@@ -11,7 +11,7 @@ import {
 } from "../vectors"
 import { updatePasswordAction } from "../../actions/profile"
 
-export const PasswordForm = ({ password }: { password: string}) => {
+export const PasswordForm = ({ password }: { password: string | undefined }) => {
     
     const [isOldPasswordHidden, setIsOldPasswordHidden] = useState(true)
     const [isNewPasswordHidden, setIsNewPasswordHidden] = useState(true)
@@ -86,9 +86,7 @@ export const PasswordForm = ({ password }: { password: string}) => {
                                 className={styles.eyeButton}
                             >
                                 {isOldPasswordHidden ?
-                                // <div className={styles.eyeSVG}>
-                                    <EyeSVG />  :
-                                // </div> :
+                                <EyeSVG />  :
                                 <ClosedEyeSVG />}
                             </button>
                         </div>
