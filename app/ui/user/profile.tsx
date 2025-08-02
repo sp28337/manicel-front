@@ -23,7 +23,7 @@ export function Profile({ userProfile }: { userProfile: UserProfileSchema }) {
                             <UsernameForm username={userProfile.username} />
                             <NameForm name={userProfile.name ? userProfile.name : ""}/>
                             <EmailForm email={userProfile.email} />
-                            <PasswordForm password={userProfile.password} />
+                            <PasswordForm password={userProfile.password ? userProfile.password : undefined} />
                         </div>
                     </div>
                     <div className={styles.settingsPanel}>
