@@ -1,0 +1,36 @@
+.questions {
+    display: flex;
+    color: var(--text-grey);
+    font-size: clamp(16px, 2.08vw, 18px);
+    align-items: center;
+    gap: 5px;
+    width: max-content;
+}
+
+.icon {
+    transition: 0.2s;
+    fill: var(--text-grey);
+}
+
+.questions:hover {
+    color: var(--text-black);
+    text-decoration: underline solid var(--text-black);;
+
+    .icon {
+        transform: scale(1.2);
+        fill: var(--text-black);;
+    }
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: max-content;
+}
+
+@media(max-width: 522px) {
+    .questions {
+        font-size: clamp(16px, 4vw, 20px);
+    }
+}

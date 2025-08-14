@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "jose": "^6.0.11",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "use-debounce": "^10.0.4"
+    "server-only": "^0.0.1",
+    "use-debounce": "^10.0.4",
+    "zod": "^3.25.41"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

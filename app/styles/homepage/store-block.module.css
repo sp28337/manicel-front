@@ -1,0 +1,79 @@
+.wrapper {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+.h2 {
+    font-weight: 500;
+    font-size: clamp(24px, 4vw, 32px);
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-black);
+    margin: 0 0 20px;
+}
+
+.p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.07em;
+    text-align: center;
+    color: var(--text-grey);
+    margin: 0 auto;
+    width: 100%;
+    text-transform: uppercase;
+    height: 100%;
+    align-content: center;
+    font-size: clamp(14px, 2vw, 16px);
+}
+
+.wb {
+    color: var(--wb-store-hover);
+    text-decoration: underline solid var(--wb-store-hover);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+.wbStore {
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+    border-radius: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: var(--white);
+    align-items: center;
+    background-color: var(--wb-store);
+    height: 60px;
+    max-width: 340px;
+    margin: 20px auto;
+    font-weight: 700;
+}
+
+.wbStore:hover {
+    background-color: var(--wb-store-hover);
+}
+
+@media (max-width: 610px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .text {
+        background: var(--background);
+        border-radius: 20px;
+        padding: 15px 25px;
+    }
+
+    .wbStore {
+        max-width: initial;
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+}

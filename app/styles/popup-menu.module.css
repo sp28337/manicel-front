@@ -1,54 +1,86 @@
+@keyframes inputOn {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
 .popupMenu {
     width: 100%;
     gap: 30px;
     position: fixed;
     top: 0;
-    left: 0;
+    margin: 105px 0 0 0;
+    right: 0;
     z-index: 100;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    backdrop-filter: saturate(120%) blur(3px);
+    justify-content: right;
     width: 100vw;
     height: 100vh;
+    transition: 1s;
 }
 
 .burger {
     display: none;
-    border: none;
-    background-color: transparent;
 }
 
 .links {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    color: #000;
-    padding: 50px 20px 50px 50px;
-    width: 200px;
-    height: 400px;
-    background-color: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
+    color: var(--text-black);
+    color: var(--text-grey);
+    height: 100dvh;
+    border-left: 0.2px solid var(--border);
+    background-color: var(--search-list-background);
+    -webkit-backdrop-filter: saturate(150%) blur(5px);
+    backdrop-filter: blur(5px);
+    animation: inputOn 0.5s;
 }
 
 .navLink {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     letter-spacing: 1px;
     text-align: left;
-    font-size: 10px;
-    transition: 
-        background-color 0.3s ease,
-        transform 0.3s ease, 
-        color 0.3s ease;
+    font-size: 14px;
+    border-bottom: 0.2px solid var(--border);
+    transition: 0.3s;
+    padding: 15px 20px;
+    width: 215px;
 }
 
+.icon {
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
 
 .navLink:hover {
-    transform: scale(1.2);
+    .icon{
+        transition: 0.3s;
+        scale: 1.2;
+    }
 }
 
 @media (max-width: 768px) {
     .burger {
-        display: block;
+        display: flex;
+        border: none;
+        background-color: transparent;
+        align-items: center;
+        transition: 0.2s;
+        font-size: 16px;
+        font-weight: 700;
+        display: flex;
+        background: var(--button-mint);
+        height: 45px;
+        border-radius: 20px;
+        min-width: 60px;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 769px) {
+    .links {
+        display: none;
     }
 }

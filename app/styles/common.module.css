@@ -5,9 +5,12 @@
     position: relative;
 }
 
-.wbLogo {
-    width: 170px;
-    height: auto;
+.h2Hidden {
+    display: none;
+}
+
+.pHidden {
+    display: none;
 }
 
 @media (max-width: 1248px) {

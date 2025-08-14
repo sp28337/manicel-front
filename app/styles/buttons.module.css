@@ -1,9 +1,33 @@
 .closeSearchListButton {
     position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(300%, -50%)
-    /* bottom: -30px; */
-    /* left: 50%; */
-    
+    bottom: -30px;
+    left: 50%;
+    padding: 15px;
+    transform: translate(-50%, 50%);
+}
+
+.button {
+    transition: 1s;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--text-gray);
+    letter-spacing: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.button:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.2);
+    .icon{
+        transition: 0.2s;
+        scale: 1.2;
+    }
 }

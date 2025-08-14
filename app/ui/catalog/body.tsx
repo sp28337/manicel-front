@@ -1,10 +1,12 @@
-import { WBLogo } from "../logotips"
-import styles from "../../styles/catalog.module.css"
-import commonStyles from "../../styles/common.module.css"
+
+import styles from "../../styles/catalog/body.module.css"
 import Link from "next/link"
 import Image from "next/image"
 import { CatalogProductsSchema } from "../../lib/definitions"
-import { EcoFriendlySVG, WithLoveSVG, NoAnimalTestingSVG, ReviewsStarsSVG } from "../vectors"
+import { 
+    ReviewsStarsSVG,
+    QuestionSVG
+ } from "../vectors"
 import { catalogImages } from "@/app/lib/images"
 
 export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] }) => {
@@ -12,22 +14,22 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
     const images = catalogImages
     
     const backgroundStyles: { [key: number]: string } = {
-        1: styles.cardItem1,
-        2: styles.cardItem2,
-        3: styles.cardItem3,
-        4: styles.cardItem4,
-        5: styles.cardItem5,
-        6: styles.cardItem6,
-        7: styles.cardItem7,
-        8: styles.cardItem8,
-        9: styles.cardItem9,
-        10: styles.cardItem10,
-        11: styles.cardItem11,
-        12: styles.cardItem12,
-        13: styles.cardItem13,
-        14: styles.cardItem14,
-        15: styles.cardItem15,
-        16: styles.cardItem16,
+        1: styles.item1,
+        2: styles.item2,
+        3: styles.item3,
+        4: styles.item4,
+        5: styles.item5,
+        6: styles.item6,
+        7: styles.item7,
+        8: styles.item8,
+        9: styles.item9,
+        10: styles.item10,
+        11: styles.item11,
+        12: styles.item12,
+        13: styles.item13,
+        14: styles.item14,
+        15: styles.item15,
+        16: styles.item16,
     }
 
     const gradientStyles: { [key: number]: string } = {
@@ -49,86 +51,76 @@ export const BodyCatalog = ({ products }: { products: CatalogProductsSchema[] })
         16: styles.gradient16,
     }
 
-    const chooseClassName = (id: number) => {
+    const setStyles = (id: number) => {
         if ([3, 6, 9].includes(id)) {
-            return styles.pocketImg
+            return styles.pocketLink
+        } else if (id === 8) {
+            return styles.peachLink
         } else {
-            return styles.scrabImg
+            return styles.link
         }
     }
 
     return (
-        <div className={`${commonStyles.container} ${styles.bodyWrapper}`}>
-            <div className={styles.urlPath}>
-                <Link className={styles.pathLink} href="/">главная </Link>
-                &gt;
-                <Link className={styles.activePath} href="/catalog"> каталог </Link>
-            </div>
-            <p className={styles.description}>Скрабы для тела SALT BODY SCRUB от российского бренда MANICEL — это эффективное средство для очищения и ухода за кожей рук, ног, живота, ягодиц и других участков тела. Скраб мягко отшелушивает ороговевшие клетки, стимулирует обновление кожи и придаёт ей здоровый сияющий вид.</p>
-            <h1 className={styles.h1Body}>каталог</h1>
-            <ul className={styles.catalogList}>
-                {products && products.map((product, index) => (
-                    <div key={index} className={`${styles.cardItem} ${backgroundStyles[product.id]}`}>
-                        <div className={`${styles.gradient} ${gradientStyles[product.id]}`}></div>
-                            <Link className={styles.cardLink} href={`/catalog/${product.id}`}>
-                                {images[product.id] && <Image 
-                                    className={`${styles.img} ${chooseClassName(product.id)}`} 
-                                    src={images[product.id]} 
-                                    alt={"scrub image"}
-                                    sizes="100vw"
-                                    width={[3, 6, 9].includes(product.id) ? 180 : 210}
-                                />}
+        <main className={styles.catalogWrapper}>
+            <section>
+                <h2 className={styles.h2}>
+                    каталог
+                </h2>
+                <div className={styles.list}>
+                    {products && products.map((product) => (
+                        <article 
+                            key={product.id} 
+                            className={`${styles.item} ${backgroundStyles[product.id]}`}
+                        >
+                            <Link  
+                                href={`/catalog/${product.id}`} 
+                                className={`${styles.gradient} ${gradientStyles[product.id]}`}
+                            >
+
+                            </Link>
+                            <Link 
+                                className={setStyles(product.id)} 
+                                href={`/catalog/${product.id}`}
+                            >
+                                {
+                                    images[product.id] && 
+                                    <Image 
+                                        className={`${styles.img}`} 
+                                        src={images[product.id]} 
+                                        alt={"фотография продукта на прозрачном фоне с ингридиентами"}
+                                        sizes="100vw"
+                                        width={210}
+                                    />
+                                }
                             </Link>
                             {product.name_ru && 
                                 <>  
-                                    <Link className={styles.cardContent} href={`/catalog/${product.id}`}>
-                                        {product.name_ru && <h3 className={styles.h3Body}>{product.name_ru}</h3>}
-                                        <span className={styles.descScrab}>{product.type}</span>
-                                        <span>
-                                            <ReviewsStarsSVG />
-                                        </span>
-                                        {/* <div className={styles.price}>{"357 P"}<span className={styles.oldPrice}>{"675 P"}</span></div> */}
-                                    </Link>
-                                    <div className={styles.infoButtonWrapper}>                            
-                                        <Link 
-                                            className={styles.infoButton} 
-                                            href={`https://www.wildberries.ru/catalog/${product.articule.toString()}/detail.aspx`}
-                                        >
-                                            КУПИТЬ
-                                        </Link>
-                                    </div>  
+                                    <div className={styles.productCard}>
+                                        {product.name_ru && 
+                                        <h3 className={styles.h3}>
+                                            {product.name_ru}
+                                        </h3>}
+                                        <p className={styles.p}>
+                                            {product.type}
+                                        </p>
+                                        <div className={styles.svgWrapper}>
+                                            <ReviewsStarsSVG articule={product.articule}/>
+                                            <QuestionSVG articule={product.articule} />
+                                        </div>
+                                    </div>
+                                    <a
+                                        className={styles.buyButton} 
+                                        href={`https://www.wildberries.ru/catalog/${product.articule.toString()}/detail.aspx`}
+                                    >
+                                        купить
+                                    </a>
                                 </>
                             }
-                        
-                    </div>
-
-                ))}
-            </ul>
-            <div className={styles.bottomWrapper}>
-                <div className={styles.iconsWrapper}>
-                    <div className={styles.iconWrapper}>
-                        <EcoFriendlySVG  />
-                        <span className={styles.iconDescribtion}>
-                            eco friendly
-                        </span>
-                    </div>
-                    <div className={styles.iconWrapper}>
-                        <WithLoveSVG  />
-                        <span className={styles.iconDescribtion}>
-                            made with love
-                        </span>
-                    </div>
-                    <div className={styles.iconWrapper}>
-                        <NoAnimalTestingSVG  />
-                        <span className={styles.iconDescribtion}>
-                            cruelty free
-                        </span>
-                    </div>
+                        </article>
+                    ))}
                 </div>
-                <div className={styles.partners}>
-                    <WBLogo />
-                </div>
-            </div>
-        </div>
-    );
+            </section>
+        </main>
+    )
 }

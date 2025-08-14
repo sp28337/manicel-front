@@ -1,51 +1,37 @@
+.footerWrapper {
+    border-top: 0.2px solid rgba(0, 0, 0, 0.1);
+}
+
 .footer {
-    margin-bottom: 5% !important;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.contactUsButtonWrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.contactUsButton {
-    display: flex;
-    justify-content: center;
-    border: 1px solid rgba(0, 0, 0, 0.9);
-    border-radius: 20px;
-    width: 223px;
-    height: 42px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.9);
-    align-items: center;    
-    transition: 
-        background-color 0.3s ease,
-        transform 0.3s ease, 
-        color 0.3s ease;
-}
-
-.contactUsButton:hover {
-    transform: scale(1.05);
+    background-color: #fff;
 }
 
 .footerNav {
     display: flex;
     width: 73%;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+}
+
+.navigation {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
 }
 
 .h3 {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-weight: 600;
-    font-size: 12px;
+    font-size: clamp(14px, 2.08vw, 16px);
     line-height: 110%;
     text-transform: uppercase;
+    color: rgba(0, 0, 0, .8);
 }
 
 .linksWrapper {
@@ -53,49 +39,57 @@
     flex-direction: column;
     gap: 20px;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 14px;
+    font-size: clamp(12px, 3vw, 14px);
     line-height: 110%;
     text-transform: uppercase;
 }
 
 .footerLink {
-    transition: 
-        background-color 0.3s ease,
-        transform 0.3s ease, 
-        color 0.3s ease;
+    transition: 0.3s
 }
 
 .footerLink:hover {
-    transform: scale(1.05);
+    text-decoration: underline solid rgba(0, 0, 0, 0.8);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
 }
 
-
-.email {
-    text-transform: lowercase;
+.partnersWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
 }
 
-.address {
-    font-style: normal;
-    text-transform: capitalize;
+.wbLogo {
+    width: 170px;
+    height: auto;
 }
 
 @media (max-width: 1024px) {
     .footer {
         display: block;
     }
-    
-    .logoWrapper {
-        text-align: center;
-        margin-bottom: 20px;
-    }
 
     .footerNav {
         width: 100%;
         justify-content: space-between;
-        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 900px) { 
+    .documents {
+        text-align: right;
     }
 
-    .contactsWrapper {
-        text-align: right;
+    .navigation {
+        width: 100%;
+    }
+
+    .footerNav {
+        flex-direction: column;
+        gap: 50px;
     }
 }

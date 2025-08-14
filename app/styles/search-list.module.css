@@ -1,52 +1,56 @@
+@keyframes search {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes searchList {
+    0% { opacity: 0;  transform: translateY(-100%);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+.background {
+    position: fixed;
+    top: 115px;
+    animation: search 0.7s;
+    z-index: 99;
+    background-color: var(--search-list-background);
+    backdrop-filter: blur(5px);
+    width: 100dvw;
+    height: 80%;
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);    
+}
+
 .searchListWrapper {
     position: fixed;
-    transform: translate(-50%);
-    height: auto;
-    width: 80%;
-    max-width: 1024px;
-    left: 50%;
-    top: 0;
-    margin-top: 120px;
-    z-index: 100;
+    animation: search 0.7s;
+    z-index: 99;
+    width: 100dvw;
+    top: 115px;
 }
 
 .searchList {
+    animation: searchList 0.6s;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    height: max-content;
     border-radius: 10px;
-    backdrop-filter: saturate(110%) blur(5px);
-    background-color: #fffffff0;
 }
 
 .searchRow {
     position: relative;
-    padding: 0 20px;
-    margin: 15px;
     display: flex;
-    border-radius: 10px;
+    min-width: 550px;
     gap: 30px;
     justify-content: space-between;
     height: 70px;
+    border-bottom: 0.2px solid var(--border);
 }
 
 .link {
     display: flex;
     gap: 15px;
+    flex-grow: 1;
 }
-
-.rowBackground {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    border-radius: 10px;
-    background: linear-gradient(180deg, transparent 0%, rgba(236, 236, 236, 0.5) 100%);
-    height: 70px;
-}
-
 
 .imgWrapper {
     align-items: center;
@@ -54,158 +58,92 @@
     display: flex;
     width: 120px;
     height: auto;
+    transition: 0.3s;
+    min-width: 80px;
+}
+
+.imgWrapper:hover {
+    cursor: pointer;
+    transform: scale(1.1)
 }
 
 .image {
     height: auto;
+    width: 100%;
 }
 
 .name {
-    width: 400px;
     display: flex;
     align-items: center;
     font-weight: 500;
     font-size: 14px;
-    color: #000;
+    color: var(--black);
     text-transform: uppercase;
+    transition: 0.3s;
 }
 
-.reviews {
-    display: flex;
-    align-items: center;
+.name:hover {
+    text-decoration: underline solid var(--text-black);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    .imgWrapper {
+        transform: scale(1.1);
+    }
 }
 
 .buttonWrapper {
     display: flex;
     align-items: center;
     justify-content: right;
+    transition: 0.3s;
+    margin-right: 10px;
 }
 
-.button{
-    backdrop-filter: blur(5.0px);
-    background-color: transparent;
-    bottom: -21px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid #CB11AB;
-    border-radius: 20px;
-    width: 130px;
-    height: 37px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 12px;
-    text-transform: uppercase;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.9);
-    align-items: center;    
+.buttonWrapper:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
-
 
 @media (max-width: 1024px) {
-    .name {
-        max-width: 200px;
-    }
-
     .searchRow {
         gap: 15px;
     }
 }
 
 @media (max-width: 768px) {
-    .searchListWrapper {
+    .searchList {
+        gap: 0px;
         width: initial;
     }
 
-    .searchList {
-        gap: 0px;
+    .background {
+        top: 105px;
     }
 
-    .button {
-        width: 110px;
-        height: 33px;
+    .searchListWrapper {
+        top: 105px;
     }
 
     .name {
         font-size: 12px;
     }
-    
-    .searchRow {
-        padding: 0 10px;
-    }
 
-    .rowBackground {
-        height: 50px;
-        top: 20%;
+    .searchRow {
+        gap: 0px;
+        min-width: initial;
     }
 
     .imgWrapper {
         width: 100px;
-    }
-
-    .setsImg {
-        width: 100px;
-    }
-    
-    .pocketImg {
-        width: 80px;
-    }
-    
-    .scrabImg {
-        width: 70px;
-    }
-
-}
-
-@media (max-width: 610px) {
-
-    .searchListWrapper {
-        width: 90%;
-    }
-
-    .imgWrapper {
-        height: auto;
-    }
-
-    .button {
-        height: 45%;
-    }
-
-    .name {
-        max-width: initial;
-        width: initial;
-    }
-
-    .reviews {
-        display: none;
-    }
-
-    .searchRow {
-        margin: 5px;
     }
 }
 
 @media (max-width: 475px) {
-    .link {
-        gap: 0px;
-    }
-    
     .imgWrapper {
         width: 80px;
     }
 
-    .setsImg {
-        width: 80px;
-    }
-    
-    .pocketImg {
-        width: 60px;
-    }
-    
-    .scrabImg {
-        width: 50px;
-    }
-
-    .name {
-        font-size: 10px;
+    .searchRow {
+        height: 60px;
     }
 }

@@ -1,10 +1,6 @@
-import Image from "next/image"
-import Link from "next/link"
-import styles from "../../styles/product-body.module.css"
+import styles from "../../styles/product/body.module.css"
 import commonStyles from "../../styles/common.module.css"
-import { Description } from "./description"
-import { ProductImages } from "./product-images"
-import howToUseImg from "@/public/all-800w.png"
+import { ImagesSection } from "./images-section"
 import { ProductSchema } from "../../lib/definitions"
 import { OneSVG, TwoSVG, MarkSVG } from "../vectors"
 
@@ -13,147 +9,142 @@ export const Body = (props: { product: ProductSchema }) => {
     const { product } = props
 
     return (
-        <div className={`${styles.bodyWrapper} ${commonStyles.container}`}>
-            
-            <div className={styles.urlPath}>
-                <Link className={styles.pathLink} href="/">главная </Link>
-                &gt;
-                <Link className={styles.pathLink} href="/catalog"> каталог </Link>
-                &gt;
-                <div className={styles.activePath}> {product.name}</div>
-            </div>
-            <Description product={props.product} />
-
-            <hr className={styles.hr}/>
-
-            <div className={styles.productCard}>
-                <ProductImages id={props.product.id}/>
-                <div className={styles.infoWrapper}>
-                    
-                    <div className={styles.infoLine}>
-                        <h3 className={styles.h3}>состав:</h3>
-                        <hr className={styles.hrInfoLine}/>
-                        <ul className={styles.infoList}>
-                            {
-                                product.flavor.ingredients.map((
-                                    ingredient: {name: string, description: string}, 
-                                    index: number
-                                ) => (<li className={styles.infoItem} key={index}>
-                                        {ingredient.name}
-                                      </li>
-                                      ))
-                            }
-                        </ul>
-                    </div>
-
-                    <div className={styles.infoLine}>
-                        <h3 className={styles.h3}>действие:</h3>
-                        <hr className={styles.hrInfoLine}/>
-                        <ul className={styles.infoList}>
-                            <li className={styles.infoItem}>
-                                против растяжек
-                            </li>
-                            <li className={styles.infoItem}>
-                                коррекция фигуры
-                            </li>
-                            <li className={styles.infoItem}>
-                                отшелушивание
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className={styles.infoLine}>
-                        <h3 className={styles.h3}>аромат:</h3>
-                        <hr className={styles.hrInfoLine}/>
-                        <span className={styles.infoItem}>{product.flavor.name}</span>
-                    </div>
-
-                    <div className={styles.infoLine}>
-                        <h3 className={styles.h3}>объем товара:</h3>
-                        <hr className={styles.hrInfoLine}/>
-                        <span className={styles.infoItem}>{`${product.volumes[0].volume}`}</span>
-                    </div>
-
-                    <div className={styles.infoLine}>
-                        <h3 className={styles.h3}>комплектация:</h3>
-                        <hr className={styles.hrInfoLine}/>
-                        <span className={styles.infoItem}>{`${product.complectation.name}`}</span>
-                    </div>
-
-                    <div>
-                        <div className={styles.infoLine}>
-                            <h3 className={styles.h3}>срок годности:</h3>
-                            <hr className={styles.hrInfoLine}/>
-                            <span className={styles.infoItem}>{`${product.expiration_date.before_opening}`}</span>
-                        </div>
-                        <p className={styles.pInfo}>рекомендованный срок хранения и использования после вскрытия упаковки - {`${props.product.expiration_date.after_opening}`}</p>
-                    </div>
-
-                    <div className={styles.bottom}>
-                        <a 
-                            href={`https://www.wildberries.ru/catalog/${props.product.articule.toString()}/detail.aspx`} 
-                            className={styles.chartButton}
-                            target="_blank"
-                        >
-                            купить на wb
-                        </a>
-                    </div>
-                    
+        <main className={commonStyles.container}>
+            <section className={styles.descriptionSection}>
+                <h2 className={styles.h2}>описание</h2>
+                <div className={styles.pWrapper}>
+                    <p className={styles.p}>
+                        <span className={styles.saltBodyScrub}>&emsp;salt body scrub</span> - {props.product.description}
+                    </p>
+                    <br/>
+                    <p className={styles.p}>
+                        &emsp;{props.product.flavor.description}
+                    </p>
                 </div>
-            </div>
-            <hr className={styles.hr}/>
-            {product.attention && 
-                <>
-                    <div className={styles.attentionWrapper}>
-                        <h3 className={styles.h3Attention}>внимание</h3>
-                        <p className={styles.pAttention}>
-                            {product.attention}
+            </section>
+            
+            <hr/>
+
+            <ImagesSection id={product.id}/>
+
+            <hr/>
+
+            <section className={styles.infoSection}>
+                <section className={styles.infoLine}>
+                    <h3 className={styles.h3}>
+                        состав:
+                    </h3>
+                    <ul className={styles.ingredientsWrapper}>
+                        <div className={styles.ingredients}>
+                            {product.flavor.ingredients.map((
+                                ingredient: {name: string, description: string}, 
+                                index: number
+                            ) => (
+                                <li className={styles.elem} key={index}>
+                                    {ingredient.name}
+                                </li>
+                            ))}
+                        </div>
+                    </ul>
+                </section>
+
+                <section className={styles.infoLine}>
+                    <h3 className={styles.h3}>действие:</h3>
+                    <ul className={styles.ingredientsWrapper}>
+                        <li className={styles.elem}>
+                            против растяжек
+                        </li>
+                        <li className={styles.elem}>
+                            коррекция фигуры
+                        </li>
+                        <li className={styles.elem}>
+                            отшелушивание
+                        </li>
+                    </ul>
+                </section>
+
+                <section className={styles.infoLine}>
+                    <h3 className={styles.h3}>аромат:</h3>
+                    <div className={styles.ingredientsWrapper}>
+                        <span className={styles.elem}>{product.flavor.name}</span>
+                    </div>
+                </section>
+
+                <section className={styles.infoLine}>
+                    <h3 className={styles.h3}>объем товара:</h3>
+                    <div className={styles.ingredientsWrapper}>
+                        <span className={styles.elem}>{product.volumes[0].volume}</span>
+                    </div>
+                </section>
+
+                <section className={styles.infoLine}>
+                    <h3 className={styles.h3}>комплект:</h3>
+                    <div className={styles.ingredientsWrapper}>
+                        <span className={styles.elem}>{product.complectation.name}</span>
+                    </div>
+                </section>
+
+                <section>
+                    <div className={styles.infoLine}>
+                        <h3 className={styles.h3}>срок годности:</h3>
+                        <div className={styles.ingredientsWrapper}>
+                            <span className={styles.elem}>{product.expiration_date.before_opening}</span>
+                        </div>
+                        <p className={styles.pInfo}>
+                            рекомендованный срок хранения и использования после вскрытия 
+                            упаковки - {product.expiration_date.after_opening}
                         </p>
                     </div>
-                    <hr className={styles.hr}/>
-                </>
+                </section>
+            </section>
+
+            <hr/>
+
+            {product.attention && 
+                <section>
+                    <h2 className={styles.h2}>внимание</h2>
+                    <p className={styles.pAttention}>
+                        {product.attention}
+                    </p>
+                    <hr/>
+                </section>
             }
-            <div className={styles.howToUse}>
-                <div className={styles.howToUseText}>
-                    <h2 className={styles.h2}>как использовать</h2>
-                    <div className={styles.howToUseDescription}>
-                        <h4 className={styles.h4}>Используйте антицеллюлитный скраб во время душа, похода в баню или сауну</h4>
-                        <div className={`${styles.howToUseDescLine}`}>
-                            <div className={styles.howToUseDiv}>
-                                <OneSVG />
-                            </div>
-                            <p className={styles.howToUseP}>
-                                Массажными движениями нанесите скраб на распаренную очищенную кожу, уделяя особое внимание “проблемным зонам”
-                            </p>
+            
+            <section className={styles.usageSection}>             
+                <h2 className={styles.h2}>как использовать</h2>
+                <section className={styles.usageBackground}>
+                    <p className={styles.pUsage}>
+                        Используйте антицеллюлитный скраб во время душа, похода в баню или сауну
+                    </p>
+                    <div className={styles.usageLine}>
+                        <div className={styles.usageIcon}>
+                            <OneSVG />
                         </div>
-                        <div className={styles.howToUseDescLine}>
-                            <div className={styles.howToUseDiv}>
-                                <TwoSVG />
-                            </div>
-                            <p className={styles.howToUseP}>
-                                Оставьте на оставьте на {`${[1, 11, 12].includes(props.product.id) ? "1-2 минуты" : "3-5 минут"}`}, затем смойте теплой водой 
-                            </p>
-                        </div>
-                        <div className={styles.howToUseDescLine}>
-                            <div className={styles.howToUseDiv}>
-                                <MarkSVG />
-                            </div>
-                            <p className={styles.howToUseP}>
-                                Не используйте соляной скраб ежедневно. Не подходит для проблемной и поврежденной кожи
-                            </p>
-                        </div>
+                        <p className={styles.pUsageLine}>
+                            Массажными движениями нанесите скраб на распаренную очищенную кожу, 
+                            уделяя особое внимание “проблемным зонам”
+                        </p>
                     </div>
-                </div>
-                <div className={styles.howToUseImgWrapper}>
-                    <Image 
-                        className={styles.howToUseImage}
-                        src={howToUseImg} 
-                        alt="how to use scrub"
-                        width={450}
-                        sizes="100vw"
-                    />
-                </div>
-            </div>
-        </div>
+                    <div className={styles.usageLine}>
+                        <div className={styles.usageIcon}>
+                            <TwoSVG />
+                        </div>
+                        <p className={styles.pUsageLine}>
+                            Оставьте на {`${[1, 11, 12].includes(product.id) ? 
+                            "1-2 минуты" : "3-5 минут"}`}, затем смойте теплой водой 
+                        </p>
+                    </div>
+                    <div className={styles.usageLine}>
+                        <div className={styles.usageIcon}>
+                            <MarkSVG />
+                        </div>
+                        <p className={styles.pUsageLine}>
+                            Не используйте соляной скраб ежедневно. 
+                            Не подходит для проблемной и поврежденной кожи
+                        </p>
+                    </div>
+                </section>
+            </section>
+        </main>
     )
 }

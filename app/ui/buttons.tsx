@@ -2,6 +2,8 @@
 
 import styles from "../styles/buttons.module.css"
 import { usePathname, useRouter } from "next/navigation"
+import { logout } from "../actions/auth"
+import { LogoutSVG, Settings2SVG } from "./vectors"
 
 export const CloseSearchListButton = () => {
     
@@ -11,7 +13,7 @@ export const CloseSearchListButton = () => {
     return (
         <button 
             className={styles.closeSearchListButton}
-            onClick={() => {replace(`${pathname}`)}}
+            onClick={() => {replace(`${pathname}`, { scroll: false })}}
         >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 1.4L14.6 0L8 6.6L1.4 0L0 1.4L6.6 8L0 14.6L1.4 16L8 9.4L14.6 16L16 14.6L9.4 8L16 1.4Z" fill="black"/>
@@ -19,3 +21,36 @@ export const CloseSearchListButton = () => {
         </button> 
     )
 }
+
+// Profile buttons
+
+export const LogoutButton = () => {
+    
+    return (
+        <>
+            <button 
+                onClick={() => {logout()}}
+                className={styles.button}
+            >
+                <span className={styles.icon}>
+                    <LogoutSVG />
+                </span>
+                выход
+            </button>
+        </>
+    )
+}
+
+export const ProfileSettingsButton = () => {
+    
+    return (
+        <button className={styles.button} >
+            <span className={styles.icon}>
+                <Settings2SVG />
+            </span>
+            настройки
+        </button>
+    )
+}
+
+//

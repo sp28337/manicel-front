@@ -1,0 +1,251 @@
+.descriptionSection {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.h2 {
+    font-weight: 500;
+    font-size: clamp(18px, 2vw, 22px);
+    text-transform: uppercase;
+    color: var(--text-black);
+    text-align: center;
+    text-decoration: underline solid var(--text-black);
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
+}
+
+.pWrapper {
+    padding: 4%;
+    font-weight: 500;
+    color: var(--text-grey);
+    background: var(--background);
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    transition: 0.3s;
+}
+
+.p {
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0px;
+    border-radius: 20px;
+    font-size: clamp(14px, 2vw, 18px);
+}
+
+.saltBodyScrub {
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 150%;
+    color: var(--text-black);
+}
+
+.imagesSection {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    overflow: scroll;
+}
+
+.smallImage {
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    border-radius: 200px;
+}
+
+.bigImage {
+    width: 80%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+.infoSection {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.infoLine {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.h3 {
+    font-weight: 500;
+    font-size: clamp(18px, 2vw, 22px);
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    color: var(--text-black);
+    align-content: center;
+}
+
+.ingredientsWrapper {
+    width: 100%;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 5px;
+    background: var(--text-blocks-background);
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.ingredients {
+    width: 100%;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.elem {
+    letter-spacing: 0px;
+    height: max-content;
+    white-space: nowrap;
+    padding: 0.3dvh 1.2dvh;
+    background: var(--ingredient-background);
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: clamp(14px, 2vw, 18px);
+    text-align: right;
+    color: var(--text-grey);
+    align-content: center;
+}
+
+.elem:hover {
+    background: var(--ingredient-background-hover);
+}
+
+.h3Attention {
+    -webkit-text-decoration: underline solid var(--text-black);
+    text-decoration: underline solid var(--text-black);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    font-weight: 500;
+    font-size: clamp(18px, 2vw, 22px);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--text-black);
+    justify-content: center;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.pAttention {
+    letter-spacing: 0px;
+    margin-top: 30px;
+    padding: 0.8dvh 1.5dvh;
+    background: var(--button-mint);
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: clamp(14px, 2vw, 18px);
+    color: var(--white);
+    text-transform: lowercase;
+}
+
+.usageSection {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.usageBackground {
+    display: flex;
+    margin: 30px 0;
+    flex-direction: column;
+    gap: 15px;
+    letter-spacing: 0px;
+    padding: 3%;
+    background: var(--text-blocks-background);
+    border-radius: 20px;
+    font-weight: 400;
+    font-size: clamp(14px, 2vw, 18px);
+    color: var(--text-grey);
+    align-content: center;
+}
+
+.usageLine {
+    display: flex;
+    padding: 3%;
+    background: var(--background);
+    border-radius: 20px;
+    gap: 20px;
+}
+
+.usageIcon {
+    align-items: center;
+    width: 41px;
+    text-align: center;
+}
+
+.pUsageLine {
+    font-weight: 400;
+    align-content: center;
+}
+
+.pUsage {
+    text-align: center;
+    font-weight: 500;
+    line-height: 150%;
+    color: #111;
+}
+
+.pInfo {
+    letter-spacing: 0px;
+    padding: 0.8dvh 1.5dvh;
+    background: var(--text-blocks-background);
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: clamp(14px, 2vw, 18px);
+    color: var(--text-grey);
+    align-content: center;
+}
+
+@media (max-width: 1024px) {
+    .productCard {
+        flex-direction: column;
+    }
+
+    .infoLine {
+        gap: 5px;
+    }
+
+    .infoSection {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .bigImage {
+        width: 100%;
+    }
+
+    .smallImage {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 610px) {
+    .bigImage {
+        display: block;
+    }
+
+    .productCard {
+        flex-direction: column;
+    }
+}

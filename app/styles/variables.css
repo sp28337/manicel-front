@@ -1,0 +1,25 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --link: rgba(18, 61, 250, .7);
+    --link-hover: rgba(18, 61, 250, 1);
+    --text-black: rgba(0, 0, 0, .8);
+    --text-grey: rgb(113, 113, 113);
+    --text-grey-hard: rgb(53, 53, 53);
+    --button-mint: rgba(0, 131, 65, .5);
+    --button-mint-hover: rgba(0, 131, 65, .7);
+    --border: rgba(0, 0, 0, .15);
+    --buy-button: rgba(157, 19, 227, .5);
+    --buy-button-hover: rgba(157, 19, 227, .7);
+    --background: rgba(0, 0, 0, .02);
+    --text-blocks-background: rgb(248 241 241 / 50%);
+    --wb-store: rgba(227, 19, 191, 0.5);
+    --wb-store-hover: rgba(227, 19, 191, 0.7);
+    --star-grey: #b6b6b6;
+    --star-yellow: #ffca00;
+    --ingredient-background: rgba(0, 0, 0, .04);
+    --ingredient-background-hover: rgba(0, 0, 0, .07);
+    --search-list-background: rgba(255, 255, 255, 0.7);
+    --form-error: rgba(240, 35, 35, 0.7);
+    --disabled-button: rgb(210, 210, 210);
+}

@@ -1,0 +1,124 @@
+@keyframes inputOn {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.navWrapper {
+    position: fixed;
+    top: 30px;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.backgroundNav {
+    height: 85px;
+    margin: 0;
+    align-content: center;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    border-bottom: 0.2px solid var(--border);
+    background-color: var(--search-list-background);
+    backdrop-filter: saturate(150%) blur(5px);
+}
+
+.nav {
+    position: relative;
+    display: flex;
+    padding-top: 20px !important;
+    padding-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo::before {
+    content: url("../../../public/svg/logo.svg");
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    color: black;
+    
+}
+
+.navLink {
+    font-size: 14px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.navLink:hover {
+    transition: 0.5s;
+    opacity: 1;
+    text-decoration: underline solid var(--text-black);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+.svgWrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-grow: 0.3;
+}
+
+.profileIcon {
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    background: var(--button-mint);
+    height: 45px;
+    border-radius: 20px;
+    color: white;
+    padding: 1% 4%;
+    justify-content: center;
+}
+
+.profileIcon:hover {
+    background: var(--button-mint-hover);
+}
+
+@media (max-width: 1024px) {
+    .logo::before {
+        content: url("../../../public/svg/mc.svg");
+    }
+
+    .links {
+        width: 260px;
+        justify-content: space-around;
+    }    
+
+    .navLink {
+        font-size: 12px;
+    }
+}    
+
+@media (max-width: 768px) {
+    .links {
+        display: none;
+    }    
+
+    .navWrapper {
+        top: 20px;
+    }
+
+    .svgWrapper {
+        height: 42px;
+        margin: 0;
+        justify-content: right;
+        width: 100%;
+    }
+    
+    .profileIcon {
+        display: none;
+    }
+}

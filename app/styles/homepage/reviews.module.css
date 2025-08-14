@@ -1,0 +1,37 @@
+.ratio {
+    font-weight: 500;
+    font-size: clamp(16px, 2.08vw, 18px);
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text-grey);
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: max-content;
+}
+
+.star {
+    fill: var(--star-grey);
+    transition: 0.3s;
+}
+
+.rating:hover {
+
+    .ratio {
+        color: var(--text-black);
+    }
+
+    .star {
+        transform: scale(1.2);
+        fill: var(--star-yellow);
+    }
+}
+
+@media(max-width: 522px) {
+    .ratio {
+        font-size: clamp(16px, 4vw, 20px);
+    }
+}

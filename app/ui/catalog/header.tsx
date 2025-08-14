@@ -1,51 +1,46 @@
 import Image from "next/image"
+import styles from "../../styles/catalog/header.module.css"
 import commonStyles from "../../styles/common.module.css"
-import styles from "../../styles/catalog.module.css"
-import allFront from "@/public/all-front-1200w.png"
-import { WaveSVG } from "../vectors"
-import background from "@/public/salt-body-scrub-500w.png"
+import mainImg from "@/public/catalog-1075w.png"
+import { HeaderSkeleton } from "../skeletons"
 
-export const HeaderCatalog = () => {
+export const Header = () => {
 
     return (
-        <>
-            <header className={styles.headerWrapper}>
-                <Image 
-                    className={styles.saltBodyScrub}
-                    src={background} 
-                    alt="pretty salt body scrab text on background"
-                    quality={0}
-                    sizes="100vw"
-                    priority
-                />
-                <div className={`${commonStyles.container}`}>
-                    <div className={styles.headerBody}>
-                        <div className={styles.textHeader}>
-                            <h1 className={styles.h1Header}>соляные скрабы<br />
-                                <span className={styles.spanHeader}>и наборы для тела</span>
-                            </h1>
-                        </div>
-                        <div className={styles.saltBodyScrubWrapper}>
-                        </div>
-                        <div className={styles.imgWrapper}>
-                            <Image 
-                                className={`${styles.scrub}`}
-                                src={allFront} 
-                                alt="scrab"
-                                width={800}
-                                sizes="100vw"
-                                priority
-                            />
-                        </div>
-                        <div className={styles.bottomText}>
-                            <p>
-                                Наши средства для ухода за кожей состоят на 98% из натуральных ингредиентовна, на 30% из растительных масел, включая в себя натуральные баттеры кокоса, ши, масло миндаля, а также витамин Е.
-                            </p>
-                        </div>
-                    </div>
+        <HeaderSkeleton>
+            <div className={`${commonStyles.container} ${styles.header}`}>
+                <div className={styles.text}>
+                    <h1 className={styles.h1}>
+                        соляные скрабы
+                        <br />
+                        <span className={styles.span}>
+                            и наборы для тела
+                        </span>
+                    </h1>
                 </div>
-            </header>
-            <WaveSVG />
-        </>
-    );
-};
+                <div className={styles.imgWrapper}>
+                    <Image
+                        className={styles.mainImage}
+                        src={mainImg} 
+                        alt="scrab"
+                        width={1000}
+                        sizes="100vw"
+                        priority
+                    />
+                </div>
+                <section className={styles.descriptionWrapper}>
+                    <p className={styles.description}>
+                        <span className={styles.uppercase}>&emsp;&emsp;SALT BODY SCRUB</span> — это 
+                        эффективное средство для очищения и ухода за кожей рук, ног, живота, 
+                        ягодиц и других участков тела, от 
+                        российского бренда <span className={styles.uppercase}>MANICEL</span>
+                    </p>
+                    <p className={styles.description}>
+                        &emsp;&emsp;Скраб мягко отшелушивает ороговевшие клетки, 
+                        стимулирует обновление кожи и придаёт ей здоровый сияющий вид.
+                    </p>
+                </section>
+            </div>
+        </HeaderSkeleton>
+    )
+}
