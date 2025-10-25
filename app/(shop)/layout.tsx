@@ -13,6 +13,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
     return (
         <html lang="en">
+            <meta name="google-site-verification" content="jN8ZNiuOopX9gft1BkrYh3GVkf_7YjACmJdHFCOhgNo" />
             <body className={`${montserrat.className}`}>
                 <TopBar />
                 <Navigation isLoggedIn={loggedIn} />
