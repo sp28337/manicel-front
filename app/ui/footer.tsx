@@ -8,55 +8,6 @@ export const Footer = () => {
         <footer className={styles.footerWrapper}>
             <div className={`${styles.footer} ${commonStyles.container}`}>
                 <nav className={styles.footerNav}>
-                    <div className={styles.navigation}>
-                        <div>
-                            <h3 className={styles.h3}>навигация</h3>
-                            <div className={styles.linksWrapper}>
-                                {/* <Link className={styles.footerLink} href=""> */}
-                                    <p style={{color: "#747474"}}>
-                                        о нас
-                                    </p>
-                                {/* </Link> */}
-                                <Link 
-                                    className={styles.footerLink} 
-                                    href="/catalog"
-                                >
-                                    каталог
-                                </Link>
-                                <a 
-                                    className={styles.footerLink} 
-                                    href="https://www.wildberries.ru/brands/310747490-manicel"
-                                >
-                                    магазин
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div id="documents" className={styles.documents}>
-                            <h3 className={styles.h3}>документы</h3>
-                            <div className={styles.linksWrapper}>
-                                
-                                <Link 
-                                    className={styles.footerLink} 
-                                    href="/agreement#contacts"
-                                >
-                                    контакты
-                                </Link>
-                                <Link 
-                                    className={styles.footerLink}
-                                    href="/agreement"
-                                >
-                                    пользовательское соглашение
-                                </Link>
-                                <Link 
-                                    className={styles.footerLink} 
-                                    href="/privacy"
-                                >
-                                    политика конфиденциальности
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
                     <div className={styles.partnersWrapper}>
                         <Link
                             title="Manicel" 

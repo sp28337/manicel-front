@@ -1,6 +1,5 @@
 import styles from "../../styles/product/body.module.css"
 import commonStyles from "../../styles/common.module.css"
-import { ImagesSection } from "./images-section"
 import { ProductSchema } from "../../lib/definitions"
 import { OneSVG, TwoSVG, MarkSVG } from "../vectors"
 
@@ -23,10 +22,6 @@ export const Body = (props: { product: ProductSchema }) => {
                 </div>
             </section>
             
-            <hr/>
-
-            <ImagesSection id={product.id}/>
-
             <hr/>
 
             <section className={styles.infoSection}>

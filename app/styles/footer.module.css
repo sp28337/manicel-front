@@ -14,7 +14,7 @@
 .footerNav {
     display: flex;
     width: 73%;
-    justify-content: space-between;
+    justify-content: center;
     display: flex;
     width: 100%;
 }
@@ -75,7 +75,6 @@
 
     .footerNav {
         width: 100%;
-        justify-content: space-between;
     }
 }
 
