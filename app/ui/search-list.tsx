@@ -7,13 +7,12 @@ import Link from "next/link"
 import { ShopSVG } from "./vectors"
 import { searchImages } from "../lib/images"
 import { notFound } from "next/navigation"
-import { connection } from 'next/server'
 
 const images = searchImages
 
 
 export async function SearchList({ query }: { query: string }) {
-    await connection()
+
     const products = await getSearchProducts(query)
 
     if (!products) {
