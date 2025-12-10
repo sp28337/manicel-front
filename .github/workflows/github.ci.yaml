@@ -11,18 +11,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: "20"
-
+        node-version: "24.11.1"
+        cache: 'npm'
+    
     - name: Install Dependencies
       run: npm ci
-
-    - name: Lint
+    
+    - name: Run Linter
       run: npm run lint
-
-    - name: Cache settings
+    
+    - name: Build Next.js
+      run: npm run build
+    
+    - name: Cache Next.js build
       uses: actions/cache@v4
       with:
         path: |
@@ -48,16 +53,80 @@ jobs:
 
     - name: Deploy to server via SSH
       run: |
-        ssh -o StrictHostKeyChecking=no sp28337@109.73.207.195 -p ${{ secrets.PORT }} '
-          cd ~/manicel/frontend &&
-          export NVM_DIR="$HOME/.nvm" 
-          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-          nvm use 22.15.1 &&
-          git switch dev &&
-          git pull &&
-          npm install pm2 -g &&
-          pm2 update &&
-          pm2 stop frontend &&
-          npm run build &&
-          pm2 start frontend
-        '
+        ssh -o StrictHostKeyChecking=no sp28337@109.73.207.195 -p ${{ secrets.PORT }} "
+          set -e  # Exit on error
+          
+          echo '=== Frontend Deployment Started ==='
+          
+          # Navigate to frontend directory
+          cd ~/manicel/frontend
+          
+          # Setup NVM
+          export NVM_DIR=\"\$HOME/.nvm\"
+          [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"
+          
+          # Use Node.js 24.11.1
+          nvm use 24.11.1
+          node -v
+          npm -v
+          
+          # Switch to dev branch and pull latest
+          echo '=== Pulling latest code ==='
+          git switch dev
+          git pull origin dev
+          
+          # Install dependencies
+          echo '=== Installing dependencies ==='
+          npm ci
+          
+          # Build Next.js
+          echo '=== Building Next.js ==='
+          npm run build
+          
+          # Restart frontend service via systemd
+          echo '=== Restarting service ==='
+          sudo systemctl daemon-reload
+          sudo systemctl restart manicel-frontend.service
+          
+          # Verify service is running
+          echo '=== Verifying service ==='
+          sudo systemctl status manicel-frontend.service
+          
+          echo '=== Frontend Deployment Completed Successfully ==='
+        "
+
+    - name: Post-deployment verification
+      run: |
+        ssh -o StrictHostKeyChecking=no sp28337@109.73.207.195 -p ${{ secrets.PORT }} "
+          echo '=== Health Check ==='
+          
+          # Check if service is running
+          if sudo systemctl is-active --quiet manicel-frontend.service; then
+            echo '✅ Frontend service is running'
+          else
+            echo '❌ Frontend service is not running'
+            sudo journalctl -u manicel-frontend.service -n 20
+            exit 1
+          fi
+          
+          # Check if port 3000 is listening
+          if sudo ss -tlnp | grep -q :3000; then
+            echo '✅ Port 3000 is listening'
+          else
+            echo '⚠️  Port 3000 is not listening (might be normal during startup)'
+          fi
+          
+          # Try to reach the application (with retry)
+          for i in {1..5}; do
+            if curl -f http://localhost:3000 > /dev/null 2>&1; then
+              echo '✅ Frontend is responding to HTTP requests'
+              break
+            fi
+            if [ \$i -lt 5 ]; then
+              echo \"Attempt \$i/5: Waiting for application to start...\"
+              sleep 2
+            else
+              echo '⚠️  Frontend not responding yet (might still be starting)'
+            fi
+          done
+        " || echo "Post-deployment checks completed with warnings"

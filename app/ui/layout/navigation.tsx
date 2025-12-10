@@ -2,10 +2,10 @@ import Link from "next/link"
 import styles from "../../styles/layout/navigation.module.css"
 import commonStyles from "../../styles/common.module.css"
 import { Search } from "./search"
-import { ProfileSVG } from "../vectors"
 import { PopupMenu } from "../popup"
+import { Suspense } from "react"
 
-export const Navigation = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
+export const Navigation = () => {
     return (
         <nav id="main-header" className={styles.navWrapper}>
             <div className={styles.backgroundNav}></div>
@@ -27,30 +27,13 @@ export const Navigation = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
                     <Link href="/catalog" className={styles.navLink}>
                         <p>КАТАЛОГ</p>
                     </Link>
-                    <Link href="/agreement#contacts" className={styles.navLink}>
-                        <p>КОНТАКТЫ</p>
-                    </Link>
                 </div>
                 <div className={styles.svgWrapper}>
-                    <Search placeholder="Поиск..."/>
-                    { isLoggedIn            ? 
-                    
-                        <Link
-                            href="/user/1"
-                            className={styles.profileIcon} 
-                        >
-                            <ProfileSVG color="#fff" h={20} w={20}/>
-                        </Link>    
-                                            :
-                        <Link
-                            href="/login"
-                            className={styles.profileIcon} 
-                        >
-                            Вход
-                        </Link>
-                    }
+                    <Suspense>
+                        <Search placeholder="Поиск..."/>
+                    </Suspense>
                 </div>
-                <PopupMenu isLoggedIn={isLoggedIn}/>
+                <PopupMenu />
             </div>
         </nav>
     )

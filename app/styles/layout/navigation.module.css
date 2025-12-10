@@ -39,10 +39,8 @@
 
 .links {
     display: flex;
-    justify-content: space-between;
-    width: 300px;
     color: black;
-    
+    gap: 30px;    
 }
 
 .navLink {
@@ -91,11 +89,6 @@
     .logo::before {
         content: url("../../../public/svg/mc.svg");
     }
-
-    .links {
-        width: 260px;
-        justify-content: space-around;
-    }    
 
     .navLink {
         font-size: 12px;

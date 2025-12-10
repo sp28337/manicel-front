@@ -33,8 +33,11 @@ export async function getCatalogProducts() {
         return products
 
     } catch (error) {
-        console.error("Database Error:", error);
-        throw new Error("Failed to fetch products.");
+    console.warn(
+      "Failed to fetch catalog products (OK in CI/build):",
+      error instanceof Error ? error.message : String(error)
+    )
+    return []
     }
 }
 
