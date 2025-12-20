@@ -22,7 +22,7 @@ jobs:
       - name: Set up Node.js (LTS)
         uses: actions/setup-node@v4
         with:
-          node-version: "20.11.1"
+          node-version: "24.11.1"
           cache: "npm"
 
       - name: Install dependencies
@@ -64,7 +64,7 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
             # Use LTS Node
-            nvm use 20
+            nvm use 24
             node -v
             npm -v
 
