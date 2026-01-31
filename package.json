@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "npm@11.7.0",
+  "packageManager": "pnpm@10.28.2+sha512.41872f037ad22f7348e3b1debbaf7e867cfd448f2726d9cf74c08f19507c31d2c8e7a11525b983febc2df640b5438dee6023ebb1f84ed43cc2d654d2bc326264",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,21 +11,21 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "jose": "^6.0.11",
-    "next": "^15.5.8",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "jose": "^6.1.3",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "server-only": "^0.0.1",
-    "use-debounce": "^10.0.4",
-    "zod": "^3.25.41"
+    "use-debounce": "^10.1.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.2.4",
-    "typescript": "^5"
+    "@types/node": "^25.1.0",
+    "@types/react": "^19.2.10",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "16.1.6",
+    "typescript": "^5.9.3"
   }
 }
