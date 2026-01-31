@@ -1,4 +1,4 @@
 {
     "editor.inlayHints.enabled": "on",
-    "editor.hover.enabled": true
+    "editor.hover.enabled": "on"
 }
