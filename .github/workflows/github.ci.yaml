@@ -69,6 +69,7 @@ jobs:
             pnpm -v
 
             echo "📦 Pulling latest code..."
+            export GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519_github -o IdentitiesOnly=yes"
             git fetch origin main
             git checkout main
             git pull origin main
