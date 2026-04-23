@@ -52,6 +52,7 @@ jobs:
           port: ${{ secrets.PORT }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          envs: GIT_TOKEN
           script: |
             set -euo pipefail
 
@@ -69,6 +70,7 @@ jobs:
             pnpm -v
 
             echo "📦 Pulling latest code..."
+            git remote set-url origin "https://${GIT_TOKEN}@github.com/sp28337/manicel-front.git"
             git fetch origin main
             git checkout main
             git pull origin main
@@ -98,3 +100,5 @@ jobs:
             fi
 
             echo "✅ Frontend deployment successful!"
+        env:
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
