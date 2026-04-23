@@ -17,15 +17,15 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
       - name: Set up Node.js (LTS)
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: "24.13.0"
+          node-version: "24"
           cache: "pnpm"
 
       - name: Install dependencies
@@ -43,7 +43,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
@@ -64,7 +64,7 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
             # Use LTS Node
-            nvm use 24.13.0
+            nvm use 24
             node -v
             pnpm -v
 
@@ -81,20 +81,20 @@ jobs:
 
             echo "🔄 Restarting service..."
             sudo systemctl daemon-reload
-            sudo systemctl restart manicel.sp28337.service
+            sudo systemctl restart manicel-front.service
 
             echo "⏳ Waiting for service..."
             sleep 3
 
-            if ! sudo systemctl is-active --quiet manicel-frontend.service; then
-              echo "❌ manicel.sp28337.service failed!"
-              sudo journalctl -u manicel.sp28337.service -n 50 --no-pager
+            if ! sudo systemctl is-active --quiet manicel-front.service; then
+              echo "❌ manicel-front.service failed!"
+              sudo journalctl -u manicel-front.service -n 50 --no-pager
               exit 1
             fi
 
             echo "🏥 Health check..."
             if ! curl -sf http://localhost:3000 > /dev/null 2>&1; then
-              echo "⚠️ manicel.sp28337.service not responding yet (may still be warming up)"
+              echo "⚠️ manicel-front.service not responding yet (may still be warming up)"
             fi
 
             echo "✅ Frontend deployment successful!"

@@ -12,7 +12,6 @@ export async function getSearchProducts(query: string) {
     try {
         const data = await fetch(
             `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/search/search_products?query=${query}`,
-            { cache: "force-cache"}
         )
         const filteredProducts: CatalogProductsSchema[] = await data.json()
         return filteredProducts
@@ -26,8 +25,7 @@ export async function getCatalogProducts() {
     
     try {
         const data = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/products/catalog_products`,
-            { cache: "no-store"}
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/products/catalog_products`
         )
         const products: CatalogProductsSchema[] = await data.json()
         return products
@@ -46,7 +44,6 @@ export async function getBestsellers() {
     try {
         const data = await fetch(
             `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/bestsellers/bestsellers`,
-            { cache: "no-store"}
         )
         const bestsellers: BestsellersSchema[] = await data.json()
         return bestsellers
@@ -62,7 +59,6 @@ export async function getProduct(id: string) {
     try {
         const data = await fetch(
             `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/products/${id}`,
-            { cache: "force-cache"}
         )
         const product: ProductSchema = await data.json()
         return product
@@ -133,7 +129,6 @@ export async function getUserProfile({ userId, authToken }: { userId: string, au
         const response = await fetch(
             `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/profile/${userId}`, 
             { 
-                cache: "force-cache",
                 headers: {
                     "Authorization": `Bearer ${authToken}`,
                 }

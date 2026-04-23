@@ -1,9 +1,7 @@
 import Link from "next/link"
 import styles from "../../styles/layout/navigation.module.css"
 import commonStyles from "../../styles/common.module.css"
-import { Search } from "./search"
 import { PopupMenu } from "../popup"
-import { Suspense } from "react"
 
 export const Navigation = () => {
     return (
@@ -27,11 +25,6 @@ export const Navigation = () => {
                     <Link href="/catalog" className={styles.navLink}>
                         <p>КАТАЛОГ</p>
                     </Link>
-                </div>
-                <div className={styles.svgWrapper}>
-                    <Suspense>
-                        <Search placeholder="Поиск..."/>
-                    </Suspense>
                 </div>
                 <PopupMenu />
             </div>
