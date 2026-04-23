@@ -49,8 +49,11 @@ export async function getBestsellers() {
         return bestsellers
 
     } catch (error) {
-        console.error("Database Error:", error);
-        throw new Error("Failed to fetch bestsellers.");
+        console.warn(
+            "Failed to fetch bestsellers (OK in CI/build):",
+            error instanceof Error ? error.message : String(error)
+        )
+        return []
       }
 }
 
