@@ -1,0 +1,113 @@
+.wrapper {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 16px 48px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 22px;
+  margin: 24px 0 12px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.cardLabel {
+  font-size: 13px;
+  color: #555;
+}
+
+.cardValue {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.form {
+  display: grid;
+  gap: 10px;
+  max-width: 420px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.input,
+.select,
+.textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 9px 10px;
+  font-size: 14px;
+}
+
+.textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.button {
+  width: fit-content;
+  background: #111;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.message {
+  font-size: 14px;
+}
+
+.error {
+  color: #c62828;
+}
+
+.success {
+  color: #2e7d32;
+}
+
+.leadList {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.leadCard {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.meta {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.topActions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

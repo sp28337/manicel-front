@@ -45,6 +45,12 @@ export const PopupMenu = () => {
                                 </span>
                                 <p>МАГАЗИН</p>
                             </a>
+                            <Link href="/admin" className={styles.navLink}>
+                                <span className={styles.icon}>
+                                    <ShopSVG color="#000" h={15} w={15}/>
+                                </span>
+                                <p>ADMIN</p>
+                            </Link>
                         </div>
                     </nav>
                     , document.body

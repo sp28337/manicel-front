@@ -3,8 +3,13 @@ import {
     BestsellersSchema, 
     ProductSchema,
     UserProfileSchema,
+    CRMLeadSchema,
+    AdminDashboardSchema,
+    LeadStatus,
+    UpdateCRMLeadPayload,
 } from "./definitions"
 import { redirect } from "next/navigation"
+import { buildCRMLeadsEndpoint } from "./admin-utils"
 
 
 export async function getSearchProducts(query: string) {
@@ -263,5 +268,134 @@ export async function changeEmail(formData: FormData, authToken: string | undefi
 
     } catch (error) {
         console.error("Backend Error:", error);
+    }
+}
+
+const getApiBaseUrl = () =>
+    `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}`
+
+export async function getAdminDashboard(authToken: string) {
+    try {
+        const response = await fetch(
+            `${getApiBaseUrl()}/admin/dashboard`,
+            {
+                headers: {
+                    "Authorization": `Bearer ${authToken}`,
+                    "accept": "application/json",
+                },
+                cache: "no-store",
+            },
+        )
+
+        if (response.ok) {
+            const dashboard: AdminDashboardSchema = await response.json()
+            return dashboard
+        }
+
+        return response.status
+    } catch (error) {
+        console.error("Backend Error:", error)
+        return 500
+    }
+}
+
+export async function getCRMLeads({
+    authToken,
+    statusFilter,
+}: {
+    authToken: string
+    statusFilter?: LeadStatus
+}) {
+    try {
+        const endpoint = buildCRMLeadsEndpoint(getApiBaseUrl(), statusFilter)
+
+        const response = await fetch(
+            endpoint,
+            {
+                headers: {
+                    "Authorization": `Bearer ${authToken}`,
+                    "accept": "application/json",
+                },
+                cache: "no-store",
+            },
+        )
+
+        if (response.ok) {
+            const leads: CRMLeadSchema[] = await response.json()
+            return leads
+        }
+
+        return response.status
+    } catch (error) {
+        console.error("Backend Error:", error)
+        return 500
+    }
+}
+
+export async function patchCRMLead({
+    authToken,
+    leadId,
+    payload,
+}: {
+    authToken: string
+    leadId: number
+    payload: UpdateCRMLeadPayload
+}) {
+    try {
+        const response = await fetch(
+            `${getApiBaseUrl()}/crm/leads/${leadId}`,
+            {
+                method: "PATCH",
+                headers: {
+                    "Authorization": `Bearer ${authToken}`,
+                    "accept": "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            },
+        )
+
+        if (response.ok) {
+            return await response.json()
+        }
+
+        return response.status
+    } catch (error) {
+        console.error("Backend Error:", error)
+        return 500
+    }
+}
+
+export async function patchAdminRole({
+    authToken,
+    targetUserId,
+    isAdmin,
+}: {
+    authToken: string
+    targetUserId: number
+    isAdmin: boolean
+}) {
+    try {
+        const response = await fetch(
+            `${getApiBaseUrl()}/admin/users/${targetUserId}/admin`,
+            {
+                method: "PATCH",
+                headers: {
+                    "Authorization": `Bearer ${authToken}`,
+                    "accept": "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ is_admin: isAdmin }),
+            },
+        )
+
+        if (response.ok) {
+            return await response.json()
+        }
+
+        return response.status
+    } catch (error) {
+        console.error("Backend Error:", error)
+        return 500
     }
 }
