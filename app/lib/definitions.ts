@@ -88,6 +88,29 @@ export const ChangeEmailSchema = z.object({
     email: z.string().email({ message: "Пожалуйста, введите корректный email" }).nullable(),
 })
 
+export const LeadStatusSchema = z.enum(["NEW", "IN_PROGRESS", "WON", "LOST"])
+
+export const UpdateLeadSchema = z.object({
+    leadId: z.coerce.number().int().positive({ message: "Некорректный ID лида" }),
+    status: LeadStatusSchema,
+    comment: z.string().max(2000, { message: "Комментарий слишком длинный" }).optional(),
+    assigned_manager_id: z
+        .union([z.coerce.number().int().positive(), z.nan()])
+        .optional(),
+})
+
+export const ToggleAdminRoleSchema = z.object({
+    target_user_id: z.coerce.number().int().positive({ message: "Некорректный ID пользователя" }),
+    is_admin: z.boolean(),
+})
+
+export const CreateLeadSchema = z.object({
+    name: z.string().trim().min(2, { message: "Введите имя (минимум 2 символа)." }),
+    phone: z.string().trim().min(6, { message: "Введите корректный телефон." }),
+    email: z.string().trim().email({ message: "Введите корректный email." }).optional().or(z.literal("")),
+    comment: z.string().trim().max(2000, { message: "Комментарий слишком длинный." }).optional(),
+})
+
 export type FormState =
   | {
       errors?: {
@@ -185,4 +208,31 @@ export type UserProfileSchema = {
     email: string,
     admin: boolean,
     created_at: string
+}
+
+export type LeadStatus = z.infer<typeof LeadStatusSchema>
+
+export type CRMLeadSchema = {
+    id: number
+    status: LeadStatus
+    created_at?: string
+    name?: string | null
+    phone?: string | null
+    email?: string | null
+    comment?: string | null
+    assigned_manager_id?: number | null
+}
+
+export type UpdateCRMLeadPayload = {
+    status: LeadStatus
+    comment?: string | null
+    assigned_manager_id?: number | null
+}
+
+export type AdminDashboardSchema = {
+    users_total: number
+    admins_total: number
+    products_total: number
+    crm_leads_total: number
+    crm_new_leads: number
 }

@@ -39,12 +39,30 @@ export const PopupMenu = () => {
                                 </span>
                                 <p>КАТАЛОГ</p>
                             </Link>
+                            <Link href="/crm" className={styles.navLink}>
+                                <span className={styles.icon}>
+                                    <StoreSVG />
+                                </span>
+                                <p>CRM</p>
+                            </Link>
+                            <Link href="/login" className={styles.navLink}>
+                                <span className={styles.icon}>
+                                    <StoreSVG />
+                                </span>
+                                <p>ВХОД</p>
+                            </Link>
                             <a href="https://www.wildberries.ru/brands/310747490-manicel" className={styles.navLink}>
                                 <span className={styles.icon}>
                                     <ShopSVG color="#000" h={15} w={15}/>
                                 </span>
                                 <p>МАГАЗИН</p>
                             </a>
+                            <Link href="/admin" className={styles.navLink}>
+                                <span className={styles.icon}>
+                                    <ShopSVG color="#000" h={15} w={15}/>
+                                </span>
+                                <p>ADMIN</p>
+                            </Link>
                         </div>
                     </nav>
                     , document.body
