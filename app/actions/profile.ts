@@ -96,7 +96,6 @@ export async function updatePasswordAction(state: FormState, formData: FormData)
     const cookie = cookieStore.get("session")
     const payload = await decrypt(cookie?.value)
     const token = cookie?.value
-    console.log(formData.get("oldPassword"), formData.get("newPassword"), formData.get("repeatedPassword"))
     const validatedFields = UpdatePasswordSchema.safeParse({
             oldPassword: formData.get("oldPassword"),
             newPassword: formData.get("newPassword"),
@@ -104,7 +103,6 @@ export async function updatePasswordAction(state: FormState, formData: FormData)
         })
     
     if (!validatedFields.success) {
-        console.log(validatedFields.error.flatten().fieldErrors)
         return {
             errors: validatedFields.error.flatten().fieldErrors,
         }

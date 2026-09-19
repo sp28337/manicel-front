@@ -17,19 +17,25 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v5
+        uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5
 
       - name: Set up Node.js (LTS)
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: "24"
           cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Audit dependencies
+        run: pnpm audit --prod
 
       - name: Build Next.js
         run: pnpm run build
@@ -43,10 +49,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 
       - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1.2.5
         with:
           host: ${{ secrets.HOST }}
           port: ${{ secrets.PORT }}
@@ -70,10 +76,9 @@ jobs:
             pnpm -v
 
             echo "📦 Pulling latest code..."
-            git remote set-url origin "https://${GIT_TOKEN}@github.com/sp28337/manicel-front.git"
-            git fetch origin main
+            git fetch "https://${GIT_TOKEN}@github.com/sp28337/manicel-front.git" main
             git checkout main
-            git pull origin main
+            git merge --ff-only FETCH_HEAD
 
             echo "📥 Installing dependencies..."
             pnpm install --frozen-lockfile
