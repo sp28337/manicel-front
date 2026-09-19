@@ -6,12 +6,14 @@ import {
 } from "./definitions"
 import { redirect } from "next/navigation"
 
+const FETCH_TIMEOUT_MS = 10_000
 
 export async function getSearchProducts(query: string) {
 
     try {
         const data = await fetch(
             `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/search/search_products?query=${encodeURIComponent(query)}`,
+            { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) },
         )
         const filteredProducts: CatalogProductsSchema[] = await data.json()
         return filteredProducts
@@ -22,10 +24,11 @@ export async function getSearchProducts(query: string) {
 }
 
 export async function getCatalogProducts() {
-    
+
     try {
         const data = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/products/catalog_products`
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/products/catalog_products`,
+            { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) },
         )
         const products: CatalogProductsSchema[] = await data.json()
         return products
@@ -40,10 +43,11 @@ export async function getCatalogProducts() {
 }
 
 export async function getBestsellers() {
-    
+
     try {
         const data = await fetch(
             `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/bestsellers/bestsellers`,
+            { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) },
         )
         const bestsellers: BestsellersSchema[] = await data.json()
         return bestsellers
@@ -62,6 +66,7 @@ export async function getProduct(id: string) {
     try {
         const data = await fetch(
             `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/products/${encodeURIComponent(id)}`,
+            { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) },
         )
         const product: ProductSchema = await data.json()
         return product
@@ -75,7 +80,7 @@ export async function getProduct(id: string) {
 export async function createUser(formData: FormData) {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user`,
             {
                 method: "POST",
                 headers: {
@@ -86,7 +91,8 @@ export async function createUser(formData: FormData) {
                     username: formData.get("username"),
                     email: formData.get("email"),
                     password: formData.get("password"),
-                }),        
+                }),
+                signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
             }
         )
 
@@ -102,7 +108,7 @@ export async function createUser(formData: FormData) {
 export async function loginUser(formData: FormData) {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/auth/login`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/auth/login`,
             {
                 method: "POST",
                 headers: {
@@ -112,7 +118,8 @@ export async function loginUser(formData: FormData) {
                 body: JSON.stringify({
                     username: formData.get("username"),
                     password: formData.get("password"),
-                }),        
+                }),
+                signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
             }
         )
         if (response.ok) {
@@ -130,14 +137,15 @@ export async function loginUser(formData: FormData) {
 export async function getUserProfile({ userId, authToken }: { userId: string, authToken: string }) {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/profile/${userId}`, 
-            { 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/profile/${userId}`,
+            {
                 headers: {
                     "Authorization": `Bearer ${authToken}`,
-                }
+                },
+                signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
             }
         )
-        
+
         if (response.ok) {
             const userProfile: UserProfileSchema = await response.json()
             return userProfile
@@ -154,7 +162,7 @@ export async function getUserProfile({ userId, authToken }: { userId: string, au
 export async function changeUsername(formData: FormData, authToken: string | undefined, userId: number | unknown) {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/update_username/${userId}`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/update_username/${userId}`,
             {
                 method: "PATCH",
                 headers: {
@@ -164,7 +172,8 @@ export async function changeUsername(formData: FormData, authToken: string | und
                 },
                 body: JSON.stringify({
                     username: formData.get("username"),
-                }),        
+                }),
+                signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
             }
         )
         if (response.ok) {
@@ -182,7 +191,7 @@ export async function changeUsername(formData: FormData, authToken: string | und
 export async function updatePassword(formData: FormData, authToken: string | undefined, userId: number | unknown) {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/update_password/${userId}`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/update_password/${userId}`,
             {
                 method: "PATCH",
                 headers: {
@@ -194,10 +203,10 @@ export async function updatePassword(formData: FormData, authToken: string | und
                     old_password: formData.get("oldPassword"),
                     new_password: formData.get("newPassword"),
                     repeat_new_password: formData.get("repeatedPassword"),
-                }),        
+                }),
+                signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
             }
         )
-        console.log(response.status, response.statusText)
         if (response.ok) {
             const userData = await response.json()
             return userData
@@ -213,7 +222,7 @@ export async function updatePassword(formData: FormData, authToken: string | und
 export async function changeName(formData: FormData, authToken: string | undefined, userId: string | unknown) {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/update_name/${userId}`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/update_name/${userId}`,
             {
                 method: "PATCH",
                 headers: {
@@ -223,7 +232,8 @@ export async function changeName(formData: FormData, authToken: string | undefin
                 },
                 body: JSON.stringify({
                     name: formData.get("name"),
-                }),        
+                }),
+                signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
             }
         )
         if (response.ok) {
@@ -241,7 +251,7 @@ export async function changeName(formData: FormData, authToken: string | undefin
 export async function changeEmail(formData: FormData, authToken: string | undefined, userId: string | unknown) {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/update_email/${userId}`, 
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/user/update_email/${userId}`,
             {
                 method: "PATCH",
                 headers: {
@@ -251,7 +261,8 @@ export async function changeEmail(formData: FormData, authToken: string | undefi
                 },
                 body: JSON.stringify({
                     email: formData.get("email"),
-                }),        
+                }),
+                signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
             }
         )
         if (response.ok) {
