@@ -1,4 +1,4 @@
-FROM node:22.23.2-alpine AS base
+FROM node:26.8.2-alpine AS base
 RUN corepack enable
 
 FROM base AS deps
