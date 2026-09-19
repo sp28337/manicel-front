@@ -73,6 +73,7 @@ jobs:
             # Use LTS Node
             nvm use 24
             node -v
+            corepack enable
             pnpm -v
 
             echo "📦 Pulling latest code..."
