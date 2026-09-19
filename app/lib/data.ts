@@ -11,7 +11,7 @@ export async function getSearchProducts(query: string) {
 
     try {
         const data = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/search/search_products?query=${query}`,
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/search/search_products?query=${encodeURIComponent(query)}`,
         )
         const filteredProducts: CatalogProductsSchema[] = await data.json()
         return filteredProducts
@@ -61,7 +61,7 @@ export async function getProduct(id: string) {
 
     try {
         const data = await fetch(
-            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/products/${id}`,
+            `${process.env.NEXT_PUBLIC_API_PROTOCOL}://${process.env.NEXT_PUBLIC_API}/products/${encodeURIComponent(id)}`,
         )
         const product: ProductSchema = await data.json()
         return product

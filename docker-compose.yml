@@ -3,5 +3,12 @@ services:
     build:
       dockerfile: ./Dockerfile
       context: ./
+      args:
+        NEXT_PUBLIC_API: ${NEXT_PUBLIC_API}
+        NEXT_PUBLIC_API_PROTOCOL: ${NEXT_PUBLIC_API_PROTOCOL}
+        NEXT_PUBLIC_REDIRECT_API: ${NEXT_PUBLIC_REDIRECT_API}
+    environment:
+      SESSION_SECRET: ${SESSION_SECRET}
+      COOKIE_DOMAIN: ${COOKIE_DOMAIN}
     ports:
       - '3000:3000'
